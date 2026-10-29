@@ -1,0 +1,802 @@
+{
+  "id": "i04",
+  "input": {
+    "text": "Mumbai comics artist making sci-fi zines and risograph posters for collectors.",
+    "soundsLike": [],
+    "city": "Mumbai",
+    "creatorType": "comic_artist",
+    "budget": "medium"
+  },
+  "startedAt": "2026-10-29T15:46:30.229Z",
+  "providerCalls": {
+    "qloo": 5,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s4",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "note",
+      "text": "Free AI resting — using fixed research steps."
+    },
+    {
+      "type": "tool_call",
+      "id": "sc1",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "mumbai comics"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc1",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Comics, Graphic novels comics, Comics manga",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc2",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "comics artist"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc2",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Comics Artist, Comics, Graphic novels comics",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc3",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "artist making"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc3",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Artist, Make-up artist, Make-up artist",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc4",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:comics",
+          "urn:tag:genre:media:graphic_novels_comics",
+          "urn:tag:genre:media:comics_manga",
+          "urn:tag:genre:media:dc_comics",
+          "urn:tag:occupation:wikidata:comics_artist",
+          "urn:tag:category:place:artist"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc4",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Comics, Comic Books, Comic Art, Comic Book…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "sc5",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:comics",
+          "urn:tag:genre:media:graphic_novels_comics",
+          "urn:tag:genre:media:comics_manga",
+          "urn:tag:genre:media:dc_comics",
+          "urn:tag:occupation:wikidata:comics_artist",
+          "urn:tag:category:place:artist"
+        ]
+      }
+    },
+    {
+      "type": "note",
+      "text": "Taste data is unavailable right now — using the interests in your brief."
+    },
+    {
+      "type": "step",
+      "id": "s5",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s6",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:genre:media:comics"
+          ]
+        },
+        "tags": [
+          {
+            "name": "sci fi",
+            "canonical": "sci-fi",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "zines",
+            "canonical": "zines",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "comics",
+            "canonical": "comics",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "art print",
+            "canonical": "art-print",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "collectible",
+            "canonical": "collectible",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "Comic Book",
+            "qlooTagId": "urn:tag:genre:media:comic_book",
+            "canonical": "books",
+            "weight": 0.85,
+            "source": "qloo"
+          },
+          {
+            "name": "Comic Fantasy",
+            "qlooTagId": "urn:tag:genre:media:comic_fantasy",
+            "canonical": "fantasy",
+            "weight": 0.4,
+            "source": "qloo"
+          }
+        ],
+        "brands": [],
+        "crossDomain": [],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": false,
+        "paletteId": "ink-literary",
+        "notes": [
+          "LLM agent hit a snag — switched to fixed research steps.",
+          "Fallback mode: fixed research steps (no free LLM available right now).",
+          "Taste data was unavailable; this profile uses the interests in your brief and any results already received."
+        ],
+        "agentMode": "scripted_fallback",
+        "qlooCalls": 5
+      }
+    },
+    {
+      "type": "done",
+      "mode": "scripted_fallback"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:genre:media:comics"
+      ]
+    },
+    "tags": [
+      {
+        "name": "sci fi",
+        "canonical": "sci-fi",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "zines",
+        "canonical": "zines",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "comics",
+        "canonical": "comics",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "art print",
+        "canonical": "art-print",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "collectible",
+        "canonical": "collectible",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "Comic Book",
+        "qlooTagId": "urn:tag:genre:media:comic_book",
+        "canonical": "books",
+        "weight": 0.85,
+        "source": "qloo"
+      },
+      {
+        "name": "Comic Fantasy",
+        "qlooTagId": "urn:tag:genre:media:comic_fantasy",
+        "canonical": "fantasy",
+        "weight": 0.4,
+        "source": "qloo"
+      }
+    ],
+    "brands": [],
+    "crossDomain": [],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": false,
+    "paletteId": "ink-literary",
+    "notes": [
+      "LLM agent hit a snag — switched to fixed research steps.",
+      "Fallback mode: fixed research steps (no free LLM available right now).",
+      "Taste data was unavailable; this profile uses the interests in your brief and any results already received."
+    ],
+    "agentMode": "scripted_fallback",
+    "qlooCalls": 5
+  },
+  "fallbackMode": "scripted_fallback",
+  "collection": {
+    "products": [
+      {
+        "id": "playing-cards",
+        "name": "Playing card deck",
+        "oneLiner": "playing card deck in ink blue, futuristic by design",
+        "category": "objects",
+        "role": "hero",
+        "silhouette": "cards",
+        "fitScore": 45,
+        "scoreParts": {
+          "tag": 0.9,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "tag",
+            "label": "collectible",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 230,
+          "price": 640,
+          "marginPerUnit": 410,
+          "minRun": 50,
+          "setupCost": 1500,
+          "firstRunCost": 13000,
+          "breakEvenUnits": 21,
+          "typicalRange": [
+            499,
+            999
+          ],
+          "estimate": true
+        },
+        "supplierType": "card printer",
+        "supplierBrief": "54-card poker-size deck with custom back and 4 custom face cards, tuck box.",
+        "description": {
+          "text": "A playing card deck in ink blue and paper white, finished with a star badge motif. 54-card poker-size deck with custom back and 4 custom face cards. The overall feel is futuristic — built for fans who lean into sci-fi and zines — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "zine",
+        "name": "Mini zine",
+        "oneLiner": "mini zine in ink blue, futuristic by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 50,
+        "scoreParts": {
+          "tag": 1,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "comics",
+            "points": 17,
+            "estimated": false
+          },
+          {
+            "kind": "tag",
+            "label": "zines",
+            "points": 17,
+            "estimated": false
+          },
+          {
+            "kind": "tag",
+            "label": "books",
+            "points": 16,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 155,
+          "price": 400,
+          "marginPerUnit": 245,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 7750,
+          "breakEvenUnits": 20,
+          "typicalRange": [
+            199,
+            399
+          ],
+          "estimate": true
+        },
+        "supplierType": "copy / print shop",
+        "supplierBrief": "16-page half-letter zine, saddle-stitched, colour cover, black-and-white inside.",
+        "description": {
+          "text": "A stapled mini zine in ink blue and paper white, finished with a cut and paste collage motif. 16-page half-letter zine. The overall feel is futuristic — built for fans who lean into sci-fi and zines — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-pin-set",
+        "name": "Enamel pin set",
+        "oneLiner": "enamel pin set in ink blue, futuristic by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 45,
+        "scoreParts": {
+          "tag": 0.9,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "tag",
+            "label": "collectible",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 135,
+          "price": 400,
+          "marginPerUnit": 265,
+          "minRun": 50,
+          "setupCost": 2500,
+          "firstRunCost": 9250,
+          "breakEvenUnits": 24,
+          "typicalRange": [
+            399,
+            699
+          ],
+          "estimate": true
+        },
+        "supplierType": "enamel pin maker",
+        "supplierBrief": "Set of 3 hard-enamel pins, about 3 cm each, butterfly clasps; confirm mould charges locally.",
+        "description": {
+          "text": "A pin set in ink blue and paper white, finished with a star badge motif. Set of 3 hard-enamel pins. The overall feel is futuristic — built for fans who lean into sci-fi and zines — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Art print poster",
+        "oneLiner": "art print poster in ink blue, futuristic by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 45,
+        "scoreParts": {
+          "tag": 0.9,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "tag",
+            "label": "collectible",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 65,
+          "price": 200,
+          "marginPerUnit": 135,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 3250,
+          "breakEvenUnits": 17,
+          "typicalRange": [
+            199,
+            499
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "A poster in ink blue and paper white, finished with a risograph sun motif. 18×24 in matte poster on 100 lb stock. The overall feel is futuristic — built for fans who lean into sci-fi and zines — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Sticker pack",
+        "oneLiner": "sticker pack in ink blue, futuristic by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 45,
+        "scoreParts": {
+          "tag": 0.9,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "tag",
+            "label": "collectible",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 57.5,
+          "price": 160,
+          "marginPerUnit": 102.5,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 5750,
+          "breakEvenUnits": 36,
+          "typicalRange": [
+            99,
+            199
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "A sticker sheet in ink blue and paper white, finished with a risograph sun motif. Die-cut or kiss-cut vinyl stickers. The overall feel is futuristic — built for fans who lean into sci-fi and zines — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "tote-bag",
+        "name": "Tote bag",
+        "oneLiner": "tote bag in ink blue, futuristic by design",
+        "category": "objects",
+        "role": "limited",
+        "silhouette": "tote",
+        "fitScore": 44,
+        "scoreParts": {
+          "tag": 0.875,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "tag",
+            "label": "books",
+            "points": 21,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 260,
+          "price": 600,
+          "marginPerUnit": 340,
+          "minRun": 36,
+          "setupCost": 800,
+          "firstRunCost": 10160,
+          "breakEvenUnits": 17,
+          "typicalRange": [
+            349,
+            599
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "Heavy cotton canvas tote, 1–2 colour print and reinforced handles.",
+        "description": {
+          "text": "A tote bag in ink blue and paper white, finished with a open book motif. 10 oz natural canvas tote. The overall feel is futuristic — built for fans who lean into sci-fi and zines — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "custom-socks",
+        "name": "Custom socks",
+        "oneLiner": "custom socks in ink blue, futuristic by design",
+        "category": "apparel",
+        "role": "core",
+        "silhouette": "socks",
+        "fitScore": 23,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "collectible",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 240,
+          "price": 670,
+          "marginPerUnit": 430,
+          "minRun": 36,
+          "setupCost": 1500,
+          "firstRunCost": 10140,
+          "breakEvenUnits": 16,
+          "typicalRange": [
+            499,
+            899
+          ],
+          "estimate": true
+        },
+        "supplierType": "custom sock knitter",
+        "supplierBrief": "Cotton-blend crew socks, jacquard logo or pattern, 2–3 colours, setup fee.",
+        "description": {
+          "text": "A crew socks in ink blue and paper white, finished with a star badge motif. Cotton-blend crew socks. The overall feel is futuristic — built for fans who lean into sci-fi and zines — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "zine",
+            "enamel-pin-set",
+            "poster-print",
+            "sticker-pack",
+            "custom-socks"
+          ],
+          "runSizes": {
+            "zine": 50,
+            "enamel-pin-set": 50,
+            "poster-print": 50,
+            "sticker-pack": 100,
+            "custom-socks": 36
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "playing-cards"
+          ],
+          "runSizes": {
+            "playing-cards": 50
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "tote-bag"
+          ],
+          "runSizes": {
+            "tote-bag": 36
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "template",
+      "notes": [
+        "6 low-fit products were withheld because the audience evidence was too weak.",
+        "LLM agent hit a snag — switched to fixed research steps.",
+        "Fallback mode: fixed research steps (no free LLM available right now).",
+        "Taste data was unavailable; this profile uses the interests in your brief and any results already received."
+      ]
+    }
+  },
+  "descriptionSource": "template",
+  "collabs": {
+    "collabs": [
+      {
+        "id": "bom-kitab-khana",
+        "name": "Kitab Khana",
+        "type": "place",
+        "area": "bookshop · Fort",
+        "tags": [
+          "books",
+          "comics"
+        ],
+        "partnerIdea": "Pitch a bookish zine or illustrated print launch.",
+        "linkedProductIds": [
+          "zine",
+          "poster-print"
+        ],
+        "sourceUrl": "https://www.kitabkhana.in/en/"
+      },
+      {
+        "id": "bom-prithvi",
+        "name": "Prithvi Theatre",
+        "type": "place",
+        "area": "theatre · Juhu",
+        "tags": [
+          "art-print"
+        ],
+        "partnerIdea": "Pitch a performance-night print or artist talk.",
+        "linkedProductIds": [
+          "zine",
+          "poster-print"
+        ],
+        "sourceUrl": "https://www.prithvitheatre.org/prithvi-experience"
+      },
+      {
+        "id": "bom-subko",
+        "name": "Subko",
+        "type": "place",
+        "area": "coffee · Bandra",
+        "tags": [
+          "art-print"
+        ],
+        "partnerIdea": "Pitch a coffee-side print pop-up or small creative drop.",
+        "linkedProductIds": [
+          "zine",
+          "poster-print"
+        ],
+        "sourceUrl": "https://www.subko.coffee/pages/locations"
+      },
+      {
+        "id": "bom-habitat",
+        "name": "The Habitat",
+        "type": "place",
+        "area": "live venue · Khar",
+        "tags": [
+          "comics"
+        ],
+        "partnerIdea": "Pitch a gig-night poster or limited merch table.",
+        "linkedProductIds": [
+          "zine",
+          "poster-print"
+        ],
+        "sourceUrl": "https://indiehabitat.in/"
+      }
+    ],
+    "cityNote": "Curated Mumbai venue ideas matched to your stated interests. Locations are sourced; partnerships and audience overlap are unverified."
+  },
+  "elapsedMs": 52278
+}

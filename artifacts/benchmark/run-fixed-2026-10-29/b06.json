@@ -1,0 +1,1216 @@
+{
+  "id": "b06",
+  "input": {
+    "text": "YouTube channel teaching watercolor landscapes. Viewers enjoy stationery and outdoor sketching.",
+    "soundsLike": [],
+    "city": "London",
+    "creatorType": "youtuber",
+    "budget": "medium"
+  },
+  "startedAt": "2026-10-29T11:54:21.130Z",
+  "providerCalls": {
+    "qloo": 7,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s33",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t52",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "watercolor landscape painting"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t52",
+      "tool": "qloo_search_tags",
+      "summary": "No tags for \"watercolor landscape painting\""
+    },
+    {
+      "type": "tool_call",
+      "id": "t53",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "watercolor"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t53",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Watercolorist, Watercolor, WaterColor Beach",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t54",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "stationery"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t54",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Stationery store, Stationery store, Stationery wholesaler",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t55",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "outdoor sketching"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t55",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Outdoor seating, Outdoor furniture, Outdoor services",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t56",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:occupation:wikidata:watercolorist",
+          "urn:tag:occupation:wikidata:watercolor"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t56",
+      "tool": "qloo_taste_tags",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "tool_call",
+      "id": "t57",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:occupation:wikidata:watercolorist",
+          "urn:tag:occupation:wikidata:watercolor",
+          "urn:tag:nearby_attraction:qloo:watercolor"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t57",
+      "tool": "qloo_taste_tags",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "tool_call",
+      "id": "t58",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:occupation:wikidata:watercolorist",
+          "urn:tag:occupation:wikidata:watercolor"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t58",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "note",
+      "text": "Time budget reached — building the profile from what we have."
+    },
+    {
+      "type": "step",
+      "id": "s34",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "7 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s35",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s36",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:service_options:place:outdoor_seating"
+          ]
+        },
+        "tags": [
+          {
+            "name": "outdoors",
+            "canonical": "outdoors",
+            "weight": 0.9,
+            "source": "user"
+          }
+        ],
+        "brands": [
+          {
+            "id": "4B84CEE5-59EA-43E1-9000-27C66D684CFA",
+            "name": "Politix Men's Fashion",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Casual",
+              "Fashion",
+              "Tailored Silhouettes",
+              "Clean Lines",
+              "Textured Fabrics",
+              "Neutral Color Palette",
+              "Slim Fit",
+              "Professional Success",
+              "Social Elegance",
+              "Modern Sophistication"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "4E179884-8BA7-4391-A2F3-B65D7114A15C",
+            "name": "Duncan Quinn",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Haute Couture",
+              "Formalwear",
+              "Fashion",
+              "Impeccable Tailoring",
+              "Classic Silhouettes",
+              "Bold Linings",
+              "Refined Details",
+              "International Travel",
+              "High-Society Networking",
+              "Collectibility"
+            ],
+            "canonicalTags": [
+              "travel"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "5024DC4A-0125-469D-B07E-879C5104D291",
+            "name": "Binance",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Financial Services",
+              "Minimalist Digital Design",
+              "Data-Driven Interface",
+              "High-Contrast Color Palette",
+              "Technical Precision",
+              "Financial Independence",
+              "Technological Empowerment",
+              "Global Wealth Building",
+              "Other",
+              "Corporate Brand"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "4E8D1362-6673-4BAE-B143-AE3101AA63B5",
+            "name": "Orfeu Cafés e Azeites",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Drinks",
+              "Coffee & Tea",
+              "Food & Beverage",
+              "Elegant",
+              "Minimalist",
+              "Dark Palette",
+              "Refined Typography",
+              "Slow Living",
+              "Gastronomy",
+              "Global Travel"
+            ],
+            "canonicalTags": [
+              "coffee",
+              "foodie",
+              "minimal",
+              "travel"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "5039441C-2412-4F10-8DBA-7696E685BF79",
+            "name": "Brother Vellies",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Footwear",
+              "Other",
+              "Fashion",
+              "Accessories",
+              "Bags & Leather",
+              "Artisanal",
+              "Textured",
+              "Earthy",
+              "Cultural-Fusion",
+              "Hand-Finished"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "4EF34717-C35C-49CD-BB41-BF035E76B5F9",
+            "name": "STIHL Inc.",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Household",
+              "Industrial Design",
+              "Functionalist",
+              "Orange And White Color Palette",
+              "Sturdy Construction",
+              "Ergonomic",
+              "Land Stewardship",
+              "Property Mastery",
+              "Self-Sufficiency",
+              "Professional Efficiency"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "outdoor",
+              "workwear"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "50669EF6-EAE3-48FF-B6A2-6D1853FDA2D9",
+            "name": "Juicy Chemistry",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Health & Beauty",
+              "Minimalist",
+              "Clean",
+              "Earthy",
+              "Botanical",
+              "Modern",
+              "Clean Living",
+              "Holistic Wellbeing",
+              "Minimalist Beauty",
+              "Ethical Consumption"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "art-goods"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "4F3C9F72-5527-4D02-B20D-73B15DAA16FD",
+            "name": "Dewar's",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Whiskey",
+              "Spirits",
+              "Scotch",
+              "Wine & Spirits",
+              "Classic Packaging",
+              "Heritage Branding",
+              "Gold Accents",
+              "Timeless Typography",
+              "Celebratory Milestones",
+              "Refined Living"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "5517D014-0C8F-4444-9690-C402F5EA2084",
+            "name": "Cars24india",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Automotive",
+              "Website",
+              "Clean Minimalist Design",
+              "Blue And White Color Palette",
+              "User-Friendly Interface",
+              "Functional Graphics",
+              "Financial Stability",
+              "Freedom Of Movement",
+              "Modern Convenience",
+              "Reliable Ownership"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "4AB0CE8F-E57A-4BC3-A89C-F2C6C67FEBDF",
+            "name": "Goldilocks Bakeshop",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "1966 establishments in the Philippines",
+              "Bakery cafés",
+              "Companies based in Mandaluyong",
+              "Dining",
+              "Fast-food chains of the Philippines",
+              "Restaurants established in 1966",
+              "Classic",
+              "Friendly",
+              "Traditional Design",
+              "Creating Lasting Memories"
+            ],
+            "canonicalTags": [
+              "foodie"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "mid"
+          }
+        ],
+        "crossDomain": [],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "earth-retro",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 7
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:service_options:place:outdoor_seating"
+      ]
+    },
+    "tags": [
+      {
+        "name": "outdoors",
+        "canonical": "outdoors",
+        "weight": 0.9,
+        "source": "user"
+      }
+    ],
+    "brands": [
+      {
+        "id": "4B84CEE5-59EA-43E1-9000-27C66D684CFA",
+        "name": "Politix Men's Fashion",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Casual",
+          "Fashion",
+          "Tailored Silhouettes",
+          "Clean Lines",
+          "Textured Fabrics",
+          "Neutral Color Palette",
+          "Slim Fit",
+          "Professional Success",
+          "Social Elegance",
+          "Modern Sophistication"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "4E179884-8BA7-4391-A2F3-B65D7114A15C",
+        "name": "Duncan Quinn",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Haute Couture",
+          "Formalwear",
+          "Fashion",
+          "Impeccable Tailoring",
+          "Classic Silhouettes",
+          "Bold Linings",
+          "Refined Details",
+          "International Travel",
+          "High-Society Networking",
+          "Collectibility"
+        ],
+        "canonicalTags": [
+          "travel"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "5024DC4A-0125-469D-B07E-879C5104D291",
+        "name": "Binance",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Financial Services",
+          "Minimalist Digital Design",
+          "Data-Driven Interface",
+          "High-Contrast Color Palette",
+          "Technical Precision",
+          "Financial Independence",
+          "Technological Empowerment",
+          "Global Wealth Building",
+          "Other",
+          "Corporate Brand"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "4E8D1362-6673-4BAE-B143-AE3101AA63B5",
+        "name": "Orfeu Cafés e Azeites",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Drinks",
+          "Coffee & Tea",
+          "Food & Beverage",
+          "Elegant",
+          "Minimalist",
+          "Dark Palette",
+          "Refined Typography",
+          "Slow Living",
+          "Gastronomy",
+          "Global Travel"
+        ],
+        "canonicalTags": [
+          "coffee",
+          "foodie",
+          "minimal",
+          "travel"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "5039441C-2412-4F10-8DBA-7696E685BF79",
+        "name": "Brother Vellies",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Footwear",
+          "Other",
+          "Fashion",
+          "Accessories",
+          "Bags & Leather",
+          "Artisanal",
+          "Textured",
+          "Earthy",
+          "Cultural-Fusion",
+          "Hand-Finished"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "4EF34717-C35C-49CD-BB41-BF035E76B5F9",
+        "name": "STIHL Inc.",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Household",
+          "Industrial Design",
+          "Functionalist",
+          "Orange And White Color Palette",
+          "Sturdy Construction",
+          "Ergonomic",
+          "Land Stewardship",
+          "Property Mastery",
+          "Self-Sufficiency",
+          "Professional Efficiency"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "outdoor",
+          "workwear"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "50669EF6-EAE3-48FF-B6A2-6D1853FDA2D9",
+        "name": "Juicy Chemistry",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Health & Beauty",
+          "Minimalist",
+          "Clean",
+          "Earthy",
+          "Botanical",
+          "Modern",
+          "Clean Living",
+          "Holistic Wellbeing",
+          "Minimalist Beauty",
+          "Ethical Consumption"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "art-goods"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "4F3C9F72-5527-4D02-B20D-73B15DAA16FD",
+        "name": "Dewar's",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Whiskey",
+          "Spirits",
+          "Scotch",
+          "Wine & Spirits",
+          "Classic Packaging",
+          "Heritage Branding",
+          "Gold Accents",
+          "Timeless Typography",
+          "Celebratory Milestones",
+          "Refined Living"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "5517D014-0C8F-4444-9690-C402F5EA2084",
+        "name": "Cars24india",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Automotive",
+          "Website",
+          "Clean Minimalist Design",
+          "Blue And White Color Palette",
+          "User-Friendly Interface",
+          "Functional Graphics",
+          "Financial Stability",
+          "Freedom Of Movement",
+          "Modern Convenience",
+          "Reliable Ownership"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "4AB0CE8F-E57A-4BC3-A89C-F2C6C67FEBDF",
+        "name": "Goldilocks Bakeshop",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "1966 establishments in the Philippines",
+          "Bakery cafés",
+          "Companies based in Mandaluyong",
+          "Dining",
+          "Fast-food chains of the Philippines",
+          "Restaurants established in 1966",
+          "Classic",
+          "Friendly",
+          "Traditional Design",
+          "Creating Lasting Memories"
+        ],
+        "canonicalTags": [
+          "foodie"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "mid"
+      }
+    ],
+    "crossDomain": [],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "earth-retro",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 7
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "hero-crewneck",
+        "name": "Heavyweight crewneck",
+        "oneLiner": "heavyweight crewneck in burnt orange, earthy by design",
+        "category": "apparel",
+        "role": "hero",
+        "silhouette": "top",
+        "fitScore": 17,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.5760000000000001,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "boutique fashion",
+            "entityName": "Politix Men's Fashion",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "boutique fashion",
+            "entityName": "Duncan Quinn",
+            "points": 8.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 22,
+          "price": 61.5,
+          "marginPerUnit": 39.5,
+          "minRun": 24,
+          "setupCost": 40,
+          "firstRunCost": 568,
+          "breakEvenUnits": 10,
+          "typicalRange": [
+            58,
+            78
+          ],
+          "estimate": true
+        },
+        "supplierType": "premium blank + embroidery/print",
+        "supplierBrief": "12–14 oz fleece crewneck, embroidered chest mark, numbered neck label, limited run.",
+        "description": {
+          "text": "A crewneck sweatshirt in burnt orange and cream, finished with a embroidered monogram motif. 12–14 oz fleece crewneck. The overall feel is earthy — built for fans who lean into outdoors — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "matchbook",
+        "name": "Matchbooks",
+        "oneLiner": "matchbooks in burnt orange, earthy by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 7,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.228,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Dewar's",
+            "points": 4,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Goldilocks Bakeshop",
+            "points": 2.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 0.65,
+          "price": 3,
+          "marginPerUnit": 2.35,
+          "minRun": 100,
+          "setupCost": 20,
+          "firstRunCost": 85,
+          "breakEvenUnits": 29,
+          "typicalRange": [
+            3,
+            6
+          ],
+          "estimate": true
+        },
+        "supplierType": "print shop",
+        "supplierBrief": "Box of matchbooks with custom cover art, 100 min run, check local shipping rules.",
+        "description": {
+          "text": "A matchbook in burnt orange and cream, finished with a faded postcard motif. Box of matchbooks with custom cover art. The overall feel is earthy — built for fans who lean into outdoors — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "embroidered-cap",
+        "name": "Embroidered corduroy cap",
+        "oneLiner": "embroidered corduroy cap in burnt orange, earthy by design",
+        "category": "apparel",
+        "role": "core",
+        "silhouette": "cap",
+        "fitScore": 28,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.183,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "outdoors",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "workwear",
+            "entityName": "STIHL Inc.",
+            "points": 5.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 9,
+          "price": 28,
+          "marginPerUnit": 19,
+          "minRun": 24,
+          "setupCost": 25,
+          "firstRunCost": 241,
+          "breakEvenUnits": 9,
+          "typicalRange": [
+            28,
+            38
+          ],
+          "estimate": true
+        },
+        "supplierType": "embroidery shop",
+        "supplierBrief": "Unstructured 6-panel corduroy cap, flat embroidery up to 3 colours, digitizing fee applies.",
+        "description": {
+          "text": "A corduroy cap in burnt orange and cream, finished with a pine ridge line motif. Unstructured 6-panel corduroy cap. The overall feel is earthy — built for fans who lean into outdoors — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-camp-mug",
+        "name": "Enamel camp mug",
+        "oneLiner": "enamel camp mug in burnt orange, earthy by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "mug",
+        "fitScore": 28,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.183,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "outdoors",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "outdoor",
+            "entityName": "STIHL Inc.",
+            "points": 5.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 4.25,
+          "price": 18,
+          "marginPerUnit": 13.75,
+          "minRun": 48,
+          "setupCost": 40,
+          "firstRunCost": 244,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            18,
+            28
+          ],
+          "estimate": true
+        },
+        "supplierType": "drinkware printer",
+        "supplierBrief": "12 oz enamel-coated steel mug, 1–2 colour print, silver rim.",
+        "description": {
+          "text": "A camp mug in burnt orange and cream, finished with a pine ridge line motif. 12 oz enamel-coated steel mug. The overall feel is earthy — built for fans who lean into outdoors — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "tote-bag",
+        "name": "Tote bag",
+        "oneLiner": "tote bag in burnt orange, earthy by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "tote",
+        "fitScore": 17,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.5760000000000001,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "boutique fashion",
+            "entityName": "Politix Men's Fashion",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "boutique fashion",
+            "entityName": "Duncan Quinn",
+            "points": 8.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 15,
+          "marginPerUnit": 11.5,
+          "minRun": 36,
+          "setupCost": 25,
+          "firstRunCost": 151,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            15,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "10 oz natural canvas tote, 1–2 colour print, reinforced handles.",
+        "description": {
+          "text": "A tote bag in burnt orange and cream, finished with a hand drawn doodle motif. 10 oz natural canvas tote. The overall feel is earthy — built for fans who lean into outdoors — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "beer-label-collab",
+        "name": "Beer label collab",
+        "oneLiner": "beer label collab in burnt orange, earthy by design",
+        "category": "consumables",
+        "role": "limited",
+        "silhouette": "can",
+        "fitScore": 7,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.228,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Dewar's",
+            "points": 4,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Goldilocks Bakeshop",
+            "points": 2.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.75,
+          "price": 7.5,
+          "marginPerUnit": 4.75,
+          "minRun": 100,
+          "setupCost": 100,
+          "firstRunCost": 375,
+          "breakEvenUnits": 50,
+          "typicalRange": [
+            5,
+            9
+          ],
+          "estimate": true
+        },
+        "supplierType": "local brewery (partner-priced)",
+        "supplierBrief": "Limited batch brewed and packaged by a local brewery with your label art. Pricing and minimums are set by the brewery.",
+        "complianceNote": "Alcohol labelling, age checks and shipping rules vary by place — the brewery leads on compliance.",
+        "description": {
+          "text": "A craft beer can with custom wrap label in burnt orange and cream, finished with a hop cone motif. Limited batch brewed and packaged by a local brewery with your label art. Pricing and minimums are set by the brewery.. The overall feel is earthy — built for fans who lean into outdoors — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "coffee-collab",
+        "name": "Coffee roast collab",
+        "oneLiner": "coffee roast collab in burnt orange, earthy by design",
+        "category": "consumables",
+        "role": "core",
+        "silhouette": "bag",
+        "fitScore": 7,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.228,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Dewar's",
+            "points": 4,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Goldilocks Bakeshop",
+            "points": 2.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 6.5,
+          "price": 18,
+          "marginPerUnit": 11.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 365,
+          "breakEvenUnits": 21,
+          "typicalRange": [
+            14,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "local roaster",
+        "supplierBrief": "12 oz bags roasted by a local roaster, custom sleeve or label from you.",
+        "complianceNote": "Check food labelling rules with the roaster.",
+        "description": {
+          "text": "A coffee bag with custom label in burnt orange and cream, finished with a steaming cup motif. 12 oz bags roasted by a local roaster. The overall feel is earthy — built for fans who lean into outdoors — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "matchbook",
+            "embroidered-cap",
+            "enamel-camp-mug",
+            "tote-bag",
+            "coffee-collab"
+          ],
+          "runSizes": {
+            "matchbook": 100,
+            "embroidered-cap": 24,
+            "enamel-camp-mug": 48,
+            "tote-bag": 36,
+            "coffee-collab": 50
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "hero-crewneck"
+          ],
+          "runSizes": {
+            "hero-crewneck": 24
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "beer-label-collab"
+          ],
+          "runSizes": {
+            "beer-label-collab": 100
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "template",
+      "notes": []
+    }
+  },
+  "descriptionSource": "template",
+  "collabs": {
+    "collabs": [
+      {
+        "id": "BDFE29AC-489E-4ADB-B666-80828284F12D",
+        "name": "London Music Pub",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "Welcoming"
+        ],
+        "partnerIdea": "Embroidered-cap with the pub's name and your logo, sold at the bar.",
+        "linkedProductIds": []
+      }
+    ]
+  },
+  "elapsedMs": 75310
+}

@@ -1,0 +1,30 @@
+{
+  "city": "Mumbai",
+  "partners": [
+    {
+      "name": "Kitab Khana",
+      "type": "place"
+    },
+    {
+      "name": "Prithvi Theatre",
+      "type": "place"
+    },
+    {
+      "name": "The Habitat",
+      "type": "place"
+    },
+    {
+      "name": "Subko",
+      "type": "place"
+    }
+  ],
+  "cityNote": "Curated Mumbai venue ideas matched to your stated interests. Locations are sourced; partnerships and audience overlap are unverified.",
+  "image": {
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "mime": "image/jpeg",
+    "file": "concept.jpg",
+    "bytes": 359742
+  },
+  "pdfPages": 1,
+  "pageErrors": []
+}

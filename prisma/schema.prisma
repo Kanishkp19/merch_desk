@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  content   String?
+  published Boolean  @default(false)
+  authorId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// A quote request submitted from a launch plan. `payload` is the immutable
+/// snapshot the creator reviewed at submission; later plan edits never change
+/// it. Operator activity (status, notes, recorded quotes, decisions) lives in
+/// `working` so revisions stay distinguishable from the original request.
+model LaunchRequest {
+  id           String   @id // public reference (e.g. MD-XXXXXX)
+  status       String   @default("submitted") // submitted | needs_info | quote_ready | closed
+  creatorName  String
+  creatorEmail String
+  clientRequestId String // idempotency key from the submitting browser
+  payload      String // immutable JSON snapshot of the request
+  working      String @default("{}") // JSON: events[], quotes[], creatorDecisions
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([createdAt])
+}

@@ -1,0 +1,106 @@
+{
+  "id": "b05",
+  "input": {
+    "text": "Tiny interview podcast about urban gardens and local food. Listeners prefer practical, low-waste goods.",
+    "soundsLike": [],
+    "city": "Portland",
+    "creatorType": "podcaster",
+    "budget": "small"
+  },
+  "startedAt": "2026-10-29T12:09:28.954Z",
+  "providerCalls": {
+    "qloo": 0,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s9",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "note",
+      "text": "Free AI resting — using fixed research steps. Results still come from taste data."
+    },
+    {
+      "type": "tool_call",
+      "id": "sc1",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "tiny interview"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc1",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Tiny Tacos, Interview, Loaded Tiny Tacos",
+      "count": 4
+    },
+    {
+      "type": "tool_call",
+      "id": "sc2",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "interview podcast"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc2",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Podcast, Interview, Podcast",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc3",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "podcast urban"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc3",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Urban Fantasy, Urban, Urban",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc4",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:specialty_dish:place:tiny_tacos",
+          "urn:tag:subgenre:qloo:interview",
+          "urn:tag:specialty_dish:place:loaded_tiny_tacos",
+          "urn:tag:keyword:qloo:interview",
+          "urn:tag:category:wikidata:podcast",
+          "urn:tag:keyword:qloo:podcast"
+        ]
+      }
+    },
+    {
+      "type": "error",
+      "code": "INTERNAL",
+      "message": "Something went wrong while researching taste."
+    }
+  ],
+  "error": "Error: Something went wrong while researching taste.",
+  "elapsedMs": 33558
+}

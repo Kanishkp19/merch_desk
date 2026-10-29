@@ -1,0 +1,1573 @@
+{
+  "id": "b03",
+  "split": "tune",
+  "input": {
+    "text": "Photography studio making quiet architecture portraits. Audience likes books, galleries, and minimal design.",
+    "soundsLike": [],
+    "city": "New York",
+    "creatorType": "other",
+    "budget": "small"
+  },
+  "expected": {
+    "genres": [],
+    "products": [
+      "print",
+      "objects"
+    ],
+    "avoidPartners": [
+      "hotel",
+      "training firm"
+    ],
+    "thinEvidence": false
+  },
+  "startedAt": "2026-10-28T21:47:05.684Z",
+  "providerCalls": {
+    "qloo": 8,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "events": [
+    {
+      "type": "step",
+      "id": "s9",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t16",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "minimal design architecture photography books galleries"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t16",
+      "tool": "qloo_search_tags",
+      "summary": "No tags for \"minimal design architecture photography books galleries\""
+    },
+    {
+      "type": "tool_call",
+      "id": "t17",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "minimal design"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t17",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Minimal Design, Minimal Design, Minimalist Design",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t18",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "architecture photography"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t18",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Photography studio, Photography service, Photography service",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t19",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "books galleries"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t19",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Picture books, Chapter books, Books about books",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t20",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:decor:qloo:minimal_design",
+          "urn:tag:ambience:qloo:minimal_design",
+          "urn:tag:decor:qloo:minimalist_design",
+          "urn:tag:decor:qloo:minimalistic_design"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t20",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Decor, Interior Design, Decorating, Interior Decoration…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "t21",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:decor:qloo:minimal_design",
+          "urn:tag:ambience:qloo:minimal_design",
+          "urn:tag:decor:qloo:minimalist_design",
+          "urn:tag:decor:qloo:minimalistic_design"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t21",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t22",
+      "tool": "qloo_related",
+      "args": {
+        "type": "book",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:decor:qloo:minimal_design",
+          "urn:tag:ambience:qloo:minimal_design",
+          "urn:tag:decor:qloo:minimalist_design",
+          "urn:tag:decor:qloo:minimalistic_design"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t22",
+      "tool": "qloo_related",
+      "summary": "10 related books",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t23",
+      "tool": "qloo_related",
+      "args": {
+        "type": "movie",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:decor:qloo:minimal_design",
+          "urn:tag:ambience:qloo:minimal_design",
+          "urn:tag:decor:qloo:minimalist_design",
+          "urn:tag:decor:qloo:minimalistic_design"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t23",
+      "tool": "qloo_related",
+      "summary": "10 related movies",
+      "count": 10
+    },
+    {
+      "type": "note",
+      "text": "Built profile from fan description (no named artist). Seed tags: minimal/minimalist design. Audience taste tags center on Decor, Interior Design, Decorating, In"
+    },
+    {
+      "type": "step",
+      "id": "s10",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "8 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s11",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s12",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:decor:qloo:minimal_design",
+            "urn:tag:category:place:photography_studio",
+            "urn:tag:genre:media:picture_books",
+            "urn:tag:decor:qloo:minimalistic_design",
+            "urn:tag:category:place:architecture_firm"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Minimal Design",
+            "qlooTagId": "urn:tag:decor:qloo:minimal_design",
+            "canonical": "minimal",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Photography studio",
+            "qlooTagId": "urn:tag:category:place:photography_studio",
+            "canonical": "photography",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Picture books",
+            "qlooTagId": "urn:tag:genre:media:picture_books",
+            "canonical": "books",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Decor",
+            "qlooTagId": "urn:tag:genre:media:decor",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Interior Design",
+            "qlooTagId": "urn:tag:genre:media:interior_design",
+            "weight": 0.95,
+            "source": "qloo"
+          },
+          {
+            "name": "Decorating",
+            "qlooTagId": "urn:tag:genre:media:decorating",
+            "weight": 0.9,
+            "source": "qloo"
+          },
+          {
+            "name": "Interior Decoration",
+            "qlooTagId": "urn:tag:genre:media:interior_decoration",
+            "weight": 0.85,
+            "source": "qloo"
+          },
+          {
+            "name": "Portaiture",
+            "qlooTagId": "urn:tag:genre:media:portaiture",
+            "weight": 0.8,
+            "source": "qloo"
+          },
+          {
+            "name": "Media Studio Aesthetic",
+            "qlooTagId": "urn:tag:decor:qloo:media_studio_aesthetic",
+            "weight": 0.75,
+            "source": "qloo"
+          },
+          {
+            "name": "Design",
+            "qlooTagId": "urn:tag:genre:media:design",
+            "weight": 0.7,
+            "source": "qloo"
+          },
+          {
+            "name": "Architecture",
+            "qlooTagId": "urn:tag:genre:media:architecture",
+            "weight": 0.65,
+            "source": "qloo"
+          },
+          {
+            "name": "Arquitecture",
+            "qlooTagId": "urn:tag:genre:media:arquitecture",
+            "weight": 0.6,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "4B84CEE5-59EA-43E1-9000-27C66D684CFA",
+            "name": "Politix Men's Fashion",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Casual",
+              "Fashion",
+              "Tailored Silhouettes",
+              "Clean Lines",
+              "Textured Fabrics",
+              "Neutral Color Palette",
+              "Slim Fit",
+              "Professional Success",
+              "Social Elegance",
+              "Modern Sophistication"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "4E179884-8BA7-4391-A2F3-B65D7114A15C",
+            "name": "Duncan Quinn",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Haute Couture",
+              "Formalwear",
+              "Fashion",
+              "Impeccable Tailoring",
+              "Classic Silhouettes",
+              "Bold Linings",
+              "Refined Details",
+              "International Travel",
+              "High-Society Networking",
+              "Collectibility"
+            ],
+            "canonicalTags": [
+              "travel"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "5024DC4A-0125-469D-B07E-879C5104D291",
+            "name": "Binance",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Financial Services",
+              "Minimalist Digital Design",
+              "Data-Driven Interface",
+              "High-Contrast Color Palette",
+              "Technical Precision",
+              "Financial Independence",
+              "Technological Empowerment",
+              "Global Wealth Building",
+              "Other",
+              "Corporate Brand"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "4E8D1362-6673-4BAE-B143-AE3101AA63B5",
+            "name": "Orfeu Cafés e Azeites",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Drinks",
+              "Coffee & Tea",
+              "Food & Beverage",
+              "Elegant",
+              "Minimalist",
+              "Dark Palette",
+              "Refined Typography",
+              "Slow Living",
+              "Gastronomy",
+              "Global Travel"
+            ],
+            "canonicalTags": [
+              "coffee",
+              "foodie",
+              "minimal",
+              "travel"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "5039441C-2412-4F10-8DBA-7696E685BF79",
+            "name": "Brother Vellies",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Footwear",
+              "Other",
+              "Fashion",
+              "Accessories",
+              "Bags & Leather",
+              "Artisanal",
+              "Textured",
+              "Earthy",
+              "Cultural-Fusion",
+              "Hand-Finished"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "4EF34717-C35C-49CD-BB41-BF035E76B5F9",
+            "name": "STIHL Inc.",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Household",
+              "Industrial Design",
+              "Functionalist",
+              "Orange And White Color Palette",
+              "Sturdy Construction",
+              "Ergonomic",
+              "Land Stewardship",
+              "Property Mastery",
+              "Self-Sufficiency",
+              "Professional Efficiency"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "outdoor"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "50669EF6-EAE3-48FF-B6A2-6D1853FDA2D9",
+            "name": "Juicy Chemistry",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Health & Beauty",
+              "Minimalist",
+              "Clean",
+              "Earthy",
+              "Botanical",
+              "Modern",
+              "Clean Living",
+              "Holistic Wellbeing",
+              "Minimalist Beauty",
+              "Ethical Consumption"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "art-goods"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "4F3C9F72-5527-4D02-B20D-73B15DAA16FD",
+            "name": "Dewar's",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Whiskey",
+              "Spirits",
+              "Scotch",
+              "Wine & Spirits",
+              "Classic Packaging",
+              "Heritage Branding",
+              "Gold Accents",
+              "Timeless Typography",
+              "Celebratory Milestones",
+              "Refined Living"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "5517D014-0C8F-4444-9690-C402F5EA2084",
+            "name": "Cars24india",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Automotive",
+              "Website",
+              "Clean Minimalist Design",
+              "Blue And White Color Palette",
+              "User-Friendly Interface",
+              "Functional Graphics",
+              "Financial Stability",
+              "Freedom Of Movement",
+              "Modern Convenience",
+              "Reliable Ownership"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "4AB0CE8F-E57A-4BC3-A89C-F2C6C67FEBDF",
+            "name": "Goldilocks Bakeshop",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "1966 establishments in the Philippines",
+              "Bakery cafés",
+              "Companies based in Mandaluyong",
+              "Dining",
+              "Fast-food chains of the Philippines",
+              "Restaurants established in 1966",
+              "Classic",
+              "Friendly",
+              "Traditional Design",
+              "Creating Lasting Memories"
+            ],
+            "canonicalTags": [
+              "foodie"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "budget"
+          }
+        ],
+        "crossDomain": [
+          {
+            "id": "48F3193E-9F20-4FB7-8965-C413D3294912",
+            "name": "A Nice Neighbor",
+            "type": "movie",
+            "weight": 1,
+            "tags": [
+              "Neighbor",
+              "Drama",
+              "Drama"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "E3E947F9-3E44-42F5-B8EE-5F3BAD7125B4",
+            "name": "7:11 PM",
+            "type": "movie",
+            "weight": 0.92,
+            "tags": [
+              "Thoughtful",
+              "Time travel fiction",
+              "Fast paced",
+              "The ticking clock",
+              "Time travel",
+              "Town",
+              "Cinematography",
+              "Proxima ev12",
+              "Mastermind",
+              "Mystery"
+            ],
+            "canonicalTags": [
+              "travel"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "1C4C0421-4AAE-473C-9994-6784E7A9462F",
+            "name": "Come on Children",
+            "type": "movie",
+            "weight": 0.84,
+            "tags": [
+              "Unscripted group dynamics",
+              "Alienation",
+              "Youth documentary",
+              "Intimate",
+              "Music",
+              "The outsider",
+              "The collective",
+              "Documentary",
+              "Peer relationships",
+              "Laid back"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "DFB7E774-B8E0-497A-A4B1-001AE2D61A33",
+            "name": "Always Audacious",
+            "type": "movie",
+            "weight": 0.77,
+            "tags": [
+              "The doppelganger",
+              "Charismatic",
+              "Silent film enthusiasts",
+              "Reporter",
+              "The hero",
+              "Suspenseful",
+              "Atmospheric",
+              "Loyal",
+              "Romance",
+              "Crime fiction"
+            ],
+            "canonicalTags": [
+              "cinema"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "0868DB1C-E23F-440A-BF03-416AC3DC0059",
+            "name": "Generation Aami",
+            "type": "movie",
+            "weight": 0.69,
+            "tags": [
+              "Passionate",
+              "Parental pressure",
+              "Musical elements",
+              "Songwriting",
+              "Insecure",
+              "Intimate",
+              "Teen drama",
+              "Vulnerable",
+              "Family",
+              "Reflective"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "6D6135EB-1B25-4EC7-ADFD-7D82D6BCE0BA",
+            "name": "Anne Arrives: Inspired by Anne of Green Gables",
+            "type": "book",
+            "weight": 1,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "5F8C0425-A0E3-4314-B735-93AAE116BAAA",
+            "name": "Rising Fury (Jesse McDermitt Caribbean Adventure #12)",
+            "type": "book",
+            "weight": 0.92,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "92B45FF7-58A1-456F-AFEC-8AFAC7BF5276",
+            "name": "Grim Witchery (Royals of Villain Academy, #7)",
+            "type": "book",
+            "weight": 0.84,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "6897CEE1-4A61-43A5-AFF4-D0DF69F7F4A3",
+            "name": "The Woman on the Island (Vera Stanhope #9.5)",
+            "type": "book",
+            "weight": 0.77,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "19CDF466-A98D-4E5A-B53E-5B5171C103F3",
+            "name": "Miss Firecracker (Wild West Boys, #2)",
+            "type": "book",
+            "weight": 0.69,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          }
+        ],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "ink-literary",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 8
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:decor:qloo:minimal_design",
+        "urn:tag:category:place:photography_studio",
+        "urn:tag:genre:media:picture_books",
+        "urn:tag:decor:qloo:minimalistic_design",
+        "urn:tag:category:place:architecture_firm"
+      ]
+    },
+    "tags": [
+      {
+        "name": "Minimal Design",
+        "qlooTagId": "urn:tag:decor:qloo:minimal_design",
+        "canonical": "minimal",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Photography studio",
+        "qlooTagId": "urn:tag:category:place:photography_studio",
+        "canonical": "photography",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Picture books",
+        "qlooTagId": "urn:tag:genre:media:picture_books",
+        "canonical": "books",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Decor",
+        "qlooTagId": "urn:tag:genre:media:decor",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Interior Design",
+        "qlooTagId": "urn:tag:genre:media:interior_design",
+        "weight": 0.95,
+        "source": "qloo"
+      },
+      {
+        "name": "Decorating",
+        "qlooTagId": "urn:tag:genre:media:decorating",
+        "weight": 0.9,
+        "source": "qloo"
+      },
+      {
+        "name": "Interior Decoration",
+        "qlooTagId": "urn:tag:genre:media:interior_decoration",
+        "weight": 0.85,
+        "source": "qloo"
+      },
+      {
+        "name": "Portaiture",
+        "qlooTagId": "urn:tag:genre:media:portaiture",
+        "weight": 0.8,
+        "source": "qloo"
+      },
+      {
+        "name": "Media Studio Aesthetic",
+        "qlooTagId": "urn:tag:decor:qloo:media_studio_aesthetic",
+        "weight": 0.75,
+        "source": "qloo"
+      },
+      {
+        "name": "Design",
+        "qlooTagId": "urn:tag:genre:media:design",
+        "weight": 0.7,
+        "source": "qloo"
+      },
+      {
+        "name": "Architecture",
+        "qlooTagId": "urn:tag:genre:media:architecture",
+        "weight": 0.65,
+        "source": "qloo"
+      },
+      {
+        "name": "Arquitecture",
+        "qlooTagId": "urn:tag:genre:media:arquitecture",
+        "weight": 0.6,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "4B84CEE5-59EA-43E1-9000-27C66D684CFA",
+        "name": "Politix Men's Fashion",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Casual",
+          "Fashion",
+          "Tailored Silhouettes",
+          "Clean Lines",
+          "Textured Fabrics",
+          "Neutral Color Palette",
+          "Slim Fit",
+          "Professional Success",
+          "Social Elegance",
+          "Modern Sophistication"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "4E179884-8BA7-4391-A2F3-B65D7114A15C",
+        "name": "Duncan Quinn",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Haute Couture",
+          "Formalwear",
+          "Fashion",
+          "Impeccable Tailoring",
+          "Classic Silhouettes",
+          "Bold Linings",
+          "Refined Details",
+          "International Travel",
+          "High-Society Networking",
+          "Collectibility"
+        ],
+        "canonicalTags": [
+          "travel"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "5024DC4A-0125-469D-B07E-879C5104D291",
+        "name": "Binance",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Financial Services",
+          "Minimalist Digital Design",
+          "Data-Driven Interface",
+          "High-Contrast Color Palette",
+          "Technical Precision",
+          "Financial Independence",
+          "Technological Empowerment",
+          "Global Wealth Building",
+          "Other",
+          "Corporate Brand"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "4E8D1362-6673-4BAE-B143-AE3101AA63B5",
+        "name": "Orfeu Cafés e Azeites",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Drinks",
+          "Coffee & Tea",
+          "Food & Beverage",
+          "Elegant",
+          "Minimalist",
+          "Dark Palette",
+          "Refined Typography",
+          "Slow Living",
+          "Gastronomy",
+          "Global Travel"
+        ],
+        "canonicalTags": [
+          "coffee",
+          "foodie",
+          "minimal",
+          "travel"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "5039441C-2412-4F10-8DBA-7696E685BF79",
+        "name": "Brother Vellies",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Footwear",
+          "Other",
+          "Fashion",
+          "Accessories",
+          "Bags & Leather",
+          "Artisanal",
+          "Textured",
+          "Earthy",
+          "Cultural-Fusion",
+          "Hand-Finished"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "4EF34717-C35C-49CD-BB41-BF035E76B5F9",
+        "name": "STIHL Inc.",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Household",
+          "Industrial Design",
+          "Functionalist",
+          "Orange And White Color Palette",
+          "Sturdy Construction",
+          "Ergonomic",
+          "Land Stewardship",
+          "Property Mastery",
+          "Self-Sufficiency",
+          "Professional Efficiency"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "outdoor"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "50669EF6-EAE3-48FF-B6A2-6D1853FDA2D9",
+        "name": "Juicy Chemistry",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Health & Beauty",
+          "Minimalist",
+          "Clean",
+          "Earthy",
+          "Botanical",
+          "Modern",
+          "Clean Living",
+          "Holistic Wellbeing",
+          "Minimalist Beauty",
+          "Ethical Consumption"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "art-goods"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "4F3C9F72-5527-4D02-B20D-73B15DAA16FD",
+        "name": "Dewar's",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Whiskey",
+          "Spirits",
+          "Scotch",
+          "Wine & Spirits",
+          "Classic Packaging",
+          "Heritage Branding",
+          "Gold Accents",
+          "Timeless Typography",
+          "Celebratory Milestones",
+          "Refined Living"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "5517D014-0C8F-4444-9690-C402F5EA2084",
+        "name": "Cars24india",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Automotive",
+          "Website",
+          "Clean Minimalist Design",
+          "Blue And White Color Palette",
+          "User-Friendly Interface",
+          "Functional Graphics",
+          "Financial Stability",
+          "Freedom Of Movement",
+          "Modern Convenience",
+          "Reliable Ownership"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "4AB0CE8F-E57A-4BC3-A89C-F2C6C67FEBDF",
+        "name": "Goldilocks Bakeshop",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "1966 establishments in the Philippines",
+          "Bakery cafés",
+          "Companies based in Mandaluyong",
+          "Dining",
+          "Fast-food chains of the Philippines",
+          "Restaurants established in 1966",
+          "Classic",
+          "Friendly",
+          "Traditional Design",
+          "Creating Lasting Memories"
+        ],
+        "canonicalTags": [
+          "foodie"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "budget"
+      }
+    ],
+    "crossDomain": [
+      {
+        "id": "48F3193E-9F20-4FB7-8965-C413D3294912",
+        "name": "A Nice Neighbor",
+        "type": "movie",
+        "weight": 1,
+        "tags": [
+          "Neighbor",
+          "Drama",
+          "Drama"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "E3E947F9-3E44-42F5-B8EE-5F3BAD7125B4",
+        "name": "7:11 PM",
+        "type": "movie",
+        "weight": 0.92,
+        "tags": [
+          "Thoughtful",
+          "Time travel fiction",
+          "Fast paced",
+          "The ticking clock",
+          "Time travel",
+          "Town",
+          "Cinematography",
+          "Proxima ev12",
+          "Mastermind",
+          "Mystery"
+        ],
+        "canonicalTags": [
+          "travel"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "1C4C0421-4AAE-473C-9994-6784E7A9462F",
+        "name": "Come on Children",
+        "type": "movie",
+        "weight": 0.84,
+        "tags": [
+          "Unscripted group dynamics",
+          "Alienation",
+          "Youth documentary",
+          "Intimate",
+          "Music",
+          "The outsider",
+          "The collective",
+          "Documentary",
+          "Peer relationships",
+          "Laid back"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "DFB7E774-B8E0-497A-A4B1-001AE2D61A33",
+        "name": "Always Audacious",
+        "type": "movie",
+        "weight": 0.77,
+        "tags": [
+          "The doppelganger",
+          "Charismatic",
+          "Silent film enthusiasts",
+          "Reporter",
+          "The hero",
+          "Suspenseful",
+          "Atmospheric",
+          "Loyal",
+          "Romance",
+          "Crime fiction"
+        ],
+        "canonicalTags": [
+          "cinema"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "0868DB1C-E23F-440A-BF03-416AC3DC0059",
+        "name": "Generation Aami",
+        "type": "movie",
+        "weight": 0.69,
+        "tags": [
+          "Passionate",
+          "Parental pressure",
+          "Musical elements",
+          "Songwriting",
+          "Insecure",
+          "Intimate",
+          "Teen drama",
+          "Vulnerable",
+          "Family",
+          "Reflective"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "6D6135EB-1B25-4EC7-ADFD-7D82D6BCE0BA",
+        "name": "Anne Arrives: Inspired by Anne of Green Gables",
+        "type": "book",
+        "weight": 1,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "5F8C0425-A0E3-4314-B735-93AAE116BAAA",
+        "name": "Rising Fury (Jesse McDermitt Caribbean Adventure #12)",
+        "type": "book",
+        "weight": 0.92,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "92B45FF7-58A1-456F-AFEC-8AFAC7BF5276",
+        "name": "Grim Witchery (Royals of Villain Academy, #7)",
+        "type": "book",
+        "weight": 0.84,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "6897CEE1-4A61-43A5-AFF4-D0DF69F7F4A3",
+        "name": "The Woman on the Island (Vera Stanhope #9.5)",
+        "type": "book",
+        "weight": 0.77,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "19CDF466-A98D-4E5A-B53E-5B5171C103F3",
+        "name": "Miss Firecracker (Wild West Boys, #2)",
+        "type": "book",
+        "weight": 0.69,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      }
+    ],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "ink-literary",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 8
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "tote-bag",
+        "name": "Canvas Tote Bag",
+        "oneLiner": "Carry your essentials in clean, minimal style.",
+        "category": "objects",
+        "role": "hero",
+        "silhouette": "tote",
+        "fitScore": 55,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0.5760000000000001,
+          "cross": 0.6133333333333334
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "books",
+            "points": 25,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "travel",
+            "points": 12,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "boutique fashion",
+            "entityName": "Politix Men's Fashion",
+            "points": 9,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 15,
+          "marginPerUnit": 11.5,
+          "minRun": 36,
+          "setupCost": 25,
+          "firstRunCost": 151,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            15,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "10 oz natural canvas tote, 1–2 colour print, reinforced handles.",
+        "description": {
+          "text": "A sturdy natural canvas tote bag features a subtle, single-color print in ink blue. The design evokes the quiet structure of a well-bound book, with clean lines and ample negative space. Reinforced handles in paper white ensure durability. The overall mood is understated and organized, perfect for daily carrying without visual clutter.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Minimal Art Print",
+        "oneLiner": "A clean, photographic composition on matte paper.",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 20,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 1
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "travel",
+            "points": 11,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "cinema",
+            "points": 9,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "This matte poster displays a minimalist photographic composition in ink blue and paper white. The image captures a stark, geometric scene with high contrast, reminiscent of a carefully framed photograph. A single accent of mustard adds warmth to the cool tones. The composition is uncluttered, emphasizing light and shadow with a serene, contemplative feel.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "bandana",
+        "name": "Cotton Bandana",
+        "oneLiner": "Soft cotton with a subtle, minimal pattern.",
+        "category": "apparel",
+        "role": "limited",
+        "silhouette": "bandana",
+        "fitScore": 12,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0.6133333333333334
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "travel",
+            "points": 12,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 12,
+          "marginPerUnit": 8.5,
+          "minRun": 36,
+          "setupCost": 30,
+          "firstRunCost": 156,
+          "breakEvenUnits": 13,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer / sublimation",
+        "supplierBrief": "22 in square cotton bandana, 1–2 colour all-over print.",
+        "description": {
+          "text": "A square cotton bandana showcases a delicate, all-over print in ink blue on a paper white background. The pattern consists of small, abstract geometric shapes that nod to minimalist book cover designs. The fabric is soft and breathable, with reinforced edges. The result is a versatile accessory that feels calm, refined, and thoughtfully simple.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "matchbook",
+        "name": "Matchbooks",
+        "oneLiner": "A pocket-sized holder for a minimal match display.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 7,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.228,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Dewar's",
+            "points": 4,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Goldilocks Bakeshop",
+            "points": 2.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 0.65,
+          "price": 3,
+          "marginPerUnit": 2.35,
+          "minRun": 100,
+          "setupCost": 20,
+          "firstRunCost": 85,
+          "breakEvenUnits": 29,
+          "typicalRange": [
+            3,
+            6
+          ],
+          "estimate": true
+        },
+        "supplierType": "print shop",
+        "supplierBrief": "Box of matchbooks with custom cover art, 100 min run, check local shipping rules.",
+        "description": {
+          "text": "A small, rectangular matchbook box features a crisp, minimalist design in ink blue and paper white. The cover art suggests a simple, abstract photography style, with clean lines and a single mustard accent. The texture is smooth and matte. It feels like a tiny, curated object, evoking the precision of a well-organized library or gallery space.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "acrylic-keychain",
+        "name": "Acrylic Keychain",
+        "oneLiner": "A lightweight, clear acrylic charm with a minimal design.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 1.85,
+          "price": 8,
+          "marginPerUnit": 6.15,
+          "minRun": 50,
+          "setupCost": 25,
+          "firstRunCost": 117.5,
+          "breakEvenUnits": 15,
+          "typicalRange": [
+            8,
+            14
+          ],
+          "estimate": true
+        },
+        "supplierType": "acrylic charm maker",
+        "supplierBrief": "2 in double-sided printed acrylic charm with ring and clasp.",
+        "description": {
+          "text": "A double-sided acrylic keychain features a simple, iconic print in ink blue. The design is a clean, geometric abstraction that reflects a minimal aesthetic. The clear edges of the acrylic catch the light, adding a subtle depth. A silver ring and clasp complete the piece. It is a small, functional item that feels modern and uncluttered.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Vinyl Sticker Pack",
+        "oneLiner": "Die-cut stickers with a clean, minimal graphic style.",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 0.43,
+          "price": 4,
+          "marginPerUnit": 3.58,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 42.5,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            4,
+            8
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "A sheet of waterproof vinyl stickers features three distinct designs in ink blue, paper white, and mustard. Each sticker uses simple, bold lines inspired by minimalist photography and book typography. The die-cut edges are precise. The pack offers a cohesive set of small graphics that are easy to apply, maintaining a clean and organized visual identity.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "poster-print",
+            "matchbook",
+            "acrylic-keychain",
+            "sticker-pack"
+          ],
+          "runSizes": {
+            "poster-print": 50,
+            "matchbook": 100,
+            "acrylic-keychain": 50,
+            "sticker-pack": 100
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "tote-bag"
+          ],
+          "runSizes": {
+            "tote-bag": 36
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "bandana"
+          ],
+          "runSizes": {
+            "bandana": 36
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "llm",
+      "notes": [
+        "Exploratory picks (no direct audience evidence yet): Acrylic Keychain, Vinyl Sticker Pack."
+      ]
+    }
+  },
+  "descriptionSource": "llm",
+  "collabsError": "Error: /api/collabs: 503 {\"error\":{\"code\":\"QLOO_UNAVAILABLE\",\"message\":\"Taste data is unavailable. Try again.\"}}",
+  "elapsedMs": 50719
+}

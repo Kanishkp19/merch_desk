@@ -1,0 +1,1354 @@
+{
+  "id": "b03",
+  "input": {
+    "text": "Photography studio making quiet architecture portraits. Audience likes books, galleries, and minimal design.",
+    "soundsLike": [],
+    "city": "New York",
+    "creatorType": "other",
+    "budget": "small"
+  },
+  "startedAt": "2026-10-28T21:50:22.275Z",
+  "providerCalls": {
+    "qloo": 6,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "events": [
+    {
+      "type": "step",
+      "id": "s21",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t36",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "minimal design architecture photography"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t36",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Architecture and design companies",
+      "count": 1
+    },
+    {
+      "type": "tool_call",
+      "id": "t37",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "books galleries minimal design"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t37",
+      "tool": "qloo_search_tags",
+      "summary": "No tags for \"books galleries minimal design\""
+    },
+    {
+      "type": "tool_call",
+      "id": "t38",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:architecture_and_design_companies"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t38",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Building design company, Architecture firm, Architecture & Design, Design agency…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "t39",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:architecture_and_design_companies"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t39",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t40",
+      "tool": "qloo_related",
+      "args": {
+        "type": "book",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:architecture_and_design_companies"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t40",
+      "tool": "qloo_related",
+      "summary": "10 related books",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t41",
+      "tool": "qloo_related",
+      "args": {
+        "type": "tv_show",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:architecture_and_design_companies"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t41",
+      "tool": "qloo_related",
+      "summary": "10 related tv shows",
+      "count": 10
+    },
+    {
+      "type": "note",
+      "text": "Built audience profile from description (no named artist). Seed tag: architecture & design. Taste tags: building design, architecture firms, design agencies. Re"
+    },
+    {
+      "type": "step",
+      "id": "s22",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "6 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s23",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s24",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:category:place:architecture_and_design_companies"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Architecture and design companies",
+            "qlooTagId": "urn:tag:category:place:architecture_and_design_companies",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Building design company",
+            "qlooTagId": "urn:tag:category:place:building_design_company",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Architecture firm",
+            "qlooTagId": "urn:tag:category:place:architecture_firm",
+            "weight": 0.95,
+            "source": "qloo"
+          },
+          {
+            "name": "Architecture & Design",
+            "qlooTagId": "urn:tag:industry:qloo:architecture_design",
+            "weight": 0.9,
+            "source": "qloo"
+          },
+          {
+            "name": "Design agency",
+            "qlooTagId": "urn:tag:category:place:design_agency",
+            "weight": 0.85,
+            "source": "qloo"
+          },
+          {
+            "name": "Architecture And Design",
+            "qlooTagId": "urn:tag:industry:qloo:architecture_and_design",
+            "weight": 0.8,
+            "source": "qloo"
+          },
+          {
+            "name": "Architectural Design",
+            "qlooTagId": "urn:tag:industry:qloo:architectural_design",
+            "weight": 0.75,
+            "source": "qloo"
+          },
+          {
+            "name": "Industrial design company",
+            "qlooTagId": "urn:tag:category:place:industrial_design_company",
+            "weight": 0.7,
+            "source": "qloo"
+          },
+          {
+            "name": "Design services",
+            "qlooTagId": "urn:tag:category:place:design_services",
+            "weight": 0.65,
+            "source": "qloo"
+          },
+          {
+            "name": "Architectural designer",
+            "qlooTagId": "urn:tag:category:place:architectural_designer",
+            "weight": 0.6,
+            "source": "qloo"
+          },
+          {
+            "name": "Architecture",
+            "qlooTagId": "urn:tag:category:place:architecture",
+            "weight": 0.55,
+            "source": "qloo"
+          },
+          {
+            "name": "Building firm",
+            "qlooTagId": "urn:tag:category:place:building_firm",
+            "weight": 0.5,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "42D6853A-AFAE-4D8E-B632-A4BE95F2CF88",
+            "name": "Matix Clothing",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Fashion",
+              "Casual",
+              "Rugged",
+              "Minimalist",
+              "Casual",
+              "Utility-focused",
+              "Off-grid Exploration",
+              "Creative Freedom",
+              "Unconventional Path",
+              "Fashion"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "C81F29FB-42B2-4543-BDBA-A7BB1DE6BF8D",
+            "name": "Ion At Home",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Health & Beauty",
+              "Clinical",
+              "Clean",
+              "Professional",
+              "Minimalist",
+              "Salon-Quality Aesthetics",
+              "Creative Self-Expression",
+              "CPG",
+              "Product Brand",
+              "B2C"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "F70565BD-6B5C-48E9-BAC8-3A8D53B5F42E",
+            "name": "Rohto Eye Drops",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Health & Beauty",
+              "Clinical",
+              "High-Visibility Packaging",
+              "Bright Colors",
+              "Functional Design",
+              "Optimized Health",
+              "Balanced Living",
+              "Efficiency",
+              "Vitality",
+              "CPG"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "2AA00E13-5712-4F75-BD97-69E6FC88EAF4",
+            "name": "Birds Of North America",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Fashion",
+              "Casual",
+              "Vibrant Prints",
+              "Natural Fibres",
+              "Vintage-Inspired Silhouettes",
+              "Artistic Patterns",
+              "Sustainable Living",
+              "Artistic Expression",
+              "Conscious Consumption",
+              "Fashion"
+            ],
+            "canonicalTags": [
+              "art-print",
+              "vintage",
+              "eco"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "EA20FC72-C4BF-4820-9216-6C28B2CB39D7",
+            "name": "Henry Cottons",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Fashion",
+              "Casual",
+              "Classic Silhouettes",
+              "Neutral Color Palettes",
+              "Textured Fabrics",
+              "Tailored Fit",
+              "Country Estate Living",
+              "Mediterranean Sailing",
+              "International Travel",
+              "Fashion"
+            ],
+            "canonicalTags": [
+              "travel"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "7B4397F4-62EC-4A71-84A0-EBBFD2EA25FD",
+            "name": "Eat Smart",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Prepared",
+              "Produce",
+              "Food",
+              "Food & Beverage",
+              "Bright",
+              "Clean",
+              "Fresh",
+              "Natural Imagery",
+              "Healthy Living",
+              "Culinary Efficiency"
+            ],
+            "canonicalTags": [
+              "foodie"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "BEC64D4D-739C-4B63-8AFF-3EB7DEE42E93",
+            "name": "Psecu",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Financial Services",
+              "Clean",
+              "Professional",
+              "Digital-Centric",
+              "Approachable",
+              "Clear Information Architecture",
+              "Financial Security",
+              "Debt Freedom",
+              "Sustainable Growth",
+              "Independence"
+            ],
+            "canonicalTags": [
+              "eco"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "0FABA1E5-EA43-4F83-BFE5-5AEE6281A1CE",
+            "name": "Deutsche Familienversicherung",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Financial Services",
+              "Clean Minimalist Design",
+              "Professional Typography",
+              "Corporate Color Palette",
+              "Financial Stability",
+              "Security for Loved Ones",
+              "Hassle-Free Protection",
+              "Other",
+              "Corporate Brand",
+              "B2C"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "081F45FE-D4E6-4221-9AE4-AF0E1D66E6A2",
+            "name": "Ka-pop",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Food",
+              "Food & Beverage",
+              "Snacks",
+              "Packaged",
+              "Bright Packaging",
+              "Modern Typography",
+              "Clean Design",
+              "Wellness-Driven Daily Routine",
+              "Balanced Living",
+              "CPG"
+            ],
+            "canonicalTags": [
+              "foodie"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "16A7C129-ADF3-4505-87CE-F506023E20E8",
+            "name": "La Positiva Seguros",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "Financial Services",
+              "Clean",
+              "Professional",
+              "Approachable",
+              "Informative",
+              "Financial Freedom",
+              "Future Security",
+              "Stability",
+              "Peace Of Mind",
+              "Other"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          }
+        ],
+        "crossDomain": [
+          {
+            "id": "CA368D19-431B-4214-97BE-1EA2E54326CE",
+            "name": "Mocros",
+            "type": "tv_show",
+            "weight": 1,
+            "tags": [
+              "Urban life",
+              "Emotional",
+              "Drama loving",
+              "Relatable",
+              "Friendship",
+              "Immigrant experiences",
+              "Culturally curious",
+              "Independent television",
+              "Drama",
+              "Observational"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "A867B4FE-F0B7-43B7-ACDE-25BD1A5A5DFB",
+            "name": "Kublai Khan",
+            "type": "tv_show",
+            "weight": 0.92,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "7554B6CD-7D95-48EC-B4AD-AA3F3CD905C7",
+            "name": "Nostalgia Trip Longplays",
+            "type": "tv_show",
+            "weight": 0.84,
+            "tags": [
+              "Endurance",
+              "Gameplay focused",
+              "Play",
+              "Lighthearted",
+              "Slow burn",
+              "Marathon like",
+              "Genre savvy",
+              "Playful",
+              "Long form competition",
+              "Quiz shows"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "F316CB56-BFD3-4BB8-995E-D8C2487A10EA",
+            "name": "The Thinkery Channel",
+            "type": "tv_show",
+            "weight": 0.77,
+            "tags": [
+              "Web series",
+              "News",
+              "Non fiction"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "8914F1D8-7C5E-415E-85DA-82E67F9BE3F9",
+            "name": "Regular Old Bogan",
+            "type": "tv_show",
+            "weight": 0.69,
+            "tags": [
+              "Stand up comedy",
+              "Character driven",
+              "Friendship",
+              "Satirical",
+              "Friendship",
+              "Adult animation",
+              "Satire",
+              "Playful",
+              "Adult humor",
+              "Iconoclastic"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "6D6135EB-1B25-4EC7-ADFD-7D82D6BCE0BA",
+            "name": "Anne Arrives: Inspired by Anne of Green Gables",
+            "type": "book",
+            "weight": 1,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "5F8C0425-A0E3-4314-B735-93AAE116BAAA",
+            "name": "Rising Fury (Jesse McDermitt Caribbean Adventure #12)",
+            "type": "book",
+            "weight": 0.92,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "92B45FF7-58A1-456F-AFEC-8AFAC7BF5276",
+            "name": "Grim Witchery (Royals of Villain Academy, #7)",
+            "type": "book",
+            "weight": 0.84,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "6897CEE1-4A61-43A5-AFF4-D0DF69F7F4A3",
+            "name": "The Woman on the Island (Vera Stanhope #9.5)",
+            "type": "book",
+            "weight": 0.77,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "19CDF466-A98D-4E5A-B53E-5B5171C103F3",
+            "name": "Miss Firecracker (Wild West Boys, #2)",
+            "type": "book",
+            "weight": 0.69,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          }
+        ],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": false,
+        "paletteId": "earth-retro",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 6
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:category:place:architecture_and_design_companies"
+      ]
+    },
+    "tags": [
+      {
+        "name": "Architecture and design companies",
+        "qlooTagId": "urn:tag:category:place:architecture_and_design_companies",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Building design company",
+        "qlooTagId": "urn:tag:category:place:building_design_company",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Architecture firm",
+        "qlooTagId": "urn:tag:category:place:architecture_firm",
+        "weight": 0.95,
+        "source": "qloo"
+      },
+      {
+        "name": "Architecture & Design",
+        "qlooTagId": "urn:tag:industry:qloo:architecture_design",
+        "weight": 0.9,
+        "source": "qloo"
+      },
+      {
+        "name": "Design agency",
+        "qlooTagId": "urn:tag:category:place:design_agency",
+        "weight": 0.85,
+        "source": "qloo"
+      },
+      {
+        "name": "Architecture And Design",
+        "qlooTagId": "urn:tag:industry:qloo:architecture_and_design",
+        "weight": 0.8,
+        "source": "qloo"
+      },
+      {
+        "name": "Architectural Design",
+        "qlooTagId": "urn:tag:industry:qloo:architectural_design",
+        "weight": 0.75,
+        "source": "qloo"
+      },
+      {
+        "name": "Industrial design company",
+        "qlooTagId": "urn:tag:category:place:industrial_design_company",
+        "weight": 0.7,
+        "source": "qloo"
+      },
+      {
+        "name": "Design services",
+        "qlooTagId": "urn:tag:category:place:design_services",
+        "weight": 0.65,
+        "source": "qloo"
+      },
+      {
+        "name": "Architectural designer",
+        "qlooTagId": "urn:tag:category:place:architectural_designer",
+        "weight": 0.6,
+        "source": "qloo"
+      },
+      {
+        "name": "Architecture",
+        "qlooTagId": "urn:tag:category:place:architecture",
+        "weight": 0.55,
+        "source": "qloo"
+      },
+      {
+        "name": "Building firm",
+        "qlooTagId": "urn:tag:category:place:building_firm",
+        "weight": 0.5,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "42D6853A-AFAE-4D8E-B632-A4BE95F2CF88",
+        "name": "Matix Clothing",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Fashion",
+          "Casual",
+          "Rugged",
+          "Minimalist",
+          "Casual",
+          "Utility-focused",
+          "Off-grid Exploration",
+          "Creative Freedom",
+          "Unconventional Path",
+          "Fashion"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "C81F29FB-42B2-4543-BDBA-A7BB1DE6BF8D",
+        "name": "Ion At Home",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Health & Beauty",
+          "Clinical",
+          "Clean",
+          "Professional",
+          "Minimalist",
+          "Salon-Quality Aesthetics",
+          "Creative Self-Expression",
+          "CPG",
+          "Product Brand",
+          "B2C"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "F70565BD-6B5C-48E9-BAC8-3A8D53B5F42E",
+        "name": "Rohto Eye Drops",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Health & Beauty",
+          "Clinical",
+          "High-Visibility Packaging",
+          "Bright Colors",
+          "Functional Design",
+          "Optimized Health",
+          "Balanced Living",
+          "Efficiency",
+          "Vitality",
+          "CPG"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "2AA00E13-5712-4F75-BD97-69E6FC88EAF4",
+        "name": "Birds Of North America",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Fashion",
+          "Casual",
+          "Vibrant Prints",
+          "Natural Fibres",
+          "Vintage-Inspired Silhouettes",
+          "Artistic Patterns",
+          "Sustainable Living",
+          "Artistic Expression",
+          "Conscious Consumption",
+          "Fashion"
+        ],
+        "canonicalTags": [
+          "art-print",
+          "vintage",
+          "eco"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "EA20FC72-C4BF-4820-9216-6C28B2CB39D7",
+        "name": "Henry Cottons",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Fashion",
+          "Casual",
+          "Classic Silhouettes",
+          "Neutral Color Palettes",
+          "Textured Fabrics",
+          "Tailored Fit",
+          "Country Estate Living",
+          "Mediterranean Sailing",
+          "International Travel",
+          "Fashion"
+        ],
+        "canonicalTags": [
+          "travel"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "7B4397F4-62EC-4A71-84A0-EBBFD2EA25FD",
+        "name": "Eat Smart",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Prepared",
+          "Produce",
+          "Food",
+          "Food & Beverage",
+          "Bright",
+          "Clean",
+          "Fresh",
+          "Natural Imagery",
+          "Healthy Living",
+          "Culinary Efficiency"
+        ],
+        "canonicalTags": [
+          "foodie"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "BEC64D4D-739C-4B63-8AFF-3EB7DEE42E93",
+        "name": "Psecu",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Financial Services",
+          "Clean",
+          "Professional",
+          "Digital-Centric",
+          "Approachable",
+          "Clear Information Architecture",
+          "Financial Security",
+          "Debt Freedom",
+          "Sustainable Growth",
+          "Independence"
+        ],
+        "canonicalTags": [
+          "eco"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "0FABA1E5-EA43-4F83-BFE5-5AEE6281A1CE",
+        "name": "Deutsche Familienversicherung",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Financial Services",
+          "Clean Minimalist Design",
+          "Professional Typography",
+          "Corporate Color Palette",
+          "Financial Stability",
+          "Security for Loved Ones",
+          "Hassle-Free Protection",
+          "Other",
+          "Corporate Brand",
+          "B2C"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "081F45FE-D4E6-4221-9AE4-AF0E1D66E6A2",
+        "name": "Ka-pop",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Food",
+          "Food & Beverage",
+          "Snacks",
+          "Packaged",
+          "Bright Packaging",
+          "Modern Typography",
+          "Clean Design",
+          "Wellness-Driven Daily Routine",
+          "Balanced Living",
+          "CPG"
+        ],
+        "canonicalTags": [
+          "foodie"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "16A7C129-ADF3-4505-87CE-F506023E20E8",
+        "name": "La Positiva Seguros",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "Financial Services",
+          "Clean",
+          "Professional",
+          "Approachable",
+          "Informative",
+          "Financial Freedom",
+          "Future Security",
+          "Stability",
+          "Peace Of Mind",
+          "Other"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      }
+    ],
+    "crossDomain": [
+      {
+        "id": "CA368D19-431B-4214-97BE-1EA2E54326CE",
+        "name": "Mocros",
+        "type": "tv_show",
+        "weight": 1,
+        "tags": [
+          "Urban life",
+          "Emotional",
+          "Drama loving",
+          "Relatable",
+          "Friendship",
+          "Immigrant experiences",
+          "Culturally curious",
+          "Independent television",
+          "Drama",
+          "Observational"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "A867B4FE-F0B7-43B7-ACDE-25BD1A5A5DFB",
+        "name": "Kublai Khan",
+        "type": "tv_show",
+        "weight": 0.92,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "7554B6CD-7D95-48EC-B4AD-AA3F3CD905C7",
+        "name": "Nostalgia Trip Longplays",
+        "type": "tv_show",
+        "weight": 0.84,
+        "tags": [
+          "Endurance",
+          "Gameplay focused",
+          "Play",
+          "Lighthearted",
+          "Slow burn",
+          "Marathon like",
+          "Genre savvy",
+          "Playful",
+          "Long form competition",
+          "Quiz shows"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "F316CB56-BFD3-4BB8-995E-D8C2487A10EA",
+        "name": "The Thinkery Channel",
+        "type": "tv_show",
+        "weight": 0.77,
+        "tags": [
+          "Web series",
+          "News",
+          "Non fiction"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "8914F1D8-7C5E-415E-85DA-82E67F9BE3F9",
+        "name": "Regular Old Bogan",
+        "type": "tv_show",
+        "weight": 0.69,
+        "tags": [
+          "Stand up comedy",
+          "Character driven",
+          "Friendship",
+          "Satirical",
+          "Friendship",
+          "Adult animation",
+          "Satire",
+          "Playful",
+          "Adult humor",
+          "Iconoclastic"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "6D6135EB-1B25-4EC7-ADFD-7D82D6BCE0BA",
+        "name": "Anne Arrives: Inspired by Anne of Green Gables",
+        "type": "book",
+        "weight": 1,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "5F8C0425-A0E3-4314-B735-93AAE116BAAA",
+        "name": "Rising Fury (Jesse McDermitt Caribbean Adventure #12)",
+        "type": "book",
+        "weight": 0.92,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "92B45FF7-58A1-456F-AFEC-8AFAC7BF5276",
+        "name": "Grim Witchery (Royals of Villain Academy, #7)",
+        "type": "book",
+        "weight": 0.84,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "6897CEE1-4A61-43A5-AFF4-D0DF69F7F4A3",
+        "name": "The Woman on the Island (Vera Stanhope #9.5)",
+        "type": "book",
+        "weight": 0.77,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "19CDF466-A98D-4E5A-B53E-5B5171C103F3",
+        "name": "Miss Firecracker (Wild West Boys, #2)",
+        "type": "book",
+        "weight": 0.69,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      }
+    ],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": false,
+    "paletteId": "earth-retro",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 6
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "acrylic-keychain",
+        "name": "Acrylic Keychain",
+        "oneLiner": "Double-sided pocket companion for daily carry.",
+        "category": "objects",
+        "role": "hero",
+        "silhouette": "round",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 1.85,
+          "price": 8,
+          "marginPerUnit": 6.15,
+          "minRun": 50,
+          "setupCost": 25,
+          "firstRunCost": 117.5,
+          "breakEvenUnits": 15,
+          "typicalRange": [
+            8,
+            14
+          ],
+          "estimate": true
+        },
+        "supplierType": "acrylic charm maker",
+        "supplierBrief": "2 in double-sided printed acrylic charm with ring and clasp.",
+        "description": {
+          "text": "A translucent double-sided acrylic charm suspended from a silver ring. The print features a bold, pop-art inspired emblem in burnt orange and forest green against a cream background. The edges are crisp and clear, capturing the light. The overall mood is playful yet resilient, echoing an indie underdog spirit with vibrant, high-contrast energy.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-pin-set",
+        "name": "Hard Enamel Pin Set",
+        "oneLiner": "Three retro-inspired pins for lapel display.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 12,
+          "marginPerUnit": 9.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 165,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            12,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "enamel pin maker",
+        "supplierBrief": "Set of 3 hard-enamel pins, 1.25 in, butterfly clasps, mold fee applies.",
+        "description": {
+          "text": "Three small hard-enamel pins with smooth, glossy finishes. One depicts a pixelated heart in forest green, another a stylized star in burnt orange, and the third a geometric shield in charcoal. The metal borders are silver-toned. The aesthetic blends retro-gaming nostalgia with indie art, creating a compact, collectible set that feels both nostalgic and quietly defiant.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "bandana",
+        "name": "Printed Bandana",
+        "oneLiner": "All-over pattern for casual street style.",
+        "category": "apparel",
+        "role": "limited",
+        "silhouette": "bandana",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 12,
+          "marginPerUnit": 8.5,
+          "minRun": 36,
+          "setupCost": 30,
+          "firstRunCost": 156,
+          "breakEvenUnits": 13,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer / sublimation",
+        "supplierBrief": "22 in square cotton bandana, 1–2 colour all-over print.",
+        "description": {
+          "text": "A square cotton bandana featuring a repeating all-over print. The design incorporates vintage folk motifs like diamonds and arrows in charcoal and forest green, set against a cream base. Burnt orange accents add warmth. The fabric looks soft and breathable. The vibe is festival-ready and unapologetically hiphop, channeling a gritty, underdog resilience through classic patterns.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "matchbook",
+        "name": "Vintage Matchbooks",
+        "oneLiner": "Small keepsakes with gritty nightlife flair.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 0.65,
+          "price": 3,
+          "marginPerUnit": 2.35,
+          "minRun": 100,
+          "setupCost": 20,
+          "firstRunCost": 85,
+          "breakEvenUnits": 29,
+          "typicalRange": [
+            3,
+            6
+          ],
+          "estimate": true
+        },
+        "supplierType": "print shop",
+        "supplierBrief": "Box of matchbooks with custom cover art, 100 min run, check local shipping rules.",
+        "description": {
+          "text": "A compact matchbook with a matte finish cover. The artwork displays a stylized cityscape at night in charcoal and forest green, with a single burnt orange neon sign motif. The edges are slightly worn for a vintage feel. The design evokes punk nightlife and craft beer culture, offering a tactile, intimate object with a gritty, underdog aesthetic.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Art Print Poster",
+        "oneLiner": "Large-format indie cinema inspired art.",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "An eighteen by twenty-four inch matte poster printed on thick stock. The central image is a minimalist composition using charcoal and forest green shapes against a cream background. A subtle burnt orange line provides a focal point. The style is reminiscent of vintage cinema posters with an indie twist. The mood is contemplative and resilient, reflecting an underdog narrative through restrained, artistic design.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Vinyl Sticker Pack",
+        "oneLiner": "Waterproof die-cut vinyl for laptops and bottles.",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 0.43,
+          "price": 4,
+          "marginPerUnit": 3.58,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 42.5,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            4,
+            8
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "A sheet of three die-cut vinyl stickers with a glossy, waterproof finish. The designs feature abstract, punk-inspired shapes in charcoal and burnt orange, accented with forest green. The cream backing paper is visible around the edges. The aesthetic is raw and collectible, appealing to indie fans. The mood is rebellious and durable, perfect for personalizing gear with an underdog attitude.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "enamel-pin-set",
+            "matchbook",
+            "poster-print",
+            "sticker-pack"
+          ],
+          "runSizes": {
+            "enamel-pin-set": 50,
+            "matchbook": 100,
+            "poster-print": 50,
+            "sticker-pack": 100
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "acrylic-keychain"
+          ],
+          "runSizes": {
+            "acrylic-keychain": 50
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "bandana"
+          ],
+          "runSizes": {
+            "bandana": 36
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "llm",
+      "notes": [
+        "No product has direct audience evidence yet — the hero pick is exploratory.",
+        "Exploratory picks (no direct audience evidence yet): Acrylic Keychain, Hard Enamel Pin Set, Printed Bandana, Vintage Matchbooks, Art Print Poster, Vinyl Sticker Pack."
+      ]
+    }
+  },
+  "descriptionSource": "llm",
+  "collabsError": "Error: /api/collabs: 503 {\"error\":{\"code\":\"QLOO_UNAVAILABLE\",\"message\":\"Taste data is unavailable. Try again.\"}}",
+  "elapsedMs": 67220
+}

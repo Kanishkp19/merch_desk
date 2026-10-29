@@ -1,0 +1,1219 @@
+{
+  "id": "b09",
+  "input": {
+    "text": "Acoustic folk duo; fans favor handmade ceramics and independent bookstores.",
+    "soundsLike": [],
+    "city": "Nashville",
+    "creatorType": "musician",
+    "budget": "small"
+  },
+  "startedAt": "2026-10-28T21:57:26.724Z",
+  "providerCalls": {
+    "qloo": 5,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "events": [
+    {
+      "type": "step",
+      "id": "s45",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t80",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "acoustic folk"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t80",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Acoustic Folk, Folk, Acoustic",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t81",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "handmade ceramics independent bookstores"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t81",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Handmade Ceramics",
+      "count": 1
+    },
+    {
+      "type": "tool_call",
+      "id": "t82",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:music:acoustic_folk",
+          "urn:tag:genre:music:folk",
+          "urn:tag:genre:music:acoustic",
+          "urn:tag:genre:music:folk_rock"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t82",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Folk Music, Folk, Folk Music, accoustic folk…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "t83",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:music:acoustic_folk",
+          "urn:tag:genre:music:folk",
+          "urn:tag:genre:music:acoustic",
+          "urn:tag:genre:music:folk_rock"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t83",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t84",
+      "tool": "qloo_related",
+      "args": {
+        "type": "book",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:music:acoustic_folk",
+          "urn:tag:genre:music:folk",
+          "urn:tag:genre:music:acoustic",
+          "urn:tag:genre:music:folk_rock"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t84",
+      "tool": "qloo_related",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "note",
+      "text": "Time budget reached — building the profile from what we have."
+    },
+    {
+      "type": "step",
+      "id": "s46",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "5 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s47",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s48",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:genre:music:acoustic_folk",
+            "urn:tag:decor:qloo:handmade_ceramics"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Acoustic Folk",
+            "qlooTagId": "urn:tag:genre:music:acoustic_folk",
+            "canonical": "folk",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Handmade Ceramics",
+            "qlooTagId": "urn:tag:decor:qloo:handmade_ceramics",
+            "canonical": "handmade",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "folkig",
+            "qlooTagId": "urn:tag:genre:music:folkig",
+            "weight": 0.45,
+            "source": "qloo"
+          },
+          {
+            "name": "acousticindiefolk",
+            "qlooTagId": "urn:tag:genre:music:acousticindiefolk",
+            "weight": 0.3,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "E5B36B4F-841F-44D4-AE86-45916E89A43A",
+            "name": "National Women's Soccer League",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Sports Organization",
+              "Woman",
+              "Leagues & Tournaments",
+              "Soccer",
+              "Dynamic Imagery",
+              "Athletic Branding",
+              "High-Energy Photography",
+              "Clean Modern Design",
+              "Elite Athleticism",
+              "Leadership"
+            ],
+            "canonicalTags": [
+              "photography"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "sportswear"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "F9803B7C-BB34-49FC-AF93-CDF9E9470264",
+            "name": "Obama Foundation",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Humanitarian NGO",
+              "NGO",
+              "Modern Architecture",
+              "Clean Typography",
+              "Purposeful Minimalism",
+              "Inspirational Imagery",
+              "Approachable Design",
+              "Global Citizenship",
+              "Social Impact",
+              "Grassroots Leadership"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "publishing"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "6A2BFC87-5F8B-43ED-B46B-136D6C27EC1B",
+            "name": "Milwaukee Art Museum",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Cultural Arts",
+              "Iconic Architecture",
+              "Expansive Spaces",
+              "Natural Light",
+              "Contemporary Design",
+              "Cultural Sophistication",
+              "Active Citizenship",
+              "Intellectual Enrichment",
+              "Other",
+              "Nonprofit Brand"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "art-goods"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "7A016C85-D68B-446B-9D97-2B2D96ACF6F6",
+            "name": "Backpacker Magazine",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Entertainment",
+              "Media",
+              "Advertising Enabled",
+              "Travel",
+              "Website",
+              "Travel",
+              "Authentic Photography",
+              "Rugged Imagery",
+              "Technical Documentation",
+              "Clean Layouts"
+            ],
+            "canonicalTags": [
+              "travel",
+              "photography"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "outdoor",
+              "publishing"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "FFBF1A0E-CE59-45A9-8C33-2E18B25B694D",
+            "name": "Christopher Kimball's Milk Street",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "American cooking websites",
+              "2016 establishments in the United States",
+              "Food & Beverage",
+              "Online magazines published in the United States",
+              "Episode list using the default LineColor",
+              "Clean Typography",
+              "Bright Food Photography",
+              "Minimalist Design",
+              "Scientific Diagrams",
+              "High Contrast Imagery"
+            ],
+            "canonicalTags": [
+              "foodie",
+              "photography",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food",
+              "publishing"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "0263DD33-0945-4490-8488-5B15A4F46AF9",
+            "name": "Museum Of Science",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Cultural Arts",
+              "Clean",
+              "Interactive",
+              "Modern",
+              "Explanatory",
+              "Intellectual Growth",
+              "Scientific Literacy",
+              "Global Understanding",
+              "Technological Fluency",
+              "Other"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "art-goods",
+              "home-goods"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "C4D45C17-ED3C-4546-961A-E1E2FA02A22C",
+            "name": "Organic Valley",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Agricultural cooperatives in the United States",
+              "Food",
+              "Dairy & Substitutes",
+              "Food and drink companies based in Wisconsin",
+              "Multinational food companies",
+              "Organic farming organizations",
+              "Dairy products companies of the United States",
+              "Food & Beverage",
+              "Vernon County",
+              "Rustic"
+            ],
+            "canonicalTags": [
+              "foodie"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food",
+              "eco-goods"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "5DA589BA-A64E-42C1-ADB2-BA12D92C60D4",
+            "name": "Little Free Library",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Cultural NGO",
+              "NGO",
+              "Rustic",
+              "Whimsical",
+              "Hand-Crafted",
+              "Community-Oriented",
+              "Accessible Design",
+              "Community Connectedness",
+              "Lifelong Learning",
+              "Literacy For All"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "home-goods",
+              "publishing"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "5236EE65-6C8A-47CD-B215-AB99D9928731",
+            "name": "Portland Thorns FC",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Sports Organization",
+              "Woman",
+              "Bold Primary Colors",
+              "Modern Sporting Design",
+              "Clean Branding",
+              "Dynamic Athletic Imagery",
+              "Athletic Achievement",
+              "Leadership Development",
+              "Professional Sporting Success",
+              "Community Mentorship"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "sportswear"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "935A4A4C-79A5-4D83-8D68-18E8B901F086",
+            "name": "Farm Sanctuary",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "Environmental NGO",
+              "NGO",
+              "Naturalistic",
+              "Earth-Toned",
+              "Documentary Style",
+              "Unadorned",
+              "Harmonious Coexistence",
+              "Systemic Change",
+              "Mindful Consumption",
+              "Global Compassion"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "eco-goods"
+            ],
+            "priceTier": "budget"
+          }
+        ],
+        "crossDomain": [],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "earth-retro",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 5
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:genre:music:acoustic_folk",
+        "urn:tag:decor:qloo:handmade_ceramics"
+      ]
+    },
+    "tags": [
+      {
+        "name": "Acoustic Folk",
+        "qlooTagId": "urn:tag:genre:music:acoustic_folk",
+        "canonical": "folk",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Handmade Ceramics",
+        "qlooTagId": "urn:tag:decor:qloo:handmade_ceramics",
+        "canonical": "handmade",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "folkig",
+        "qlooTagId": "urn:tag:genre:music:folkig",
+        "weight": 0.45,
+        "source": "qloo"
+      },
+      {
+        "name": "acousticindiefolk",
+        "qlooTagId": "urn:tag:genre:music:acousticindiefolk",
+        "weight": 0.3,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "E5B36B4F-841F-44D4-AE86-45916E89A43A",
+        "name": "National Women's Soccer League",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Sports Organization",
+          "Woman",
+          "Leagues & Tournaments",
+          "Soccer",
+          "Dynamic Imagery",
+          "Athletic Branding",
+          "High-Energy Photography",
+          "Clean Modern Design",
+          "Elite Athleticism",
+          "Leadership"
+        ],
+        "canonicalTags": [
+          "photography"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "sportswear"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "F9803B7C-BB34-49FC-AF93-CDF9E9470264",
+        "name": "Obama Foundation",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Humanitarian NGO",
+          "NGO",
+          "Modern Architecture",
+          "Clean Typography",
+          "Purposeful Minimalism",
+          "Inspirational Imagery",
+          "Approachable Design",
+          "Global Citizenship",
+          "Social Impact",
+          "Grassroots Leadership"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "publishing"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "6A2BFC87-5F8B-43ED-B46B-136D6C27EC1B",
+        "name": "Milwaukee Art Museum",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Cultural Arts",
+          "Iconic Architecture",
+          "Expansive Spaces",
+          "Natural Light",
+          "Contemporary Design",
+          "Cultural Sophistication",
+          "Active Citizenship",
+          "Intellectual Enrichment",
+          "Other",
+          "Nonprofit Brand"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "art-goods"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "7A016C85-D68B-446B-9D97-2B2D96ACF6F6",
+        "name": "Backpacker Magazine",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Entertainment",
+          "Media",
+          "Advertising Enabled",
+          "Travel",
+          "Website",
+          "Travel",
+          "Authentic Photography",
+          "Rugged Imagery",
+          "Technical Documentation",
+          "Clean Layouts"
+        ],
+        "canonicalTags": [
+          "travel",
+          "photography"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "outdoor",
+          "publishing"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "FFBF1A0E-CE59-45A9-8C33-2E18B25B694D",
+        "name": "Christopher Kimball's Milk Street",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "American cooking websites",
+          "2016 establishments in the United States",
+          "Food & Beverage",
+          "Online magazines published in the United States",
+          "Episode list using the default LineColor",
+          "Clean Typography",
+          "Bright Food Photography",
+          "Minimalist Design",
+          "Scientific Diagrams",
+          "High Contrast Imagery"
+        ],
+        "canonicalTags": [
+          "foodie",
+          "photography",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food",
+          "publishing"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "0263DD33-0945-4490-8488-5B15A4F46AF9",
+        "name": "Museum Of Science",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Cultural Arts",
+          "Clean",
+          "Interactive",
+          "Modern",
+          "Explanatory",
+          "Intellectual Growth",
+          "Scientific Literacy",
+          "Global Understanding",
+          "Technological Fluency",
+          "Other"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "art-goods",
+          "home-goods"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "C4D45C17-ED3C-4546-961A-E1E2FA02A22C",
+        "name": "Organic Valley",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Agricultural cooperatives in the United States",
+          "Food",
+          "Dairy & Substitutes",
+          "Food and drink companies based in Wisconsin",
+          "Multinational food companies",
+          "Organic farming organizations",
+          "Dairy products companies of the United States",
+          "Food & Beverage",
+          "Vernon County",
+          "Rustic"
+        ],
+        "canonicalTags": [
+          "foodie"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food",
+          "eco-goods"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "5DA589BA-A64E-42C1-ADB2-BA12D92C60D4",
+        "name": "Little Free Library",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Cultural NGO",
+          "NGO",
+          "Rustic",
+          "Whimsical",
+          "Hand-Crafted",
+          "Community-Oriented",
+          "Accessible Design",
+          "Community Connectedness",
+          "Lifelong Learning",
+          "Literacy For All"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "home-goods",
+          "publishing"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "5236EE65-6C8A-47CD-B215-AB99D9928731",
+        "name": "Portland Thorns FC",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Sports Organization",
+          "Woman",
+          "Bold Primary Colors",
+          "Modern Sporting Design",
+          "Clean Branding",
+          "Dynamic Athletic Imagery",
+          "Athletic Achievement",
+          "Leadership Development",
+          "Professional Sporting Success",
+          "Community Mentorship"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "sportswear"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "935A4A4C-79A5-4D83-8D68-18E8B901F086",
+        "name": "Farm Sanctuary",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "Environmental NGO",
+          "NGO",
+          "Naturalistic",
+          "Earth-Toned",
+          "Documentary Style",
+          "Unadorned",
+          "Harmonious Coexistence",
+          "Systemic Change",
+          "Mindful Consumption",
+          "Global Compassion"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "eco-goods"
+        ],
+        "priceTier": "budget"
+      }
+    ],
+    "crossDomain": [],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "earth-retro",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 5
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "bandana",
+        "name": "Printed bandana",
+        "oneLiner": "printed bandana in burnt orange, whittled and warm by design",
+        "category": "apparel",
+        "role": "hero",
+        "silhouette": "bandana",
+        "fitScore": 25,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "folk",
+            "points": 25,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 12,
+          "marginPerUnit": 8.5,
+          "minRun": 36,
+          "setupCost": 30,
+          "firstRunCost": 156,
+          "breakEvenUnits": 13,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer / sublimation",
+        "supplierBrief": "22 in square cotton bandana, 1–2 colour all-over print.",
+        "description": {
+          "text": "A cotton bandana in burnt orange and cream, finished with a wildflower motif. 22 in square cotton bandana. The overall feel is whittled and warm — built for fans who lean into folk and handmade — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "zine",
+        "name": "Mini zine",
+        "oneLiner": "mini zine in burnt orange, whittled and warm by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 40,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0.507,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "handmade",
+            "points": 25,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Obama Foundation",
+            "points": 8.5,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Backpacker Magazine",
+            "points": 7,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 7,
+          "marginPerUnit": 4.5,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 125,
+          "breakEvenUnits": 18,
+          "typicalRange": [
+            6,
+            12
+          ],
+          "estimate": true
+        },
+        "supplierType": "copy / print shop",
+        "supplierBrief": "16-page half-letter zine, saddle-stitched, colour cover, black-and-white inside.",
+        "description": {
+          "text": "A stapled mini zine in burnt orange and cream, finished with a hand stitched patch motif. 16-page half-letter zine. The overall feel is whittled and warm — built for fans who lean into folk and handmade — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Art print poster",
+        "oneLiner": "art print poster in burnt orange, whittled and warm by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 15,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.507,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Obama Foundation",
+            "points": 8.5,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Backpacker Magazine",
+            "points": 7,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "A poster in burnt orange and cream, finished with a risograph sun motif. 18×24 in matte poster on 100 lb stock. The overall feel is whittled and warm — built for fans who lean into folk and handmade — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "tote-bag",
+        "name": "Tote bag",
+        "oneLiner": "tote bag in burnt orange, whittled and warm by design",
+        "category": "objects",
+        "role": "limited",
+        "silhouette": "tote",
+        "fitScore": 15,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.507,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Obama Foundation",
+            "points": 8.5,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Backpacker Magazine",
+            "points": 7,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 15,
+          "marginPerUnit": 11.5,
+          "minRun": 36,
+          "setupCost": 25,
+          "firstRunCost": 151,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            15,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "10 oz natural canvas tote, 1–2 colour print, reinforced handles.",
+        "description": {
+          "text": "A tote bag in burnt orange and cream, finished with a hand drawn doodle motif. 10 oz natural canvas tote. The overall feel is whittled and warm — built for fans who lean into folk and handmade — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "matchbook",
+        "name": "Matchbooks",
+        "oneLiner": "matchbooks in burnt orange, whittled and warm by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 11,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.366,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Christopher Kimball's Milk Street",
+            "points": 6,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Organic Valley",
+            "points": 5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 0.65,
+          "price": 3,
+          "marginPerUnit": 2.35,
+          "minRun": 100,
+          "setupCost": 20,
+          "firstRunCost": 85,
+          "breakEvenUnits": 29,
+          "typicalRange": [
+            3,
+            6
+          ],
+          "estimate": true
+        },
+        "supplierType": "print shop",
+        "supplierBrief": "Box of matchbooks with custom cover art, 100 min run, check local shipping rules.",
+        "description": {
+          "text": "A matchbook in burnt orange and cream, finished with a faded postcard motif. Box of matchbooks with custom cover art. The overall feel is whittled and warm — built for fans who lean into folk and handmade — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Sticker pack",
+        "oneLiner": "sticker pack in burnt orange, whittled and warm by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 0.43,
+          "price": 4,
+          "marginPerUnit": 3.58,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 42.5,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            4,
+            8
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "A sticker sheet in burnt orange and cream, finished with a hand drawn doodle motif. Die-cut or kiss-cut vinyl stickers. The overall feel is whittled and warm — built for fans who lean into folk and handmade — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "zine",
+            "poster-print",
+            "matchbook",
+            "sticker-pack"
+          ],
+          "runSizes": {
+            "zine": 50,
+            "poster-print": 50,
+            "matchbook": 100,
+            "sticker-pack": 100
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "bandana"
+          ],
+          "runSizes": {
+            "bandana": 36
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "tote-bag"
+          ],
+          "runSizes": {
+            "tote-bag": 36
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "template",
+      "notes": [
+        "Exploratory picks (no direct audience evidence yet): Sticker pack."
+      ]
+    }
+  },
+  "descriptionSource": "template",
+  "collabs": {
+    "collabs": [
+      {
+        "id": "05669317-DB24-417E-AE7A-77F72D0DBB9F",
+        "name": "God Save Queens",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "Fashion"
+        ],
+        "partnerIdea": "God Save Queens is an affinity brand for this audience — explore a co-branded capsule.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "83B3C33F-527A-4C33-B0C0-FA8186834379",
+        "name": "Inglot Cosmetics",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "Health & Beauty"
+        ],
+        "partnerIdea": "Custom zine featuring makeup tutorials with Inglot art on your Nashville meridian.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "8A589742-A3B5-48A1-9971-FCCDCE16359B",
+        "name": "Localheroes",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "Casual"
+        ],
+        "partnerIdea": "Co-branded tote bag with your local Nashville hero illustrations and their logo.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "219F2268-F0F0-41A1-8D53-BC365BC63239",
+        "name": "Poland national football team",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "Sports Organization"
+        ],
+        "partnerIdea": "Poland national football team is an affinity brand for this audience — explore a co-branded capsule.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "4CCA4588-5FF9-4138-9D4F-BF7FB90F25A8",
+        "name": "Renee Girls",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "Footwear"
+        ],
+        "partnerIdea": "Renee Girls is an affinity brand for this audience — explore a co-branded capsule.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "012ABA77-DDF8-4211-966A-EDDA24926013",
+        "name": "University of Alaska Fairbanks",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "Academic"
+        ],
+        "partnerIdea": "University of Alaska Fairbanks is an affinity brand for this audience — explore a co-branded capsule.",
+        "linkedProductIds": []
+      }
+    ]
+  },
+  "elapsedMs": 70758
+}

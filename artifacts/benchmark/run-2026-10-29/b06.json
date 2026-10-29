@@ -1,0 +1,1402 @@
+{
+  "id": "b06",
+  "input": {
+    "text": "YouTube channel teaching watercolor landscapes. Viewers enjoy stationery and outdoor sketching.",
+    "soundsLike": [],
+    "city": "London",
+    "creatorType": "youtuber",
+    "budget": "medium"
+  },
+  "startedAt": "2026-10-28T21:53:47.761Z",
+  "providerCalls": {
+    "qloo": 8,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "events": [
+    {
+      "type": "step",
+      "id": "s33",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t56",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "watercolor landscape painting"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t56",
+      "tool": "qloo_search_tags",
+      "summary": "No tags for \"watercolor landscape painting\""
+    },
+    {
+      "type": "tool_call",
+      "id": "t57",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "stationery"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t57",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Stationery store, Stationery store, Stationery wholesaler",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t58",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "outdoor sketching"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t58",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Outdoor seating, Outdoor furniture, Outdoor services",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t59",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "watercolor painting art"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t59",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Art Of Painting",
+      "count": 1
+    },
+    {
+      "type": "tool_call",
+      "id": "t60",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:stationery_store",
+          "urn:tag:genre:place:stationery_store",
+          "urn:tag:category:place:stationery_wholesaler",
+          "urn:tag:category:place:stationery_manufacturer"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t60",
+      "tool": "qloo_taste_tags",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "tool_call",
+      "id": "t61",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "art supplies"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t61",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Art, Art gallery, Art gallery",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t62",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:stationery_store",
+          "urn:tag:genre:place:stationery_store",
+          "urn:tag:category:place:stationery_wholesaler",
+          "urn:tag:category:place:stationery_manufacturer"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t62",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Art, Art supply store, Decoration, Art supply store…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "t63",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:stationery_store",
+          "urn:tag:genre:place:stationery_store",
+          "urn:tag:category:place:stationery_wholesaler",
+          "urn:tag:category:place:stationery_manufacturer"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t63",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "note",
+      "text": "Built audience taste profile from description (no named artist). Seed tags: stationery store/wholesaler/manufacturer. Taste tags: Art, Art supply store, Decorat"
+    },
+    {
+      "type": "step",
+      "id": "s34",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "8 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s35",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s36",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:category:place:stationery_store",
+            "urn:tag:service_options:place:outdoor_seating",
+            "urn:tag:occupation:wikidata:art_painting",
+            "urn:tag:genre:media:art",
+            "urn:tag:genre:place:stationery_store",
+            "urn:tag:genre:place:art_gallery",
+            "urn:tag:category:place:stationery_wholesaler",
+            "urn:tag:category:place:art_gallery",
+            "urn:tag:category:place:stationery_manufacturer",
+            "urn:tag:category:place:art_studio",
+            "urn:tag:genre:place:hotel:stationery_wholesaler",
+            "urn:tag:genre:place:art_studio"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Stationery store",
+            "qlooTagId": "urn:tag:category:place:stationery_store",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Outdoor seating",
+            "qlooTagId": "urn:tag:service_options:place:outdoor_seating",
+            "canonical": "outdoors",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Art Of Painting",
+            "qlooTagId": "urn:tag:occupation:wikidata:art_painting",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Art",
+            "qlooTagId": "urn:tag:genre:media:art",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Art",
+            "qlooTagId": "urn:tag:category:place:art",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Art supply store",
+            "qlooTagId": "urn:tag:genre:place:art_supply_store",
+            "weight": 0.95,
+            "source": "qloo"
+          },
+          {
+            "name": "Decoration",
+            "qlooTagId": "urn:tag:category:place:decoration",
+            "weight": 0.9,
+            "source": "qloo"
+          },
+          {
+            "name": "Art supply store",
+            "qlooTagId": "urn:tag:category:place:art_supply_store",
+            "weight": 0.85,
+            "source": "qloo"
+          },
+          {
+            "name": "Stationery store",
+            "qlooTagId": "urn:tag:genre:place:stationery_store",
+            "weight": 0.83,
+            "source": "qloo"
+          },
+          {
+            "name": "Art gallery",
+            "qlooTagId": "urn:tag:genre:place:art_gallery",
+            "weight": 0.83,
+            "source": "qloo"
+          },
+          {
+            "name": "Hobby Venue",
+            "qlooTagId": "urn:tag:setting:qloo:hobby_venue",
+            "weight": 0.8,
+            "source": "qloo"
+          },
+          {
+            "name": "Venue Styling",
+            "qlooTagId": "urn:tag:activity_type:qloo:venue_styling",
+            "weight": 0.75,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "A6B753D8-C777-4D6E-BED3-CBB72428CEA4",
+            "name": "ECCO",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Shoe companies of Denmark",
+              "Purveyors to the Court of Denmark",
+              "Multinational companies headquartered in Denmark",
+              "Other",
+              "Shoe brands",
+              "Vague or ambiguous time from September 2021",
+              "Danish brands",
+              "Footwear",
+              "Fashion",
+              "Danish companies established in 1963"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion",
+              "outdoor"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "64E43D15-EB66-4D38-B385-B893D2317755",
+            "name": "Strand Bookstore",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Retail",
+              "Industrial Architecture",
+              "Floor-To-Ceiling Bookshelves",
+              "Classic Typography",
+              "Textured Paper",
+              "Vintage Signage",
+              "Intellectual Growth",
+              "Curated Personal Libraries",
+              "Deep Literary Engagement",
+              "Other"
+            ],
+            "canonicalTags": [
+              "vintage"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "publishing",
+              "vintage-americana"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "FD78D542-655E-431E-9B37-FCF0A1C0AABD",
+            "name": "Paperless Post",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "E Commerce App",
+              "Website",
+              "Mobile App",
+              "Minimalist",
+              "Typographic",
+              "Elegant",
+              "Refined",
+              "Clean Layouts",
+              "Seamless Entertaining",
+              "Sophisticated Social Hosting"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "art-goods",
+              "home-goods"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "FBA749A7-6A8F-4DD9-9EE5-F446796D224A",
+            "name": "Basics Life",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Casual",
+              "Fashion",
+              "Clean Lines",
+              "Modern Tailoring",
+              "Versatile Patterns",
+              "Minimalist Branding",
+              "Contemporary Silhouettes",
+              "Professional Success",
+              "Effortless Style",
+              "Travel"
+            ],
+            "canonicalTags": [
+              "minimal",
+              "travel"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion",
+              "home-goods"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "9A86BEF7-B86B-4C81-90DF-053726DDD052",
+            "name": "Epic Reads",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Retail",
+              "Vibrant",
+              "Youthful",
+              "Modern",
+              "Illustrative",
+              "Typographic",
+              "Becoming A Writer",
+              "Building A Home Library",
+              "Literary Travel",
+              "Deep Critical Thinking"
+            ],
+            "canonicalTags": [
+              "travel"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "publishing"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "7F4CD3BE-477A-467D-B4F7-5F245B56B5F4",
+            "name": "Claire's",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Companies that filed for Chapter 11 bankruptcy in 2018",
+              "Apollo Global Management companies",
+              "Clothing companies established in 1961",
+              "Accessories",
+              "2007 mergers and acquisitions",
+              "Jewelry retailers of the United States",
+              "American companies established in 1961",
+              "Jewelry",
+              "Companies based in Cook County",
+              "Retail"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "toys",
+              "boutique-fashion"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "778EAE3D-CA66-4DFE-A72A-4C2EB1A1788C",
+            "name": "Center for Reproductive Rights",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "NGO",
+              "Advocacy NGO",
+              "Clean Typography",
+              "Professional",
+              "Minimalist",
+              "Information-Dense",
+              "Serious",
+              "Other",
+              "Nonprofit Brand",
+              "Nonprofit"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "publishing"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "49FEBFB6-D8DE-4394-A1D3-71672D6D03D7",
+            "name": "Bragi",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Electronics",
+              "Headphones",
+              "Minimalist",
+              "Clean",
+              "Functional",
+              "Technical",
+              "Other",
+              "Corporate Brand",
+              "B2B",
+              "Innovation"
+            ],
+            "canonicalTags": [
+              "electronic",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics",
+              "techwear"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "0BAC80D0-90D5-46A8-A11F-7CC58DE74963",
+            "name": "Barnes & Noble",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Retail companies established in 1917",
+              "Companies based in Manhattan",
+              "Mobile App",
+              "Online retailers of the United States",
+              "Music retailers of the United States",
+              "Barnes & Noble",
+              "Bookstores established in the 20th century",
+              "Privately held companies based in New York City",
+              "Advertising Enabled",
+              "Reading App"
+            ],
+            "canonicalTags": [
+              "books"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "publishing"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "E8328C0A-7787-4ECA-9E8A-AD75F55BBFFA",
+            "name": "Parents, Families and Friends of Lesbians and Gays",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "Advocacy NGO",
+              "NGO",
+              "Approachable",
+              "Clear",
+              "Educational",
+              "Community-Focused",
+              "Inclusive Family Dynamics",
+              "Social Equality",
+              "Unconditional Acceptance",
+              "Supportive Community Environments"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "publishing"
+            ],
+            "priceTier": "mid"
+          }
+        ],
+        "crossDomain": [],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "earth-retro",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 8
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:category:place:stationery_store",
+        "urn:tag:service_options:place:outdoor_seating",
+        "urn:tag:occupation:wikidata:art_painting",
+        "urn:tag:genre:media:art",
+        "urn:tag:genre:place:stationery_store",
+        "urn:tag:genre:place:art_gallery",
+        "urn:tag:category:place:stationery_wholesaler",
+        "urn:tag:category:place:art_gallery",
+        "urn:tag:category:place:stationery_manufacturer",
+        "urn:tag:category:place:art_studio",
+        "urn:tag:genre:place:hotel:stationery_wholesaler",
+        "urn:tag:genre:place:art_studio"
+      ]
+    },
+    "tags": [
+      {
+        "name": "Stationery store",
+        "qlooTagId": "urn:tag:category:place:stationery_store",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Outdoor seating",
+        "qlooTagId": "urn:tag:service_options:place:outdoor_seating",
+        "canonical": "outdoors",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Art Of Painting",
+        "qlooTagId": "urn:tag:occupation:wikidata:art_painting",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Art",
+        "qlooTagId": "urn:tag:genre:media:art",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Art",
+        "qlooTagId": "urn:tag:category:place:art",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Art supply store",
+        "qlooTagId": "urn:tag:genre:place:art_supply_store",
+        "weight": 0.95,
+        "source": "qloo"
+      },
+      {
+        "name": "Decoration",
+        "qlooTagId": "urn:tag:category:place:decoration",
+        "weight": 0.9,
+        "source": "qloo"
+      },
+      {
+        "name": "Art supply store",
+        "qlooTagId": "urn:tag:category:place:art_supply_store",
+        "weight": 0.85,
+        "source": "qloo"
+      },
+      {
+        "name": "Stationery store",
+        "qlooTagId": "urn:tag:genre:place:stationery_store",
+        "weight": 0.83,
+        "source": "qloo"
+      },
+      {
+        "name": "Art gallery",
+        "qlooTagId": "urn:tag:genre:place:art_gallery",
+        "weight": 0.83,
+        "source": "qloo"
+      },
+      {
+        "name": "Hobby Venue",
+        "qlooTagId": "urn:tag:setting:qloo:hobby_venue",
+        "weight": 0.8,
+        "source": "qloo"
+      },
+      {
+        "name": "Venue Styling",
+        "qlooTagId": "urn:tag:activity_type:qloo:venue_styling",
+        "weight": 0.75,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "A6B753D8-C777-4D6E-BED3-CBB72428CEA4",
+        "name": "ECCO",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Shoe companies of Denmark",
+          "Purveyors to the Court of Denmark",
+          "Multinational companies headquartered in Denmark",
+          "Other",
+          "Shoe brands",
+          "Vague or ambiguous time from September 2021",
+          "Danish brands",
+          "Footwear",
+          "Fashion",
+          "Danish companies established in 1963"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion",
+          "outdoor"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "64E43D15-EB66-4D38-B385-B893D2317755",
+        "name": "Strand Bookstore",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Retail",
+          "Industrial Architecture",
+          "Floor-To-Ceiling Bookshelves",
+          "Classic Typography",
+          "Textured Paper",
+          "Vintage Signage",
+          "Intellectual Growth",
+          "Curated Personal Libraries",
+          "Deep Literary Engagement",
+          "Other"
+        ],
+        "canonicalTags": [
+          "vintage"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "publishing",
+          "vintage-americana"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "FD78D542-655E-431E-9B37-FCF0A1C0AABD",
+        "name": "Paperless Post",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "E Commerce App",
+          "Website",
+          "Mobile App",
+          "Minimalist",
+          "Typographic",
+          "Elegant",
+          "Refined",
+          "Clean Layouts",
+          "Seamless Entertaining",
+          "Sophisticated Social Hosting"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "art-goods",
+          "home-goods"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "FBA749A7-6A8F-4DD9-9EE5-F446796D224A",
+        "name": "Basics Life",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Casual",
+          "Fashion",
+          "Clean Lines",
+          "Modern Tailoring",
+          "Versatile Patterns",
+          "Minimalist Branding",
+          "Contemporary Silhouettes",
+          "Professional Success",
+          "Effortless Style",
+          "Travel"
+        ],
+        "canonicalTags": [
+          "minimal",
+          "travel"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion",
+          "home-goods"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "9A86BEF7-B86B-4C81-90DF-053726DDD052",
+        "name": "Epic Reads",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Retail",
+          "Vibrant",
+          "Youthful",
+          "Modern",
+          "Illustrative",
+          "Typographic",
+          "Becoming A Writer",
+          "Building A Home Library",
+          "Literary Travel",
+          "Deep Critical Thinking"
+        ],
+        "canonicalTags": [
+          "travel"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "publishing"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "7F4CD3BE-477A-467D-B4F7-5F245B56B5F4",
+        "name": "Claire's",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Companies that filed for Chapter 11 bankruptcy in 2018",
+          "Apollo Global Management companies",
+          "Clothing companies established in 1961",
+          "Accessories",
+          "2007 mergers and acquisitions",
+          "Jewelry retailers of the United States",
+          "American companies established in 1961",
+          "Jewelry",
+          "Companies based in Cook County",
+          "Retail"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "toys",
+          "boutique-fashion"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "778EAE3D-CA66-4DFE-A72A-4C2EB1A1788C",
+        "name": "Center for Reproductive Rights",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "NGO",
+          "Advocacy NGO",
+          "Clean Typography",
+          "Professional",
+          "Minimalist",
+          "Information-Dense",
+          "Serious",
+          "Other",
+          "Nonprofit Brand",
+          "Nonprofit"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "publishing"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "49FEBFB6-D8DE-4394-A1D3-71672D6D03D7",
+        "name": "Bragi",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Electronics",
+          "Headphones",
+          "Minimalist",
+          "Clean",
+          "Functional",
+          "Technical",
+          "Other",
+          "Corporate Brand",
+          "B2B",
+          "Innovation"
+        ],
+        "canonicalTags": [
+          "electronic",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics",
+          "techwear"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "0BAC80D0-90D5-46A8-A11F-7CC58DE74963",
+        "name": "Barnes & Noble",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Retail companies established in 1917",
+          "Companies based in Manhattan",
+          "Mobile App",
+          "Online retailers of the United States",
+          "Music retailers of the United States",
+          "Barnes & Noble",
+          "Bookstores established in the 20th century",
+          "Privately held companies based in New York City",
+          "Advertising Enabled",
+          "Reading App"
+        ],
+        "canonicalTags": [
+          "books"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "publishing"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "E8328C0A-7787-4ECA-9E8A-AD75F55BBFFA",
+        "name": "Parents, Families and Friends of Lesbians and Gays",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "Advocacy NGO",
+          "NGO",
+          "Approachable",
+          "Clear",
+          "Educational",
+          "Community-Focused",
+          "Inclusive Family Dynamics",
+          "Social Equality",
+          "Unconditional Acceptance",
+          "Supportive Community Environments"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "publishing"
+        ],
+        "priceTier": "mid"
+      }
+    ],
+    "crossDomain": [],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "earth-retro",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 8
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "hero-crewneck",
+        "name": "Heavyweight Crewneck",
+        "oneLiner": "Rugged fleece with earthy outdoor embroidery.",
+        "category": "apparel",
+        "role": "hero",
+        "silhouette": "top",
+        "fitScore": 17,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.5760000000000001,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "boutique fashion",
+            "entityName": "ECCO",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "vintage americana",
+            "entityName": "Strand Bookstore",
+            "points": 8.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 22,
+          "price": 61.5,
+          "marginPerUnit": 39.5,
+          "minRun": 24,
+          "setupCost": 40,
+          "firstRunCost": 568,
+          "breakEvenUnits": 10,
+          "typicalRange": [
+            58,
+            78
+          ],
+          "estimate": true
+        },
+        "supplierType": "premium blank + embroidery/print",
+        "supplierBrief": "12–14 oz fleece crewneck, embroidered chest mark, numbered neck label, limited run.",
+        "description": {
+          "text": "Thick charcoal fleece sweatshirt featuring a subtle, minimal embroidered motif in burnt orange and cream on the chest. The texture is soft yet durable, evoking a vintage workwear aesthetic. The muted palette and sturdy construction create a grounded, cozy atmosphere suitable for rugged adventures.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Art Print Poster",
+        "oneLiner": "Earthy botanical illustration on matte paper.",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 14,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.483,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Strand Bookstore",
+            "points": 8.5,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Epic Reads",
+            "points": 6,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "Matte cream paper showcasing a vintage-inspired botanical illustration in forest green and burnt orange. The design features detailed, hand-drawn foliage with a slightly distressed texture, evoking a classic field guide aesthetic. The warm tones and organic shapes create a serene, natural mood perfect for interior decor.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "embroidered-cap",
+        "name": "Embroidered Corduroy Cap",
+        "oneLiner": "Vintage corduroy cap with nature embroidery.",
+        "category": "apparel",
+        "role": "limited",
+        "silhouette": "cap",
+        "fitScore": 42,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0.5760000000000001,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "outdoors",
+            "points": 25,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "outdoor",
+            "entityName": "ECCO",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "vintage americana",
+            "entityName": "Strand Bookstore",
+            "points": 8.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 9,
+          "price": 28,
+          "marginPerUnit": 19,
+          "minRun": 24,
+          "setupCost": 25,
+          "firstRunCost": 241,
+          "breakEvenUnits": 9,
+          "typicalRange": [
+            28,
+            38
+          ],
+          "estimate": true
+        },
+        "supplierType": "embroidery shop",
+        "supplierBrief": "Unstructured 6-panel corduroy cap, flat embroidery up to 3 colours, digitizing fee applies.",
+        "description": {
+          "text": "Unstructured charcoal corduroy cap with a flat, three-color embroidery in forest green, burnt orange, and cream. The design depicts a simple, rugged mountain silhouette, reflecting a vintage outdoorsman style. The ribbed fabric texture adds warmth and character, creating a practical yet stylish accessory for field trips.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-camp-mug",
+        "name": "Enamel Camp Mug",
+        "oneLiner": "Rugged enamel mug with rustic forest motif.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "mug",
+        "fitScore": 42,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0.552,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "outdoors",
+            "points": 25,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "outdoor",
+            "entityName": "ECCO",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "home goods",
+            "entityName": "Paperless Post",
+            "points": 7.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 4.25,
+          "price": 18,
+          "marginPerUnit": 13.75,
+          "minRun": 48,
+          "setupCost": 40,
+          "firstRunCost": 244,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            18,
+            28
+          ],
+          "estimate": true
+        },
+        "supplierType": "drinkware printer",
+        "supplierBrief": "12 oz enamel-coated steel mug, 1–2 colour print, silver rim.",
+        "description": {
+          "text": "Steel enamel mug in deep forest green with a visible silver rim. A simple, bold burnt orange tree silhouette is printed on the side. The glossy finish contrasts with the raw metal edge, evoking a nostalgic camping vibe. The sturdy design suggests durability and warmth for chilly mornings in nature.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "tote-bag",
+        "name": "Canvas Tote Bag",
+        "oneLiner": "Natural canvas bag with botanical print.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "tote",
+        "fitScore": 17,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.5760000000000001,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "boutique fashion",
+            "entityName": "ECCO",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Strand Bookstore",
+            "points": 8.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 15,
+          "marginPerUnit": 11.5,
+          "minRun": 36,
+          "setupCost": 25,
+          "firstRunCost": 151,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            15,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "10 oz natural canvas tote, 1–2 colour print, reinforced handles.",
+        "description": {
+          "text": "Natural cream canvas tote with reinforced handles. A delicate, single-color forest green leaf pattern is screen-printed across the front. The fabric has a slightly rough, eco-friendly texture. The minimalist design and earthy tones create a fresh, organic look ideal for carrying books or daily essentials sustainably.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "playing-cards",
+        "name": "Playing Card Deck",
+        "oneLiner": "Vintage card deck with nature-themed faces.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "cards",
+        "fitScore": 14,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.483,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Strand Bookstore",
+            "points": 8.5,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Epic Reads",
+            "points": 6,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 4.5,
+          "price": 12.5,
+          "marginPerUnit": 8,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 265,
+          "breakEvenUnits": 22,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "card printer",
+        "supplierBrief": "54-card poker-size deck with custom back and 4 custom face cards, tuck box.",
+        "description": {
+          "text": "Poker-size cards with a charcoal tuck box. The card backs feature a repeating burnt orange geometric nature pattern. Custom face cards depict stylized forest animals in a vintage engraving style using cream and green inks. The tactile feel of the cards and the earthy design create a nostalgic, collectible atmosphere.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "zine",
+        "name": "Mini Zine",
+        "oneLiner": "Hand-stitched zine with raw punk aesthetic.",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 14,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.483,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Strand Bookstore",
+            "points": 8.5,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Epic Reads",
+            "points": 6,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 7,
+          "marginPerUnit": 4.5,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 125,
+          "breakEvenUnits": 18,
+          "typicalRange": [
+            6,
+            12
+          ],
+          "estimate": true
+        },
+        "supplierType": "copy / print shop",
+        "supplierBrief": "16-page half-letter zine, saddle-stitched, colour cover, black-and-white inside.",
+        "description": {
+          "text": "Saddle-stitched half-letter zine with a solid burnt orange cover. The inside pages are stark black-and-white, featuring rough, punk-inspired sketches of outdoor landscapes. The handmade quality and raw, unpolished aesthetic create an intimate, indie vibe. The contrast between the bold cover and monochrome interior adds visual intrigue.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "poster-print",
+            "enamel-camp-mug",
+            "tote-bag",
+            "playing-cards",
+            "zine"
+          ],
+          "runSizes": {
+            "poster-print": 50,
+            "enamel-camp-mug": 48,
+            "tote-bag": 36,
+            "playing-cards": 50,
+            "zine": 50
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "hero-crewneck"
+          ],
+          "runSizes": {
+            "hero-crewneck": 24
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "embroidered-cap"
+          ],
+          "runSizes": {
+            "embroidered-cap": 24
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "llm",
+      "notes": []
+    }
+  },
+  "descriptionSource": "llm",
+  "collabsError": "Error: /api/collabs: 503 {\"error\":{\"code\":\"QLOO_UNAVAILABLE\",\"message\":\"Taste data is unavailable. Try again.\"}}",
+  "elapsedMs": 51378
+}

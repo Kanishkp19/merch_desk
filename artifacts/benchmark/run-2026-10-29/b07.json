@@ -1,0 +1,1731 @@
+{
+  "id": "b07",
+  "input": {
+    "text": "Comic artist drawing cozy science fiction; readers like tabletop games and enamel pins.",
+    "soundsLike": [],
+    "city": "Toronto",
+    "creatorType": "comic_artist",
+    "budget": "medium"
+  },
+  "startedAt": "2026-10-28T21:54:39.140Z",
+  "providerCalls": {
+    "qloo": 8,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "events": [
+    {
+      "type": "step",
+      "id": "s37",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t64",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "cozy science fiction comic artist"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t64",
+      "tool": "qloo_search_tags",
+      "summary": "No tags for \"cozy science fiction comic artist\""
+    },
+    {
+      "type": "tool_call",
+      "id": "t65",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "tabletop games"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t65",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Tabletop Games, Tabletop Games, Tabletop Games Sessions",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t66",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "enamel pins"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t66",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Juan Les Pins Beach, Oskar Schindler's Enamel Factory",
+      "count": 2
+    },
+    {
+      "type": "tool_call",
+      "id": "t67",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "cozy science fiction"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t67",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Science Fiction, Science fiction fantasy, Science fiction romance",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t68",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:keyword:qloo:tabletop_games",
+          "urn:tag:subgenre:qloo:tabletop_games",
+          "urn:tag:good_for:qloo:tabletop_games_sessions",
+          "urn:tag:offerings:place:arcade_games"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t68",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Sci Fi, Scifi, Sci Fi Fantasy, Fantasy Play…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "t69",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:keyword:qloo:tabletop_games",
+          "urn:tag:subgenre:qloo:tabletop_games",
+          "urn:tag:good_for:qloo:tabletop_games_sessions",
+          "urn:tag:offerings:place:arcade_games"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t69",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t70",
+      "tool": "qloo_related",
+      "args": {
+        "type": "videogame",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:keyword:qloo:tabletop_games",
+          "urn:tag:subgenre:qloo:tabletop_games",
+          "urn:tag:good_for:qloo:tabletop_games_sessions",
+          "urn:tag:offerings:place:arcade_games"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t70",
+      "tool": "qloo_related",
+      "summary": "10 related videogames",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t71",
+      "tool": "qloo_related",
+      "args": {
+        "type": "book",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:keyword:qloo:tabletop_games",
+          "urn:tag:subgenre:qloo:tabletop_games",
+          "urn:tag:good_for:qloo:tabletop_games_sessions",
+          "urn:tag:offerings:place:arcade_games"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t71",
+      "tool": "qloo_related",
+      "summary": "10 related books",
+      "count": 10
+    },
+    {
+      "type": "note",
+      "text": "Time budget reached — building the profile from what we have."
+    },
+    {
+      "type": "step",
+      "id": "s38",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "8 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s39",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s40",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:keyword:qloo:tabletop_games",
+            "urn:tag:nearby_attraction:qloo:juan_les_pins_beach",
+            "urn:tag:genre:media:science_fiction",
+            "urn:tag:offerings:place:arcade_games",
+            "urn:tag:amenity:place:board_games_puzzles",
+            "urn:tag:nearby_attraction:qloo:oskar_schindler_s_enamel_factory"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Tabletop Games",
+            "qlooTagId": "urn:tag:keyword:qloo:tabletop_games",
+            "canonical": "tabletop",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Juan Les Pins Beach",
+            "qlooTagId": "urn:tag:nearby_attraction:qloo:juan_les_pins_beach",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Science Fiction",
+            "qlooTagId": "urn:tag:genre:media:science_fiction",
+            "canonical": "sci-fi",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Scifi",
+            "qlooTagId": "urn:tag:genre:media:scifi",
+            "weight": 0.95,
+            "source": "qloo"
+          },
+          {
+            "name": "Sci Fi Fantasy",
+            "qlooTagId": "urn:tag:genre:media:sci_fi_fantasy",
+            "canonical": "fantasy",
+            "weight": 0.9,
+            "source": "qloo"
+          },
+          {
+            "name": "Sciene Fiction",
+            "qlooTagId": "urn:tag:genre:media:sciene_fiction",
+            "weight": 0.8,
+            "source": "qloo"
+          },
+          {
+            "name": "Arcade games",
+            "qlooTagId": "urn:tag:offerings:place:arcade_games",
+            "canonical": "retro-gaming",
+            "weight": 0.48,
+            "source": "qloo"
+          },
+          {
+            "name": "Board games / puzzles",
+            "qlooTagId": "urn:tag:amenity:place:board_games_puzzles",
+            "canonical": "board-games",
+            "weight": 0.3,
+            "source": "qloo"
+          },
+          {
+            "name": "Oskar Schindler's Enamel Factory",
+            "qlooTagId": "urn:tag:nearby_attraction:qloo:oskar_schindler_s_enamel_factory",
+            "weight": 0.3,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "8E6C77D8-9F96-404B-BEAD-DEFDB0AE0A4C",
+            "name": "Death Saves",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Fashion",
+              "Casual",
+              "Dark Imagery",
+              "Gothic Typography",
+              "Graphic Illustration",
+              "High Contrast",
+              "Oversized Fits",
+              "Creative Expression",
+              "Belonging To An Underground Community",
+              "Fashion"
+            ],
+            "canonicalTags": [
+              "art-print"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "gaming",
+              "collectibles"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "2FB9C3A5-9FBF-4ADA-A257-8C26C53CD712",
+            "name": "Extra Life",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Healthcare NGO",
+              "NGO",
+              "Digital-First Design",
+              "Playful Imagery",
+              "Accessible Branding",
+              "Social Responsibility",
+              "Altruistic Digital Impact",
+              "Connected Global Community",
+              "Other",
+              "Nonprofit Brand"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "gaming",
+              "collectibles"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "DB32FF06-D181-4BBF-A79B-D56671AD992E",
+            "name": "The AbleGamers Foundation",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Humanitarian NGO",
+              "NGO",
+              "Clean",
+              "Modern",
+              "Accessible",
+              "Professional",
+              "Limitless Gaming",
+              "Universal Digital Access",
+              "Social Connectivity",
+              "Other"
+            ],
+            "canonicalTags": [
+              "retro-gaming"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "gaming",
+              "electronics"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "58F8037E-26C6-4C63-86A0-6F3B7B2B35C0",
+            "name": "Kickstarter",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Website",
+              "Mobile App",
+              "Financial Services App",
+              "Clean UI",
+              "Minimalist Design",
+              "Community-Focused Visuals",
+              "Functionality-First Layout",
+              "Entrepreneurship",
+              "Social Impact",
+              "Creative Freedom"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "publishing",
+              "art-goods"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "016F7629-169D-4310-AFC8-486D80C67A48",
+            "name": "Beavertown Brewery",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Craft",
+              "Beer",
+              "Wine & Spirits",
+              "Illustrative",
+              "Colorful",
+              "Bold Typography",
+              "Psychedelic Influences",
+              "Vibrant Urban Living",
+              "Exploring Art Scenes",
+              "Curated Social Experiences"
+            ],
+            "canonicalTags": [
+              "craft-beer"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "92E0BD0D-FCF1-4E59-AD06-FA7F0E72E29A",
+            "name": "Dorkly",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Advertising Enabled",
+              "Website",
+              "Minimalist Illustration",
+              "Cartoonish Style",
+              "Bright Colors",
+              "Digital Graphics",
+              "Staying Current With Trends",
+              "Participating In Fandom Communities",
+              "Other",
+              "Media Brand"
+            ],
+            "canonicalTags": [
+              "art-print"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "gaming",
+              "toys"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "0A6ED7BF-53CE-489F-B340-920884F206A5",
+            "name": "Garage Project",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "2011 establishments in New Zealand",
+              "Beer",
+              "Craft",
+              "Wine & Spirits",
+              "Breweries of New Zealand",
+              "Artistic",
+              "Bold Typography",
+              "Eclectic Illustration",
+              "Vibrant Color Palettes",
+              "Industrial"
+            ],
+            "canonicalTags": [
+              "craft-beer",
+              "art-print"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "1A136E24-7CD6-4B98-8395-6FB1BFD43356",
+            "name": "Indiegogo",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Website",
+              "Clean Digital Interface",
+              "Minimalist Layout",
+              "High-Contrast Imagery",
+              "Community-Focused Visuals",
+              "Entrepreneurial Success",
+              "Early Adoption",
+              "Disruptive Thinking",
+              "Making An Impact",
+              "Other"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "publishing",
+              "art-goods"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "BFC08D2A-4BF5-4874-B2CD-7557385ED25B",
+            "name": "ThinkGeek",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "1999 establishments in Virginia",
+              "Website",
+              "Toy retailers of the United States",
+              "Retail companies established in 1999",
+              "Companies based in Fairfax",
+              "Online retailers of the United States",
+              "GameStop",
+              "Geeknet",
+              "Graphic Print Heavy",
+              "Bold Colors"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "gaming",
+              "toys",
+              "electronics"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "514197E5-3F3B-4508-9169-102718866294",
+            "name": "Oculus",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "Electronics",
+              "Gaming",
+              "Computer Accessories",
+              "Minimalist",
+              "Futuristic",
+              "Sleek",
+              "Modern",
+              "Virtual Exploration",
+              "Digital Immersion",
+              "Futuristic Living"
+            ],
+            "canonicalTags": [
+              "electronic",
+              "retro-gaming",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics",
+              "gaming"
+            ],
+            "priceTier": "premium"
+          }
+        ],
+        "crossDomain": [
+          {
+            "id": "9BA29C9C-3490-4678-B7D2-ED180FA13736",
+            "name": "Tabletop Simulator",
+            "type": "videogame",
+            "weight": 1,
+            "tags": [
+              "3D",
+              "Realistic physical simulation",
+              "highly modifiable",
+              "community-driven",
+              "party game",
+              "tabletop simulator",
+              "sandbox experience",
+              "social",
+              "creative",
+              "lighthearted"
+            ],
+            "canonicalTags": [
+              "tabletop"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "75520C59-1DF2-4A46-84FA-7D2558A19F05",
+            "name": "Gunpoint",
+            "type": "videogame",
+            "weight": 0.92,
+            "tags": [
+              "2D",
+              "pixel art",
+              "innovative",
+              "challenging",
+              "clever",
+              "suspenseful",
+              "intense",
+              "single player",
+              "stealth",
+              "puzzle"
+            ],
+            "canonicalTags": [
+              "retro-gaming"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "E32EB7E4-3019-4D92-978B-D3BC68D0B6A7",
+            "name": "Phoenix Point",
+            "type": "videogame",
+            "weight": 0.84,
+            "tags": [
+              "3D",
+              "Realistic",
+              "hardcore strategy",
+              "deep customization",
+              "story-rich",
+              "challenging",
+              "long campaign",
+              "tense",
+              "grim",
+              "mysterious"
+            ],
+            "canonicalTags": [
+              "metal"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "94B2BCC2-5563-4F17-86C5-6ACB9A5C3A41",
+            "name": "Wargroove",
+            "type": "videogame",
+            "weight": 0.77,
+            "tags": [
+              "2D",
+              "Pixel Art",
+              "Tactical",
+              "Strategic",
+              "Creative",
+              "Strategic",
+              "Engaging",
+              "Challenging",
+              "Single-player",
+              "Multiplayer"
+            ],
+            "canonicalTags": [
+              "retro-gaming"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "1760952E-27B8-47DA-BEE6-8CCBE77B0F47",
+            "name": "Children of Morta",
+            "type": "videogame",
+            "weight": 0.69,
+            "tags": [
+              "Pixel Art",
+              "2D",
+              "Hand-painted lighting and effects",
+              "emotional depth",
+              "family saga",
+              "challenging gameplay",
+              "beautiful pixel art",
+              "high replayability",
+              "melancholic",
+              "heroic"
+            ],
+            "canonicalTags": [
+              "retro-gaming"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "2325B602-F59D-4846-A29C-3539BD2BA327",
+            "name": "Strong Female Protagonist: Book One",
+            "type": "book",
+            "weight": 1,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "91BAF971-B72E-424B-8F48-734B08CCC969",
+            "name": "Advanced Class Guide (Pathfinder, 1st Edition)",
+            "type": "book",
+            "weight": 0.92,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "5E25F5FD-E834-45E6-990C-72A5C282F5DD",
+            "name": "Wondermark, Vol. 1: Beards of Our Forefathers",
+            "type": "book",
+            "weight": 0.84,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "5F4E5CAA-510D-4F77-9384-2E521BE0F92D",
+            "name": "The Adventure Zone Vol. 4: The Crystal Kingdom",
+            "type": "book",
+            "weight": 0.77,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "0F6B285F-A6C9-47C6-A35E-75959B1E443B",
+            "name": "The Devil You Know (Brimstone Angels, #6)",
+            "type": "book",
+            "weight": 0.69,
+            "tags": [
+              "Dungeons and Dragons",
+              "Adventure",
+              "Forgotten Realms",
+              "Audiobook",
+              "High Fantasy",
+              "Fantasy",
+              "Dragons",
+              "Science Fiction Fantasy",
+              "Fiction",
+              "18-24"
+            ],
+            "canonicalTags": [
+              "fantasy",
+              "sci-fi"
+            ],
+            "estimated": false
+          }
+        ],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "neon-arcade",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 8
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:keyword:qloo:tabletop_games",
+        "urn:tag:nearby_attraction:qloo:juan_les_pins_beach",
+        "urn:tag:genre:media:science_fiction",
+        "urn:tag:offerings:place:arcade_games",
+        "urn:tag:amenity:place:board_games_puzzles",
+        "urn:tag:nearby_attraction:qloo:oskar_schindler_s_enamel_factory"
+      ]
+    },
+    "tags": [
+      {
+        "name": "Tabletop Games",
+        "qlooTagId": "urn:tag:keyword:qloo:tabletop_games",
+        "canonical": "tabletop",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Juan Les Pins Beach",
+        "qlooTagId": "urn:tag:nearby_attraction:qloo:juan_les_pins_beach",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Science Fiction",
+        "qlooTagId": "urn:tag:genre:media:science_fiction",
+        "canonical": "sci-fi",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Scifi",
+        "qlooTagId": "urn:tag:genre:media:scifi",
+        "weight": 0.95,
+        "source": "qloo"
+      },
+      {
+        "name": "Sci Fi Fantasy",
+        "qlooTagId": "urn:tag:genre:media:sci_fi_fantasy",
+        "canonical": "fantasy",
+        "weight": 0.9,
+        "source": "qloo"
+      },
+      {
+        "name": "Sciene Fiction",
+        "qlooTagId": "urn:tag:genre:media:sciene_fiction",
+        "weight": 0.8,
+        "source": "qloo"
+      },
+      {
+        "name": "Arcade games",
+        "qlooTagId": "urn:tag:offerings:place:arcade_games",
+        "canonical": "retro-gaming",
+        "weight": 0.48,
+        "source": "qloo"
+      },
+      {
+        "name": "Board games / puzzles",
+        "qlooTagId": "urn:tag:amenity:place:board_games_puzzles",
+        "canonical": "board-games",
+        "weight": 0.3,
+        "source": "qloo"
+      },
+      {
+        "name": "Oskar Schindler's Enamel Factory",
+        "qlooTagId": "urn:tag:nearby_attraction:qloo:oskar_schindler_s_enamel_factory",
+        "weight": 0.3,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "8E6C77D8-9F96-404B-BEAD-DEFDB0AE0A4C",
+        "name": "Death Saves",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Fashion",
+          "Casual",
+          "Dark Imagery",
+          "Gothic Typography",
+          "Graphic Illustration",
+          "High Contrast",
+          "Oversized Fits",
+          "Creative Expression",
+          "Belonging To An Underground Community",
+          "Fashion"
+        ],
+        "canonicalTags": [
+          "art-print"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "gaming",
+          "collectibles"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "2FB9C3A5-9FBF-4ADA-A257-8C26C53CD712",
+        "name": "Extra Life",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Healthcare NGO",
+          "NGO",
+          "Digital-First Design",
+          "Playful Imagery",
+          "Accessible Branding",
+          "Social Responsibility",
+          "Altruistic Digital Impact",
+          "Connected Global Community",
+          "Other",
+          "Nonprofit Brand"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "gaming",
+          "collectibles"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "DB32FF06-D181-4BBF-A79B-D56671AD992E",
+        "name": "The AbleGamers Foundation",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Humanitarian NGO",
+          "NGO",
+          "Clean",
+          "Modern",
+          "Accessible",
+          "Professional",
+          "Limitless Gaming",
+          "Universal Digital Access",
+          "Social Connectivity",
+          "Other"
+        ],
+        "canonicalTags": [
+          "retro-gaming"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "gaming",
+          "electronics"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "58F8037E-26C6-4C63-86A0-6F3B7B2B35C0",
+        "name": "Kickstarter",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Website",
+          "Mobile App",
+          "Financial Services App",
+          "Clean UI",
+          "Minimalist Design",
+          "Community-Focused Visuals",
+          "Functionality-First Layout",
+          "Entrepreneurship",
+          "Social Impact",
+          "Creative Freedom"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "publishing",
+          "art-goods"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "016F7629-169D-4310-AFC8-486D80C67A48",
+        "name": "Beavertown Brewery",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Craft",
+          "Beer",
+          "Wine & Spirits",
+          "Illustrative",
+          "Colorful",
+          "Bold Typography",
+          "Psychedelic Influences",
+          "Vibrant Urban Living",
+          "Exploring Art Scenes",
+          "Curated Social Experiences"
+        ],
+        "canonicalTags": [
+          "craft-beer"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "92E0BD0D-FCF1-4E59-AD06-FA7F0E72E29A",
+        "name": "Dorkly",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Advertising Enabled",
+          "Website",
+          "Minimalist Illustration",
+          "Cartoonish Style",
+          "Bright Colors",
+          "Digital Graphics",
+          "Staying Current With Trends",
+          "Participating In Fandom Communities",
+          "Other",
+          "Media Brand"
+        ],
+        "canonicalTags": [
+          "art-print"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "gaming",
+          "toys"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "0A6ED7BF-53CE-489F-B340-920884F206A5",
+        "name": "Garage Project",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "2011 establishments in New Zealand",
+          "Beer",
+          "Craft",
+          "Wine & Spirits",
+          "Breweries of New Zealand",
+          "Artistic",
+          "Bold Typography",
+          "Eclectic Illustration",
+          "Vibrant Color Palettes",
+          "Industrial"
+        ],
+        "canonicalTags": [
+          "craft-beer",
+          "art-print"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "1A136E24-7CD6-4B98-8395-6FB1BFD43356",
+        "name": "Indiegogo",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Website",
+          "Clean Digital Interface",
+          "Minimalist Layout",
+          "High-Contrast Imagery",
+          "Community-Focused Visuals",
+          "Entrepreneurial Success",
+          "Early Adoption",
+          "Disruptive Thinking",
+          "Making An Impact",
+          "Other"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "publishing",
+          "art-goods"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "BFC08D2A-4BF5-4874-B2CD-7557385ED25B",
+        "name": "ThinkGeek",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "1999 establishments in Virginia",
+          "Website",
+          "Toy retailers of the United States",
+          "Retail companies established in 1999",
+          "Companies based in Fairfax",
+          "Online retailers of the United States",
+          "GameStop",
+          "Geeknet",
+          "Graphic Print Heavy",
+          "Bold Colors"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "gaming",
+          "toys",
+          "electronics"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "514197E5-3F3B-4508-9169-102718866294",
+        "name": "Oculus",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "Electronics",
+          "Gaming",
+          "Computer Accessories",
+          "Minimalist",
+          "Futuristic",
+          "Sleek",
+          "Modern",
+          "Virtual Exploration",
+          "Digital Immersion",
+          "Futuristic Living"
+        ],
+        "canonicalTags": [
+          "electronic",
+          "retro-gaming",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics",
+          "gaming"
+        ],
+        "priceTier": "premium"
+      }
+    ],
+    "crossDomain": [
+      {
+        "id": "9BA29C9C-3490-4678-B7D2-ED180FA13736",
+        "name": "Tabletop Simulator",
+        "type": "videogame",
+        "weight": 1,
+        "tags": [
+          "3D",
+          "Realistic physical simulation",
+          "highly modifiable",
+          "community-driven",
+          "party game",
+          "tabletop simulator",
+          "sandbox experience",
+          "social",
+          "creative",
+          "lighthearted"
+        ],
+        "canonicalTags": [
+          "tabletop"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "75520C59-1DF2-4A46-84FA-7D2558A19F05",
+        "name": "Gunpoint",
+        "type": "videogame",
+        "weight": 0.92,
+        "tags": [
+          "2D",
+          "pixel art",
+          "innovative",
+          "challenging",
+          "clever",
+          "suspenseful",
+          "intense",
+          "single player",
+          "stealth",
+          "puzzle"
+        ],
+        "canonicalTags": [
+          "retro-gaming"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "E32EB7E4-3019-4D92-978B-D3BC68D0B6A7",
+        "name": "Phoenix Point",
+        "type": "videogame",
+        "weight": 0.84,
+        "tags": [
+          "3D",
+          "Realistic",
+          "hardcore strategy",
+          "deep customization",
+          "story-rich",
+          "challenging",
+          "long campaign",
+          "tense",
+          "grim",
+          "mysterious"
+        ],
+        "canonicalTags": [
+          "metal"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "94B2BCC2-5563-4F17-86C5-6ACB9A5C3A41",
+        "name": "Wargroove",
+        "type": "videogame",
+        "weight": 0.77,
+        "tags": [
+          "2D",
+          "Pixel Art",
+          "Tactical",
+          "Strategic",
+          "Creative",
+          "Strategic",
+          "Engaging",
+          "Challenging",
+          "Single-player",
+          "Multiplayer"
+        ],
+        "canonicalTags": [
+          "retro-gaming"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "1760952E-27B8-47DA-BEE6-8CCBE77B0F47",
+        "name": "Children of Morta",
+        "type": "videogame",
+        "weight": 0.69,
+        "tags": [
+          "Pixel Art",
+          "2D",
+          "Hand-painted lighting and effects",
+          "emotional depth",
+          "family saga",
+          "challenging gameplay",
+          "beautiful pixel art",
+          "high replayability",
+          "melancholic",
+          "heroic"
+        ],
+        "canonicalTags": [
+          "retro-gaming"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "2325B602-F59D-4846-A29C-3539BD2BA327",
+        "name": "Strong Female Protagonist: Book One",
+        "type": "book",
+        "weight": 1,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "91BAF971-B72E-424B-8F48-734B08CCC969",
+        "name": "Advanced Class Guide (Pathfinder, 1st Edition)",
+        "type": "book",
+        "weight": 0.92,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "5E25F5FD-E834-45E6-990C-72A5C282F5DD",
+        "name": "Wondermark, Vol. 1: Beards of Our Forefathers",
+        "type": "book",
+        "weight": 0.84,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "5F4E5CAA-510D-4F77-9384-2E521BE0F92D",
+        "name": "The Adventure Zone Vol. 4: The Crystal Kingdom",
+        "type": "book",
+        "weight": 0.77,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "0F6B285F-A6C9-47C6-A35E-75959B1E443B",
+        "name": "The Devil You Know (Brimstone Angels, #6)",
+        "type": "book",
+        "weight": 0.69,
+        "tags": [
+          "Dungeons and Dragons",
+          "Adventure",
+          "Forgotten Realms",
+          "Audiobook",
+          "High Fantasy",
+          "Fantasy",
+          "Dragons",
+          "Science Fiction Fantasy",
+          "Fiction",
+          "18-24"
+        ],
+        "canonicalTags": [
+          "fantasy",
+          "sci-fi"
+        ],
+        "estimated": false
+      }
+    ],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "neon-arcade",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 8
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "playing-cards",
+        "name": "Playing card deck",
+        "oneLiner": "playing card deck in hot pink, adventurous by design",
+        "category": "objects",
+        "role": "hero",
+        "silhouette": "cards",
+        "fitScore": 45,
+        "scoreParts": {
+          "tag": 0.15,
+          "brand": 0.5760000000000001,
+          "cross": 1
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "gaming",
+            "entityName": "Death Saves",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "gaming",
+            "entityName": "Extra Life",
+            "points": 8.5,
+            "estimated": true
+          },
+          {
+            "kind": "tag",
+            "label": "board games",
+            "points": 8,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 4.5,
+          "price": 12.5,
+          "marginPerUnit": 8,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 265,
+          "breakEvenUnits": 22,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "card printer",
+        "supplierBrief": "54-card poker-size deck with custom back and 4 custom face cards, tuck box.",
+        "description": {
+          "text": "A playing card deck in hot pink and cyan, finished with a dice and meeple motif. 54-card poker-size deck with custom back and 4 custom face cards. The overall feel is adventurous — built for fans who lean into tabletop and sci-fi — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-pin-set",
+        "name": "Enamel pin set",
+        "oneLiner": "enamel pin set in hot pink, adventurous by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 49,
+        "scoreParts": {
+          "tag": 0.24,
+          "brand": 0.5760000000000001,
+          "cross": 1
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "retro gaming",
+            "points": 12,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "gaming",
+            "entityName": "Death Saves",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "gaming",
+            "entityName": "Extra Life",
+            "points": 8.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 12,
+          "marginPerUnit": 9.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 165,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            12,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "enamel pin maker",
+        "supplierBrief": "Set of 3 hard-enamel pins, 1.25 in, butterfly clasps, mold fee applies.",
+        "description": {
+          "text": "A pin set in hot pink and cyan, finished with a pixel art motif. Set of 3 hard-enamel pins. The overall feel is adventurous — built for fans who lean into tabletop and sci-fi — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "cassette-usb",
+        "name": "Cassette-style USB",
+        "oneLiner": "cassette-style usb in hot pink, adventurous by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "cassette",
+        "fitScore": 37,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.5760000000000001,
+          "cross": 1
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "retro gaming",
+            "points": 11,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "gaming",
+            "entityName": "Death Saves",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "cross_domain",
+            "label": "sci fi",
+            "points": 9,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 5,
+          "price": 18,
+          "marginPerUnit": 13,
+          "minRun": 50,
+          "setupCost": 30,
+          "firstRunCost": 280,
+          "breakEvenUnits": 16,
+          "typicalRange": [
+            18,
+            28
+          ],
+          "estimate": true
+        },
+        "supplierType": "USB / cassette duplicator",
+        "supplierBrief": "Cassette-style 8 GB USB pre-loaded with the artist's own tracks, printed J-card insert.",
+        "description": {
+          "text": "A USB drive in hot pink and cyan, finished with a cassette tape motif. Cassette-style 8 GB USB pre-loaded with the artist's own tracks. The overall feel is adventurous — built for fans who lean into tabletop and sci-fi — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Sticker pack",
+        "oneLiner": "sticker pack in hot pink, adventurous by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 37,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.5760000000000001,
+          "cross": 1
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "retro gaming",
+            "points": 11,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "gaming",
+            "entityName": "Death Saves",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "cross_domain",
+            "label": "sci fi",
+            "points": 9,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 0.43,
+          "price": 4,
+          "marginPerUnit": 3.58,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 42.5,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            4,
+            8
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "A sticker sheet in hot pink and cyan, finished with a hand drawn doodle motif. Die-cut or kiss-cut vinyl stickers. The overall feel is adventurous — built for fans who lean into tabletop and sci-fi — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Art print poster",
+        "oneLiner": "art print poster in hot pink, adventurous by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 29,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.369,
+          "cross": 0.9199999999999999
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "fantasy",
+            "points": 9,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "sci fi",
+            "points": 9,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Kickstarter",
+            "points": 7,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "A poster in hot pink and cyan, finished with a risograph sun motif. 18×24 in matte poster on 100 lb stock. The overall feel is adventurous — built for fans who lean into tabletop and sci-fi — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "custom-socks",
+        "name": "Custom socks",
+        "oneLiner": "custom socks in hot pink, adventurous by design",
+        "category": "apparel",
+        "role": "core",
+        "silhouette": "socks",
+        "fitScore": 12,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0.6133333333333334
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "retro gaming",
+            "points": 12,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 5.5,
+          "price": 15.5,
+          "marginPerUnit": 10,
+          "minRun": 36,
+          "setupCost": 60,
+          "firstRunCost": 258,
+          "breakEvenUnits": 17,
+          "typicalRange": [
+            14,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "custom sock knitter",
+        "supplierBrief": "Cotton-blend crew socks, jacquard logo or pattern, 2–3 colours, setup fee.",
+        "description": {
+          "text": "A crew socks in hot pink and cyan, finished with a hand drawn doodle motif. Cotton-blend crew socks. The overall feel is adventurous — built for fans who lean into tabletop and sci-fi — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "beer-label-collab",
+        "name": "Beer label collab",
+        "oneLiner": "beer label collab in hot pink, adventurous by design",
+        "category": "consumables",
+        "role": "limited",
+        "silhouette": "can",
+        "fitScore": 11,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.366,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Beavertown Brewery",
+            "points": 6,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Garage Project",
+            "points": 5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.75,
+          "price": 7.5,
+          "marginPerUnit": 4.75,
+          "minRun": 100,
+          "setupCost": 100,
+          "firstRunCost": 375,
+          "breakEvenUnits": 50,
+          "typicalRange": [
+            5,
+            9
+          ],
+          "estimate": true
+        },
+        "supplierType": "local brewery (partner-priced)",
+        "supplierBrief": "Limited batch brewed and packaged by a local brewery with your label art. Pricing and minimums are set by the brewery.",
+        "complianceNote": "Alcohol labelling, age checks and shipping rules vary by place — the brewery leads on compliance.",
+        "description": {
+          "text": "A craft beer can with custom wrap label in hot pink and cyan, finished with a hop cone motif. Limited batch brewed and packaged by a local brewery with your label art. Pricing and minimums are set by the brewery.. The overall feel is adventurous — built for fans who lean into tabletop and sci-fi — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "enamel-pin-set",
+            "cassette-usb",
+            "sticker-pack",
+            "poster-print",
+            "custom-socks"
+          ],
+          "runSizes": {
+            "enamel-pin-set": 50,
+            "cassette-usb": 50,
+            "sticker-pack": 100,
+            "poster-print": 50,
+            "custom-socks": 36
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "playing-cards"
+          ],
+          "runSizes": {
+            "playing-cards": 50
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "beer-label-collab"
+          ],
+          "runSizes": {
+            "beer-label-collab": 100
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "template",
+      "notes": []
+    }
+  },
+  "descriptionSource": "template",
+  "collabsError": "Error: /api/collabs: 503 {\"error\":{\"code\":\"QLOO_UNAVAILABLE\",\"message\":\"Taste data is unavailable. Try again.\"}}",
+  "elapsedMs": 86528
+}

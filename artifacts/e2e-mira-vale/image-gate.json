@@ -1,0 +1,8 @@
+{
+  "http": 422,
+  "error": {
+    "code": "VALIDATION",
+    "message": "Images are only generated after you approve the description.",
+    "field": "approved"
+  }
+}

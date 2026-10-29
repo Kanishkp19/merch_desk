@@ -1,0 +1,1378 @@
+{
+  "id": "b03",
+  "input": {
+    "text": "Photography studio making quiet architecture portraits. Audience likes books, galleries, and minimal design.",
+    "soundsLike": [],
+    "city": "New York",
+    "creatorType": "other",
+    "budget": "small"
+  },
+  "startedAt": "2026-10-29T11:51:16.311Z",
+  "providerCalls": {
+    "qloo": 7,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s21",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t32",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "minimal design architecture photography"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t32",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Architecture and design companies",
+      "count": 1
+    },
+    {
+      "type": "tool_call",
+      "id": "t33",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "books galleries minimal design quiet"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t33",
+      "tool": "qloo_search_tags",
+      "summary": "No tags for \"books galleries minimal design quiet\""
+    },
+    {
+      "type": "tool_call",
+      "id": "t34",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "photography studio New York"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t34",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Photography studio, New york, New York",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t35",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:architecture_and_design_companies",
+          "urn:tag:category:place:photography_studio",
+          "urn:tag:genre:media:new_york"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t35",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: New York, New York City, New York, New York City…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "t36",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:architecture_and_design_companies",
+          "urn:tag:category:place:photography_studio",
+          "urn:tag:genre:media:new_york"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t36",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t37",
+      "tool": "qloo_related",
+      "args": {
+        "type": "book",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:architecture_and_design_companies",
+          "urn:tag:category:place:photography_studio",
+          "urn:tag:genre:media:new_york"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t37",
+      "tool": "qloo_related",
+      "summary": "10 related books",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t38",
+      "tool": "qloo_related",
+      "args": {
+        "type": "tv_show",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:architecture_and_design_companies",
+          "urn:tag:category:place:photography_studio",
+          "urn:tag:genre:media:new_york"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t38",
+      "tool": "qloo_related",
+      "summary": "10 related tv shows",
+      "count": 10
+    },
+    {
+      "type": "note",
+      "text": "Built audience profile from description (no named artist). Seed tags: architecture & design companies, photography studio, New York media. Retrieved taste tags "
+    },
+    {
+      "type": "step",
+      "id": "s22",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "7 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s23",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s24",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:category:place:photography_studio"
+          ]
+        },
+        "tags": [
+          {
+            "name": "photography",
+            "canonical": "photography",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "books",
+            "canonical": "books",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "minimal",
+            "canonical": "minimal",
+            "weight": 0.9,
+            "source": "user"
+          }
+        ],
+        "brands": [
+          {
+            "id": "8BC061F3-5F35-4568-9C03-11E3BE3B9323",
+            "name": "Bellabeat  Wellness",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Health & Beauty",
+              "Elegant",
+              "Minimalist",
+              "Organic Shapes",
+              "Refined Metallic Finishes",
+              "Sleek",
+              "Optimized Health",
+              "Mind-Body Alignment",
+              "Longevity",
+              "Intuitive Self-Care"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "8723CE08-DEC0-4755-93D7-23E50029E1FD",
+            "name": "Xtep Sports",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Fashion",
+              "Athletic",
+              "Bold Colorways",
+              "Streamlined Silhouettes",
+              "Technical Mesh Textures",
+              "Dynamic Graphics",
+              "High-Visibility Accents",
+              "Marathon Completion",
+              "Professional Court Success",
+              "Athletic Mastery"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "A34E26E1-473E-45A2-AA84-7953C5876785",
+            "name": "Zasport",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Fashion",
+              "Athletic",
+              "Minimalist",
+              "Technical",
+              "Functional",
+              "Sleek",
+              "Sport-Oriented",
+              "Olympic Achievement",
+              "Professional Excellence",
+              "Physical Mastery"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "B88F1C3E-EDF3-4AAC-964C-0AF7CA955E48",
+            "name": "Bleusalt",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Casual",
+              "Fashion",
+              "Minimalist",
+              "Neutral Color Palette",
+              "Clean Lines",
+              "Essentialist Design",
+              "Soft-Touch Textures",
+              "Minimalist Living",
+              "Refined Relaxation",
+              "Sustainable Luxury"
+            ],
+            "canonicalTags": [
+              "minimal",
+              "eco"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "21B69FC7-69CC-4801-909D-5488F9535439",
+            "name": "Cheil Worldwide",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "South Korean companies established in 1973",
+              "Samsung subsidiaries",
+              "Companies based in Seoul",
+              "Companies listed on the Korea Exchange",
+              "Advertising agencies of South Korea",
+              "South Korean brands",
+              "Business services companies established in 1973",
+              "Professional Services",
+              "Cheil Worldwide",
+              "Minimalist"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "69448BD7-DCD9-4757-9337-7CDF6EAD832F",
+            "name": "BLK DNM",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Fashion",
+              "Monochromatic",
+              "Minimalist",
+              "Raw Denim Textures",
+              "Tailored Silhouettes",
+              "Clean Lines",
+              "Global Citizen",
+              "Artistic Freedom",
+              "Effortless Elegance",
+              "Fashion"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "3ABF81E2-7110-4038-8D7A-4446D941550D",
+            "name": "Snowfox Skincare",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Health & Beauty",
+              "Minimalist",
+              "Clean",
+              "Naturalistic",
+              "Earthy Tones",
+              "Holistic Wellbeing",
+              "Mindful Living",
+              "Radiant Skin Health",
+              "CPG",
+              "Product Brand"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "0DE7D28A-23D2-4DBA-A542-1F6FA815B01A",
+            "name": "Alvin Valley",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Formalwear",
+              "Fashion",
+              "Haute Couture",
+              "Minimalist",
+              "Structured",
+              "Clean Lines",
+              "Sophisticated Palette",
+              "International Travel",
+              "Coastal Living",
+              "Luxury Leisure"
+            ],
+            "canonicalTags": [
+              "minimal",
+              "travel",
+              "luxury"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "7D97F4B9-3BC9-4889-B769-C9BA75247CAB",
+            "name": "Yigal Azrouël",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Fashion",
+              "Casual",
+              "Draped Silhouettes",
+              "Tailored Fits",
+              "Neutral Color Palettes",
+              "Architectural Lines",
+              "Sophisticated Detailing",
+              "Global Travel",
+              "Cultural Engagement",
+              "Private Events"
+            ],
+            "canonicalTags": [
+              "travel"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "8DF91942-0217-42F5-83B6-ED619C8D7C8C",
+            "name": "Scala",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "Fashion",
+              "Casual",
+              "Formalwear",
+              "Intricate Beadwork",
+              "Sequin Embellishments",
+              "Glamorous Silhouettes",
+              "Sparkling Textures",
+              "Red Carpet Glamour",
+              "Social Media Spotlight",
+              "Perfect Milestone Moments"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          }
+        ],
+        "crossDomain": [
+          {
+            "id": "930BB117-E9F8-4F22-9BBB-A5CBECD42C2E",
+            "name": "The Watcher",
+            "type": "tv_show",
+            "weight": 1,
+            "tags": [
+              "Suspenseful",
+              "Vulnerable",
+              "Swimming pool",
+              "Slow burn paranoia",
+              "Unsettling intimacy",
+              "Boy",
+              "Letters",
+              "Whodunnit mystery",
+              "Mysterious house",
+              "Suburban unease"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "EE526A76-98AB-46EC-9F32-F1D8148C97B5",
+            "name": "Wu-Tang: An American Saga",
+            "type": "tv_show",
+            "weight": 0.92,
+            "tags": [
+              "Biographical",
+              "Pursuit of dreams",
+              "Drama",
+              "Music industry",
+              "The mentor",
+              "20th century",
+              "Rapper",
+              "Biography",
+              "Wu tang clan",
+              "The rebel"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "C6109487-B909-49FB-8FCA-20C7D83B9186",
+            "name": "Mickey Mouse Clubhouse",
+            "type": "tv_show",
+            "weight": 0.84,
+            "tags": [
+              "Cartoon duck",
+              "The hero",
+              "Anthropomorphic dog",
+              "Magic",
+              "Mouse",
+              "Breaking the fourth wall",
+              "Cooperation",
+              "Character driven",
+              "Donald duck character",
+              "Magical house"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "24B807EE-D591-4E70-87A5-0CEA76A3D81B",
+            "name": "Wu Assassins",
+            "type": "tv_show",
+            "weight": 0.77,
+            "tags": [
+              "Urban fantasy",
+              "Action",
+              "Villain",
+              "Superhero",
+              "Beat em up",
+              "Supernatural fiction",
+              "Mystical adventure",
+              "Chef",
+              "Male chef",
+              "Wu warlords"
+            ],
+            "canonicalTags": [
+              "fantasy"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "D8F0F18F-133F-43A1-B775-9EF839E07D61",
+            "name": "The Outsider",
+            "type": "tv_show",
+            "weight": 0.69,
+            "tags": [
+              "Murder mystery",
+              "Accused of abduction",
+              "Drama",
+              "Isolation",
+              "Conflicted",
+              "The wrongly accused",
+              "Dayton ohio",
+              "The monster",
+              "Murder",
+              "Horror literature"
+            ],
+            "canonicalTags": [
+              "books"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "8AFE4F96-76C7-47EF-9C83-8865E1DD9E34",
+            "name": "Downtown: My Manhattan",
+            "type": "book",
+            "weight": 1,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "32C22501-77E7-47AF-A1E4-52BE0C78B1D4",
+            "name": "Strivers Row (City of Fire #3)",
+            "type": "book",
+            "weight": 0.92,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "37D62BF8-C43E-418D-85D6-139EB4111E41",
+            "name": "Great Fortune: The Epic of Rockefeller Center",
+            "type": "book",
+            "weight": 0.84,
+            "tags": [
+              "New York",
+              "American History",
+              "Audiobook",
+              "Nonfiction",
+              "History",
+              "Architecture",
+              "Business",
+              "Biography",
+              "Urban Studies",
+              "American"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "2199052B-4B34-4E11-BA88-7E1DEB9468AA",
+            "name": "Paradise Alley (City of Fire #2)",
+            "type": "book",
+            "weight": 0.77,
+            "tags": [
+              "Novels",
+              "New York",
+              "American History",
+              "Historical Fiction",
+              "Fiction",
+              "Historical",
+              "American Civil War",
+              "American",
+              "19th Century",
+              "Civil War"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "7928D0B0-E210-4BD6-BC8A-56B8D7C0FC00",
+            "name": "Tabloid City",
+            "type": "book",
+            "weight": 0.69,
+            "tags": [
+              "Adult",
+              "Contemporary",
+              "Mystery",
+              "Thriller",
+              "Crime",
+              "Audiobook",
+              "Literary Fiction",
+              "Mystery Thriller",
+              "Fiction",
+              "New York"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          }
+        ],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": false,
+        "paletteId": "ink-literary",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 7
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:category:place:photography_studio"
+      ]
+    },
+    "tags": [
+      {
+        "name": "photography",
+        "canonical": "photography",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "books",
+        "canonical": "books",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "minimal",
+        "canonical": "minimal",
+        "weight": 0.9,
+        "source": "user"
+      }
+    ],
+    "brands": [
+      {
+        "id": "8BC061F3-5F35-4568-9C03-11E3BE3B9323",
+        "name": "Bellabeat  Wellness",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Health & Beauty",
+          "Elegant",
+          "Minimalist",
+          "Organic Shapes",
+          "Refined Metallic Finishes",
+          "Sleek",
+          "Optimized Health",
+          "Mind-Body Alignment",
+          "Longevity",
+          "Intuitive Self-Care"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "8723CE08-DEC0-4755-93D7-23E50029E1FD",
+        "name": "Xtep Sports",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Fashion",
+          "Athletic",
+          "Bold Colorways",
+          "Streamlined Silhouettes",
+          "Technical Mesh Textures",
+          "Dynamic Graphics",
+          "High-Visibility Accents",
+          "Marathon Completion",
+          "Professional Court Success",
+          "Athletic Mastery"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "A34E26E1-473E-45A2-AA84-7953C5876785",
+        "name": "Zasport",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Fashion",
+          "Athletic",
+          "Minimalist",
+          "Technical",
+          "Functional",
+          "Sleek",
+          "Sport-Oriented",
+          "Olympic Achievement",
+          "Professional Excellence",
+          "Physical Mastery"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "B88F1C3E-EDF3-4AAC-964C-0AF7CA955E48",
+        "name": "Bleusalt",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Casual",
+          "Fashion",
+          "Minimalist",
+          "Neutral Color Palette",
+          "Clean Lines",
+          "Essentialist Design",
+          "Soft-Touch Textures",
+          "Minimalist Living",
+          "Refined Relaxation",
+          "Sustainable Luxury"
+        ],
+        "canonicalTags": [
+          "minimal",
+          "eco"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "21B69FC7-69CC-4801-909D-5488F9535439",
+        "name": "Cheil Worldwide",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "South Korean companies established in 1973",
+          "Samsung subsidiaries",
+          "Companies based in Seoul",
+          "Companies listed on the Korea Exchange",
+          "Advertising agencies of South Korea",
+          "South Korean brands",
+          "Business services companies established in 1973",
+          "Professional Services",
+          "Cheil Worldwide",
+          "Minimalist"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "69448BD7-DCD9-4757-9337-7CDF6EAD832F",
+        "name": "BLK DNM",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Fashion",
+          "Monochromatic",
+          "Minimalist",
+          "Raw Denim Textures",
+          "Tailored Silhouettes",
+          "Clean Lines",
+          "Global Citizen",
+          "Artistic Freedom",
+          "Effortless Elegance",
+          "Fashion"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "3ABF81E2-7110-4038-8D7A-4446D941550D",
+        "name": "Snowfox Skincare",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Health & Beauty",
+          "Minimalist",
+          "Clean",
+          "Naturalistic",
+          "Earthy Tones",
+          "Holistic Wellbeing",
+          "Mindful Living",
+          "Radiant Skin Health",
+          "CPG",
+          "Product Brand"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "0DE7D28A-23D2-4DBA-A542-1F6FA815B01A",
+        "name": "Alvin Valley",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Formalwear",
+          "Fashion",
+          "Haute Couture",
+          "Minimalist",
+          "Structured",
+          "Clean Lines",
+          "Sophisticated Palette",
+          "International Travel",
+          "Coastal Living",
+          "Luxury Leisure"
+        ],
+        "canonicalTags": [
+          "minimal",
+          "travel",
+          "luxury"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "7D97F4B9-3BC9-4889-B769-C9BA75247CAB",
+        "name": "Yigal Azrouël",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Fashion",
+          "Casual",
+          "Draped Silhouettes",
+          "Tailored Fits",
+          "Neutral Color Palettes",
+          "Architectural Lines",
+          "Sophisticated Detailing",
+          "Global Travel",
+          "Cultural Engagement",
+          "Private Events"
+        ],
+        "canonicalTags": [
+          "travel"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "8DF91942-0217-42F5-83B6-ED619C8D7C8C",
+        "name": "Scala",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "Fashion",
+          "Casual",
+          "Formalwear",
+          "Intricate Beadwork",
+          "Sequin Embellishments",
+          "Glamorous Silhouettes",
+          "Sparkling Textures",
+          "Red Carpet Glamour",
+          "Social Media Spotlight",
+          "Perfect Milestone Moments"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      }
+    ],
+    "crossDomain": [
+      {
+        "id": "930BB117-E9F8-4F22-9BBB-A5CBECD42C2E",
+        "name": "The Watcher",
+        "type": "tv_show",
+        "weight": 1,
+        "tags": [
+          "Suspenseful",
+          "Vulnerable",
+          "Swimming pool",
+          "Slow burn paranoia",
+          "Unsettling intimacy",
+          "Boy",
+          "Letters",
+          "Whodunnit mystery",
+          "Mysterious house",
+          "Suburban unease"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "EE526A76-98AB-46EC-9F32-F1D8148C97B5",
+        "name": "Wu-Tang: An American Saga",
+        "type": "tv_show",
+        "weight": 0.92,
+        "tags": [
+          "Biographical",
+          "Pursuit of dreams",
+          "Drama",
+          "Music industry",
+          "The mentor",
+          "20th century",
+          "Rapper",
+          "Biography",
+          "Wu tang clan",
+          "The rebel"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "C6109487-B909-49FB-8FCA-20C7D83B9186",
+        "name": "Mickey Mouse Clubhouse",
+        "type": "tv_show",
+        "weight": 0.84,
+        "tags": [
+          "Cartoon duck",
+          "The hero",
+          "Anthropomorphic dog",
+          "Magic",
+          "Mouse",
+          "Breaking the fourth wall",
+          "Cooperation",
+          "Character driven",
+          "Donald duck character",
+          "Magical house"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "24B807EE-D591-4E70-87A5-0CEA76A3D81B",
+        "name": "Wu Assassins",
+        "type": "tv_show",
+        "weight": 0.77,
+        "tags": [
+          "Urban fantasy",
+          "Action",
+          "Villain",
+          "Superhero",
+          "Beat em up",
+          "Supernatural fiction",
+          "Mystical adventure",
+          "Chef",
+          "Male chef",
+          "Wu warlords"
+        ],
+        "canonicalTags": [
+          "fantasy"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "D8F0F18F-133F-43A1-B775-9EF839E07D61",
+        "name": "The Outsider",
+        "type": "tv_show",
+        "weight": 0.69,
+        "tags": [
+          "Murder mystery",
+          "Accused of abduction",
+          "Drama",
+          "Isolation",
+          "Conflicted",
+          "The wrongly accused",
+          "Dayton ohio",
+          "The monster",
+          "Murder",
+          "Horror literature"
+        ],
+        "canonicalTags": [
+          "books"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "8AFE4F96-76C7-47EF-9C83-8865E1DD9E34",
+        "name": "Downtown: My Manhattan",
+        "type": "book",
+        "weight": 1,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "32C22501-77E7-47AF-A1E4-52BE0C78B1D4",
+        "name": "Strivers Row (City of Fire #3)",
+        "type": "book",
+        "weight": 0.92,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "37D62BF8-C43E-418D-85D6-139EB4111E41",
+        "name": "Great Fortune: The Epic of Rockefeller Center",
+        "type": "book",
+        "weight": 0.84,
+        "tags": [
+          "New York",
+          "American History",
+          "Audiobook",
+          "Nonfiction",
+          "History",
+          "Architecture",
+          "Business",
+          "Biography",
+          "Urban Studies",
+          "American"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "2199052B-4B34-4E11-BA88-7E1DEB9468AA",
+        "name": "Paradise Alley (City of Fire #2)",
+        "type": "book",
+        "weight": 0.77,
+        "tags": [
+          "Novels",
+          "New York",
+          "American History",
+          "Historical Fiction",
+          "Fiction",
+          "Historical",
+          "American Civil War",
+          "American",
+          "19th Century",
+          "Civil War"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "7928D0B0-E210-4BD6-BC8A-56B8D7C0FC00",
+        "name": "Tabloid City",
+        "type": "book",
+        "weight": 0.69,
+        "tags": [
+          "Adult",
+          "Contemporary",
+          "Mystery",
+          "Thriller",
+          "Crime",
+          "Audiobook",
+          "Literary Fiction",
+          "Mystery Thriller",
+          "Fiction",
+          "New York"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      }
+    ],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": false,
+    "paletteId": "ink-literary",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 7
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "tote-bag",
+        "name": "Canvas Tote Bag",
+        "oneLiner": "Sturdy canvas for daily literary carry.",
+        "category": "objects",
+        "role": "hero",
+        "silhouette": "tote",
+        "fitScore": 32,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0.45999999999999996
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "books",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "books",
+            "points": 9,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 15,
+          "marginPerUnit": 11.5,
+          "minRun": 36,
+          "setupCost": 25,
+          "firstRunCost": 151,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            15,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "10 oz natural canvas tote, 1–2 colour print, reinforced handles.",
+        "description": {
+          "text": "A natural canvas tote features reinforced handles and a minimalist design. A single ink blue geometric motif sits subtly against the paper white fabric. The aesthetic is quiet and observational, evoking the structure of a well-organized bookshelf. Mustard accents appear sparingly, keeping the overall look clean, functional, and grounded in a understated, artistic simplicity that prioritizes utility and form.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-pin-set",
+        "name": "Minimalist Enamel Pin Set",
+        "oneLiner": "Three small, quiet observational icons.",
+        "category": "objects",
+        "role": "limited",
+        "silhouette": "round",
+        "fitScore": 10,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0.5133333333333333
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "fantasy",
+            "points": 10,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 12,
+          "marginPerUnit": 9.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 165,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            12,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "enamel pin maker",
+        "supplierBrief": "Set of 3 hard-enamel pins, 1.25 in, butterfly clasps, mold fee applies.",
+        "description": {
+          "text": "Three small hard-enamel pins display abstract, observational shapes inspired by book spines and camera lenses. The designs use ink blue and mustard fills on a paper white background. The surfaces are smooth and flat, reflecting light softly. The collection feels collected and personal, with a muted, quiet aesthetic that suits careful observation and minimalistic collection habits without any loud imagery or text.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Minimalist Art Print",
+        "oneLiner": "Quiet observational composition on matte stock.",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 10,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0.5133333333333333
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "fantasy",
+            "points": 10,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "An 18×24 inch matte poster presents a sparse, observational landscape. Large areas of paper white negative space surround a single ink blue horizon line. A small mustard geometric shape anchors the lower corner. The design is stripped back, focusing on light and shadow. The mood is still and contemplative, capturing a fleeting moment in a minimal, photographic style that encourages prolonged, quiet viewing from a distance.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "zine",
+        "name": "Saddle-Stitched Mini Zine",
+        "oneLiner": "Handmade pages of quiet photographic fragments.",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 9,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0.45999999999999996
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "books",
+            "points": 9,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 7,
+          "marginPerUnit": 4.5,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 125,
+          "breakEvenUnits": 18,
+          "typicalRange": [
+            6,
+            12
+          ],
+          "estimate": true
+        },
+        "supplierType": "copy / print shop",
+        "supplierBrief": "16-page half-letter zine, saddle-stitched, colour cover, black-and-white inside.",
+        "description": {
+          "text": "A sixteen-page saddle-stitched zine features a colour cover in ink blue with a paper white title area. Inside, black-and-white photographic fragments are arranged with generous spacing. The layout feels handmade and deliberate. The visual rhythm is slow and observational, mimicking the pacing of a quiet morning read. The tactile experience of the stapled binding complements the minimalist, introspective mood of the printed content.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "acrylic-keychain",
+        "name": "Acrylic Keychain",
+        "oneLiner": "Clear acrylic with a quiet ink motif.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 1.85,
+          "price": 8,
+          "marginPerUnit": 6.15,
+          "minRun": 50,
+          "setupCost": 25,
+          "firstRunCost": 117.5,
+          "breakEvenUnits": 15,
+          "typicalRange": [
+            8,
+            14
+          ],
+          "estimate": true
+        },
+        "supplierType": "acrylic charm maker",
+        "supplierBrief": "2 in double-sided printed acrylic charm with ring and clasp.",
+        "description": {
+          "text": "A two-inch double-sided acrylic charm features a single, small ink blue square on a clear background. The edges are polished and smooth. When held up to the light, the transparency creates a subtle, observational play with depth. The design is stark and minimal, avoiding busy patterns. It offers a quiet, reflective accessory that complements simple, clean aesthetics without drawing excessive attention or demanding visual engagement.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "poster-print",
+            "zine",
+            "acrylic-keychain"
+          ],
+          "runSizes": {
+            "poster-print": 50,
+            "zine": 50,
+            "acrylic-keychain": 50
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "tote-bag"
+          ],
+          "runSizes": {
+            "tote-bag": 36
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "enamel-pin-set"
+          ],
+          "runSizes": {
+            "enamel-pin-set": 50
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "llm",
+      "notes": [
+        "Exploratory picks (no direct audience evidence yet): Acrylic Keychain."
+      ]
+    }
+  },
+  "descriptionSource": "llm",
+  "collabsError": "Error: /api/collabs: 503 {\"error\":{\"code\":\"QLOO_UNAVAILABLE\",\"message\":\"Taste data is unavailable. Try again.\"}}",
+  "elapsedMs": 63122
+}

@@ -1,0 +1,2043 @@
+{
+  "id": "b04",
+  "input": {
+    "text": "Known indie rock band with listeners who collect vinyl and go to small venues.",
+    "artist": {
+      "id": "69B1344A-11B3-46AC-ACD2-098DE349E9D3",
+      "name": "The National"
+    },
+    "soundsLike": [],
+    "city": "Chicago",
+    "creatorType": "musician",
+    "budget": "large"
+  },
+  "startedAt": "2026-10-28T21:51:29.496Z",
+  "providerCalls": {
+    "qloo": 6,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "events": [
+    {
+      "type": "step",
+      "id": "s25",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t42",
+      "tool": "qloo_search_entity",
+      "args": {
+        "query": "The National",
+        "type": "artist"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t42",
+      "tool": "qloo_search_entity",
+      "summary": "Found The National +4 more (artist)",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t43",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [
+          "192BB96E-F4BD-4A76-B24E-CD049EC9DFA2"
+        ],
+        "tagIds": []
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t43",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Entertainment, Inexpensive, Bar, Chips…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "t44",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [
+          "192BB96E-F4BD-4A76-B24E-CD049EC9DFA2"
+        ],
+        "tagIds": []
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t44",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t45",
+      "tool": "qloo_related",
+      "args": {
+        "type": "movie",
+        "entityIds": [
+          "192BB96E-F4BD-4A76-B24E-CD049EC9DFA2"
+        ],
+        "tagIds": []
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t45",
+      "tool": "qloo_related",
+      "summary": "10 related movies",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t46",
+      "tool": "qloo_related",
+      "args": {
+        "type": "book",
+        "entityIds": [
+          "192BB96E-F4BD-4A76-B24E-CD049EC9DFA2"
+        ],
+        "tagIds": []
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t46",
+      "tool": "qloo_related",
+      "summary": "10 related books",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t47",
+      "tool": "qloo_related",
+      "args": {
+        "type": "podcast",
+        "entityIds": [
+          "192BB96E-F4BD-4A76-B24E-CD049EC9DFA2"
+        ],
+        "tagIds": []
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t47",
+      "tool": "qloo_related",
+      "summary": "10 related podcasts",
+      "count": 10
+    },
+    {
+      "type": "note",
+      "text": "Built taste profile for The National fans: taste tags (Entertainment, Inexpensive, Bar, Chips, etc.), 10 related brands, 10 movies, 10 books, and 10 podcasts. F"
+    },
+    {
+      "type": "step",
+      "id": "s26",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "6 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s27",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s28",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "A_artist_found",
+        "artist": {
+          "id": "192BB96E-F4BD-4A76-B24E-CD049EC9DFA2",
+          "name": "The National"
+        },
+        "seeds": {
+          "entityIds": [
+            "192BB96E-F4BD-4A76-B24E-CD049EC9DFA2"
+          ],
+          "tagIds": []
+        },
+        "tags": [
+          {
+            "name": "Entertainment",
+            "qlooTagId": "urn:tag:genre:brand:entertainment",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Inexpensive",
+            "qlooTagId": "urn:tag:cost_description:place:inexpensive",
+            "weight": 0.95,
+            "source": "qloo"
+          },
+          {
+            "name": "Bar",
+            "qlooTagId": "urn:tag:genre:place:restaurant:bar",
+            "weight": 0.9,
+            "source": "qloo"
+          },
+          {
+            "name": "Chips",
+            "qlooTagId": "urn:tag:specialty_dish:place:chips",
+            "weight": 0.85,
+            "source": "qloo"
+          },
+          {
+            "name": "American Express",
+            "qlooTagId": "urn:tag:credit_card:place:american_express",
+            "weight": 0.8,
+            "source": "qloo"
+          },
+          {
+            "name": "Two Star",
+            "qlooTagId": "urn:tag:hotel_rating:place:two_star",
+            "weight": 0.75,
+            "source": "qloo"
+          },
+          {
+            "name": "Identifies as women-owned",
+            "qlooTagId": "urn:tag:inclusivity:place:identifies_as_women_owned",
+            "weight": 0.7,
+            "source": "qloo"
+          },
+          {
+            "name": "Romantic Relationships",
+            "qlooTagId": "urn:tag:theme:qloo:romantic_relationships",
+            "weight": 0.65,
+            "source": "qloo"
+          },
+          {
+            "name": " indie",
+            "qlooTagId": "urn:tag:genre:music:indie",
+            "canonical": "indie",
+            "weight": 0.6,
+            "source": "qloo"
+          },
+          {
+            "name": "Modern Life",
+            "qlooTagId": "urn:tag:theme:qloo:modern_life",
+            "weight": 0.5,
+            "source": "qloo"
+          },
+          {
+            "name": " folk",
+            "qlooTagId": "urn:tag:genre:music:folk",
+            "canonical": "folk",
+            "weight": 0.4,
+            "source": "qloo"
+          },
+          {
+            "name": "Alternative Rock",
+            "qlooTagId": "urn:tag:genre:music:alternative_rock",
+            "weight": 0.35,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "EE2B58FF-37F6-4521-912F-55EBC25D83E2",
+            "name": "Levi Strauss & Co.",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Jeans",
+              "Fashion",
+              "Iconic Red Tab",
+              "Leather Patch Branding",
+              "Indigo Washes",
+              "Durable Stitching",
+              "Classic Cuts",
+              "Road Trips",
+              "Creative Expression",
+              "Adventure"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "workwear",
+              "vintage-americana",
+              "streetwear"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "E50919AC-B1FF-410A-9B0D-DFA914286C3C",
+            "name": "Puma",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Footwear",
+              "Companies listed on the Frankfurt Stock Exchange",
+              "Shoe companies of Germany",
+              "Running",
+              "Puma (brand)",
+              "Company in the MDAX",
+              "Sneakers",
+              "Societates Europaeae",
+              "Basketball",
+              "Companies based in Herzogenaurach"
+            ],
+            "canonicalTags": [
+              "fitness"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "sportswear",
+              "streetwear"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "6890A77C-8839-477E-8A12-E5F911000575",
+            "name": "Timberland",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Outdoor clothing brands",
+              "Casual",
+              "Clothing companies established in 1952",
+              "1952 establishments in New Hampshire",
+              "Fashion",
+              "Other",
+              "Clothing brands of the United States",
+              "Stratham",
+              "2011 mergers and acquisitions",
+              "Lifestyle / Casual"
+            ],
+            "canonicalTags": [
+              "outdoors"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "outdoor",
+              "workwear",
+              "streetwear"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "3EC9E7DF-1497-44C4-8642-E7FA2FF3A99D",
+            "name": "Calvin Klein",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Casual",
+              "Other",
+              "Shoe brands",
+              "1980s fashion",
+              "Lifestyle / Casual",
+              "Clothing brands of the United States",
+              "Design companies established in 1968",
+              "Clothing companies based in New York City",
+              "High fashion brands",
+              "Eyewear brands of the United States"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion",
+              "luxury"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "82946F1C-AB10-4669-B9A1-640A01E2A407",
+            "name": "Tommy Hilfiger",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Bags & Leather",
+              "Fashion",
+              "Accessories",
+              "Basketball",
+              "Other",
+              "Lifestyle / Casual",
+              "Casual",
+              "Jeans",
+              "Health & Beauty",
+              "Footwear"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "vintage-americana",
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "AC8F9047-F23D-4A54-BBAA-A3CBD2991C02",
+            "name": "Vans",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "1990s fashion",
+              "Sportswear brands",
+              "1980s fashion",
+              "2020s fashion",
+              "Lifestyle / Casual",
+              "1966 establishments in California",
+              "Skateboarding companies",
+              "VF Corporation",
+              "Clothing companies established in 1966",
+              "Skateboard shoe companies"
+            ],
+            "canonicalTags": [
+              "skate"
+            ],
+            "estimated": false,
+            "brandCategories": [
+              "skate",
+              "streetwear"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "2723B38E-C3E2-435F-A77B-A94A92D68D07",
+            "name": "Ralph Lauren",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Lauren family",
+              "Bags & Leather",
+              "Watch",
+              "1980s fashion",
+              "American companies established in 1967",
+              "High fashion brands",
+              "Publicly traded companies based in New York City",
+              "Shoe companies of the United States",
+              "Suit makers",
+              "Swimwear"
+            ],
+            "canonicalTags": [],
+            "estimated": false,
+            "brandCategories": [
+              "vintage-americana",
+              "boutique-fashion"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "84B18312-3C2B-41A9-863B-89651C2F6A2C",
+            "name": "Gucci",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Health & Beauty",
+              "Eyewear brands of Italy",
+              "Gucci",
+              "Lifestyle / Casual",
+              "1980s fashion",
+              "Design companies established in 1921",
+              "American Motors",
+              "Manufacturing companies based in Florence",
+              "Haute Couture",
+              "Eyewear"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "luxury",
+              "boutique-fashion"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "D5B78065-6DBB-4DDB-80DF-6495B9B1006B",
+            "name": "Apple Inc",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "American business executives",
+              "Apple Inc. lists",
+              "Companies in the PRISM network",
+              "Nigerian women business executives",
+              "Headphones",
+              "Phones & Tablets",
+              "American women business executives",
+              "Home computer hardware companies",
+              "Companies in the NASDAQ-100",
+              "Retail companies of the United States"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "electronics",
+              "techwear"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "5760BF0A-EBDF-4B9A-88CD-69F4BF08C362",
+            "name": "Louis Vuitton",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "French brands",
+              "Footwear",
+              "French collaborators with Nazi Germany",
+              "High fashion brands",
+              "French companies established in 1854",
+              "Companies based in Paris",
+              "Bags & Leather",
+              "Other",
+              "Perfume houses",
+              "Accessories"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "luxury",
+              "boutique-fashion"
+            ],
+            "priceTier": "premium"
+          }
+        ],
+        "crossDomain": [
+          {
+            "id": "603C7E42-C952-45CB-8B6F-3B803FEFB2F7",
+            "name": "Lost in Translation",
+            "type": "movie",
+            "weight": 1,
+            "tags": [
+              "Age disparate romance",
+              "Postmodern",
+              "Cigarette smoking",
+              "Reflective",
+              "Unhappiness",
+              "Tokyo japan",
+              "Fish out of water",
+              "Photographer",
+              "Billboard",
+              "Sushi restaurant"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "DCD69D0D-CAFC-4BC8-BF5C-0F87CC533E5B",
+            "name": "Beginners",
+            "type": "movie",
+            "weight": 0.92,
+            "tags": [
+              "Relationship",
+              "Shaving someone",
+              "Aging",
+              "Montage",
+              "Reference to bill clinton",
+              "Coming out",
+              "Gay priest",
+              "Memory",
+              "Oxygen tank",
+              "Love"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "79A98408-6B84-4416-99B4-A4B3563BEAFB",
+            "name": "Moonrise Kingdom",
+            "type": "movie",
+            "weight": 0.84,
+            "tags": [
+              "Boat",
+              "Adultery",
+              "Candy cinema",
+              "Letter",
+              "Woods",
+              "Postmodern",
+              "Lightning",
+              "First love",
+              "New england",
+              "Wading across a river"
+            ],
+            "canonicalTags": [
+              "cinema"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "EFD8B201-CC97-462C-AFE2-5CC6352239E6",
+            "name": "Frances Ha",
+            "type": "movie",
+            "weight": 0.77,
+            "tags": [
+              "Brooklyn",
+              "Alarm clock",
+              "Female best friends",
+              "The fool",
+              "Self absorbed",
+              "Modern dance",
+              "Shared bed",
+              "College",
+              "Comedy",
+              "Reflective"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "AE1E52EE-BAB5-4C6E-84C3-A3F4346C26C3",
+            "name": "Garden State",
+            "type": "movie",
+            "weight": 0.69,
+            "tags": [
+              "Psychiatrist",
+              "Depression",
+              "Music",
+              "Medicine",
+              "Forgiveness",
+              "Knight in shining armor",
+              "Organist",
+              "Swimming",
+              "Medication",
+              "Guardian"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "4C289B92-279B-45D2-8118-CAEEA3A839EE",
+            "name": "One Two Three Four: The Beatles in Time",
+            "type": "book",
+            "weight": 1,
+            "tags": [
+              "Music",
+              "Biography",
+              "Audiobook",
+              "British Literature",
+              "Nonfiction",
+              "History",
+              "Historical",
+              "Pop Culture",
+              "Rock N Roll",
+              "Biography Memoir"
+            ],
+            "canonicalTags": [
+              "books",
+              "pop"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "BE5A064E-219C-4495-8972-4CC1C66AF76F",
+            "name": "And Then It Fell Apart",
+            "type": "book",
+            "weight": 0.92,
+            "tags": [
+              "Memoir",
+              "Autobiography",
+              "Nonfiction",
+              "Art",
+              "Humor",
+              "The United States Of America",
+              "Music",
+              "Biography",
+              "Audiobook",
+              "American"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "FA76A8F9-F3A6-414B-9918-5E8884653B46",
+            "name": "Overpaid, Oversexed and Over There: How a Few Skinny Brits with Bad Teeth Rocked America",
+            "type": "book",
+            "weight": 0.84,
+            "tags": [
+              "Music",
+              "Nonfiction",
+              "Audiobook",
+              "History",
+              "18-24",
+              "25-29",
+              "30-34",
+              "35-44",
+              "45-54",
+              "55+"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "1EFB874A-B87F-41AE-9B90-13AFDB9DD9B3",
+            "name": "Slowhand: The Life and Music of Eric Clapton",
+            "type": "book",
+            "weight": 0.77,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "83CE7A5D-0391-42C6-9B25-FB3E2A81D54E",
+            "name": "Chums: How A Tiny Caste of Oxford Tories Took Over The UK",
+            "type": "book",
+            "weight": 0.69,
+            "tags": [
+              "Sociology",
+              "Nonfiction",
+              "Society",
+              "Journalism",
+              "Politics",
+              "History",
+              "Biography",
+              "Class",
+              "British Literature",
+              "Audiobook"
+            ],
+            "canonicalTags": [
+              "books"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "D95B20A8-0CEA-4BDC-8074-60A303FA1980",
+            "name": "Song Exploder",
+            "type": "podcast",
+            "weight": 1,
+            "tags": [
+              "Music",
+              "Podcasts"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "1B466B0E-323A-4EFD-A314-8737F58F1E1B",
+            "name": "99% Invisible",
+            "type": "podcast",
+            "weight": 0.92,
+            "tags": [
+              "Podcasts",
+              "Design",
+              "Arts"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "B4D6B6FD-7146-4E1C-AE48-B8EBD2BB71DA",
+            "name": "Radiolab",
+            "type": "podcast",
+            "weight": 0.84,
+            "tags": [
+              "Podcasts",
+              "Natural Sciences",
+              "Society & Culture",
+              "Documentary",
+              "Science"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "BF80E280-A231-44B0-B98C-31C541F007E2",
+            "name": "This American Life",
+            "type": "podcast",
+            "weight": 0.77,
+            "tags": [
+              "Arts",
+              "Podcasts",
+              "Society & Culture"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "87EAEE3F-8F2D-4478-AB1A-E803F7BF69D0",
+            "name": "the memory palace",
+            "type": "podcast",
+            "weight": 0.69,
+            "tags": [
+              "Podcasts",
+              "History"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          }
+        ],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "earth-retro",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 6
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "A_artist_found",
+    "artist": {
+      "id": "192BB96E-F4BD-4A76-B24E-CD049EC9DFA2",
+      "name": "The National"
+    },
+    "seeds": {
+      "entityIds": [
+        "192BB96E-F4BD-4A76-B24E-CD049EC9DFA2"
+      ],
+      "tagIds": []
+    },
+    "tags": [
+      {
+        "name": "Entertainment",
+        "qlooTagId": "urn:tag:genre:brand:entertainment",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Inexpensive",
+        "qlooTagId": "urn:tag:cost_description:place:inexpensive",
+        "weight": 0.95,
+        "source": "qloo"
+      },
+      {
+        "name": "Bar",
+        "qlooTagId": "urn:tag:genre:place:restaurant:bar",
+        "weight": 0.9,
+        "source": "qloo"
+      },
+      {
+        "name": "Chips",
+        "qlooTagId": "urn:tag:specialty_dish:place:chips",
+        "weight": 0.85,
+        "source": "qloo"
+      },
+      {
+        "name": "American Express",
+        "qlooTagId": "urn:tag:credit_card:place:american_express",
+        "weight": 0.8,
+        "source": "qloo"
+      },
+      {
+        "name": "Two Star",
+        "qlooTagId": "urn:tag:hotel_rating:place:two_star",
+        "weight": 0.75,
+        "source": "qloo"
+      },
+      {
+        "name": "Identifies as women-owned",
+        "qlooTagId": "urn:tag:inclusivity:place:identifies_as_women_owned",
+        "weight": 0.7,
+        "source": "qloo"
+      },
+      {
+        "name": "Romantic Relationships",
+        "qlooTagId": "urn:tag:theme:qloo:romantic_relationships",
+        "weight": 0.65,
+        "source": "qloo"
+      },
+      {
+        "name": " indie",
+        "qlooTagId": "urn:tag:genre:music:indie",
+        "canonical": "indie",
+        "weight": 0.6,
+        "source": "qloo"
+      },
+      {
+        "name": "Modern Life",
+        "qlooTagId": "urn:tag:theme:qloo:modern_life",
+        "weight": 0.5,
+        "source": "qloo"
+      },
+      {
+        "name": " folk",
+        "qlooTagId": "urn:tag:genre:music:folk",
+        "canonical": "folk",
+        "weight": 0.4,
+        "source": "qloo"
+      },
+      {
+        "name": "Alternative Rock",
+        "qlooTagId": "urn:tag:genre:music:alternative_rock",
+        "weight": 0.35,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "EE2B58FF-37F6-4521-912F-55EBC25D83E2",
+        "name": "Levi Strauss & Co.",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Jeans",
+          "Fashion",
+          "Iconic Red Tab",
+          "Leather Patch Branding",
+          "Indigo Washes",
+          "Durable Stitching",
+          "Classic Cuts",
+          "Road Trips",
+          "Creative Expression",
+          "Adventure"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "workwear",
+          "vintage-americana",
+          "streetwear"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "E50919AC-B1FF-410A-9B0D-DFA914286C3C",
+        "name": "Puma",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Footwear",
+          "Companies listed on the Frankfurt Stock Exchange",
+          "Shoe companies of Germany",
+          "Running",
+          "Puma (brand)",
+          "Company in the MDAX",
+          "Sneakers",
+          "Societates Europaeae",
+          "Basketball",
+          "Companies based in Herzogenaurach"
+        ],
+        "canonicalTags": [
+          "fitness"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "sportswear",
+          "streetwear"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "6890A77C-8839-477E-8A12-E5F911000575",
+        "name": "Timberland",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Outdoor clothing brands",
+          "Casual",
+          "Clothing companies established in 1952",
+          "1952 establishments in New Hampshire",
+          "Fashion",
+          "Other",
+          "Clothing brands of the United States",
+          "Stratham",
+          "2011 mergers and acquisitions",
+          "Lifestyle / Casual"
+        ],
+        "canonicalTags": [
+          "outdoors"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "outdoor",
+          "workwear",
+          "streetwear"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "3EC9E7DF-1497-44C4-8642-E7FA2FF3A99D",
+        "name": "Calvin Klein",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Casual",
+          "Other",
+          "Shoe brands",
+          "1980s fashion",
+          "Lifestyle / Casual",
+          "Clothing brands of the United States",
+          "Design companies established in 1968",
+          "Clothing companies based in New York City",
+          "High fashion brands",
+          "Eyewear brands of the United States"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion",
+          "luxury"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "82946F1C-AB10-4669-B9A1-640A01E2A407",
+        "name": "Tommy Hilfiger",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Bags & Leather",
+          "Fashion",
+          "Accessories",
+          "Basketball",
+          "Other",
+          "Lifestyle / Casual",
+          "Casual",
+          "Jeans",
+          "Health & Beauty",
+          "Footwear"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "vintage-americana",
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "AC8F9047-F23D-4A54-BBAA-A3CBD2991C02",
+        "name": "Vans",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "1990s fashion",
+          "Sportswear brands",
+          "1980s fashion",
+          "2020s fashion",
+          "Lifestyle / Casual",
+          "1966 establishments in California",
+          "Skateboarding companies",
+          "VF Corporation",
+          "Clothing companies established in 1966",
+          "Skateboard shoe companies"
+        ],
+        "canonicalTags": [
+          "skate"
+        ],
+        "estimated": false,
+        "brandCategories": [
+          "skate",
+          "streetwear"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "2723B38E-C3E2-435F-A77B-A94A92D68D07",
+        "name": "Ralph Lauren",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Lauren family",
+          "Bags & Leather",
+          "Watch",
+          "1980s fashion",
+          "American companies established in 1967",
+          "High fashion brands",
+          "Publicly traded companies based in New York City",
+          "Shoe companies of the United States",
+          "Suit makers",
+          "Swimwear"
+        ],
+        "canonicalTags": [],
+        "estimated": false,
+        "brandCategories": [
+          "vintage-americana",
+          "boutique-fashion"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "84B18312-3C2B-41A9-863B-89651C2F6A2C",
+        "name": "Gucci",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Health & Beauty",
+          "Eyewear brands of Italy",
+          "Gucci",
+          "Lifestyle / Casual",
+          "1980s fashion",
+          "Design companies established in 1921",
+          "American Motors",
+          "Manufacturing companies based in Florence",
+          "Haute Couture",
+          "Eyewear"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "luxury",
+          "boutique-fashion"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "D5B78065-6DBB-4DDB-80DF-6495B9B1006B",
+        "name": "Apple Inc",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "American business executives",
+          "Apple Inc. lists",
+          "Companies in the PRISM network",
+          "Nigerian women business executives",
+          "Headphones",
+          "Phones & Tablets",
+          "American women business executives",
+          "Home computer hardware companies",
+          "Companies in the NASDAQ-100",
+          "Retail companies of the United States"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "electronics",
+          "techwear"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "5760BF0A-EBDF-4B9A-88CD-69F4BF08C362",
+        "name": "Louis Vuitton",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "French brands",
+          "Footwear",
+          "French collaborators with Nazi Germany",
+          "High fashion brands",
+          "French companies established in 1854",
+          "Companies based in Paris",
+          "Bags & Leather",
+          "Other",
+          "Perfume houses",
+          "Accessories"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "luxury",
+          "boutique-fashion"
+        ],
+        "priceTier": "premium"
+      }
+    ],
+    "crossDomain": [
+      {
+        "id": "603C7E42-C952-45CB-8B6F-3B803FEFB2F7",
+        "name": "Lost in Translation",
+        "type": "movie",
+        "weight": 1,
+        "tags": [
+          "Age disparate romance",
+          "Postmodern",
+          "Cigarette smoking",
+          "Reflective",
+          "Unhappiness",
+          "Tokyo japan",
+          "Fish out of water",
+          "Photographer",
+          "Billboard",
+          "Sushi restaurant"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "DCD69D0D-CAFC-4BC8-BF5C-0F87CC533E5B",
+        "name": "Beginners",
+        "type": "movie",
+        "weight": 0.92,
+        "tags": [
+          "Relationship",
+          "Shaving someone",
+          "Aging",
+          "Montage",
+          "Reference to bill clinton",
+          "Coming out",
+          "Gay priest",
+          "Memory",
+          "Oxygen tank",
+          "Love"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "79A98408-6B84-4416-99B4-A4B3563BEAFB",
+        "name": "Moonrise Kingdom",
+        "type": "movie",
+        "weight": 0.84,
+        "tags": [
+          "Boat",
+          "Adultery",
+          "Candy cinema",
+          "Letter",
+          "Woods",
+          "Postmodern",
+          "Lightning",
+          "First love",
+          "New england",
+          "Wading across a river"
+        ],
+        "canonicalTags": [
+          "cinema"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "EFD8B201-CC97-462C-AFE2-5CC6352239E6",
+        "name": "Frances Ha",
+        "type": "movie",
+        "weight": 0.77,
+        "tags": [
+          "Brooklyn",
+          "Alarm clock",
+          "Female best friends",
+          "The fool",
+          "Self absorbed",
+          "Modern dance",
+          "Shared bed",
+          "College",
+          "Comedy",
+          "Reflective"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "AE1E52EE-BAB5-4C6E-84C3-A3F4346C26C3",
+        "name": "Garden State",
+        "type": "movie",
+        "weight": 0.69,
+        "tags": [
+          "Psychiatrist",
+          "Depression",
+          "Music",
+          "Medicine",
+          "Forgiveness",
+          "Knight in shining armor",
+          "Organist",
+          "Swimming",
+          "Medication",
+          "Guardian"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "4C289B92-279B-45D2-8118-CAEEA3A839EE",
+        "name": "One Two Three Four: The Beatles in Time",
+        "type": "book",
+        "weight": 1,
+        "tags": [
+          "Music",
+          "Biography",
+          "Audiobook",
+          "British Literature",
+          "Nonfiction",
+          "History",
+          "Historical",
+          "Pop Culture",
+          "Rock N Roll",
+          "Biography Memoir"
+        ],
+        "canonicalTags": [
+          "books",
+          "pop"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "BE5A064E-219C-4495-8972-4CC1C66AF76F",
+        "name": "And Then It Fell Apart",
+        "type": "book",
+        "weight": 0.92,
+        "tags": [
+          "Memoir",
+          "Autobiography",
+          "Nonfiction",
+          "Art",
+          "Humor",
+          "The United States Of America",
+          "Music",
+          "Biography",
+          "Audiobook",
+          "American"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "FA76A8F9-F3A6-414B-9918-5E8884653B46",
+        "name": "Overpaid, Oversexed and Over There: How a Few Skinny Brits with Bad Teeth Rocked America",
+        "type": "book",
+        "weight": 0.84,
+        "tags": [
+          "Music",
+          "Nonfiction",
+          "Audiobook",
+          "History",
+          "18-24",
+          "25-29",
+          "30-34",
+          "35-44",
+          "45-54",
+          "55+"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "1EFB874A-B87F-41AE-9B90-13AFDB9DD9B3",
+        "name": "Slowhand: The Life and Music of Eric Clapton",
+        "type": "book",
+        "weight": 0.77,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "83CE7A5D-0391-42C6-9B25-FB3E2A81D54E",
+        "name": "Chums: How A Tiny Caste of Oxford Tories Took Over The UK",
+        "type": "book",
+        "weight": 0.69,
+        "tags": [
+          "Sociology",
+          "Nonfiction",
+          "Society",
+          "Journalism",
+          "Politics",
+          "History",
+          "Biography",
+          "Class",
+          "British Literature",
+          "Audiobook"
+        ],
+        "canonicalTags": [
+          "books"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "D95B20A8-0CEA-4BDC-8074-60A303FA1980",
+        "name": "Song Exploder",
+        "type": "podcast",
+        "weight": 1,
+        "tags": [
+          "Music",
+          "Podcasts"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "1B466B0E-323A-4EFD-A314-8737F58F1E1B",
+        "name": "99% Invisible",
+        "type": "podcast",
+        "weight": 0.92,
+        "tags": [
+          "Podcasts",
+          "Design",
+          "Arts"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "B4D6B6FD-7146-4E1C-AE48-B8EBD2BB71DA",
+        "name": "Radiolab",
+        "type": "podcast",
+        "weight": 0.84,
+        "tags": [
+          "Podcasts",
+          "Natural Sciences",
+          "Society & Culture",
+          "Documentary",
+          "Science"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "BF80E280-A231-44B0-B98C-31C541F007E2",
+        "name": "This American Life",
+        "type": "podcast",
+        "weight": 0.77,
+        "tags": [
+          "Arts",
+          "Podcasts",
+          "Society & Culture"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "87EAEE3F-8F2D-4478-AB1A-E803F7BF69D0",
+        "name": "the memory palace",
+        "type": "podcast",
+        "weight": 0.69,
+        "tags": [
+          "Podcasts",
+          "History"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      }
+    ],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "earth-retro",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 6
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "hero-crewneck",
+        "name": "Heavyweight crewneck",
+        "oneLiner": "heavyweight crewneck in burnt orange, underdog by design",
+        "category": "apparel",
+        "role": "hero",
+        "silhouette": "top",
+        "fitScore": 38,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.605,
+          "cross": 1
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "books",
+            "points": 11,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "cinema",
+            "points": 9,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Vans",
+            "points": 9,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 22,
+          "price": 61.5,
+          "marginPerUnit": 39.5,
+          "minRun": 24,
+          "setupCost": 40,
+          "firstRunCost": 568,
+          "breakEvenUnits": 10,
+          "typicalRange": [
+            58,
+            78
+          ],
+          "estimate": true
+        },
+        "supplierType": "premium blank + embroidery/print",
+        "supplierBrief": "12–14 oz fleece crewneck, embroidered chest mark, numbered neck label, limited run.",
+        "description": {
+          "text": "A crewneck sweatshirt in burnt orange and cream, finished with a embroidered monogram motif. 12–14 oz fleece crewneck. The overall feel is underdog — built for fans who lean into indie and folk — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "acrylic-keychain",
+        "name": "Acrylic keychain",
+        "oneLiner": "acrylic keychain in burnt orange, underdog by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 33,
+        "scoreParts": {
+          "tag": 0.3,
+          "brand": 0.605,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "indie",
+            "points": 15,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Vans",
+            "points": 9,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Levi Strauss & Co.",
+            "points": 9,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 1.85,
+          "price": 8,
+          "marginPerUnit": 6.15,
+          "minRun": 50,
+          "setupCost": 25,
+          "firstRunCost": 117.5,
+          "breakEvenUnits": 15,
+          "typicalRange": [
+            8,
+            14
+          ],
+          "estimate": true
+        },
+        "supplierType": "acrylic charm maker",
+        "supplierBrief": "2 in double-sided printed acrylic charm with ring and clasp.",
+        "description": {
+          "text": "A acrylic charm keychain in burnt orange and cream, finished with a hand drawn doodle motif. 2 in double-sided printed acrylic charm with ring and clasp.. The overall feel is underdog — built for fans who lean into indie and folk — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "heavyweight-tee",
+        "name": "Heavyweight tee",
+        "oneLiner": "heavyweight tee in burnt orange, underdog by design",
+        "category": "apparel",
+        "role": "core",
+        "silhouette": "top",
+        "fitScore": 44,
+        "scoreParts": {
+          "tag": 0.3,
+          "brand": 0.605,
+          "cross": 0.5599999999999999
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "indie",
+            "points": 15,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "cinema",
+            "points": 11,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Vans",
+            "points": 9,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 8,
+          "price": 28,
+          "marginPerUnit": 20,
+          "minRun": 36,
+          "setupCost": 30,
+          "firstRunCost": 318,
+          "breakEvenUnits": 12,
+          "typicalRange": [
+            28,
+            40
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "6.5 oz cotton tee, 1–2 colour screen print front, small back print, sizes S–XXL.",
+        "description": {
+          "text": "A cotton t-shirt in burnt orange and cream, finished with a hand drawn doodle motif. 6.5 oz cotton tee. The overall feel is underdog — built for fans who lean into indie and folk — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "cassette-usb",
+        "name": "Cassette-style USB",
+        "oneLiner": "cassette-style usb in burnt orange, underdog by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "cassette",
+        "fitScore": 43,
+        "scoreParts": {
+          "tag": 0.3,
+          "brand": 0.565,
+          "cross": 0.5599999999999999
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "indie",
+            "points": 15,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "cinema",
+            "points": 11,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "vintage americana",
+            "entityName": "Levi Strauss & Co.",
+            "points": 9,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 5,
+          "price": 18,
+          "marginPerUnit": 13,
+          "minRun": 50,
+          "setupCost": 30,
+          "firstRunCost": 280,
+          "breakEvenUnits": 16,
+          "typicalRange": [
+            18,
+            28
+          ],
+          "estimate": true
+        },
+        "supplierType": "USB / cassette duplicator",
+        "supplierBrief": "Cassette-style 8 GB USB pre-loaded with the artist's own tracks, printed J-card insert.",
+        "description": {
+          "text": "A USB drive in burnt orange and cream, finished with a hand drawn doodle motif. Cassette-style 8 GB USB pre-loaded with the artist's own tracks. The overall feel is underdog — built for fans who lean into indie and folk — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "tote-bag",
+        "name": "Tote bag",
+        "oneLiner": "tote bag in burnt orange, underdog by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "tote",
+        "fitScore": 43,
+        "scoreParts": {
+          "tag": 0.3,
+          "brand": 0.496,
+          "cross": 0.6666666666666666
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "indie",
+            "points": 15,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "books",
+            "points": 13,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "boutique fashion",
+            "entityName": "Ralph Lauren",
+            "points": 8,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 15,
+          "marginPerUnit": 11.5,
+          "minRun": 36,
+          "setupCost": 25,
+          "firstRunCost": 151,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            15,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "10 oz natural canvas tote, 1–2 colour print, reinforced handles.",
+        "description": {
+          "text": "A tote bag in burnt orange and cream, finished with a hand drawn doodle motif. 10 oz natural canvas tote. The overall feel is underdog — built for fans who lean into indie and folk — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "coffee-collab",
+        "name": "Coffee roast collab",
+        "oneLiner": "coffee roast collab in burnt orange, underdog by design",
+        "category": "consumables",
+        "role": "limited",
+        "silhouette": "bag",
+        "fitScore": 38,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0,
+          "cross": 0.6666666666666666
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "indie",
+            "points": 15,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "books",
+            "points": 13,
+            "estimated": false
+          },
+          {
+            "kind": "tag",
+            "label": "folk",
+            "points": 10,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 6.5,
+          "price": 18,
+          "marginPerUnit": 11.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 365,
+          "breakEvenUnits": 21,
+          "typicalRange": [
+            14,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "local roaster",
+        "supplierBrief": "12 oz bags roasted by a local roaster, custom sleeve or label from you.",
+        "complianceNote": "Check food labelling rules with the roaster.",
+        "description": {
+          "text": "A coffee bag with custom label in burnt orange and cream, finished with a hand drawn doodle motif. 12 oz bags roasted by a local roaster. The overall feel is underdog — built for fans who lean into indie and folk — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "custom-socks",
+        "name": "Custom socks",
+        "oneLiner": "custom socks in burnt orange, underdog by design",
+        "category": "apparel",
+        "role": "core",
+        "silhouette": "socks",
+        "fitScore": 33,
+        "scoreParts": {
+          "tag": 0.3,
+          "brand": 0.605,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "indie",
+            "points": 15,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Vans",
+            "points": 9,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Levi Strauss & Co.",
+            "points": 9,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 5.5,
+          "price": 15.5,
+          "marginPerUnit": 10,
+          "minRun": 36,
+          "setupCost": 60,
+          "firstRunCost": 258,
+          "breakEvenUnits": 17,
+          "typicalRange": [
+            14,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "custom sock knitter",
+        "supplierBrief": "Cotton-blend crew socks, jacquard logo or pattern, 2–3 colours, setup fee.",
+        "description": {
+          "text": "A crew socks in burnt orange and cream, finished with a hand drawn doodle motif. Cotton-blend crew socks. The overall feel is underdog — built for fans who lean into indie and folk — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Sticker pack",
+        "oneLiner": "sticker pack in burnt orange, underdog by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 33,
+        "scoreParts": {
+          "tag": 0.3,
+          "brand": 0.605,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "indie",
+            "points": 15,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "skate",
+            "entityName": "Vans",
+            "points": 9,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Levi Strauss & Co.",
+            "points": 9,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 0.43,
+          "price": 4,
+          "marginPerUnit": 3.58,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 42.5,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            4,
+            8
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "A sticker sheet in burnt orange and cream, finished with a hand drawn doodle motif. Die-cut or kiss-cut vinyl stickers. The overall feel is underdog — built for fans who lean into indie and folk — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "acrylic-keychain",
+            "heavyweight-tee",
+            "cassette-usb",
+            "tote-bag",
+            "custom-socks",
+            "sticker-pack"
+          ],
+          "runSizes": {
+            "acrylic-keychain": 50,
+            "heavyweight-tee": 36,
+            "cassette-usb": 50,
+            "tote-bag": 36,
+            "custom-socks": 36,
+            "sticker-pack": 100
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "hero-crewneck"
+          ],
+          "runSizes": {
+            "hero-crewneck": 24
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "coffee-collab"
+          ],
+          "runSizes": {
+            "coffee-collab": 50
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "template",
+      "notes": []
+    }
+  },
+  "descriptionSource": "template",
+  "collabs": {
+    "collabs": [
+      {
+        "id": "3EC9E7DF-1497-44C4-8642-E7FA2FF3A99D",
+        "name": "Calvin Klein",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "Casual"
+        ],
+        "partnerIdea": "Minimalist cassette-usb packaging with your clean-line art for their digital accessory line.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "EE2B58FF-37F6-4521-912F-55EBC25D83E2",
+        "name": "Levi Strauss & Co.",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "Jeans"
+        ],
+        "partnerIdea": "Co-branded heavyweight-tee with your denim-wash graphic at their flagship store pop-up.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "E50919AC-B1FF-410A-9B0D-DFA914286C3C",
+        "name": "Puma",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "Footwear"
+        ],
+        "partnerIdea": "Exclusive custom-socks collaboration with your logo woven into their performance line.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "6890A77C-8839-477E-8A12-E5F911000575",
+        "name": "Timberland",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "Outdoor clothing brands"
+        ],
+        "partnerIdea": "Co-branded acrylic-keychain with your rugged aesthetic for their outdoor gear buyers.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "82946F1C-AB10-4669-B9A1-640A01E2A407",
+        "name": "Tommy Hilfiger",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "Bags & Leather"
+        ],
+        "partnerIdea": "Hero-crewneck featuring your retro color-block design in their seasonal capsule collection.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "AC8F9047-F23D-4A54-BBAA-A3CBD2991C02",
+        "name": "Vans",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "1990s fashion"
+        ],
+        "partnerIdea": "Limited sticker-pack drop featuring your art on their classic checkerboard tote-bag.",
+        "linkedProductIds": []
+      }
+    ]
+  },
+  "elapsedMs": 50507
+}

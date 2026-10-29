@@ -1,0 +1,1807 @@
+{
+  "id": "b11",
+  "input": {
+    "text": "Experimental metal project with fans who also enjoy botanical illustration and tea ceremonies.",
+    "soundsLike": [],
+    "city": "Tokyo",
+    "creatorType": "musician",
+    "budget": "large"
+  },
+  "startedAt": "2026-10-28T21:59:39.232Z",
+  "providerCalls": {
+    "qloo": 7,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "events": [
+    {
+      "type": "step",
+      "id": "s53",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t93",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "experimental metal"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t93",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Experimental Metal, Experimental Black Metal, Experimental Death Metal",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t94",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "botanical illustration"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t94",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Botanical Illustrations, Botanical Illustration, Botanical garden",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t95",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "tea ceremony"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t95",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Tea Ceremony, Tea Ceremony, Tea Ceremony",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t96",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:music:experimental_metal",
+          "urn:tag:genre:music:experimental_black_metal",
+          "urn:tag:genre:music:experimental_death_metal",
+          "urn:tag:genre:music:experimental_doom_metal"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t96",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Botanical Experience, Funky Design, Botanical Theme, Exotically Themed…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "t97",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:music:experimental_metal",
+          "urn:tag:genre:music:experimental_black_metal",
+          "urn:tag:genre:music:experimental_death_metal",
+          "urn:tag:genre:music:experimental_doom_metal"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t97",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t98",
+      "tool": "qloo_related",
+      "args": {
+        "type": "book",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:music:experimental_metal",
+          "urn:tag:genre:music:experimental_black_metal",
+          "urn:tag:genre:music:experimental_death_metal",
+          "urn:tag:genre:music:experimental_doom_metal"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t98",
+      "tool": "qloo_related",
+      "summary": "10 related books",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t99",
+      "tool": "qloo_related",
+      "args": {
+        "type": "podcast",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:music:experimental_metal",
+          "urn:tag:genre:music:experimental_black_metal",
+          "urn:tag:genre:music:experimental_death_metal",
+          "urn:tag:genre:music:experimental_doom_metal"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t99",
+      "tool": "qloo_related",
+      "summary": "10 related podcasts",
+      "count": 10
+    },
+    {
+      "type": "note",
+      "text": "Built audience profile from description (no named artist in Qloo). Seed tags: experimental metal variants. Taste tags surfaced botanical/exotic themes matching "
+    },
+    {
+      "type": "step",
+      "id": "s54",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "7 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s55",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s56",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:genre:music:experimental_metal",
+            "urn:tag:decor:qloo:botanical_illustrations",
+            "urn:tag:specialty_dish:place:tea_ceremony",
+            "urn:tag:category:place:botanical_garden",
+            "urn:tag:genre:place:botanical_garden",
+            "urn:tag:occupation:wikidata:botanical_collector"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Experimental Metal",
+            "qlooTagId": "urn:tag:genre:music:experimental_metal",
+            "canonical": "metal",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Botanical Illustrations",
+            "qlooTagId": "urn:tag:decor:qloo:botanical_illustrations",
+            "canonical": "art-print",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Tea Ceremony",
+            "qlooTagId": "urn:tag:specialty_dish:place:tea_ceremony",
+            "canonical": "tea",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Botanical Experience",
+            "qlooTagId": "urn:tag:setting:qloo:botanical_experience",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Funky Design",
+            "qlooTagId": "urn:tag:ambience:qloo:funky_design",
+            "weight": 0.95,
+            "source": "qloo"
+          },
+          {
+            "name": "Botanical Theme",
+            "qlooTagId": "urn:tag:ambience:qloo:botanical_theme",
+            "weight": 0.9,
+            "source": "qloo"
+          },
+          {
+            "name": "Exotically Themed",
+            "qlooTagId": "urn:tag:ambience:qloo:exotically_themed",
+            "weight": 0.85,
+            "source": "qloo"
+          },
+          {
+            "name": "Botanical Feature",
+            "qlooTagId": "urn:tag:setting:qloo:botanical_feature",
+            "weight": 0.8,
+            "source": "qloo"
+          },
+          {
+            "name": "Specialized Themed",
+            "qlooTagId": "urn:tag:ambience:qloo:specialized_themed",
+            "weight": 0.75,
+            "source": "qloo"
+          },
+          {
+            "name": "Funky Decor",
+            "qlooTagId": "urn:tag:ambience:qloo:funky_decor",
+            "weight": 0.7,
+            "source": "qloo"
+          },
+          {
+            "name": "Botanical garden",
+            "qlooTagId": "urn:tag:category:place:botanical_garden",
+            "weight": 0.65,
+            "source": "qloo"
+          },
+          {
+            "name": "Botanical Disco",
+            "qlooTagId": "urn:tag:ambience:qloo:botanical_disco",
+            "weight": 0.65,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "84235385-074E-4366-9378-4C5498ADF5A7",
+            "name": "World Nomads",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Entertainment",
+              "Financial Services",
+              "Minimalist",
+              "Authentic Photography",
+              "Informative Layouts",
+              "Bright Accents",
+              "Modern Typography",
+              "Global Citizenship",
+              "Documentary Storytelling",
+              "Immersion In Foreign Cultures"
+            ],
+            "canonicalTags": [
+              "minimal",
+              "photography"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "outdoor"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "AC1DCDCF-5E95-4E15-82FF-727EABEF814A",
+            "name": "Wildlife Conservation Society",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "NGO",
+              "Environmental NGO",
+              "Educational",
+              "Documentary-Style",
+              "Naturalistic",
+              "Academic",
+              "Environmental Stewardship",
+              "Global Impact",
+              "Harmony With Nature",
+              "Other"
+            ],
+            "canonicalTags": [
+              "outdoors"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "outdoor",
+              "eco-goods"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "788D8430-3004-4F7F-AD7F-F5EFA44B4B69",
+            "name": "African Wildlife Foundation",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Environmental NGO",
+              "NGO",
+              "Minimalist",
+              "Documentary Style Photography",
+              "Earthy Tones",
+              "Clean Typography",
+              "Coexistence With Nature",
+              "Global Impact",
+              "Support Of Sustainable Prosperity",
+              "Other"
+            ],
+            "canonicalTags": [
+              "minimal",
+              "photography",
+              "outdoors",
+              "eco"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "outdoor",
+              "eco-goods"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "92D52DD1-E788-41BB-8D87-B6BCFB6520AE",
+            "name": "Sheldrick Wildlife Trust",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "NGO",
+              "Environmental NGO",
+              "Naturalistic",
+              "Documentary Style",
+              "Earthy Tones",
+              "Authentic",
+              "Active Conservationist",
+              "Global Philanthropist",
+              "Immersive Safari Experience",
+              "Other"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "outdoor",
+              "eco-goods"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "6BFCE79F-2259-4214-B02A-84AA7B458790",
+            "name": "Conservation International",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Environmental NGO",
+              "NGO",
+              "Documentary Style Photography",
+              "Earth-Toned Color Palettes",
+              "Minimalist Typography",
+              "Nature-Focused Imagery",
+              "Global Citizenship",
+              "Environmental Stewardship",
+              "Impact-Driven Living",
+              "Sustainable Legacy"
+            ],
+            "canonicalTags": [
+              "photography",
+              "minimal",
+              "outdoors",
+              "eco"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "outdoor",
+              "eco-goods"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "6023034F-0E21-43E0-B8D8-C6505FF755F4",
+            "name": "Joe Gibbs Racing",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Sports Organization",
+              "Motorsports",
+              "Sleek Automotive Design",
+              "Dynamic Branding",
+              "Team-Specific Livery",
+              "Technical Precision",
+              "Professional Success",
+              "Elite Sporting Achievement",
+              "Technological Innovation",
+              "Other"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "sportswear",
+              "collectibles"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "3A4B8BBF-43BB-4D14-A277-D154044B6618",
+            "name": "Ocean Conservancy",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Environmental NGO",
+              "NGO",
+              "Informative",
+              "Scientific",
+              "Blue Tones",
+              "Nature-Focused Photography",
+              "Accessible Infographics",
+              "Thriving Marine Ecosystems",
+              "Sustainable Global Climate",
+              "Pollution-Free Beaches"
+            ],
+            "canonicalTags": [
+              "photography",
+              "eco"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "outdoor",
+              "eco-goods"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "3E6D2D38-28AC-4969-852B-3C3AA587BC69",
+            "name": "Richard Childress Racing",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Leagues & Tournaments",
+              "Sports Organization",
+              "Motorsports",
+              "Bold Typography",
+              "Racing Graphics",
+              "Primary Color Palettes",
+              "Technical Precision",
+              "Performance-Oriented Design",
+              "Winning Mentality",
+              "High-Performance Living"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "sportswear",
+              "collectibles"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "62088D3B-9F50-48BB-B54C-D99F7ED6F1D0",
+            "name": "Richard Petty Motorsports",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Motorsports",
+              "Sports Organization",
+              "Racing Livery",
+              "Bold Typography",
+              "Classic Branding",
+              "Sport-Focused Imagery",
+              "Professional Racing Achievement",
+              "Automotive Excellence",
+              "Other",
+              "Entertainment Brand"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "sportswear",
+              "collectibles"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "9C8AA1C7-2CC6-4EF8-BCCA-C058EFA08749",
+            "name": "Goodyear",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "Automotive",
+              "Industrial",
+              "Clean",
+              "Functional",
+              "Yellow and Blue Branding",
+              "Safe Journeying",
+              "Uninterrupted Travel",
+              "Operational Excellence",
+              "Other",
+              "Corporate Brand"
+            ],
+            "canonicalTags": [
+              "travel"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "sportswear",
+              "outdoor"
+            ],
+            "priceTier": "mid"
+          }
+        ],
+        "crossDomain": [
+          {
+            "id": "533A2133-79C4-4DA7-8610-9F4D4B0B8B66",
+            "name": "The Reign of Osiris (Ramses the Damned #3)",
+            "type": "book",
+            "weight": 1,
+            "tags": [
+              "Magic",
+              "Audiobook",
+              "Romance",
+              "Horror",
+              "Mythology",
+              "Supernatural",
+              "Paranormal",
+              "Fiction",
+              "Fantasy",
+              "Historical Fiction"
+            ],
+            "canonicalTags": [
+              "horror",
+              "fantasy"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "F335A801-527B-42E1-BE0B-913F966EBC95",
+            "name": "Bad Teeth",
+            "type": "book",
+            "weight": 0.92,
+            "tags": [
+              "Fiction",
+              "18-24",
+              "25-29",
+              "30-34",
+              "Fiction",
+              "Narratives",
+              "Love",
+              "Academia",
+              "Tibetan Novelist",
+              "Protest Group"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "002DB439-EC1D-4D2F-AA8C-60CA5402FAFD",
+            "name": "The Arm: Inside the Billion-Dollar Mystery of the Most Valuable Commodity in Sports",
+            "type": "book",
+            "weight": 0.84,
+            "tags": [
+              "Nonfiction",
+              "Sports",
+              "Baseball",
+              "Biography Memoir",
+              "21st Century",
+              "History",
+              "Science",
+              "Business",
+              "Audiobook",
+              "Journalism"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "541F8A97-C9CE-4880-AA96-DEC8EA2D57E9",
+            "name": "DC Comics: The New 52",
+            "type": "book",
+            "weight": 0.77,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "072FA03B-E96E-4DD6-98B3-0CD39347C31F",
+            "name": "Rogues",
+            "type": "book",
+            "weight": 0.69,
+            "tags": [
+              "Fiction",
+              "Anthologies",
+              "Fantasy",
+              "Audiobook",
+              "Science Fiction",
+              "High Fantasy",
+              "Science Fiction Fantasy",
+              "Short Stories",
+              "Mystery",
+              "Adventure"
+            ],
+            "canonicalTags": [
+              "fantasy",
+              "sci-fi"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "F5F2072D-50F7-44DD-A4B4-E974FE24CB80",
+            "name": "Nerd Poker",
+            "type": "podcast",
+            "weight": 1,
+            "tags": [
+              "Podcasts",
+              "Comedy",
+              "Leisure",
+              "Improv",
+              "Games"
+            ],
+            "canonicalTags": [
+              "retro-gaming"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "2408AD4E-8679-4B63-8933-736EB060C897",
+            "name": "Ross Tucker Football Podcast: Daily NFL Podcast",
+            "type": "podcast",
+            "weight": 0.92,
+            "tags": [
+              "Sports News",
+              "Sports",
+              "Football",
+              "Podcasts",
+              "News"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "13605448-1FDC-4DD5-8277-BECBB405C726",
+            "name": "The Dale Jr. Download",
+            "type": "podcast",
+            "weight": 0.84,
+            "tags": [
+              "Sports",
+              "Podcasts"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "CE22668C-7DF0-4ED3-B5D7-0DFCB5A3AB2A",
+            "name": "Abundant Ever After with Cathy Heller",
+            "type": "podcast",
+            "weight": 0.77,
+            "tags": [
+              "Religion & Spirituality",
+              "Podcasts",
+              "Spirituality"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "2AFF26CD-FBBF-48FC-B865-60AA57BFF36E",
+            "name": "Heartland Radio: Presented by The Pat McAfee Show",
+            "type": "podcast",
+            "weight": 0.69,
+            "tags": [
+              "Comedy",
+              "Podcasts"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          }
+        ],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "mono-punk",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 7
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:genre:music:experimental_metal",
+        "urn:tag:decor:qloo:botanical_illustrations",
+        "urn:tag:specialty_dish:place:tea_ceremony",
+        "urn:tag:category:place:botanical_garden",
+        "urn:tag:genre:place:botanical_garden",
+        "urn:tag:occupation:wikidata:botanical_collector"
+      ]
+    },
+    "tags": [
+      {
+        "name": "Experimental Metal",
+        "qlooTagId": "urn:tag:genre:music:experimental_metal",
+        "canonical": "metal",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Botanical Illustrations",
+        "qlooTagId": "urn:tag:decor:qloo:botanical_illustrations",
+        "canonical": "art-print",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Tea Ceremony",
+        "qlooTagId": "urn:tag:specialty_dish:place:tea_ceremony",
+        "canonical": "tea",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Botanical Experience",
+        "qlooTagId": "urn:tag:setting:qloo:botanical_experience",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Funky Design",
+        "qlooTagId": "urn:tag:ambience:qloo:funky_design",
+        "weight": 0.95,
+        "source": "qloo"
+      },
+      {
+        "name": "Botanical Theme",
+        "qlooTagId": "urn:tag:ambience:qloo:botanical_theme",
+        "weight": 0.9,
+        "source": "qloo"
+      },
+      {
+        "name": "Exotically Themed",
+        "qlooTagId": "urn:tag:ambience:qloo:exotically_themed",
+        "weight": 0.85,
+        "source": "qloo"
+      },
+      {
+        "name": "Botanical Feature",
+        "qlooTagId": "urn:tag:setting:qloo:botanical_feature",
+        "weight": 0.8,
+        "source": "qloo"
+      },
+      {
+        "name": "Specialized Themed",
+        "qlooTagId": "urn:tag:ambience:qloo:specialized_themed",
+        "weight": 0.75,
+        "source": "qloo"
+      },
+      {
+        "name": "Funky Decor",
+        "qlooTagId": "urn:tag:ambience:qloo:funky_decor",
+        "weight": 0.7,
+        "source": "qloo"
+      },
+      {
+        "name": "Botanical garden",
+        "qlooTagId": "urn:tag:category:place:botanical_garden",
+        "weight": 0.65,
+        "source": "qloo"
+      },
+      {
+        "name": "Botanical Disco",
+        "qlooTagId": "urn:tag:ambience:qloo:botanical_disco",
+        "weight": 0.65,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "84235385-074E-4366-9378-4C5498ADF5A7",
+        "name": "World Nomads",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Entertainment",
+          "Financial Services",
+          "Minimalist",
+          "Authentic Photography",
+          "Informative Layouts",
+          "Bright Accents",
+          "Modern Typography",
+          "Global Citizenship",
+          "Documentary Storytelling",
+          "Immersion In Foreign Cultures"
+        ],
+        "canonicalTags": [
+          "minimal",
+          "photography"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "outdoor"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "AC1DCDCF-5E95-4E15-82FF-727EABEF814A",
+        "name": "Wildlife Conservation Society",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "NGO",
+          "Environmental NGO",
+          "Educational",
+          "Documentary-Style",
+          "Naturalistic",
+          "Academic",
+          "Environmental Stewardship",
+          "Global Impact",
+          "Harmony With Nature",
+          "Other"
+        ],
+        "canonicalTags": [
+          "outdoors"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "outdoor",
+          "eco-goods"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "788D8430-3004-4F7F-AD7F-F5EFA44B4B69",
+        "name": "African Wildlife Foundation",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Environmental NGO",
+          "NGO",
+          "Minimalist",
+          "Documentary Style Photography",
+          "Earthy Tones",
+          "Clean Typography",
+          "Coexistence With Nature",
+          "Global Impact",
+          "Support Of Sustainable Prosperity",
+          "Other"
+        ],
+        "canonicalTags": [
+          "minimal",
+          "photography",
+          "outdoors",
+          "eco"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "outdoor",
+          "eco-goods"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "92D52DD1-E788-41BB-8D87-B6BCFB6520AE",
+        "name": "Sheldrick Wildlife Trust",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "NGO",
+          "Environmental NGO",
+          "Naturalistic",
+          "Documentary Style",
+          "Earthy Tones",
+          "Authentic",
+          "Active Conservationist",
+          "Global Philanthropist",
+          "Immersive Safari Experience",
+          "Other"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "outdoor",
+          "eco-goods"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "6BFCE79F-2259-4214-B02A-84AA7B458790",
+        "name": "Conservation International",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Environmental NGO",
+          "NGO",
+          "Documentary Style Photography",
+          "Earth-Toned Color Palettes",
+          "Minimalist Typography",
+          "Nature-Focused Imagery",
+          "Global Citizenship",
+          "Environmental Stewardship",
+          "Impact-Driven Living",
+          "Sustainable Legacy"
+        ],
+        "canonicalTags": [
+          "photography",
+          "minimal",
+          "outdoors",
+          "eco"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "outdoor",
+          "eco-goods"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "6023034F-0E21-43E0-B8D8-C6505FF755F4",
+        "name": "Joe Gibbs Racing",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Sports Organization",
+          "Motorsports",
+          "Sleek Automotive Design",
+          "Dynamic Branding",
+          "Team-Specific Livery",
+          "Technical Precision",
+          "Professional Success",
+          "Elite Sporting Achievement",
+          "Technological Innovation",
+          "Other"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "sportswear",
+          "collectibles"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "3A4B8BBF-43BB-4D14-A277-D154044B6618",
+        "name": "Ocean Conservancy",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Environmental NGO",
+          "NGO",
+          "Informative",
+          "Scientific",
+          "Blue Tones",
+          "Nature-Focused Photography",
+          "Accessible Infographics",
+          "Thriving Marine Ecosystems",
+          "Sustainable Global Climate",
+          "Pollution-Free Beaches"
+        ],
+        "canonicalTags": [
+          "photography",
+          "eco"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "outdoor",
+          "eco-goods"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "3E6D2D38-28AC-4969-852B-3C3AA587BC69",
+        "name": "Richard Childress Racing",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Leagues & Tournaments",
+          "Sports Organization",
+          "Motorsports",
+          "Bold Typography",
+          "Racing Graphics",
+          "Primary Color Palettes",
+          "Technical Precision",
+          "Performance-Oriented Design",
+          "Winning Mentality",
+          "High-Performance Living"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "sportswear",
+          "collectibles"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "62088D3B-9F50-48BB-B54C-D99F7ED6F1D0",
+        "name": "Richard Petty Motorsports",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Motorsports",
+          "Sports Organization",
+          "Racing Livery",
+          "Bold Typography",
+          "Classic Branding",
+          "Sport-Focused Imagery",
+          "Professional Racing Achievement",
+          "Automotive Excellence",
+          "Other",
+          "Entertainment Brand"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "sportswear",
+          "collectibles"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "9C8AA1C7-2CC6-4EF8-BCCA-C058EFA08749",
+        "name": "Goodyear",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "Automotive",
+          "Industrial",
+          "Clean",
+          "Functional",
+          "Yellow and Blue Branding",
+          "Safe Journeying",
+          "Uninterrupted Travel",
+          "Operational Excellence",
+          "Other",
+          "Corporate Brand"
+        ],
+        "canonicalTags": [
+          "travel"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "sportswear",
+          "outdoor"
+        ],
+        "priceTier": "mid"
+      }
+    ],
+    "crossDomain": [
+      {
+        "id": "533A2133-79C4-4DA7-8610-9F4D4B0B8B66",
+        "name": "The Reign of Osiris (Ramses the Damned #3)",
+        "type": "book",
+        "weight": 1,
+        "tags": [
+          "Magic",
+          "Audiobook",
+          "Romance",
+          "Horror",
+          "Mythology",
+          "Supernatural",
+          "Paranormal",
+          "Fiction",
+          "Fantasy",
+          "Historical Fiction"
+        ],
+        "canonicalTags": [
+          "horror",
+          "fantasy"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "F335A801-527B-42E1-BE0B-913F966EBC95",
+        "name": "Bad Teeth",
+        "type": "book",
+        "weight": 0.92,
+        "tags": [
+          "Fiction",
+          "18-24",
+          "25-29",
+          "30-34",
+          "Fiction",
+          "Narratives",
+          "Love",
+          "Academia",
+          "Tibetan Novelist",
+          "Protest Group"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "002DB439-EC1D-4D2F-AA8C-60CA5402FAFD",
+        "name": "The Arm: Inside the Billion-Dollar Mystery of the Most Valuable Commodity in Sports",
+        "type": "book",
+        "weight": 0.84,
+        "tags": [
+          "Nonfiction",
+          "Sports",
+          "Baseball",
+          "Biography Memoir",
+          "21st Century",
+          "History",
+          "Science",
+          "Business",
+          "Audiobook",
+          "Journalism"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "541F8A97-C9CE-4880-AA96-DEC8EA2D57E9",
+        "name": "DC Comics: The New 52",
+        "type": "book",
+        "weight": 0.77,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "072FA03B-E96E-4DD6-98B3-0CD39347C31F",
+        "name": "Rogues",
+        "type": "book",
+        "weight": 0.69,
+        "tags": [
+          "Fiction",
+          "Anthologies",
+          "Fantasy",
+          "Audiobook",
+          "Science Fiction",
+          "High Fantasy",
+          "Science Fiction Fantasy",
+          "Short Stories",
+          "Mystery",
+          "Adventure"
+        ],
+        "canonicalTags": [
+          "fantasy",
+          "sci-fi"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "F5F2072D-50F7-44DD-A4B4-E974FE24CB80",
+        "name": "Nerd Poker",
+        "type": "podcast",
+        "weight": 1,
+        "tags": [
+          "Podcasts",
+          "Comedy",
+          "Leisure",
+          "Improv",
+          "Games"
+        ],
+        "canonicalTags": [
+          "retro-gaming"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "2408AD4E-8679-4B63-8933-736EB060C897",
+        "name": "Ross Tucker Football Podcast: Daily NFL Podcast",
+        "type": "podcast",
+        "weight": 0.92,
+        "tags": [
+          "Sports News",
+          "Sports",
+          "Football",
+          "Podcasts",
+          "News"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "13605448-1FDC-4DD5-8277-BECBB405C726",
+        "name": "The Dale Jr. Download",
+        "type": "podcast",
+        "weight": 0.84,
+        "tags": [
+          "Sports",
+          "Podcasts"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "CE22668C-7DF0-4ED3-B5D7-0DFCB5A3AB2A",
+        "name": "Abundant Ever After with Cathy Heller",
+        "type": "podcast",
+        "weight": 0.77,
+        "tags": [
+          "Religion & Spirituality",
+          "Podcasts",
+          "Spirituality"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "2AFF26CD-FBBF-48FC-B865-60AA57BFF36E",
+        "name": "Heartland Radio: Presented by The Pat McAfee Show",
+        "type": "podcast",
+        "weight": 0.69,
+        "tags": [
+          "Comedy",
+          "Podcasts"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      }
+    ],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "mono-punk",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 7
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "heavyweight-hoodie",
+        "name": "Heavyweight hoodie",
+        "oneLiner": "heavyweight hoodie in black, heavy by design",
+        "category": "apparel",
+        "role": "hero",
+        "silhouette": "top",
+        "fitScore": 48,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0.321,
+          "cross": 0.6666666666666666
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "metal",
+            "points": 25,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "horror",
+            "points": 13,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "sportswear",
+            "entityName": "Joe Gibbs Racing",
+            "points": 5.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 25,
+          "price": 70,
+          "marginPerUnit": 45,
+          "minRun": 24,
+          "setupCost": 40,
+          "firstRunCost": 640,
+          "breakEvenUnits": 10,
+          "typicalRange": [
+            65,
+            90
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer / embroidery",
+        "supplierBrief": "Heavy fleece hoodie, large back print, small front chest embroidery, kangaroo pocket.",
+        "description": {
+          "text": "A pullover hoodie in black and off-white, finished with a iron cross flame motif. Heavy fleece hoodie. The overall feel is heavy — built for fans who lean into metal and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-pin-set",
+        "name": "Enamel pin set",
+        "oneLiner": "enamel pin set in black, heavy by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 45,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0,
+          "cross": 1
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 25,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "fantasy",
+            "points": 7,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "retro gaming",
+            "points": 7,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 12,
+          "marginPerUnit": 9.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 165,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            12,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "enamel pin maker",
+        "supplierBrief": "Set of 3 hard-enamel pins, 1.25 in, butterfly clasps, mold fee applies.",
+        "description": {
+          "text": "A pin set in black and off-white, finished with a risograph sun motif. Set of 3 hard-enamel pins. The overall feel is heavy — built for fans who lean into metal and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "playing-cards",
+        "name": "Playing card deck",
+        "oneLiner": "playing card deck in black, heavy by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "cards",
+        "fitScore": 45,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0,
+          "cross": 1
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 25,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "fantasy",
+            "points": 10,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "retro gaming",
+            "points": 10,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 4.5,
+          "price": 12.5,
+          "marginPerUnit": 8,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 265,
+          "breakEvenUnits": 22,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "card printer",
+        "supplierBrief": "54-card poker-size deck with custom back and 4 custom face cards, tuck box.",
+        "description": {
+          "text": "A playing card deck in black and off-white, finished with a risograph sun motif. 54-card poker-size deck with custom back and 4 custom face cards. The overall feel is heavy — built for fans who lean into metal and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Art print poster",
+        "oneLiner": "art print poster in black, heavy by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 45,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0,
+          "cross": 1
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 25,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "fantasy",
+            "points": 12,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "sci fi",
+            "points": 8,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "A poster in black and off-white, finished with a risograph sun motif. 18×24 in matte poster on 100 lb stock. The overall feel is heavy — built for fans who lean into metal and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Sticker pack",
+        "oneLiner": "sticker pack in black, heavy by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 45,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0,
+          "cross": 1
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 25,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "retro gaming",
+            "points": 12,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "sci fi",
+            "points": 8,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 0.43,
+          "price": 4,
+          "marginPerUnit": 3.58,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 42.5,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            4,
+            8
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "A sticker sheet in black and off-white, finished with a risograph sun motif. Die-cut or kiss-cut vinyl stickers. The overall feel is heavy — built for fans who lean into metal and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "tote-bag",
+        "name": "Tote bag",
+        "oneLiner": "tote bag in black, heavy by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "tote",
+        "fitScore": 41,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0.528,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 25,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "eco goods",
+            "entityName": "Wildlife Conservation Society",
+            "points": 8.5,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "eco goods",
+            "entityName": "African Wildlife Foundation",
+            "points": 7.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 15,
+          "marginPerUnit": 11.5,
+          "minRun": 36,
+          "setupCost": 25,
+          "firstRunCost": 151,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            15,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "10 oz natural canvas tote, 1–2 colour print, reinforced handles.",
+        "description": {
+          "text": "A tote bag in black and off-white, finished with a risograph sun motif. 10 oz natural canvas tote. The overall feel is heavy — built for fans who lean into metal and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "hot-sauce-collab",
+        "name": "Hot sauce collab",
+        "oneLiner": "hot sauce collab in black, heavy by design",
+        "category": "consumables",
+        "role": "limited",
+        "silhouette": "bottle",
+        "fitScore": 25,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "metal",
+            "points": 25,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 4,
+          "price": 11,
+          "marginPerUnit": 7,
+          "minRun": 48,
+          "setupCost": 50,
+          "firstRunCost": 242,
+          "breakEvenUnits": 22,
+          "typicalRange": [
+            10,
+            16
+          ],
+          "estimate": true
+        },
+        "supplierType": "small-batch sauce maker (co-pack)",
+        "supplierBrief": "5 oz bottles produced by a licensed local sauce maker; you supply label art. Partner-led.",
+        "complianceNote": "Check food labelling rules and the producer's licence.",
+        "description": {
+          "text": "A hot sauce bottle with custom label in black and off-white, finished with a iron cross flame motif. 5 oz bottles produced by a licensed local sauce maker; you supply label art. Partner-led.. The overall feel is heavy — built for fans who lean into metal and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "custom-socks",
+        "name": "Custom socks",
+        "oneLiner": "custom socks in black, heavy by design",
+        "category": "apparel",
+        "role": "core",
+        "silhouette": "socks",
+        "fitScore": 23,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.321,
+          "cross": 0.6666666666666666
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "retro gaming",
+            "points": 13,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "sportswear",
+            "entityName": "Joe Gibbs Racing",
+            "points": 5.5,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "sportswear",
+            "entityName": "Richard Childress Racing",
+            "points": 4,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 5.5,
+          "price": 15.5,
+          "marginPerUnit": 10,
+          "minRun": 36,
+          "setupCost": 60,
+          "firstRunCost": 258,
+          "breakEvenUnits": 17,
+          "typicalRange": [
+            14,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "custom sock knitter",
+        "supplierBrief": "Cotton-blend crew socks, jacquard logo or pattern, 2–3 colours, setup fee.",
+        "description": {
+          "text": "A crew socks in black and off-white, finished with a hand drawn doodle motif. Cotton-blend crew socks. The overall feel is heavy — built for fans who lean into metal and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "enamel-pin-set",
+            "playing-cards",
+            "poster-print",
+            "sticker-pack",
+            "tote-bag",
+            "custom-socks"
+          ],
+          "runSizes": {
+            "enamel-pin-set": 50,
+            "playing-cards": 50,
+            "poster-print": 50,
+            "sticker-pack": 100,
+            "tote-bag": 36,
+            "custom-socks": 36
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "heavyweight-hoodie"
+          ],
+          "runSizes": {
+            "heavyweight-hoodie": 24
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "hot-sauce-collab"
+          ],
+          "runSizes": {
+            "hot-sauce-collab": 48
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "template",
+      "notes": []
+    }
+  },
+  "descriptionSource": "template",
+  "collabsError": "Error: /api/collabs: 503 {\"error\":{\"code\":\"QLOO_UNAVAILABLE\",\"message\":\"Taste data is unavailable. Try again.\"}}",
+  "elapsedMs": 68984
+}

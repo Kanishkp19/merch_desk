@@ -1,0 +1,28 @@
+{
+  "id": "b12",
+  "input": {
+    "text": "Brand-new creator, still exploring; audience preferences are unknown.",
+    "soundsLike": [],
+    "city": "Pune",
+    "creatorType": "other",
+    "budget": "small"
+  },
+  "startedAt": "2026-10-29T12:13:25.152Z",
+  "providerCalls": {
+    "qloo": 0,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "error": "Error: /api/agent/profile: 500 ",
+  "elapsedMs": 107
+}

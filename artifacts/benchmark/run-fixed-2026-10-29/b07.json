@@ -1,0 +1,1312 @@
+{
+  "id": "b07",
+  "input": {
+    "text": "Comic artist drawing cozy science fiction; readers like tabletop games and enamel pins.",
+    "soundsLike": [],
+    "city": "Toronto",
+    "creatorType": "comic_artist",
+    "budget": "medium"
+  },
+  "startedAt": "2026-10-29T11:55:36.441Z",
+  "providerCalls": {
+    "qloo": 8,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s37",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t59",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "cozy science fiction"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t59",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Science Fiction, Science fiction fantasy, Science fiction romance",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t60",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "tabletop games"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t60",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Tabletop Games, Tabletop Games, Tabletop Games Sessions",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t61",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "enamel pins"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t61",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Juan Les Pins Beach, Oskar Schindler's Enamel Factory",
+      "count": 2
+    },
+    {
+      "type": "tool_call",
+      "id": "t62",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "cozy"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t62",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Cozy, Cozy, Cozy",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t63",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:science_fiction",
+          "urn:tag:genre:media:science_fiction_fantasy",
+          "urn:tag:genre:media:science_fiction_romance",
+          "urn:tag:genre:media:military_science_fiction"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t63",
+      "tool": "qloo_taste_tags",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "tool_call",
+      "id": "t64",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:science_fiction",
+          "urn:tag:genre:media:science_fiction_fantasy",
+          "urn:tag:genre:media:science_fiction_romance",
+          "urn:tag:genre:media:military_science_fiction"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t64",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t65",
+      "tool": "qloo_related",
+      "args": {
+        "type": "videogame",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:science_fiction",
+          "urn:tag:genre:media:science_fiction_fantasy",
+          "urn:tag:genre:media:science_fiction_romance",
+          "urn:tag:genre:media:military_science_fiction"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t65",
+      "tool": "qloo_related",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "tool_call",
+      "id": "t66",
+      "tool": "qloo_related",
+      "args": {
+        "type": "book",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:science_fiction",
+          "urn:tag:genre:media:science_fiction_fantasy",
+          "urn:tag:genre:media:science_fiction_romance",
+          "urn:tag:genre:media:military_science_fiction"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t66",
+      "tool": "qloo_related",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "note",
+      "text": "Time budget reached — building the profile from what we have."
+    },
+    {
+      "type": "step",
+      "id": "s38",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "8 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s39",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s40",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:genre:media:science_fiction",
+            "urn:tag:keyword:qloo:tabletop_games",
+            "urn:tag:decor:qloo:cozy",
+            "urn:tag:offerings:place:arcade_games",
+            "urn:tag:amenity:place:board_games_puzzles"
+          ]
+        },
+        "tags": [
+          {
+            "name": "tabletop",
+            "canonical": "tabletop",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "sci fi",
+            "canonical": "sci-fi",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "cozy",
+            "canonical": "cozy",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "retro gaming",
+            "canonical": "retro-gaming",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "Board games / puzzles",
+            "qlooTagId": "urn:tag:amenity:place:board_games_puzzles",
+            "canonical": "board-games",
+            "weight": 0.3,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "C0882174-03C4-47B5-8FAB-A48F4455B054",
+            "name": "Acer",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Computers & Laptops",
+              "Home Theater",
+              "Computer Components",
+              "Software",
+              "Electronics",
+              "Minimalist",
+              "Utilitarian",
+              "Modern",
+              "Professional Success",
+              "Creative Freedom"
+            ],
+            "canonicalTags": [
+              "electronic",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics",
+              "gaming"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "0A87BF0F-5F0C-4BB5-A0C1-65660BF80711",
+            "name": "EK Water Blocks",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Manufacturing companies of Slovenia",
+              "Electronics",
+              "Computer hardware cooling",
+              "Computer Components",
+              "Computer hardware companies",
+              "Minimalist",
+              "Modern",
+              "Industrial",
+              "RGB Lighting",
+              "Sleek Metallic Finishes"
+            ],
+            "canonicalTags": [
+              "electronic",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics",
+              "gaming"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "C1AAE8AA-0A79-4807-8B4B-64DD06F64B08",
+            "name": "Steam",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Website",
+              "Advertising Enabled",
+              "Minimalist Interface",
+              "Dark Mode",
+              "Functional Design",
+              "Information Dense",
+              "Gaming Mastery",
+              "Creating Content",
+              "Owning The Ultimate Collection",
+              "Other"
+            ],
+            "canonicalTags": [
+              "minimal",
+              "retro-gaming"
+            ],
+            "estimated": false,
+            "brandCategories": [
+              "gaming"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "CEA68D36-7AB2-406E-AFA2-FBB97E3CB983",
+            "name": "LG",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Electronics",
+              "Appliances",
+              "Home Theater",
+              "Minimalist",
+              "Clean Lines",
+              "Ergonomic Design",
+              "Neutral Color Palette",
+              "Sleek Metallic Finishes",
+              "Smart Living",
+              "Seamless Connectivity"
+            ],
+            "canonicalTags": [
+              "electronic",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "66295ABF-B10D-4ED6-9107-6E2A8DBD47BA",
+            "name": "Lian Li Industrial",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Electronics",
+              "Taiwanese brands",
+              "1983 establishments in Taiwan",
+              "Computer power supply unit manufacturers",
+              "Computers & Laptops",
+              "Computer enclosure companies",
+              "Electronics companies of Taiwan",
+              "Computer Components",
+              "Taiwanese company stubs",
+              "Companies based in Keelung"
+            ],
+            "canonicalTags": [
+              "electronic"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics",
+              "gaming"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "D02D9B14-12DA-415A-A45E-15EC28FDC627",
+            "name": "Old Spice",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Perfumes",
+              "American brands",
+              "Procter & Gamble brands",
+              "Health & Beauty",
+              "Personal care brands",
+              "Soap brands",
+              "Products introduced in 1937",
+              "Bold Red And White Packaging",
+              "Nautical Motifs",
+              "Clean Minimalist Graphics"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "home-goods"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "AB3B8B05-FA18-481C-8C9A-A4B3F49051C2",
+            "name": "Bowers & Wilkins",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "EngvarB from September 2017",
+              "Companies based in Sussex",
+              "British brands",
+              "1966 establishments in England",
+              "Loudspeaker manufacturers",
+              "British companies established in 1966",
+              "Audio equipment manufacturers of the United Kingdom",
+              "Headphones",
+              "Home Theater",
+              "Electronics"
+            ],
+            "canonicalTags": [
+              "electronic"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "08495BF3-D779-453D-8239-F71ADA609107",
+            "name": "Nokia",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Electronics",
+              "Computer Components",
+              "Phones & Tablets",
+              "Telecommunication",
+              "Minimalist",
+              "Clean Design",
+              "Technical",
+              "Modern",
+              "Professional",
+              "Seamless Global Connectivity"
+            ],
+            "canonicalTags": [
+              "electronic",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "0A3776C6-B975-4CDA-B2E8-C77D27BFC03C",
+            "name": "Grindr",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Website",
+              "Mobile App",
+              "Social Networking App",
+              "Minimalist",
+              "High-Contrast",
+              "Yellow And Black Palette",
+              "Grid Layout",
+              "Global Connectivity",
+              "Community Belonging",
+              "Authentic Self-Expression"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "CD2B9DB6-8105-4FB7-9729-3A3DD36BD19A",
+            "name": "Maingear",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "Computer companies of the United States",
+              "Computer companies",
+              "Gaming",
+              "Companies based in Union County",
+              "Computers & Laptops",
+              "Electronics",
+              "High-Performance Industrial Design",
+              "Customizable RGB Lighting",
+              "Transparent Tempered Glass Panels",
+              "Sleek Metallic Finishes"
+            ],
+            "canonicalTags": [
+              "retro-gaming",
+              "electronic"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics",
+              "gaming"
+            ],
+            "priceTier": "premium"
+          }
+        ],
+        "crossDomain": [],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "neon-arcade",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 8
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:genre:media:science_fiction",
+        "urn:tag:keyword:qloo:tabletop_games",
+        "urn:tag:decor:qloo:cozy",
+        "urn:tag:offerings:place:arcade_games",
+        "urn:tag:amenity:place:board_games_puzzles"
+      ]
+    },
+    "tags": [
+      {
+        "name": "tabletop",
+        "canonical": "tabletop",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "sci fi",
+        "canonical": "sci-fi",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "cozy",
+        "canonical": "cozy",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "retro gaming",
+        "canonical": "retro-gaming",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "Board games / puzzles",
+        "qlooTagId": "urn:tag:amenity:place:board_games_puzzles",
+        "canonical": "board-games",
+        "weight": 0.3,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "C0882174-03C4-47B5-8FAB-A48F4455B054",
+        "name": "Acer",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Computers & Laptops",
+          "Home Theater",
+          "Computer Components",
+          "Software",
+          "Electronics",
+          "Minimalist",
+          "Utilitarian",
+          "Modern",
+          "Professional Success",
+          "Creative Freedom"
+        ],
+        "canonicalTags": [
+          "electronic",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics",
+          "gaming"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "0A87BF0F-5F0C-4BB5-A0C1-65660BF80711",
+        "name": "EK Water Blocks",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Manufacturing companies of Slovenia",
+          "Electronics",
+          "Computer hardware cooling",
+          "Computer Components",
+          "Computer hardware companies",
+          "Minimalist",
+          "Modern",
+          "Industrial",
+          "RGB Lighting",
+          "Sleek Metallic Finishes"
+        ],
+        "canonicalTags": [
+          "electronic",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics",
+          "gaming"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "C1AAE8AA-0A79-4807-8B4B-64DD06F64B08",
+        "name": "Steam",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Website",
+          "Advertising Enabled",
+          "Minimalist Interface",
+          "Dark Mode",
+          "Functional Design",
+          "Information Dense",
+          "Gaming Mastery",
+          "Creating Content",
+          "Owning The Ultimate Collection",
+          "Other"
+        ],
+        "canonicalTags": [
+          "minimal",
+          "retro-gaming"
+        ],
+        "estimated": false,
+        "brandCategories": [
+          "gaming"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "CEA68D36-7AB2-406E-AFA2-FBB97E3CB983",
+        "name": "LG",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Electronics",
+          "Appliances",
+          "Home Theater",
+          "Minimalist",
+          "Clean Lines",
+          "Ergonomic Design",
+          "Neutral Color Palette",
+          "Sleek Metallic Finishes",
+          "Smart Living",
+          "Seamless Connectivity"
+        ],
+        "canonicalTags": [
+          "electronic",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "66295ABF-B10D-4ED6-9107-6E2A8DBD47BA",
+        "name": "Lian Li Industrial",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Electronics",
+          "Taiwanese brands",
+          "1983 establishments in Taiwan",
+          "Computer power supply unit manufacturers",
+          "Computers & Laptops",
+          "Computer enclosure companies",
+          "Electronics companies of Taiwan",
+          "Computer Components",
+          "Taiwanese company stubs",
+          "Companies based in Keelung"
+        ],
+        "canonicalTags": [
+          "electronic"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics",
+          "gaming"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "D02D9B14-12DA-415A-A45E-15EC28FDC627",
+        "name": "Old Spice",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Perfumes",
+          "American brands",
+          "Procter & Gamble brands",
+          "Health & Beauty",
+          "Personal care brands",
+          "Soap brands",
+          "Products introduced in 1937",
+          "Bold Red And White Packaging",
+          "Nautical Motifs",
+          "Clean Minimalist Graphics"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "home-goods"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "AB3B8B05-FA18-481C-8C9A-A4B3F49051C2",
+        "name": "Bowers & Wilkins",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "EngvarB from September 2017",
+          "Companies based in Sussex",
+          "British brands",
+          "1966 establishments in England",
+          "Loudspeaker manufacturers",
+          "British companies established in 1966",
+          "Audio equipment manufacturers of the United Kingdom",
+          "Headphones",
+          "Home Theater",
+          "Electronics"
+        ],
+        "canonicalTags": [
+          "electronic"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "08495BF3-D779-453D-8239-F71ADA609107",
+        "name": "Nokia",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Electronics",
+          "Computer Components",
+          "Phones & Tablets",
+          "Telecommunication",
+          "Minimalist",
+          "Clean Design",
+          "Technical",
+          "Modern",
+          "Professional",
+          "Seamless Global Connectivity"
+        ],
+        "canonicalTags": [
+          "electronic",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "0A3776C6-B975-4CDA-B2E8-C77D27BFC03C",
+        "name": "Grindr",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Website",
+          "Mobile App",
+          "Social Networking App",
+          "Minimalist",
+          "High-Contrast",
+          "Yellow And Black Palette",
+          "Grid Layout",
+          "Global Connectivity",
+          "Community Belonging",
+          "Authentic Self-Expression"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "CD2B9DB6-8105-4FB7-9729-3A3DD36BD19A",
+        "name": "Maingear",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "Computer companies of the United States",
+          "Computer companies",
+          "Gaming",
+          "Companies based in Union County",
+          "Computers & Laptops",
+          "Electronics",
+          "High-Performance Industrial Design",
+          "Customizable RGB Lighting",
+          "Transparent Tempered Glass Panels",
+          "Sleek Metallic Finishes"
+        ],
+        "canonicalTags": [
+          "retro-gaming",
+          "electronic"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics",
+          "gaming"
+        ],
+        "priceTier": "premium"
+      }
+    ],
+    "crossDomain": [],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "neon-arcade",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 8
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "hero-crewneck",
+        "name": "Heavyweight Crewneck",
+        "oneLiner": "Bold streetwear staple with embroidered accents",
+        "category": "apparel",
+        "role": "hero",
+        "silhouette": "top",
+        "fitScore": 23,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "cozy",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 22,
+          "price": 61.5,
+          "marginPerUnit": 39.5,
+          "minRun": 24,
+          "setupCost": 40,
+          "firstRunCost": 568,
+          "breakEvenUnits": 10,
+          "typicalRange": [
+            58,
+            78
+          ],
+          "estimate": true
+        },
+        "supplierType": "premium blank + embroidery/print",
+        "supplierBrief": "12–14 oz fleece crewneck, embroidered chest mark, numbered neck label, limited run.",
+        "description": {
+          "text": "A thick, heavy fleece crewneck in deep purple, offering substantial comfort. A small, embroidered geometric motif in cyan and hot pink sits on the chest, while a minimal yellow numbered label adds detail. The fabric feels durable and tactile, evoking a modern, adventurous streetwear vibe that balances cozy warmth with bold, retro-inspired color contrasts.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-pin-set",
+        "name": "Retro Gaming Enamel Pins",
+        "oneLiner": "Collectible enamel pins with retro gaming flair",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 44,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.72,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "retro gaming",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "gaming",
+            "entityName": "Steam",
+            "points": 12.5,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "gaming",
+            "entityName": "Acer",
+            "points": 9,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 12,
+          "marginPerUnit": 9.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 165,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            12,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "enamel pin maker",
+        "supplierBrief": "Set of 3 hard-enamel pins, 1.25 in, butterfly clasps, mold fee applies.",
+        "description": {
+          "text": "Three hard-enamel pins featuring pixel-art inspired abstract shapes in bright yellow and cyan. The glossy finish contrasts with the deep purple enamel background, creating a vibrant, nostalgic aesthetic. Each pin is compact and detailed, perfect for attaching to bags or hoodies, capturing the energetic spirit of classic video game culture in a tangible, collectible form.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "playing-cards",
+        "name": "Custom Playing Card Deck",
+        "oneLiner": "Premium deck with vibrant custom face cards",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "cards",
+        "fitScore": 29,
+        "scoreParts": {
+          "tag": 0.15,
+          "brand": 0.72,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "gaming",
+            "entityName": "Steam",
+            "points": 12.5,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "gaming",
+            "entityName": "Acer",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "tag",
+            "label": "board games",
+            "points": 8,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 4.5,
+          "price": 12.5,
+          "marginPerUnit": 8,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 265,
+          "breakEvenUnits": 22,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "card printer",
+        "supplierBrief": "54-card poker-size deck with custom back and 4 custom face cards, tuck box.",
+        "description": {
+          "text": "A poker-size deck housed in a sturdy tuck box, featuring a custom back pattern in deep purple and hot pink. The four face cards display stylized, abstract character designs in yellow and cyan, blending vintage card aesthetics with modern graphic arts. The cards have a smooth, durable finish, ideal for tabletop strategy games and casual play, evoking a sense of tactile adventure and cozy evening gatherings.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-camp-mug",
+        "name": "Enamel Camp Mug",
+        "oneLiner": "Rugged camp mug with bold two-tone print",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "mug",
+        "fitScore": 28,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.183,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "cozy",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "home goods",
+            "entityName": "Old Spice",
+            "points": 5.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 4.25,
+          "price": 18,
+          "marginPerUnit": 13.75,
+          "minRun": 48,
+          "setupCost": 40,
+          "firstRunCost": 244,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            18,
+            28
+          ],
+          "estimate": true
+        },
+        "supplierType": "drinkware printer",
+        "supplierBrief": "12 oz enamel-coated steel mug, 1–2 colour print, silver rim.",
+        "description": {
+          "text": "A classic twelve-ounce enamel-coated steel mug with a silver rim, painted in deep purple. A simple, two-color print in hot pink and yellow wraps the side, featuring a subtle, abstract landscape motif. The glossy enamel surface is durable and easy to clean, while the overall design feels nostalgic and rugged, perfect for sipping coffee during cozy, adventurous moments.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "coffee-collab",
+        "name": "Artisan Coffee Roast Bag",
+        "oneLiner": "Cozy coffee bag with vibrant indie label",
+        "category": "consumables",
+        "role": "limited",
+        "silhouette": "bag",
+        "fitScore": 23,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "cozy",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 6.5,
+          "price": 18,
+          "marginPerUnit": 11.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 365,
+          "breakEvenUnits": 21,
+          "typicalRange": [
+            14,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "local roaster",
+        "supplierBrief": "12 oz bags roasted by a local roaster, custom sleeve or label from you.",
+        "complianceNote": "Check food labelling rules with the roaster.",
+        "description": {
+          "text": "A matte-finish twelve-ounce coffee bag in deep purple, featuring a custom label with bold, abstract typography in hot pink and yellow. The design is minimalist yet playful, using cyan accents to highlight the coffee origin details. The packaging feels premium and inviting, suggesting a rich, aromatic brew experience that pairs perfectly with a cozy, creative afternoon or focused work session.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "custom-socks",
+        "name": "Jacquard Pattern Crew Socks",
+        "oneLiner": "Colorful jacquard socks with playful patterns",
+        "category": "apparel",
+        "role": "core",
+        "silhouette": "socks",
+        "fitScore": 23,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "cozy",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 5.5,
+          "price": 15.5,
+          "marginPerUnit": 10,
+          "minRun": 36,
+          "setupCost": 60,
+          "firstRunCost": 258,
+          "breakEvenUnits": 17,
+          "typicalRange": [
+            14,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "custom sock knitter",
+        "supplierBrief": "Cotton-blend crew socks, jacquard logo or pattern, 2–3 colours, setup fee.",
+        "description": {
+          "text": "Cotton-blend crew socks featuring a intricate jacquard weave in deep purple, hot pink, and yellow. The pattern consists of small, repeating geometric shapes that catch the light, adding texture and visual interest. The fit is snug and comfortable, with a ribbed cuff in cyan for contrast. These socks bring a pop of playful, indie energy to any outfit, suitable for casual, everyday wear.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Waterproof Vinyl Sticker Pack",
+        "oneLiner": "Durable vinyl stickers with bold graphic designs",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 22,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.72,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "gaming",
+            "entityName": "Steam",
+            "points": 12.5,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "gaming",
+            "entityName": "Acer",
+            "points": 9,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 0.43,
+          "price": 4,
+          "marginPerUnit": 3.58,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 42.5,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            4,
+            8
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "A sheet of die-cut vinyl stickers featuring three distinct, graphic designs. The visuals use a vibrant palette of hot pink, cyan, and yellow against a deep purple background, with bold outlines and abstract shapes. The waterproof material ensures durability, making them ideal for laptops, water bottles, or journals. The overall aesthetic is energetic and modern, appealing to fans of indie art and expressive, bold stationery.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "enamel-pin-set",
+            "playing-cards",
+            "enamel-camp-mug",
+            "custom-socks",
+            "sticker-pack"
+          ],
+          "runSizes": {
+            "enamel-pin-set": 50,
+            "playing-cards": 50,
+            "enamel-camp-mug": 48,
+            "custom-socks": 36,
+            "sticker-pack": 100
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "hero-crewneck"
+          ],
+          "runSizes": {
+            "hero-crewneck": 24
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "coffee-collab"
+          ],
+          "runSizes": {
+            "coffee-collab": 50
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "llm",
+      "notes": []
+    }
+  },
+  "descriptionSource": "llm",
+  "collabsError": "Error: /api/collabs: 503 {\"error\":{\"code\":\"QLOO_UNAVAILABLE\",\"message\":\"Taste data is unavailable. Try again.\"}}",
+  "elapsedMs": 84851
+}

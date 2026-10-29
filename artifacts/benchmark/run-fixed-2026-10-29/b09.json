@@ -1,0 +1,761 @@
+{
+  "id": "b09",
+  "input": {
+    "text": "Acoustic folk duo; fans favor handmade ceramics and independent bookstores.",
+    "soundsLike": [],
+    "city": "Nashville",
+    "creatorType": "musician",
+    "budget": "small"
+  },
+  "startedAt": "2026-10-29T11:58:18.435Z",
+  "providerCalls": {
+    "qloo": 6,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s45",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t75",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "acoustic folk"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t75",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Acoustic Folk, Folk, Acoustic",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t76",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "handmade ceramics independent bookstores"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t76",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Handmade Ceramics",
+      "count": 1
+    },
+    {
+      "type": "tool_call",
+      "id": "t77",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:music:acoustic_folk",
+          "urn:tag:genre:music:folk",
+          "urn:tag:genre:music:acoustic",
+          "urn:tag:genre:music:folk_rock"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t77",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Folk Music, Folk, Folk Music, accoustic folk…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "t78",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:music:acoustic_folk",
+          "urn:tag:genre:music:folk",
+          "urn:tag:genre:music:acoustic",
+          "urn:tag:genre:music:folk_rock"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t78",
+      "tool": "qloo_related",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "tool_call",
+      "id": "t79",
+      "tool": "qloo_related",
+      "args": {
+        "type": "book",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:music:acoustic_folk",
+          "urn:tag:genre:music:folk",
+          "urn:tag:genre:music:acoustic",
+          "urn:tag:genre:music:folk_rock"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t79",
+      "tool": "qloo_related",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "tool_call",
+      "id": "t80",
+      "tool": "qloo_related",
+      "args": {
+        "type": "tv_show",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:music:acoustic_folk",
+          "urn:tag:genre:music:folk",
+          "urn:tag:genre:music:acoustic",
+          "urn:tag:genre:music:folk_rock"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t80",
+      "tool": "qloo_related",
+      "summary": "10 related tv shows",
+      "count": 10
+    },
+    {
+      "type": "note",
+      "text": "Time budget reached — building the profile from what we have."
+    },
+    {
+      "type": "step",
+      "id": "s46",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "6 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s47",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s48",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:genre:music:acoustic_folk",
+            "urn:tag:decor:qloo:handmade_ceramics"
+          ]
+        },
+        "tags": [
+          {
+            "name": "folk",
+            "canonical": "folk",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "handmade",
+            "canonical": "handmade",
+            "weight": 0.9,
+            "source": "user"
+          }
+        ],
+        "brands": [],
+        "crossDomain": [
+          {
+            "id": "DCA1F3CA-7A25-421C-BB4D-A864B6D53848",
+            "name": "Ted Lasso",
+            "type": "tv_show",
+            "weight": 1,
+            "tags": [
+              "Optimistic",
+              "Lgbt character",
+              "Sport",
+              "Female boss",
+              "Soccer player",
+              "Soccer stadium",
+              "Coaching",
+              "Vulnerable",
+              "Polished",
+              "London england"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "2F2AD30B-7FAC-44DD-A43D-92177E71A22F",
+            "name": "The Crown",
+            "type": "tv_show",
+            "weight": 0.92,
+            "tags": [
+              "Self induced vomiting",
+              "Emotionally engaged",
+              "Greece",
+              "Film producer",
+              "Mental health",
+              "Monarchy",
+              "Political drama",
+              "Throne",
+              "Lung cancer",
+              "Period drama fans"
+            ],
+            "canonicalTags": [
+              "cinema"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "78CE7AC6-AE59-4EAA-BDAD-A63120B15F7F",
+            "name": "Mad Men",
+            "type": "tv_show",
+            "weight": 0.84,
+            "tags": [
+              "Workplace drama",
+              "Analytical",
+              "Period accurate",
+              "Mask",
+              "Subtle continuity montage",
+              "Employer employee relationship",
+              "Film and tv criticism",
+              "Meticulous production design",
+              "Ambition",
+              "Chain smoking"
+            ],
+            "canonicalTags": [
+              "cinema"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "B20D186B-A301-4D58-8497-6C09853CC1B0",
+            "name": "The Late Show with Stephen Colbert",
+            "type": "tv_show",
+            "weight": 0.77,
+            "tags": [
+              "Monologue centric",
+              "Talk show",
+              "Satire",
+              "Monologue driven",
+              "Improvisational",
+              "Observant",
+              "Comedy variety",
+              "Social commentary",
+              "Public discourse",
+              "Live"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "72F1AC56-FB07-49F5-9713-8C738723AB4E",
+            "name": "Friends: The Reunion",
+            "type": "tv_show",
+            "weight": 0.69,
+            "tags": [
+              "Based on tv series",
+              "Reminiscence",
+              "Gay",
+              "Set",
+              "Archive heavy",
+              "Hug",
+              "Friendship",
+              "Conversational intimacy",
+              "Casual",
+              "Nostalgic"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          }
+        ],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": false,
+        "paletteId": "earth-retro",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 6
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:genre:music:acoustic_folk",
+        "urn:tag:decor:qloo:handmade_ceramics"
+      ]
+    },
+    "tags": [
+      {
+        "name": "folk",
+        "canonical": "folk",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "handmade",
+        "canonical": "handmade",
+        "weight": 0.9,
+        "source": "user"
+      }
+    ],
+    "brands": [],
+    "crossDomain": [
+      {
+        "id": "DCA1F3CA-7A25-421C-BB4D-A864B6D53848",
+        "name": "Ted Lasso",
+        "type": "tv_show",
+        "weight": 1,
+        "tags": [
+          "Optimistic",
+          "Lgbt character",
+          "Sport",
+          "Female boss",
+          "Soccer player",
+          "Soccer stadium",
+          "Coaching",
+          "Vulnerable",
+          "Polished",
+          "London england"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "2F2AD30B-7FAC-44DD-A43D-92177E71A22F",
+        "name": "The Crown",
+        "type": "tv_show",
+        "weight": 0.92,
+        "tags": [
+          "Self induced vomiting",
+          "Emotionally engaged",
+          "Greece",
+          "Film producer",
+          "Mental health",
+          "Monarchy",
+          "Political drama",
+          "Throne",
+          "Lung cancer",
+          "Period drama fans"
+        ],
+        "canonicalTags": [
+          "cinema"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "78CE7AC6-AE59-4EAA-BDAD-A63120B15F7F",
+        "name": "Mad Men",
+        "type": "tv_show",
+        "weight": 0.84,
+        "tags": [
+          "Workplace drama",
+          "Analytical",
+          "Period accurate",
+          "Mask",
+          "Subtle continuity montage",
+          "Employer employee relationship",
+          "Film and tv criticism",
+          "Meticulous production design",
+          "Ambition",
+          "Chain smoking"
+        ],
+        "canonicalTags": [
+          "cinema"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "B20D186B-A301-4D58-8497-6C09853CC1B0",
+        "name": "The Late Show with Stephen Colbert",
+        "type": "tv_show",
+        "weight": 0.77,
+        "tags": [
+          "Monologue centric",
+          "Talk show",
+          "Satire",
+          "Monologue driven",
+          "Improvisational",
+          "Observant",
+          "Comedy variety",
+          "Social commentary",
+          "Public discourse",
+          "Live"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "72F1AC56-FB07-49F5-9713-8C738723AB4E",
+        "name": "Friends: The Reunion",
+        "type": "tv_show",
+        "weight": 0.69,
+        "tags": [
+          "Based on tv series",
+          "Reminiscence",
+          "Gay",
+          "Set",
+          "Archive heavy",
+          "Hug",
+          "Friendship",
+          "Conversational intimacy",
+          "Casual",
+          "Nostalgic"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      }
+    ],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": false,
+    "paletteId": "earth-retro",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 6
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "bandana",
+        "name": "Cotton Bandana",
+        "oneLiner": "Rustic folk pattern on soft cotton",
+        "category": "apparel",
+        "role": "hero",
+        "silhouette": "bandana",
+        "fitScore": 23,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "folk",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 12,
+          "marginPerUnit": 8.5,
+          "minRun": 36,
+          "setupCost": 30,
+          "firstRunCost": 156,
+          "breakEvenUnits": 13,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer / sublimation",
+        "supplierBrief": "22 in square cotton bandana, 1–2 colour all-over print.",
+        "description": {
+          "text": "A square cotton bandana featuring a subtle, all-over print in burnt orange on a cream base. The pattern consists of simple, hand-drawn botanical shapes that evoke a traditional folk aesthetic. The fabric looks soft and breathable, with a matte finish that complements the earthy tones. The overall mood is warm, inviting, and distinctly handmade, perfect for everyday wear or festival use.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "zine",
+        "name": "Mini Zine",
+        "oneLiner": "Saddle-stitched pages with a handcrafted feel",
+        "category": "print",
+        "role": "limited",
+        "silhouette": "flat",
+        "fitScore": 23,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "handmade",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 7,
+          "marginPerUnit": 4.5,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 125,
+          "breakEvenUnits": 18,
+          "typicalRange": [
+            6,
+            12
+          ],
+          "estimate": true
+        },
+        "supplierType": "copy / print shop",
+        "supplierBrief": "16-page half-letter zine, saddle-stitched, colour cover, black-and-white inside.",
+        "description": {
+          "text": "A compact, saddle-stitched zine with a tactile, handmade quality. The cover is printed in forest green, while the interior pages alternate between cream and charcoal black-and-white graphics. The staples are visible, emphasizing the DIY construction. The paper has a slight matte texture, enhancing the raw, indie vibe. The design feels intimate and personal, like a carefully crafted keepsake from a local workshop.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Art Print Poster",
+        "oneLiner": "Matte poster with vintage-inspired folk motifs",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 12,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0.6133333333333334
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "cinema",
+            "points": 12,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "A large-format matte poster featuring a single, centered illustration in burnt orange and charcoal on a cream background. The artwork displays stylized, geometric folk patterns that suggest movement and rhythm. The paper has a smooth, 100 lb weight, providing a premium feel. The composition is balanced and minimal, creating a calm, vintage-inspired atmosphere that fits well in a home or studio setting.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "acrylic-keychain",
+        "name": "Acrylic Keychain",
+        "oneLiner": "Compact charm with indie art details",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 1.85,
+          "price": 8,
+          "marginPerUnit": 6.15,
+          "minRun": 50,
+          "setupCost": 25,
+          "firstRunCost": 117.5,
+          "breakEvenUnits": 15,
+          "typicalRange": [
+            8,
+            14
+          ],
+          "estimate": true
+        },
+        "supplierType": "acrylic charm maker",
+        "supplierBrief": "2 in double-sided printed acrylic charm with ring and clasp.",
+        "description": {
+          "text": "A small, double-sided acrylic charm attached to a silver-tone ring. One side features a detailed illustration in forest green and cream, while the reverse shows a complementary pattern in charcoal. The acrylic is clear and glossy, highlighting the vibrant colors of the print. The design is compact and portable, with a clean, modern edge that suits collectible enthusiasts. The overall look is polished yet accessible.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-pin-set",
+        "name": "Enamel Pin Set",
+        "oneLiner": "Three retro pins with enamel finish",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 12,
+          "marginPerUnit": 9.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 165,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            12,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "enamel pin maker",
+        "supplierBrief": "Set of 3 hard-enamel pins, 1.25 in, butterfly clasps, mold fee applies.",
+        "description": {
+          "text": "A set of three small, hard-enamel pins with a glossy finish. The designs feature simple, bold shapes in burnt orange, forest green, and charcoal, set against a cream background. Each pin is about an inch and a quarter, with sturdy butterfly clasps. The aesthetic is retro and collectible, with a clean, polished look. The colors are rich and saturated, making them stand out on jackets or bags.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "poster-print",
+            "acrylic-keychain",
+            "enamel-pin-set"
+          ],
+          "runSizes": {
+            "poster-print": 50,
+            "acrylic-keychain": 50,
+            "enamel-pin-set": 50
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "bandana"
+          ],
+          "runSizes": {
+            "bandana": 36
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "zine"
+          ],
+          "runSizes": {
+            "zine": 50
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "llm",
+      "notes": [
+        "Exploratory picks (no direct audience evidence yet): Acrylic Keychain, Enamel Pin Set."
+      ]
+    }
+  },
+  "descriptionSource": "llm",
+  "collabs": {
+    "collabs": [
+      {
+        "id": "14A621CD-051D-40FC-9E4C-4DB3F35AD48E",
+        "name": "Famous Nashville Live Music Venue, Rooftop Bar & Restaurant",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "Waterfront"
+        ],
+        "partnerIdea": "Possible partner near Nashville — no strong audience-overlap signal yet, vet before pitching.",
+        "linkedProductIds": []
+      }
+    ]
+  },
+  "elapsedMs": 68576
+}

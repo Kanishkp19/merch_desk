@@ -1,0 +1,1499 @@
+{
+  "id": "b05",
+  "input": {
+    "text": "Tiny interview podcast about urban gardens and local food. Listeners prefer practical, low-waste goods.",
+    "soundsLike": [],
+    "city": "Portland",
+    "creatorType": "podcaster",
+    "budget": "small"
+  },
+  "startedAt": "2026-10-29T11:52:58.198Z",
+  "providerCalls": {
+    "qloo": 7,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s29",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t45",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "urban gardening local food low waste practical"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t45",
+      "tool": "qloo_search_tags",
+      "summary": "No tags for \"urban gardening local food low waste practical\""
+    },
+    {
+      "type": "tool_call",
+      "id": "t46",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "sustainable living"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t46",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Sustainable living, Sustainable living, Christian living",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t47",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "gardening"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t47",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Gardening, Gardening, Gardening",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t48",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:theme:qloo:sustainable_living",
+          "urn:tag:keyword:qloo:sustainable_living"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t48",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Garden Gardening, Gardening, Sustainable Gardening, Home Gardening…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "t49",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:theme:qloo:sustainable_living",
+          "urn:tag:keyword:qloo:sustainable_living"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t49",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t50",
+      "tool": "qloo_related",
+      "args": {
+        "type": "book",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:theme:qloo:sustainable_living",
+          "urn:tag:keyword:qloo:sustainable_living"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t50",
+      "tool": "qloo_related",
+      "summary": "10 related books",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t51",
+      "tool": "qloo_related",
+      "args": {
+        "type": "podcast",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:theme:qloo:sustainable_living",
+          "urn:tag:keyword:qloo:sustainable_living"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t51",
+      "tool": "qloo_related",
+      "summary": "10 related podcasts",
+      "count": 10
+    },
+    {
+      "type": "note",
+      "text": "Built taste profile from fan description (Portland urban-garden/low-waste podcast). Seed tags: sustainable living. Taste tags: garden/gardening, sustainable & h"
+    },
+    {
+      "type": "step",
+      "id": "s30",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "7 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s31",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s32",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:theme:qloo:sustainable_living",
+            "urn:tag:genre:media:gardening"
+          ]
+        },
+        "tags": [
+          {
+            "name": "foodie",
+            "canonical": "foodie",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "Sustainable living",
+            "qlooTagId": "urn:tag:theme:qloo:sustainable_living",
+            "canonical": "eco",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Gardening",
+            "qlooTagId": "urn:tag:genre:media:gardening",
+            "canonical": "plants",
+            "weight": 1,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "1A47F17A-061C-4C71-9F9A-B826FC23ECC2",
+            "name": "Alyssa's Cookies",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Dining",
+              "Minimalist",
+              "Clean",
+              "Appetizing",
+              "Approachable",
+              "Holistic Wellness",
+              "Balanced Living",
+              "Optimal Nutrition",
+              "CPG",
+              "Product Brand"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "0553D4AD-3FFF-4A6A-B6F7-3948BA748BC5",
+            "name": "Premier Protein",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Food & Beverage",
+              "Clean",
+              "Minimalist",
+              "Vibrant",
+              "Approachability",
+              "Modern",
+              "Improved Wellness",
+              "Fitness Progress",
+              "Sustained Energy",
+              "Optimal Health"
+            ],
+            "canonicalTags": [
+              "foodie",
+              "minimal",
+              "fitness"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "sportswear",
+              "craft-food"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "24678AF2-EB62-4E3D-ACF5-E102556CB947",
+            "name": "Fairprice Finest",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Website",
+              "Clean",
+              "Modern",
+              "Organized",
+              "Well-Lit",
+              "Inviting",
+              "Gourmet Dining",
+              "Culinary Exploration",
+              "Sophisticated Entertaining",
+              "Healthy Balanced Living"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "37B27CFF-AF90-46A0-A236-F1CEC9FD8CC5",
+            "name": "The 21 Day Sugar Detox",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Website",
+              "Health & Beauty",
+              "Clean Minimalist Design",
+              "Natural Imagery",
+              "Informative Graphics",
+              "Bright Accessible Typography",
+              "Vitality",
+              "Energy Balance",
+              "Optimal Health",
+              "Mindful Lifestyle"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "publishing",
+              "craft-food"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "22544624-7E5B-48B1-89A4-C9A79AFC4B5C",
+            "name": "Christine Carter",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Health & Beauty",
+              "Clean",
+              "Approachable",
+              "Minimalist",
+              "Sustainable Weight Management",
+              "Balanced Living",
+              "Holistic Well-Being",
+              "Other",
+              "Personal Brand",
+              "B2C"
+            ],
+            "canonicalTags": [
+              "minimal",
+              "eco"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "publishing"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "45B42282-1FBE-41AA-B6DB-F447599E7918",
+            "name": "Keto-mojo",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Advertising Enabled",
+              "Healthcare App",
+              "Mobile App",
+              "Clinical",
+              "Clean",
+              "Minimalist",
+              "Information-Rich",
+              "Digital-Forward",
+              "Optimal Metabolic Function",
+              "Longevity"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "019CA275-3055-444F-ABB0-85DD1A1BCD18",
+            "name": "Nut Pods",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Food & Beverage",
+              "Food",
+              "Dairy & Substitutes",
+              "Minimalist",
+              "Clean Typography",
+              "Natural Imagery",
+              "Warm Color Palette",
+              "Holistic Wellness",
+              "Barista-Quality Home Drinks",
+              "Conscious Living"
+            ],
+            "canonicalTags": [
+              "foodie",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food",
+              "coffee-culture"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "865A090D-8818-4FFF-9162-CABB6DD40D50",
+            "name": "FairPrice",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Supermarkets of Singapore",
+              "ExxonMobil",
+              "1973 establishments in Singapore",
+              "Retail companies established in 1973",
+              "EngvarB from July 2014",
+              "Singaporean brands",
+              "Retail",
+              "Convenience stores of Singapore",
+              "Functional",
+              "Clean"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "2F658D99-1CEF-45BC-89F3-E8A5CF9AA3CB",
+            "name": "Sakae Sushi",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Restaurant chains in Singapore",
+              "Singaporean brands",
+              "Restaurants in Singapore",
+              "Restaurants established in 1997",
+              "1997 establishments in Singapore",
+              "Japanese restaurants",
+              "Fast-food chains of Singapore",
+              "Sushi restaurants",
+              "Dining",
+              "Food company stubs"
+            ],
+            "canonicalTags": [
+              "foodie"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "CA2C0A41-9FF4-4AD5-9DBC-E1BF90D7E3FE",
+            "name": "Jujube",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "Fashion",
+              "Bags & Leather",
+              "Accessories",
+              "Vibrant Prints",
+              "Playful Graphics",
+              "Organized Internal Compartments",
+              "Coordinated Accessory Sets",
+              "Seamless Organization",
+              "Stress-Free Parenting",
+              "Stylishly Balanced Family Life"
+            ],
+            "canonicalTags": [
+              "art-print"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "mid"
+          }
+        ],
+        "crossDomain": [
+          {
+            "id": "BF304838-8CA1-4454-84F7-3606794550D2",
+            "name": "The Land Of Flying Lamas & Other Real Travel Stories From The Indian Himalaya",
+            "type": "book",
+            "weight": 1,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "6C51E15B-530A-4588-9EF2-B0CDEF8295DA",
+            "name": "Let There Be Light",
+            "type": "book",
+            "weight": 0.92,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "5DA335A6-1B0E-4027-88EB-E9D55595E12B",
+            "name": "Dollar Bahu",
+            "type": "book",
+            "weight": 0.84,
+            "tags": [
+              "Contemporary",
+              "Literature",
+              "Indian Literature",
+              "Short Stories",
+              "Drama",
+              "Fiction",
+              "Marathi",
+              "India",
+              "Novels",
+              "Family"
+            ],
+            "canonicalTags": [
+              "books"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "6E53B27F-F4EB-4080-A533-88BFEEADE8AC",
+            "name": "1991: How P. V. Narasimha Rao Made History",
+            "type": "book",
+            "weight": 0.77,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "B598EAE9-0CEE-4131-8AC8-861E1F864340",
+            "name": "Option B: Facing Adversity, Building Resilience, and Finding Joy",
+            "type": "book",
+            "weight": 0.69,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "49C45AC8-3106-4F66-91D1-52397059CF17",
+            "name": "Tiny House Podcast",
+            "type": "podcast",
+            "weight": 1,
+            "tags": [
+              "Society & Culture",
+              "Podcasts"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "C0A165E4-29D2-4E97-8D88-2E45D31239B2",
+            "name": "Ready Your Future - A Prepper Podcast",
+            "type": "podcast",
+            "weight": 0.92,
+            "tags": [
+              "Society & Culture",
+              "Podcasts"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "F3B72A59-7DFF-4637-B4A0-D62CEFEF4647",
+            "name": "The Urban Farm Podcast with Greg Peterson",
+            "type": "podcast",
+            "weight": 0.84,
+            "tags": [
+              "Podcasts",
+              "Food",
+              "Courses",
+              "Education",
+              "Arts"
+            ],
+            "canonicalTags": [
+              "foodie"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "B184D004-8D27-4189-B1C1-9FAAE5CC8D48",
+            "name": "Homegrown Liberty Podcast",
+            "type": "podcast",
+            "weight": 0.77,
+            "tags": [
+              "Kids & Family",
+              "Health & Fitness",
+              "Podcasts"
+            ],
+            "canonicalTags": [
+              "fitness"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "732C24A9-F3E0-4965-A68B-5F44F0791D9F",
+            "name": "The Simple Home",
+            "type": "podcast",
+            "weight": 0.69,
+            "tags": [
+              "Podcasts",
+              "Parenting",
+              "Self-Improvement",
+              "Education",
+              "Kids & Family"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          }
+        ],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "pastel-cozy",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 7
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:theme:qloo:sustainable_living",
+        "urn:tag:genre:media:gardening"
+      ]
+    },
+    "tags": [
+      {
+        "name": "foodie",
+        "canonical": "foodie",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "Sustainable living",
+        "qlooTagId": "urn:tag:theme:qloo:sustainable_living",
+        "canonical": "eco",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Gardening",
+        "qlooTagId": "urn:tag:genre:media:gardening",
+        "canonical": "plants",
+        "weight": 1,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "1A47F17A-061C-4C71-9F9A-B826FC23ECC2",
+        "name": "Alyssa's Cookies",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Dining",
+          "Minimalist",
+          "Clean",
+          "Appetizing",
+          "Approachable",
+          "Holistic Wellness",
+          "Balanced Living",
+          "Optimal Nutrition",
+          "CPG",
+          "Product Brand"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "0553D4AD-3FFF-4A6A-B6F7-3948BA748BC5",
+        "name": "Premier Protein",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Food & Beverage",
+          "Clean",
+          "Minimalist",
+          "Vibrant",
+          "Approachability",
+          "Modern",
+          "Improved Wellness",
+          "Fitness Progress",
+          "Sustained Energy",
+          "Optimal Health"
+        ],
+        "canonicalTags": [
+          "foodie",
+          "minimal",
+          "fitness"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "sportswear",
+          "craft-food"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "24678AF2-EB62-4E3D-ACF5-E102556CB947",
+        "name": "Fairprice Finest",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Website",
+          "Clean",
+          "Modern",
+          "Organized",
+          "Well-Lit",
+          "Inviting",
+          "Gourmet Dining",
+          "Culinary Exploration",
+          "Sophisticated Entertaining",
+          "Healthy Balanced Living"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "37B27CFF-AF90-46A0-A236-F1CEC9FD8CC5",
+        "name": "The 21 Day Sugar Detox",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Website",
+          "Health & Beauty",
+          "Clean Minimalist Design",
+          "Natural Imagery",
+          "Informative Graphics",
+          "Bright Accessible Typography",
+          "Vitality",
+          "Energy Balance",
+          "Optimal Health",
+          "Mindful Lifestyle"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "publishing",
+          "craft-food"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "22544624-7E5B-48B1-89A4-C9A79AFC4B5C",
+        "name": "Christine Carter",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Health & Beauty",
+          "Clean",
+          "Approachable",
+          "Minimalist",
+          "Sustainable Weight Management",
+          "Balanced Living",
+          "Holistic Well-Being",
+          "Other",
+          "Personal Brand",
+          "B2C"
+        ],
+        "canonicalTags": [
+          "minimal",
+          "eco"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "publishing"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "45B42282-1FBE-41AA-B6DB-F447599E7918",
+        "name": "Keto-mojo",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Advertising Enabled",
+          "Healthcare App",
+          "Mobile App",
+          "Clinical",
+          "Clean",
+          "Minimalist",
+          "Information-Rich",
+          "Digital-Forward",
+          "Optimal Metabolic Function",
+          "Longevity"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "019CA275-3055-444F-ABB0-85DD1A1BCD18",
+        "name": "Nut Pods",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Food & Beverage",
+          "Food",
+          "Dairy & Substitutes",
+          "Minimalist",
+          "Clean Typography",
+          "Natural Imagery",
+          "Warm Color Palette",
+          "Holistic Wellness",
+          "Barista-Quality Home Drinks",
+          "Conscious Living"
+        ],
+        "canonicalTags": [
+          "foodie",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food",
+          "coffee-culture"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "865A090D-8818-4FFF-9162-CABB6DD40D50",
+        "name": "FairPrice",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Supermarkets of Singapore",
+          "ExxonMobil",
+          "1973 establishments in Singapore",
+          "Retail companies established in 1973",
+          "EngvarB from July 2014",
+          "Singaporean brands",
+          "Retail",
+          "Convenience stores of Singapore",
+          "Functional",
+          "Clean"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "2F658D99-1CEF-45BC-89F3-E8A5CF9AA3CB",
+        "name": "Sakae Sushi",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Restaurant chains in Singapore",
+          "Singaporean brands",
+          "Restaurants in Singapore",
+          "Restaurants established in 1997",
+          "1997 establishments in Singapore",
+          "Japanese restaurants",
+          "Fast-food chains of Singapore",
+          "Sushi restaurants",
+          "Dining",
+          "Food company stubs"
+        ],
+        "canonicalTags": [
+          "foodie"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "CA2C0A41-9FF4-4AD5-9DBC-E1BF90D7E3FE",
+        "name": "Jujube",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "Fashion",
+          "Bags & Leather",
+          "Accessories",
+          "Vibrant Prints",
+          "Playful Graphics",
+          "Organized Internal Compartments",
+          "Coordinated Accessory Sets",
+          "Seamless Organization",
+          "Stress-Free Parenting",
+          "Stylishly Balanced Family Life"
+        ],
+        "canonicalTags": [
+          "art-print"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "mid"
+      }
+    ],
+    "crossDomain": [
+      {
+        "id": "BF304838-8CA1-4454-84F7-3606794550D2",
+        "name": "The Land Of Flying Lamas & Other Real Travel Stories From The Indian Himalaya",
+        "type": "book",
+        "weight": 1,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "6C51E15B-530A-4588-9EF2-B0CDEF8295DA",
+        "name": "Let There Be Light",
+        "type": "book",
+        "weight": 0.92,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "5DA335A6-1B0E-4027-88EB-E9D55595E12B",
+        "name": "Dollar Bahu",
+        "type": "book",
+        "weight": 0.84,
+        "tags": [
+          "Contemporary",
+          "Literature",
+          "Indian Literature",
+          "Short Stories",
+          "Drama",
+          "Fiction",
+          "Marathi",
+          "India",
+          "Novels",
+          "Family"
+        ],
+        "canonicalTags": [
+          "books"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "6E53B27F-F4EB-4080-A533-88BFEEADE8AC",
+        "name": "1991: How P. V. Narasimha Rao Made History",
+        "type": "book",
+        "weight": 0.77,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "B598EAE9-0CEE-4131-8AC8-861E1F864340",
+        "name": "Option B: Facing Adversity, Building Resilience, and Finding Joy",
+        "type": "book",
+        "weight": 0.69,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "49C45AC8-3106-4F66-91D1-52397059CF17",
+        "name": "Tiny House Podcast",
+        "type": "podcast",
+        "weight": 1,
+        "tags": [
+          "Society & Culture",
+          "Podcasts"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "C0A165E4-29D2-4E97-8D88-2E45D31239B2",
+        "name": "Ready Your Future - A Prepper Podcast",
+        "type": "podcast",
+        "weight": 0.92,
+        "tags": [
+          "Society & Culture",
+          "Podcasts"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "F3B72A59-7DFF-4637-B4A0-D62CEFEF4647",
+        "name": "The Urban Farm Podcast with Greg Peterson",
+        "type": "podcast",
+        "weight": 0.84,
+        "tags": [
+          "Podcasts",
+          "Food",
+          "Courses",
+          "Education",
+          "Arts"
+        ],
+        "canonicalTags": [
+          "foodie"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "B184D004-8D27-4189-B1C1-9FAAE5CC8D48",
+        "name": "Homegrown Liberty Podcast",
+        "type": "podcast",
+        "weight": 0.77,
+        "tags": [
+          "Kids & Family",
+          "Health & Fitness",
+          "Podcasts"
+        ],
+        "canonicalTags": [
+          "fitness"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "732C24A9-F3E0-4965-A68B-5F44F0791D9F",
+        "name": "The Simple Home",
+        "type": "podcast",
+        "weight": 0.69,
+        "tags": [
+          "Podcasts",
+          "Parenting",
+          "Self-Improvement",
+          "Education",
+          "Kids & Family"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      }
+    ],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "pastel-cozy",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 7
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "tote-bag",
+        "name": "Canvas Tote Bag",
+        "oneLiner": "Everyday canvas with a fresh, plant-based twist.",
+        "category": "objects",
+        "role": "hero",
+        "silhouette": "tote",
+        "fitScore": 49,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0.43799999999999994,
+          "cross": 0.5599999999999999
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "eco",
+            "points": 25,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "books",
+            "points": 11,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "The 21 Day Sugar Detox",
+            "points": 7,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 15,
+          "marginPerUnit": 11.5,
+          "minRun": 36,
+          "setupCost": 25,
+          "firstRunCost": 151,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            15,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "10 oz natural canvas tote, 1–2 colour print, reinforced handles.",
+        "description": {
+          "text": "Sturdy ten-ounce natural canvas tote featuring reinforced handles and a minimalist botanical print. The design highlights stylized sage and cocoa green leaves arranged in a rhythmic, organic pattern. Blush pink accents add a soft, appetizing warmth, creating a grounded, eco-friendly aesthetic perfect for carrying market hauls or casual essentials with a sophisticated, plant-inspired mood.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "matchbook",
+        "name": "Botanical Matchbooks",
+        "oneLiner": "Compact matchbooks with earthy, culinary-inspired cover art.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 28,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.5760000000000001,
+          "cross": 0.5599999999999999
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "foodie",
+            "points": 11,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Alyssa's Cookies",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Premier Protein",
+            "points": 8.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 0.65,
+          "price": 3,
+          "marginPerUnit": 2.35,
+          "minRun": 100,
+          "setupCost": 20,
+          "firstRunCost": 85,
+          "breakEvenUnits": 29,
+          "typicalRange": [
+            3,
+            6
+          ],
+          "estimate": true
+        },
+        "supplierType": "print shop",
+        "supplierBrief": "Box of matchbooks with custom cover art, 100 min run, check local shipping rules.",
+        "description": {
+          "text": "Small, pocket-sized matchbook boxes displaying a rich, textured illustration. The cover features dense clusters of cocoa-brown herbs and sage green sprigs against a butter yellow background. The design evokes the smell of fresh compost and warm spices, blending an eco-conscious sensibility with a cozy, appetizing vibe that feels both vintage and perfectly suited for intimate, low-light settings.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "zine",
+        "name": "Mini Zine",
+        "oneLiner": "Hand-stitched pages with earthy, flora-focused illustrations.",
+        "category": "print",
+        "role": "limited",
+        "silhouette": "flat",
+        "fitScore": 24,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.43799999999999994,
+          "cross": 0.5599999999999999
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "books",
+            "points": 11,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "The 21 Day Sugar Detox",
+            "points": 7,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Christine Carter",
+            "points": 6,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 7,
+          "marginPerUnit": 4.5,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 125,
+          "breakEvenUnits": 18,
+          "typicalRange": [
+            6,
+            12
+          ],
+          "estimate": true
+        },
+        "supplierType": "copy / print shop",
+        "supplierBrief": "16-page half-letter zine, saddle-stitched, colour cover, black-and-white inside.",
+        "description": {
+          "text": "Saddle-stitched sixteen-page mini zine with a vibrant blush pink cover. Inside, intricate black-and-white line drawings depict detailed root systems and leafy vines, evoking a quiet, introspective connection to nature. The tactile paper texture and handmade binding complement the eco-friendly theme, while the cocoa-toned spine adds a grounded, earthy contrast to the soft, inviting exterior design.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Art Print Poster",
+        "oneLiner": "Large-format botanical art for warm, inviting wall spaces.",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 13,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.43799999999999994,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "The 21 Day Sugar Detox",
+            "points": 7,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Christine Carter",
+            "points": 6,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "Eighteen-by-twenty-four matte poster showcasing a lush, oversized botanical arrangement. Broad sage leaves and delicate blush pink flowers cascade across the paper, grounded by deep cocoa stem details. The composition is dense and organic, creating a serene, appetizing atmosphere that invites viewers to slow down. The matte finish softens the colors, enhancing the natural, eco-friendly charm of the piece.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "acrylic-keychain",
+        "name": "Acrylic Keychain",
+        "oneLiner": "Durable acrylic charm with a playful, plant-based motif.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 1.85,
+          "price": 8,
+          "marginPerUnit": 6.15,
+          "minRun": 50,
+          "setupCost": 25,
+          "firstRunCost": 117.5,
+          "breakEvenUnits": 15,
+          "typicalRange": [
+            8,
+            14
+          ],
+          "estimate": true
+        },
+        "supplierType": "acrylic charm maker",
+        "supplierBrief": "2 in double-sided printed acrylic charm with ring and clasp.",
+        "description": {
+          "text": "Two-inch double-sided acrylic charm featuring a glossy, vibrant design. One side displays a stylized sage green leaf with a butter yellow highlight, while the reverse shows a cocoa brown stem detail. The transparent edges catch the light, adding a modern, indie-chic appeal. The smooth, durable surface and compact size make it a cheerful, eco-conscious accessory for keys or bags.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Vinyl Sticker Pack",
+        "oneLiner": "Waterproof vinyl stickers with earthy, botanical illustrations.",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 0.43,
+          "price": 4,
+          "marginPerUnit": 3.58,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 42.5,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            4,
+            8
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "Sheet of die-cut waterproof vinyl stickers featuring three distinct botanical designs. Each sticker depicts a different plant element in sage, blush pink, and cocoa tones, set against a soft butter yellow background. The sturdy material and clean edges ensure durability, while the nature-inspired motifs provide a fresh, eco-friendly touch for laptops, water bottles, or journals with an appetizing warmth.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "matchbook",
+            "poster-print",
+            "acrylic-keychain",
+            "sticker-pack"
+          ],
+          "runSizes": {
+            "matchbook": 100,
+            "poster-print": 50,
+            "acrylic-keychain": 50,
+            "sticker-pack": 100
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "tote-bag"
+          ],
+          "runSizes": {
+            "tote-bag": 36
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "zine"
+          ],
+          "runSizes": {
+            "zine": 50
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "llm",
+      "notes": [
+        "Exploratory picks (no direct audience evidence yet): Acrylic Keychain, Vinyl Sticker Pack."
+      ]
+    }
+  },
+  "descriptionSource": "llm",
+  "collabs": {
+    "collabs": [
+      {
+        "id": "705D48C5-12B1-4F8D-8551-9B0CD1B8BC85",
+        "name": "Franny",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "eco"
+        ],
+        "partnerIdea": "Co-release with Franny — your audiences overlap on eco.",
+        "linkedProductIds": [
+          "tote-bag"
+        ]
+      },
+      {
+        "id": "D7481BC5-5CE5-4496-8101-73C6A2CE8BA5",
+        "name": "Perfect Bar",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "foodie"
+        ],
+        "partnerIdea": "Co-release with Perfect Bar — your audiences overlap on foodie.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "53A50528-DD7E-4D88-B9F3-09BCB9840F18",
+        "name": "Helium Comedy Club",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "foodie"
+        ],
+        "partnerIdea": "Co-release with Helium Comedy Club — your audiences overlap on foodie.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "A59B7AA8-1C64-4A90-8030-C0033A835509",
+        "name": "OX Restaurant",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "Empanadas"
+        ],
+        "partnerIdea": "Possible partner near Portland — no strong audience-overlap signal yet, vet before pitching.",
+        "linkedProductIds": []
+      }
+    ]
+  },
+  "elapsedMs": 82930
+}

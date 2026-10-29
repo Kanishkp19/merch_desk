@@ -1,0 +1,1673 @@
+{
+  "id": "b10",
+  "input": {
+    "text": "Streamer whose audience likes cozy games, tea, and soft colors; no music angle.",
+    "soundsLike": [],
+    "city": "Seattle",
+    "creatorType": "streamer",
+    "budget": "medium"
+  },
+  "startedAt": "2026-10-29T11:59:27.012Z",
+  "providerCalls": {
+    "qloo": 7,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s49",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t81",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "cozy games"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t81",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Cozy Mystery, Arcade games, Board games / puzzles",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t82",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "tea"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t82",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Tea, Tea, Tea",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t83",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:cozy_mystery",
+          "urn:tag:offerings:place:arcade_games",
+          "urn:tag:amenity:place:board_games_puzzles",
+          "urn:tag:decor:qloo:cozy"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t83",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Tea Cosy, Tea store, Teashop Vibe, Tea Shop Vibe…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "t84",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:cozy_mystery",
+          "urn:tag:offerings:place:arcade_games",
+          "urn:tag:amenity:place:board_games_puzzles",
+          "urn:tag:decor:qloo:cozy"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t84",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t85",
+      "tool": "qloo_related",
+      "args": {
+        "type": "videogame",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:cozy_mystery",
+          "urn:tag:offerings:place:arcade_games",
+          "urn:tag:amenity:place:board_games_puzzles",
+          "urn:tag:decor:qloo:cozy"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t85",
+      "tool": "qloo_related",
+      "summary": "10 related videogames",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t86",
+      "tool": "qloo_related",
+      "args": {
+        "type": "book",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:cozy_mystery",
+          "urn:tag:offerings:place:arcade_games",
+          "urn:tag:amenity:place:board_games_puzzles",
+          "urn:tag:decor:qloo:cozy"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t86",
+      "tool": "qloo_related",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "tool_call",
+      "id": "t87",
+      "tool": "qloo_related",
+      "args": {
+        "type": "podcast",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:cozy_mystery",
+          "urn:tag:offerings:place:arcade_games",
+          "urn:tag:amenity:place:board_games_puzzles",
+          "urn:tag:decor:qloo:cozy"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t87",
+      "tool": "qloo_related",
+      "summary": "10 related podcasts",
+      "count": 10
+    },
+    {
+      "type": "note",
+      "text": "Built profile from description (no named artist). Taste tags centered on cozy/tea vibes (Tea Cosy, Teashop Vibe, etc.). Related brands (10), cozy videogames (10"
+    },
+    {
+      "type": "step",
+      "id": "s50",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "7 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s51",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s52",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:genre:media:cozy_mystery",
+            "urn:tag:genre:media:tea",
+            "urn:tag:offerings:place:arcade_games",
+            "urn:tag:amenity:place:board_games_puzzles"
+          ]
+        },
+        "tags": [
+          {
+            "name": "tea",
+            "canonical": "tea",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "cozy",
+            "canonical": "cozy",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "retro gaming",
+            "canonical": "retro-gaming",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "Board games / puzzles",
+            "qlooTagId": "urn:tag:amenity:place:board_games_puzzles",
+            "canonical": "board-games",
+            "weight": 0.65,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "F7EA3C33-A5B3-4BE8-8211-96B609F72DBA",
+            "name": "Club Atlético Osasuna",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Sports Organization",
+              "Spain Soccer",
+              "Soccer",
+              "Red And Blue Color Palette",
+              "Traditional Sporting Kits",
+              "Dynamic Stadium Imagery",
+              "Professional Athletic Achievement",
+              "Collective Sporting Success",
+              "Legacy Building",
+              "Other"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "sportswear"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "AF3D7012-4D5B-4549-972B-AE4E49911301",
+            "name": "FC Metz",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "France Soccer",
+              "Soccer",
+              "Sports Organization",
+              "Garnet Color Palette",
+              "Traditional Sporting Crest",
+              "Athletic Branding",
+              "Championship Success",
+              "Regional Sporting Excellence",
+              "Other",
+              "Entertainment Brand"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "sportswear"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "B3DCAE99-A3CB-4037-B75B-EC6D22D3F384",
+            "name": "Austin Spurs",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Sports Organization",
+              "Basketball",
+              "NBA G League",
+              "Silver and Black Team Colors",
+              "Athletic Branding",
+              "Minimalist Logo Design",
+              "Professional Athletics",
+              "Championship Success",
+              "Sporting Excellence",
+              "Other"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "sportswear"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "567053EB-4B74-4241-AB2F-FAD06946025B",
+            "name": "K Ruoka",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Mobile App",
+              "Food & Dining App",
+              "Retail",
+              "Clean Layouts",
+              "Food Photography",
+              "User-Friendly Interface",
+              "Stress-Free Cooking",
+              "Healthy Meal Planning",
+              "Seamless Domestic Management",
+              "Other"
+            ],
+            "canonicalTags": [
+              "foodie",
+              "photography"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "8C04F54E-8755-4798-B82C-E880AFDF66BE",
+            "name": "F'real Milkshakes",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Food",
+              "Food & Beverage",
+              "Dairy & Substitutes",
+              "Bright Colors",
+              "Playful Branding",
+              "Digital Interfaces",
+              "Instant Gratification",
+              "High-Energy Living",
+              "CPG",
+              "Product Brand"
+            ],
+            "canonicalTags": [
+              "foodie"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "351A2844-D3FF-4EA8-8DAC-7BC31DD67622",
+            "name": "Brooklyn Nets",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Basketball",
+              "Sports Organization",
+              "NBA",
+              "Minimalist Monochrome Color Palette",
+              "Sleek Typographic Branding",
+              "High-Contrast Photography",
+              "Professional Athletic Achievement",
+              "Championship Success",
+              "Other",
+              "Entertainment Brand"
+            ],
+            "canonicalTags": [
+              "minimal",
+              "photography"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "sportswear"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "F5747147-676D-4451-A628-415F037131B2",
+            "name": "Appletiser UK",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Food & Beverage",
+              "Carbonated",
+              "Juice",
+              "Drinks",
+              "Elegant",
+              "Clean",
+              "Minimalist",
+              "Metallic Gold Accents",
+              "Garden Parties",
+              "Al Fresco Dining"
+            ],
+            "canonicalTags": [
+              "foodie",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "E686F7F7-08C9-41FE-A711-2A6F7F152A48",
+            "name": "Lolaliza",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Fashion",
+              "Casual",
+              "Minimalist",
+              "Solid Colors",
+              "Clean Lines",
+              "Functional Design",
+              "Effortless Style",
+              "Organized Living",
+              "Comfortable Confidence",
+              "Fashion"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "FCEDC6DD-5BE7-4EA5-8356-5F9669269A41",
+            "name": "Mundo Facundo",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Snacks",
+              "Food",
+              "Food & Beverage",
+              "Packaged",
+              "Vibrant Colors",
+              "Classic Typography",
+              "Traditional Packaging",
+              "Relaxed Living",
+              "Enjoying Small Pleasures",
+              "CPG"
+            ],
+            "canonicalTags": [
+              "foodie"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "B19670BA-8B2E-48FF-BA0F-787F7C1E0CBD",
+            "name": "Snackpass",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "Food & Dining App",
+              "Mobile App",
+              "Clean Minimalist UI",
+              "Bright Vibrant Accents",
+              "Friendly Typography",
+              "Functional Design",
+              "Connected Social Dining",
+              "Optimized Daily Routine",
+              "Supportive Local Consumption",
+              "Other"
+            ],
+            "canonicalTags": [
+              "foodie",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "budget"
+          }
+        ],
+        "crossDomain": [
+          {
+            "id": "E67AF84A-BD97-425B-B483-34542B1C8909",
+            "name": "NieR: Automata",
+            "type": "videogame",
+            "weight": 1,
+            "tags": [
+              "3D",
+              "Stylized Realism",
+              "Anime-influenced",
+              "unique storyline",
+              "philosophical",
+              "strong soundtrack",
+              "memorable characters",
+              "replay-value",
+              "melancholic",
+              "thought-provoking"
+            ],
+            "canonicalTags": [
+              "anime"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "4E757AB5-3AC8-48EA-9C3F-7247C7799FA2",
+            "name": "New World",
+            "type": "videogame",
+            "weight": 0.92,
+            "tags": [
+              "3D",
+              "Realistic",
+              "PvP-focused",
+              "sandbox",
+              "social",
+              "guild-oriented",
+              "grindy",
+              "community-driven",
+              "adventurous",
+              "tense"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "08910533-E760-4683-9201-57B9B73A4F7F",
+            "name": "Sekiro: Shadows Die Twice",
+            "type": "videogame",
+            "weight": 0.84,
+            "tags": [
+              "3D",
+              "Realistic",
+              "Dark Fantasy",
+              "punishing difficulty",
+              "rewarding combat",
+              "tight controls",
+              "mastery focused",
+              "immersive worldbuilding",
+              "Japanese historical setting",
+              "tense"
+            ],
+            "canonicalTags": [
+              "fantasy"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "A7E89EDB-59DD-4F28-AC2B-49307548E3EF",
+            "name": "Dark Souls",
+            "type": "videogame",
+            "weight": 0.77,
+            "tags": [
+              "3D",
+              "Realistic",
+              "Dark fantasy",
+              "Gothic",
+              "challenging",
+              "rewarding",
+              "deep lore",
+              "cryptic storytelling",
+              "methodical combat",
+              "high skill ceiling"
+            ],
+            "canonicalTags": [
+              "fantasy"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "CB2DD50F-A89C-4B72-B332-895078F6B0A2",
+            "name": "Final Fantasy XIV Online: A Realm Reborn",
+            "type": "videogame",
+            "weight": 0.69,
+            "tags": [
+              "3D",
+              "High-fidelity fantasy",
+              "Cinematic cutscenes",
+              "story-rich",
+              "social",
+              "endgame progression",
+              "frequent updates",
+              "deep lore",
+              "epic",
+              "hopeful"
+            ],
+            "canonicalTags": [
+              "fantasy"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "8DA853AA-D2C6-4645-A1FD-1E3EFD84CB11",
+            "name": "Why Is This Happening? The Chris Hayes Podcast",
+            "type": "podcast",
+            "weight": 1,
+            "tags": [
+              "Society & Culture",
+              "News",
+              "Podcasts"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "2316845B-BE97-4EE2-AD4D-E8426BD523C9",
+            "name": "We Got This with Mark and Hal",
+            "type": "podcast",
+            "weight": 0.92,
+            "tags": [
+              "Comedy",
+              "Arts",
+              "Comedy Interviews",
+              "Podcasts"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "0C27CB6C-BE83-4120-AF59-78BF0FC0C888",
+            "name": "The Indoor Kids with Kumail Nanjiani and Emily V. Gordon",
+            "type": "podcast",
+            "weight": 0.84,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "B5F45DCB-E922-4DFD-ACE9-730577AEC94D",
+            "name": "Hysteria",
+            "type": "podcast",
+            "weight": 0.77,
+            "tags": [
+              "News",
+              "Podcasts",
+              "Society & Culture",
+              "Politics"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "18C36E19-FB23-42B3-92A5-01DB6B157A8D",
+            "name": "Art of Wrestling",
+            "type": "podcast",
+            "weight": 0.69,
+            "tags": [
+              "Society & Culture",
+              "Wrestling",
+              "Podcasts",
+              "Sports"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          }
+        ],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "pastel-cozy",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 7
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:genre:media:cozy_mystery",
+        "urn:tag:genre:media:tea",
+        "urn:tag:offerings:place:arcade_games",
+        "urn:tag:amenity:place:board_games_puzzles"
+      ]
+    },
+    "tags": [
+      {
+        "name": "tea",
+        "canonical": "tea",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "cozy",
+        "canonical": "cozy",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "retro gaming",
+        "canonical": "retro-gaming",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "Board games / puzzles",
+        "qlooTagId": "urn:tag:amenity:place:board_games_puzzles",
+        "canonical": "board-games",
+        "weight": 0.65,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "F7EA3C33-A5B3-4BE8-8211-96B609F72DBA",
+        "name": "Club Atlético Osasuna",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Sports Organization",
+          "Spain Soccer",
+          "Soccer",
+          "Red And Blue Color Palette",
+          "Traditional Sporting Kits",
+          "Dynamic Stadium Imagery",
+          "Professional Athletic Achievement",
+          "Collective Sporting Success",
+          "Legacy Building",
+          "Other"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "sportswear"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "AF3D7012-4D5B-4549-972B-AE4E49911301",
+        "name": "FC Metz",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "France Soccer",
+          "Soccer",
+          "Sports Organization",
+          "Garnet Color Palette",
+          "Traditional Sporting Crest",
+          "Athletic Branding",
+          "Championship Success",
+          "Regional Sporting Excellence",
+          "Other",
+          "Entertainment Brand"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "sportswear"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "B3DCAE99-A3CB-4037-B75B-EC6D22D3F384",
+        "name": "Austin Spurs",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Sports Organization",
+          "Basketball",
+          "NBA G League",
+          "Silver and Black Team Colors",
+          "Athletic Branding",
+          "Minimalist Logo Design",
+          "Professional Athletics",
+          "Championship Success",
+          "Sporting Excellence",
+          "Other"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "sportswear"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "567053EB-4B74-4241-AB2F-FAD06946025B",
+        "name": "K Ruoka",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Mobile App",
+          "Food & Dining App",
+          "Retail",
+          "Clean Layouts",
+          "Food Photography",
+          "User-Friendly Interface",
+          "Stress-Free Cooking",
+          "Healthy Meal Planning",
+          "Seamless Domestic Management",
+          "Other"
+        ],
+        "canonicalTags": [
+          "foodie",
+          "photography"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "8C04F54E-8755-4798-B82C-E880AFDF66BE",
+        "name": "F'real Milkshakes",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Food",
+          "Food & Beverage",
+          "Dairy & Substitutes",
+          "Bright Colors",
+          "Playful Branding",
+          "Digital Interfaces",
+          "Instant Gratification",
+          "High-Energy Living",
+          "CPG",
+          "Product Brand"
+        ],
+        "canonicalTags": [
+          "foodie"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "351A2844-D3FF-4EA8-8DAC-7BC31DD67622",
+        "name": "Brooklyn Nets",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Basketball",
+          "Sports Organization",
+          "NBA",
+          "Minimalist Monochrome Color Palette",
+          "Sleek Typographic Branding",
+          "High-Contrast Photography",
+          "Professional Athletic Achievement",
+          "Championship Success",
+          "Other",
+          "Entertainment Brand"
+        ],
+        "canonicalTags": [
+          "minimal",
+          "photography"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "sportswear"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "F5747147-676D-4451-A628-415F037131B2",
+        "name": "Appletiser UK",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Food & Beverage",
+          "Carbonated",
+          "Juice",
+          "Drinks",
+          "Elegant",
+          "Clean",
+          "Minimalist",
+          "Metallic Gold Accents",
+          "Garden Parties",
+          "Al Fresco Dining"
+        ],
+        "canonicalTags": [
+          "foodie",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "E686F7F7-08C9-41FE-A711-2A6F7F152A48",
+        "name": "Lolaliza",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Fashion",
+          "Casual",
+          "Minimalist",
+          "Solid Colors",
+          "Clean Lines",
+          "Functional Design",
+          "Effortless Style",
+          "Organized Living",
+          "Comfortable Confidence",
+          "Fashion"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "FCEDC6DD-5BE7-4EA5-8356-5F9669269A41",
+        "name": "Mundo Facundo",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Snacks",
+          "Food",
+          "Food & Beverage",
+          "Packaged",
+          "Vibrant Colors",
+          "Classic Typography",
+          "Traditional Packaging",
+          "Relaxed Living",
+          "Enjoying Small Pleasures",
+          "CPG"
+        ],
+        "canonicalTags": [
+          "foodie"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "B19670BA-8B2E-48FF-BA0F-787F7C1E0CBD",
+        "name": "Snackpass",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "Food & Dining App",
+          "Mobile App",
+          "Clean Minimalist UI",
+          "Bright Vibrant Accents",
+          "Friendly Typography",
+          "Functional Design",
+          "Connected Social Dining",
+          "Optimized Daily Routine",
+          "Supportive Local Consumption",
+          "Other"
+        ],
+        "canonicalTags": [
+          "foodie",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "budget"
+      }
+    ],
+    "crossDomain": [
+      {
+        "id": "E67AF84A-BD97-425B-B483-34542B1C8909",
+        "name": "NieR: Automata",
+        "type": "videogame",
+        "weight": 1,
+        "tags": [
+          "3D",
+          "Stylized Realism",
+          "Anime-influenced",
+          "unique storyline",
+          "philosophical",
+          "strong soundtrack",
+          "memorable characters",
+          "replay-value",
+          "melancholic",
+          "thought-provoking"
+        ],
+        "canonicalTags": [
+          "anime"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "4E757AB5-3AC8-48EA-9C3F-7247C7799FA2",
+        "name": "New World",
+        "type": "videogame",
+        "weight": 0.92,
+        "tags": [
+          "3D",
+          "Realistic",
+          "PvP-focused",
+          "sandbox",
+          "social",
+          "guild-oriented",
+          "grindy",
+          "community-driven",
+          "adventurous",
+          "tense"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "08910533-E760-4683-9201-57B9B73A4F7F",
+        "name": "Sekiro: Shadows Die Twice",
+        "type": "videogame",
+        "weight": 0.84,
+        "tags": [
+          "3D",
+          "Realistic",
+          "Dark Fantasy",
+          "punishing difficulty",
+          "rewarding combat",
+          "tight controls",
+          "mastery focused",
+          "immersive worldbuilding",
+          "Japanese historical setting",
+          "tense"
+        ],
+        "canonicalTags": [
+          "fantasy"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "A7E89EDB-59DD-4F28-AC2B-49307548E3EF",
+        "name": "Dark Souls",
+        "type": "videogame",
+        "weight": 0.77,
+        "tags": [
+          "3D",
+          "Realistic",
+          "Dark fantasy",
+          "Gothic",
+          "challenging",
+          "rewarding",
+          "deep lore",
+          "cryptic storytelling",
+          "methodical combat",
+          "high skill ceiling"
+        ],
+        "canonicalTags": [
+          "fantasy"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "CB2DD50F-A89C-4B72-B332-895078F6B0A2",
+        "name": "Final Fantasy XIV Online: A Realm Reborn",
+        "type": "videogame",
+        "weight": 0.69,
+        "tags": [
+          "3D",
+          "High-fidelity fantasy",
+          "Cinematic cutscenes",
+          "story-rich",
+          "social",
+          "endgame progression",
+          "frequent updates",
+          "deep lore",
+          "epic",
+          "hopeful"
+        ],
+        "canonicalTags": [
+          "fantasy"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "8DA853AA-D2C6-4645-A1FD-1E3EFD84CB11",
+        "name": "Why Is This Happening? The Chris Hayes Podcast",
+        "type": "podcast",
+        "weight": 1,
+        "tags": [
+          "Society & Culture",
+          "News",
+          "Podcasts"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "2316845B-BE97-4EE2-AD4D-E8426BD523C9",
+        "name": "We Got This with Mark and Hal",
+        "type": "podcast",
+        "weight": 0.92,
+        "tags": [
+          "Comedy",
+          "Arts",
+          "Comedy Interviews",
+          "Podcasts"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "0C27CB6C-BE83-4120-AF59-78BF0FC0C888",
+        "name": "The Indoor Kids with Kumail Nanjiani and Emily V. Gordon",
+        "type": "podcast",
+        "weight": 0.84,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "B5F45DCB-E922-4DFD-ACE9-730577AEC94D",
+        "name": "Hysteria",
+        "type": "podcast",
+        "weight": 0.77,
+        "tags": [
+          "News",
+          "Podcasts",
+          "Society & Culture",
+          "Politics"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "18C36E19-FB23-42B3-92A5-01DB6B157A8D",
+        "name": "Art of Wrestling",
+        "type": "podcast",
+        "weight": 0.69,
+        "tags": [
+          "Society & Culture",
+          "Wrestling",
+          "Podcasts",
+          "Sports"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      }
+    ],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "pastel-cozy",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 7
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "hero-crewneck",
+        "name": "Heavyweight crewneck",
+        "oneLiner": "heavyweight crewneck in blush pink, calm by design",
+        "category": "apparel",
+        "role": "hero",
+        "silhouette": "top",
+        "fitScore": 30,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.252,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "cozy",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "boutique fashion",
+            "entityName": "Lolaliza",
+            "points": 4,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "boutique fashion",
+            "entityName": "Mundo Facundo",
+            "points": 3.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 22,
+          "price": 61.5,
+          "marginPerUnit": 39.5,
+          "minRun": 24,
+          "setupCost": 40,
+          "firstRunCost": 568,
+          "breakEvenUnits": 10,
+          "typicalRange": [
+            58,
+            78
+          ],
+          "estimate": true
+        },
+        "supplierType": "premium blank + embroidery/print",
+        "supplierBrief": "12–14 oz fleece crewneck, embroidered chest mark, numbered neck label, limited run.",
+        "description": {
+          "text": "A crewneck sweatshirt in blush pink and sage, finished with a quilted heart motif. 12–14 oz fleece crewneck. The overall feel is calm — built for fans who lean into tea and cozy — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-pin-set",
+        "name": "Enamel pin set",
+        "oneLiner": "enamel pin set in blush pink, calm by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 43,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 1
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "retro gaming",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "anime",
+            "points": 11,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "fantasy",
+            "points": 9,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 12,
+          "marginPerUnit": 9.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 165,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            12,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "enamel pin maker",
+        "supplierBrief": "Set of 3 hard-enamel pins, 1.25 in, butterfly clasps, mold fee applies.",
+        "description": {
+          "text": "A pin set in blush pink and sage, finished with a pixel art motif. Set of 3 hard-enamel pins. The overall feel is calm — built for fans who lean into tea and cozy — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "custom-socks",
+        "name": "Custom socks",
+        "oneLiner": "custom socks in blush pink, calm by design",
+        "category": "apparel",
+        "role": "core",
+        "silhouette": "socks",
+        "fitScore": 40,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.5760000000000001,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "cozy",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "sportswear",
+            "entityName": "Club Atlético Osasuna",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "sportswear",
+            "entityName": "FC Metz",
+            "points": 8.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 5.5,
+          "price": 15.5,
+          "marginPerUnit": 10,
+          "minRun": 36,
+          "setupCost": 60,
+          "firstRunCost": 258,
+          "breakEvenUnits": 17,
+          "typicalRange": [
+            14,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "custom sock knitter",
+        "supplierBrief": "Cotton-blend crew socks, jacquard logo or pattern, 2–3 colours, setup fee.",
+        "description": {
+          "text": "A crew socks in blush pink and sage, finished with a quilted heart motif. Cotton-blend crew socks. The overall feel is calm — built for fans who lean into tea and cozy — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "coffee-collab",
+        "name": "Coffee roast collab",
+        "oneLiner": "coffee roast collab in blush pink, calm by design",
+        "category": "consumables",
+        "role": "limited",
+        "silhouette": "bag",
+        "fitScore": 36,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.43799999999999994,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "cozy",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "K Ruoka",
+            "points": 7,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "F'real Milkshakes",
+            "points": 6,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 6.5,
+          "price": 18,
+          "marginPerUnit": 11.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 365,
+          "breakEvenUnits": 21,
+          "typicalRange": [
+            14,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "local roaster",
+        "supplierBrief": "12 oz bags roasted by a local roaster, custom sleeve or label from you.",
+        "complianceNote": "Check food labelling rules with the roaster.",
+        "description": {
+          "text": "A coffee bag with custom label in blush pink and sage, finished with a quilted heart motif. 12 oz bags roasted by a local roaster. The overall feel is calm — built for fans who lean into tea and cozy — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "playing-cards",
+        "name": "Playing card deck",
+        "oneLiner": "playing card deck in blush pink, calm by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "cards",
+        "fitScore": 27,
+        "scoreParts": {
+          "tag": 0.325,
+          "brand": 0,
+          "cross": 0.5599999999999999
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "board games",
+            "points": 16,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "fantasy",
+            "points": 11,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 4.5,
+          "price": 12.5,
+          "marginPerUnit": 8,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 265,
+          "breakEvenUnits": 22,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "card printer",
+        "supplierBrief": "54-card poker-size deck with custom back and 4 custom face cards, tuck box.",
+        "description": {
+          "text": "A playing card deck in blush pink and sage, finished with a dice and meeple motif. 54-card poker-size deck with custom back and 4 custom face cards. The overall feel is calm — built for fans who lean into tea and cozy — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-camp-mug",
+        "name": "Enamel camp mug",
+        "oneLiner": "enamel camp mug in blush pink, calm by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "mug",
+        "fitScore": 23,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "cozy",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 4.25,
+          "price": 18,
+          "marginPerUnit": 13.75,
+          "minRun": 48,
+          "setupCost": 40,
+          "firstRunCost": 244,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            18,
+            28
+          ],
+          "estimate": true
+        },
+        "supplierType": "drinkware printer",
+        "supplierBrief": "12 oz enamel-coated steel mug, 1–2 colour print, silver rim.",
+        "description": {
+          "text": "A camp mug in blush pink and sage, finished with a quilted heart motif. 12 oz enamel-coated steel mug. The overall feel is calm — built for fans who lean into tea and cozy — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "hot-sauce-collab",
+        "name": "Hot sauce collab",
+        "oneLiner": "hot sauce collab in blush pink, calm by design",
+        "category": "consumables",
+        "role": "core",
+        "silhouette": "bottle",
+        "fitScore": 13,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.43799999999999994,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "K Ruoka",
+            "points": 7,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "F'real Milkshakes",
+            "points": 6,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 4,
+          "price": 11,
+          "marginPerUnit": 7,
+          "minRun": 48,
+          "setupCost": 50,
+          "firstRunCost": 242,
+          "breakEvenUnits": 22,
+          "typicalRange": [
+            10,
+            16
+          ],
+          "estimate": true
+        },
+        "supplierType": "small-batch sauce maker (co-pack)",
+        "supplierBrief": "5 oz bottles produced by a licensed local sauce maker; you supply label art. Partner-led.",
+        "complianceNote": "Check food labelling rules and the producer's licence.",
+        "description": {
+          "text": "A hot sauce bottle with custom label in blush pink and sage, finished with a flame and chili motif. 5 oz bottles produced by a licensed local sauce maker; you supply label art. Partner-led.. The overall feel is calm — built for fans who lean into tea and cozy — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "enamel-pin-set",
+            "custom-socks",
+            "playing-cards",
+            "enamel-camp-mug",
+            "hot-sauce-collab"
+          ],
+          "runSizes": {
+            "enamel-pin-set": 50,
+            "custom-socks": 36,
+            "playing-cards": 50,
+            "enamel-camp-mug": 48,
+            "hot-sauce-collab": 48
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "hero-crewneck"
+          ],
+          "runSizes": {
+            "hero-crewneck": 24
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "coffee-collab"
+          ],
+          "runSizes": {
+            "coffee-collab": 50
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "template",
+      "notes": []
+    }
+  },
+  "descriptionSource": "template",
+  "collabs": {
+    "collabs": [
+      {
+        "id": "004DC3F3-F3E6-4A2E-8179-08269E651660",
+        "name": "Can Bar",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "Gastropub"
+        ],
+        "partnerIdea": "Co-branded coffee-collab with Can Bar art, sold at their Seattle location.",
+        "linkedProductIds": [
+          "hot-sauce-collab"
+        ]
+      },
+      {
+        "id": "0020924B-B440-4A7C-9453-43053A9CA99B",
+        "name": "Thanh Vi Restaurant",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "Wheelchair accessible parking lot"
+        ],
+        "partnerIdea": "Limited hot-sauce-collab featuring Thanh Vi flavors, packaged with your enamel-pin-set.",
+        "linkedProductIds": [
+          "hot-sauce-collab"
+        ]
+      }
+    ]
+  },
+  "elapsedMs": 81000
+}

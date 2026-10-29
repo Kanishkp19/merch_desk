@@ -1,0 +1,417 @@
+{
+  "http": 200,
+  "data": {
+    "products": [
+      {
+        "id": "hero-crewneck",
+        "name": "Heavyweight Crewneck",
+        "oneLiner": "Lush fleece with hypnotic electronic accents",
+        "category": "apparel",
+        "role": "hero",
+        "silhouette": "top",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 22,
+          "price": 58,
+          "marginPerUnit": 36,
+          "minRun": 24,
+          "setupCost": 40,
+          "firstRunCost": 568,
+          "breakEvenUnits": 10,
+          "typicalRange": [
+            58,
+            78
+          ],
+          "estimate": true
+        },
+        "supplierType": "premium blank + embroidery/print",
+        "supplierBrief": "12\u201314 oz fleece crewneck, embroidered chest mark, numbered neck label, limited run.",
+        "description": {
+          "text": "This thick, twelve-ounce fleece crewneck features a soft black base with a subtle silver herringbone texture. A small, abstract electronic waveform motif in baby blue and magenta is embroidered on the chest, creating a hypnotic focal point. The oversized fit and premium feel evoke high-end streetwear, while the muted palette ensures timeless versatility for seasonal layering.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "patch-set",
+        "name": "Embroidered Patch Set",
+        "oneLiner": "Punk-inspired hip-hop textures on iron-on patches",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 12,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0.6133333333333334
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "horror",
+            "points": 12,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2,
+          "price": 8,
+          "marginPerUnit": 6,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 140,
+          "breakEvenUnits": 18,
+          "typicalRange": [
+            8,
+            15
+          ],
+          "estimate": true
+        },
+        "supplierType": "embroidery shop",
+        "supplierBrief": "Set of 2 iron-on embroidered patches, 3 in, merrowed border, digitizing fee applies.",
+        "description": {
+          "text": "Two square patches display rugged, high-density embroidery on a black canvas base. One features a jagged silver soundwave, while the other shows a magenta and baby blue geometric hiphop symbol. The merrowed edges provide a durable, workwear aesthetic, and the tactile thread creates a distinct, punk-inspired texture that complements jackets and denim with industrial grit.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "bandana",
+        "name": "Printed Bandana",
+        "oneLiner": "Hypnotic electronic patterns in vibrant festival colors",
+        "category": "apparel",
+        "role": "core",
+        "silhouette": "bandana",
+        "fitScore": 25,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "hiphop",
+            "points": 25,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 12,
+          "marginPerUnit": 8.5,
+          "minRun": 36,
+          "setupCost": 30,
+          "firstRunCost": 156,
+          "breakEvenUnits": 13,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer / sublimation",
+        "supplierBrief": "22 in square cotton bandana, 1\u20132 colour all-over print.",
+        "description": {
+          "text": "A square cotton bandana displays a seamless, all-over print of concentric silver and baby blue circles. Interspersed with sharp magenta lines, the design mimics a hypnotic electronic rhythm. The black background grounds the vibrant palette, creating a striking visual impact suitable for festival wear or street style, blending vintage folk shapes with modern digital energy.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "cassette-usb",
+        "name": "Cassette-Style USB",
+        "oneLiner": "Retro cassette drive with neon electronic motifs",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "cassette",
+        "fitScore": 25,
+        "scoreParts": {
+          "tag": 0.5,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "electronic",
+            "points": 25,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 5,
+          "price": 18,
+          "marginPerUnit": 13,
+          "minRun": 50,
+          "setupCost": 30,
+          "firstRunCost": 280,
+          "breakEvenUnits": 16,
+          "typicalRange": [
+            18,
+            28
+          ],
+          "estimate": true
+        },
+        "supplierType": "USB / cassette duplicator",
+        "supplierBrief": "Cassette-style 8 GB USB pre-loaded with the artist's own tracks, printed J-card insert.",
+        "description": {
+          "text": "This USB drive mimics a vintage cassette shape with a matte black plastic shell. The front label features a glowing silver and baby blue frequency wave, accented by a single magenta dot. The design evokes a hypnotic, analog-digital fusion, offering a nostalgic collectible that bridges classic hiphop media with modern electronic music storage in a sleek, tactile form.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "heavyweight-tee",
+        "name": "Heavyweight Tee",
+        "oneLiner": "Streetwear staple with hypnotic screen-printed waves",
+        "category": "apparel",
+        "role": "limited",
+        "silhouette": "top",
+        "fitScore": 12,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0.6133333333333334
+        },
+        "evidence": [
+          {
+            "kind": "cross_domain",
+            "label": "horror",
+            "points": 12,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 8,
+          "price": 28,
+          "marginPerUnit": 20,
+          "minRun": 36,
+          "setupCost": 30,
+          "firstRunCost": 318,
+          "breakEvenUnits": 12,
+          "typicalRange": [
+            28,
+            40
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "6.5 oz cotton tee, 1\u20132 colour screen print front, small back print, sizes S\u2013XXL.",
+        "description": {
+          "text": "A sturdy, mid-weight cotton tee in deep black features a bold, two-color screen print on the chest. The design consists of overlapping silver and magenta soundwaves, creating a hypnotic, electronic visual effect. A small baby blue geometric detail appears on the back collar, adding subtle hiphop-inspired styling to the minimalist streetwear silhouette for everyday durability.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "playing-cards",
+        "name": "Playing Card Deck",
+        "oneLiner": "Hypnotic card art with neon electronic themes",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "cards",
+        "fitScore": 12,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.414,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "The SETI Institute",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Singularity University",
+            "points": 3.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 4.5,
+          "price": 12,
+          "marginPerUnit": 7.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 265,
+          "breakEvenUnits": 23,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "card printer",
+        "supplierBrief": "54-card poker-size deck with custom back and 4 custom face cards, tuck box.",
+        "description": {
+          "text": "This poker-sized deck features a custom back design of swirling silver and baby blue lines on a black background, evoking hypnotic electronic frequencies. The four face cards replace traditional figures with abstract magenta and silver hiphop-inspired geometric shapes. The tuck box matches the deck\u2019s vibrant, futuristic aesthetic, making it a collectible art piece for card enthusiasts and music fans.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Art Print Poster",
+        "oneLiner": "Hypnotic electronic art on matte paper",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 12,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.414,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "The SETI Institute",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "Singularity University",
+            "points": 3.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18\u00d724 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "This large-format poster displays a monochromatic black background with a central, hypnotic burst of silver and baby blue light rays. A single magenta accent line cuts through the composition, adding dynamic tension. The matte finish enhances the depth of the colors, creating a cinematic, vintage-inspired visual that captures the essence of electronic music in a minimalist, gallery-ready format.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "patch-set",
+            "bandana",
+            "cassette-usb",
+            "playing-cards",
+            "poster-print"
+          ],
+          "runSizes": {
+            "patch-set": 50,
+            "bandana": 36,
+            "cassette-usb": 50,
+            "playing-cards": 50,
+            "poster-print": 50
+          },
+          "note": "Launch the reliable sellers first \u2014 smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "hero-crewneck"
+          ],
+          "runSizes": {
+            "hero-crewneck": 24
+          },
+          "note": "Take pre-orders for the statement piece \u2014 gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "heavyweight-tee"
+          ],
+          "runSizes": {
+            "heavyweight-tee": 36
+          },
+          "note": "Numbered edition. Scarce by design \u2014 one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell \u2014 a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "llm",
+      "notes": []
+    }
+  },
+  "error": null
+}

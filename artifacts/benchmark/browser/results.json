@@ -1,0 +1,16 @@
+[
+  {
+    "name": "desktop",
+    "downloadedBytes": 502358,
+    "pdfBytes": 232513,
+    "pdfPages": 1,
+    "pageErrors": []
+  },
+  {
+    "name": "mobile",
+    "downloadedBytes": 502358,
+    "pdfBytes": 232513,
+    "pdfPages": 1,
+    "pageErrors": []
+  }
+]

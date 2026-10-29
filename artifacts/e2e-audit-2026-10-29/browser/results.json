@@ -1,0 +1,14 @@
+[
+  {
+    "name": "desktop",
+    "downloadedBytes": 502358,
+    "pdfBytes": 224854,
+    "pageErrors": []
+  },
+  {
+    "name": "mobile",
+    "downloadedBytes": 502358,
+    "pdfBytes": 224854,
+    "pageErrors": []
+  }
+]

@@ -1,0 +1,1007 @@
+{
+  "id": "b03",
+  "input": {
+    "text": "Photography studio making quiet architecture portraits. Audience likes books, galleries, and minimal design.",
+    "soundsLike": [],
+    "city": "New York",
+    "creatorType": "other",
+    "budget": "small"
+  },
+  "startedAt": "2026-10-29T12:07:21.259Z",
+  "providerCalls": {
+    "qloo": 6,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s5",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "note",
+      "text": "Free AI resting — using fixed research steps. Results still come from taste data."
+    },
+    {
+      "type": "tool_call",
+      "id": "sc1",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "photography studio"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc1",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Photography studio, Photography Studio, Photography Studio",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc2",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "studio making"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc2",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Warner Bros Studio Tour London – The Making of Harry Potter, Photography studio, Yoga studio",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc3",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "making quiet"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc3",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Quiet, Quiet, Quiet",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc4",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:photography_studio",
+          "urn:tag:genre:place:photography_studio",
+          "urn:tag:genre:place:restaurant:photography_studio",
+          "urn:tag:genre:place:hotel:photography_studio",
+          "urn:tag:genre:place:photography_service",
+          "urn:tag:nearby_attraction:qloo:warner_bros_studio_tour_london_the_making_of_harry_potter"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc4",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Photography Studio, Photo Studio, Photography service, Local Photo Studios…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "sc5",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:photography_studio",
+          "urn:tag:genre:place:photography_studio",
+          "urn:tag:genre:place:restaurant:photography_studio",
+          "urn:tag:genre:place:hotel:photography_studio",
+          "urn:tag:genre:place:photography_service",
+          "urn:tag:nearby_attraction:qloo:warner_bros_studio_tour_london_the_making_of_harry_potter"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc5",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "sc6",
+      "tool": "qloo_related",
+      "args": {
+        "type": "book",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:category:place:photography_studio",
+          "urn:tag:genre:place:photography_studio",
+          "urn:tag:genre:place:restaurant:photography_studio",
+          "urn:tag:genre:place:hotel:photography_studio",
+          "urn:tag:genre:place:photography_service",
+          "urn:tag:nearby_attraction:qloo:warner_bros_studio_tour_london_the_making_of_harry_potter"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc6",
+      "tool": "qloo_related",
+      "summary": "8 related books",
+      "count": 8
+    },
+    {
+      "type": "step",
+      "id": "s6",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s7",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:category:place:photography_studio"
+          ]
+        },
+        "tags": [
+          {
+            "name": "photography",
+            "canonical": "photography",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "books",
+            "canonical": "books",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "minimal",
+            "canonical": "minimal",
+            "weight": 0.9,
+            "source": "user"
+          }
+        ],
+        "brands": [
+          {
+            "id": "4B84CEE5-59EA-43E1-9000-27C66D684CFA",
+            "name": "Politix Men's Fashion",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Casual",
+              "Fashion",
+              "Tailored Silhouettes",
+              "Clean Lines",
+              "Textured Fabrics",
+              "Neutral Color Palette",
+              "Slim Fit",
+              "Professional Success",
+              "Social Elegance",
+              "Modern Sophistication"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "4E179884-8BA7-4391-A2F3-B65D7114A15C",
+            "name": "Duncan Quinn",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Haute Couture",
+              "Formalwear",
+              "Fashion",
+              "Impeccable Tailoring",
+              "Classic Silhouettes",
+              "Bold Linings",
+              "Refined Details",
+              "International Travel",
+              "High-Society Networking",
+              "Collectibility"
+            ],
+            "canonicalTags": [
+              "travel"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "5024DC4A-0125-469D-B07E-879C5104D291",
+            "name": "Binance",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Financial Services",
+              "Minimalist Digital Design",
+              "Data-Driven Interface",
+              "High-Contrast Color Palette",
+              "Technical Precision",
+              "Financial Independence",
+              "Technological Empowerment",
+              "Global Wealth Building",
+              "Other",
+              "Corporate Brand"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "4E8D1362-6673-4BAE-B143-AE3101AA63B5",
+            "name": "Orfeu Cafés e Azeites",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Drinks",
+              "Coffee & Tea",
+              "Food & Beverage",
+              "Elegant",
+              "Minimalist",
+              "Dark Palette",
+              "Refined Typography",
+              "Slow Living",
+              "Gastronomy",
+              "Global Travel"
+            ],
+            "canonicalTags": [
+              "coffee",
+              "foodie",
+              "minimal",
+              "travel"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "5039441C-2412-4F10-8DBA-7696E685BF79",
+            "name": "Brother Vellies",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Footwear",
+              "Other",
+              "Fashion",
+              "Accessories",
+              "Bags & Leather",
+              "Artisanal",
+              "Textured",
+              "Earthy",
+              "Cultural-Fusion",
+              "Hand-Finished"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "4EF34717-C35C-49CD-BB41-BF035E76B5F9",
+            "name": "STIHL Inc.",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Household",
+              "Industrial Design",
+              "Functionalist",
+              "Orange And White Color Palette",
+              "Sturdy Construction",
+              "Ergonomic",
+              "Land Stewardship",
+              "Property Mastery",
+              "Self-Sufficiency",
+              "Professional Efficiency"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "50669EF6-EAE3-48FF-B6A2-6D1853FDA2D9",
+            "name": "Juicy Chemistry",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Health & Beauty",
+              "Minimalist",
+              "Clean",
+              "Earthy",
+              "Botanical",
+              "Modern",
+              "Clean Living",
+              "Holistic Wellbeing",
+              "Minimalist Beauty",
+              "Ethical Consumption"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "4F3C9F72-5527-4D02-B20D-73B15DAA16FD",
+            "name": "Dewar's",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Whiskey",
+              "Spirits",
+              "Scotch",
+              "Wine & Spirits",
+              "Classic Packaging",
+              "Heritage Branding",
+              "Gold Accents",
+              "Timeless Typography",
+              "Celebratory Milestones",
+              "Refined Living"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "5517D014-0C8F-4444-9690-C402F5EA2084",
+            "name": "Cars24india",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Automotive",
+              "Website",
+              "Clean Minimalist Design",
+              "Blue And White Color Palette",
+              "User-Friendly Interface",
+              "Functional Graphics",
+              "Financial Stability",
+              "Freedom Of Movement",
+              "Modern Convenience",
+              "Reliable Ownership"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "4AB0CE8F-E57A-4BC3-A89C-F2C6C67FEBDF",
+            "name": "Goldilocks Bakeshop",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "1966 establishments in the Philippines",
+              "Bakery cafés",
+              "Companies based in Mandaluyong",
+              "Dining",
+              "Fast-food chains of the Philippines",
+              "Restaurants established in 1966",
+              "Classic",
+              "Friendly",
+              "Traditional Design",
+              "Creating Lasting Memories"
+            ],
+            "canonicalTags": [
+              "foodie"
+            ],
+            "estimated": false
+          }
+        ],
+        "crossDomain": [
+          {
+            "id": "6D6135EB-1B25-4EC7-ADFD-7D82D6BCE0BA",
+            "name": "Anne Arrives: Inspired by Anne of Green Gables",
+            "type": "book",
+            "weight": 1,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "5F8C0425-A0E3-4314-B735-93AAE116BAAA",
+            "name": "Rising Fury (Jesse McDermitt Caribbean Adventure #12)",
+            "type": "book",
+            "weight": 0.9,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "92B45FF7-58A1-456F-AFEC-8AFAC7BF5276",
+            "name": "Grim Witchery (Royals of Villain Academy, #7)",
+            "type": "book",
+            "weight": 0.8,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "6897CEE1-4A61-43A5-AFF4-D0DF69F7F4A3",
+            "name": "The Woman on the Island (Vera Stanhope #9.5)",
+            "type": "book",
+            "weight": 0.7,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "19CDF466-A98D-4E5A-B53E-5B5171C103F3",
+            "name": "Miss Firecracker (Wild West Boys, #2)",
+            "type": "book",
+            "weight": 0.6,
+            "tags": [],
+            "canonicalTags": [],
+            "estimated": false
+          }
+        ],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": false,
+        "paletteId": "ink-literary",
+        "notes": [
+          "LLM agent hit a snag — switched to fixed research steps.",
+          "Fallback mode: fixed steps (no free LLM available right now) — results are still grounded in taste data."
+        ],
+        "agentMode": "scripted_fallback",
+        "qlooCalls": 6
+      }
+    },
+    {
+      "type": "done",
+      "mode": "scripted_fallback"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:category:place:photography_studio"
+      ]
+    },
+    "tags": [
+      {
+        "name": "photography",
+        "canonical": "photography",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "books",
+        "canonical": "books",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "minimal",
+        "canonical": "minimal",
+        "weight": 0.9,
+        "source": "user"
+      }
+    ],
+    "brands": [
+      {
+        "id": "4B84CEE5-59EA-43E1-9000-27C66D684CFA",
+        "name": "Politix Men's Fashion",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Casual",
+          "Fashion",
+          "Tailored Silhouettes",
+          "Clean Lines",
+          "Textured Fabrics",
+          "Neutral Color Palette",
+          "Slim Fit",
+          "Professional Success",
+          "Social Elegance",
+          "Modern Sophistication"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "4E179884-8BA7-4391-A2F3-B65D7114A15C",
+        "name": "Duncan Quinn",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Haute Couture",
+          "Formalwear",
+          "Fashion",
+          "Impeccable Tailoring",
+          "Classic Silhouettes",
+          "Bold Linings",
+          "Refined Details",
+          "International Travel",
+          "High-Society Networking",
+          "Collectibility"
+        ],
+        "canonicalTags": [
+          "travel"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "5024DC4A-0125-469D-B07E-879C5104D291",
+        "name": "Binance",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Financial Services",
+          "Minimalist Digital Design",
+          "Data-Driven Interface",
+          "High-Contrast Color Palette",
+          "Technical Precision",
+          "Financial Independence",
+          "Technological Empowerment",
+          "Global Wealth Building",
+          "Other",
+          "Corporate Brand"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "4E8D1362-6673-4BAE-B143-AE3101AA63B5",
+        "name": "Orfeu Cafés e Azeites",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Drinks",
+          "Coffee & Tea",
+          "Food & Beverage",
+          "Elegant",
+          "Minimalist",
+          "Dark Palette",
+          "Refined Typography",
+          "Slow Living",
+          "Gastronomy",
+          "Global Travel"
+        ],
+        "canonicalTags": [
+          "coffee",
+          "foodie",
+          "minimal",
+          "travel"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "5039441C-2412-4F10-8DBA-7696E685BF79",
+        "name": "Brother Vellies",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Footwear",
+          "Other",
+          "Fashion",
+          "Accessories",
+          "Bags & Leather",
+          "Artisanal",
+          "Textured",
+          "Earthy",
+          "Cultural-Fusion",
+          "Hand-Finished"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "4EF34717-C35C-49CD-BB41-BF035E76B5F9",
+        "name": "STIHL Inc.",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Household",
+          "Industrial Design",
+          "Functionalist",
+          "Orange And White Color Palette",
+          "Sturdy Construction",
+          "Ergonomic",
+          "Land Stewardship",
+          "Property Mastery",
+          "Self-Sufficiency",
+          "Professional Efficiency"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "50669EF6-EAE3-48FF-B6A2-6D1853FDA2D9",
+        "name": "Juicy Chemistry",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Health & Beauty",
+          "Minimalist",
+          "Clean",
+          "Earthy",
+          "Botanical",
+          "Modern",
+          "Clean Living",
+          "Holistic Wellbeing",
+          "Minimalist Beauty",
+          "Ethical Consumption"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "4F3C9F72-5527-4D02-B20D-73B15DAA16FD",
+        "name": "Dewar's",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Whiskey",
+          "Spirits",
+          "Scotch",
+          "Wine & Spirits",
+          "Classic Packaging",
+          "Heritage Branding",
+          "Gold Accents",
+          "Timeless Typography",
+          "Celebratory Milestones",
+          "Refined Living"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "5517D014-0C8F-4444-9690-C402F5EA2084",
+        "name": "Cars24india",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Automotive",
+          "Website",
+          "Clean Minimalist Design",
+          "Blue And White Color Palette",
+          "User-Friendly Interface",
+          "Functional Graphics",
+          "Financial Stability",
+          "Freedom Of Movement",
+          "Modern Convenience",
+          "Reliable Ownership"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "4AB0CE8F-E57A-4BC3-A89C-F2C6C67FEBDF",
+        "name": "Goldilocks Bakeshop",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "1966 establishments in the Philippines",
+          "Bakery cafés",
+          "Companies based in Mandaluyong",
+          "Dining",
+          "Fast-food chains of the Philippines",
+          "Restaurants established in 1966",
+          "Classic",
+          "Friendly",
+          "Traditional Design",
+          "Creating Lasting Memories"
+        ],
+        "canonicalTags": [
+          "foodie"
+        ],
+        "estimated": false
+      }
+    ],
+    "crossDomain": [
+      {
+        "id": "6D6135EB-1B25-4EC7-ADFD-7D82D6BCE0BA",
+        "name": "Anne Arrives: Inspired by Anne of Green Gables",
+        "type": "book",
+        "weight": 1,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "5F8C0425-A0E3-4314-B735-93AAE116BAAA",
+        "name": "Rising Fury (Jesse McDermitt Caribbean Adventure #12)",
+        "type": "book",
+        "weight": 0.9,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "92B45FF7-58A1-456F-AFEC-8AFAC7BF5276",
+        "name": "Grim Witchery (Royals of Villain Academy, #7)",
+        "type": "book",
+        "weight": 0.8,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "6897CEE1-4A61-43A5-AFF4-D0DF69F7F4A3",
+        "name": "The Woman on the Island (Vera Stanhope #9.5)",
+        "type": "book",
+        "weight": 0.7,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "19CDF466-A98D-4E5A-B53E-5B5171C103F3",
+        "name": "Miss Firecracker (Wild West Boys, #2)",
+        "type": "book",
+        "weight": 0.6,
+        "tags": [],
+        "canonicalTags": [],
+        "estimated": false
+      }
+    ],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": false,
+    "paletteId": "ink-literary",
+    "notes": [
+      "LLM agent hit a snag — switched to fixed research steps.",
+      "Fallback mode: fixed steps (no free LLM available right now) — results are still grounded in taste data."
+    ],
+    "agentMode": "scripted_fallback",
+    "qlooCalls": 6
+  },
+  "fallbackMode": "scripted_fallback",
+  "collection": {
+    "products": [
+      {
+        "id": "tote-bag",
+        "name": "Tote bag",
+        "oneLiner": "tote bag in ink blue, quiet and observational by design",
+        "category": "objects",
+        "role": "hero",
+        "silhouette": "tote",
+        "fitScore": 23,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "books",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 15,
+          "marginPerUnit": 11.5,
+          "minRun": 36,
+          "setupCost": 25,
+          "firstRunCost": 151,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            15,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "10 oz natural canvas tote, 1–2 colour print, reinforced handles.",
+        "description": {
+          "text": "A tote bag in ink blue and paper white, finished with a open book motif. 10 oz natural canvas tote. The overall feel is quiet and observational — built for fans who lean into photography and books — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "zine",
+        "name": "Mini zine",
+        "oneLiner": "mini zine in ink blue, quiet and observational by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 45,
+        "scoreParts": {
+          "tag": 0.9,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "books",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "tag",
+            "label": "photography",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 7,
+          "marginPerUnit": 4.5,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 125,
+          "breakEvenUnits": 18,
+          "typicalRange": [
+            6,
+            12
+          ],
+          "estimate": true
+        },
+        "supplierType": "copy / print shop",
+        "supplierBrief": "16-page half-letter zine, saddle-stitched, colour cover, black-and-white inside.",
+        "description": {
+          "text": "A stapled mini zine in ink blue and paper white, finished with a contact sheet grid motif. 16-page half-letter zine. The overall feel is quiet and observational — built for fans who lean into photography and books — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Art print poster",
+        "oneLiner": "art print poster in ink blue, quiet and observational by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 23,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "photography",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "A poster in ink blue and paper white, finished with a contact sheet grid motif. 18×24 in matte poster on 100 lb stock. The overall feel is quiet and observational — built for fans who lean into photography and books — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "zine",
+            "poster-print"
+          ],
+          "runSizes": {
+            "zine": 50,
+            "poster-print": 50
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "tote-bag"
+          ],
+          "runSizes": {
+            "tote-bag": 36
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "template",
+      "notes": [
+        "6 low-fit products were withheld because the audience evidence was too weak.",
+        "Fewer than 5 products have enough audience evidence for this budget.",
+        "LLM agent hit a snag — switched to fixed research steps.",
+        "Fallback mode: fixed steps (no free LLM available right now) — results are still grounded in taste data."
+      ]
+    }
+  },
+  "descriptionSource": "template",
+  "collabs": {
+    "collabs": [
+      {
+        "id": "C81F29FB-42B2-4543-BDBA-A7BB1DE6BF8D",
+        "name": "Ion At Home",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "minimal"
+        ],
+        "partnerIdea": "Limited poster print designed to hang beside their home wellness products.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "42D6853A-AFAE-4D8E-B632-A4BE95F2CF88",
+        "name": "Matix Clothing",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "minimal"
+        ],
+        "partnerIdea": "Co-branded tote bag featuring your zine cover art on their streetwear fabric.",
+        "linkedProductIds": []
+      }
+    ],
+    "cityNote": "Local venue lookup is unavailable near New York; showing affinity brands separately. Try another city for local collaborations."
+  },
+  "elapsedMs": 84758
+}

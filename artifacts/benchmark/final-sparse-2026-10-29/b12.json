@@ -1,0 +1,1251 @@
+{
+  "id": "b12",
+  "input": {
+    "text": "Brand-new creator, still exploring; audience preferences are unknown.",
+    "soundsLike": [],
+    "city": "Pune",
+    "creatorType": "other",
+    "budget": "small"
+  },
+  "startedAt": "2026-10-29T14:14:33.549Z",
+  "providerCalls": {
+    "qloo": 6,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s1",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "note",
+      "text": "No named artist or genre hints — building a generic Pune-based audience profile from location and creator type."
+    },
+    {
+      "type": "tool_call",
+      "id": "t1",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "Pune India lifestyle culture"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t1",
+      "tool": "qloo_search_tags",
+      "summary": "No tags for \"Pune India lifestyle culture\""
+    },
+    {
+      "type": "tool_call",
+      "id": "t2",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "lifestyle culture"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t2",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Society & Culture, Pop culture, Culture",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t3",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:society_culture",
+          "urn:tag:genre:media:pop_culture",
+          "urn:tag:genre:media:culture",
+          "urn:tag:category:place:culture"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t3",
+      "tool": "qloo_taste_tags",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "tool_call",
+      "id": "t4",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:society_culture",
+          "urn:tag:genre:media:pop_culture",
+          "urn:tag:genre:media:culture",
+          "urn:tag:category:place:culture"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t4",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t5",
+      "tool": "qloo_related",
+      "args": {
+        "type": "tv_show",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:society_culture",
+          "urn:tag:genre:media:pop_culture",
+          "urn:tag:genre:media:culture",
+          "urn:tag:category:place:culture"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t5",
+      "tool": "qloo_related",
+      "summary": "10 related tv shows",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t6",
+      "tool": "qloo_related",
+      "args": {
+        "type": "movie",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:society_culture",
+          "urn:tag:genre:media:pop_culture",
+          "urn:tag:genre:media:culture",
+          "urn:tag:category:place:culture"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t6",
+      "tool": "qloo_related",
+      "summary": "10 related movies",
+      "count": 10
+    },
+    {
+      "type": "note",
+      "text": "Time budget reached — building the profile from what we have."
+    },
+    {
+      "type": "step",
+      "id": "s2",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "6 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s3",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s4",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:genre:media:pop_culture"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Pop culture",
+            "qlooTagId": "urn:tag:genre:media:pop_culture",
+            "canonical": "pop",
+            "weight": 0.83,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "E8642ED3-4AF1-4121-9523-2A7601BB4E57",
+            "name": "6ixty8ight",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Fashion",
+              "Lingerie & Sleepwear",
+              "Pastel Color Palette",
+              "Playful Patterns",
+              "Feminine Details",
+              "Minimalist Branding",
+              "Soft Textures",
+              "Trendy Aesthetic",
+              "Effortless Chic",
+              "Carefree Youth"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "streetwear",
+              "skate"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "5DB45D6B-4D40-4ED8-B73F-7108C2656F99",
+            "name": "Grab",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Software",
+              "Minimalist Design",
+              "Clean Interface",
+              "Signature Green Color Palette",
+              "Functional UX",
+              "Seamless Efficiency",
+              "Modern Convenience",
+              "Financial Inclusion",
+              "Other",
+              "Corporate Brand"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "2591B9BF-C436-42D7-AAB0-9BFEED33432F",
+            "name": "Heron Preston",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Other",
+              "Casual",
+              "Lifestyle / Casual",
+              "Footwear",
+              "Fashion",
+              "Utilitarian Elements",
+              "Workwear-Inspired Details",
+              "High-Contrast Graphics",
+              "Industrial Motifs",
+              "Bright Orange Accents"
+            ],
+            "canonicalTags": [
+              "workwear"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "streetwear",
+              "boutique-fashion"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "80751C6A-A624-46EB-8997-7A2A7875B51D",
+            "name": "Pomelo Fashion",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Formalwear",
+              "Accessories",
+              "Website",
+              "Casual",
+              "Fashion",
+              "Bags & Leather",
+              "Vibrant",
+              "Minimalist",
+              "Modern",
+              "Photogenic"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "5F8BF7D5-63B1-4E52-95CE-D237B505259C",
+            "name": "Irvins",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Food & Beverage"
+            ],
+            "canonicalTags": [
+              "foodie"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "DDB697E1-1045-44D5-8EAB-6E526A82345D",
+            "name": "Mamonde",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Health & Beauty",
+              "Amorepacific brands",
+              "Company stubs",
+              "Floral Imagery",
+              "Clean Packaging",
+              "Pastel Color Palettes",
+              "Botanical Prints",
+              "Minimalist Branding",
+              "Radiant Skin",
+              "Holistic Wellness"
+            ],
+            "canonicalTags": [
+              "art-print",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "3FF1FAB4-41BB-448F-98E0-9CA10C8F81EA",
+            "name": "Aftershock PC",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Computers & Laptops",
+              "Electronics",
+              "Minimalist Industrial",
+              "RGB Lighting",
+              "Sleek Chassis Designs",
+              "Modern Professional",
+              "High-Performance Setup",
+              "Pro-Level Gaming",
+              "Streamer Lifestyle",
+              "Hardware Mastery"
+            ],
+            "canonicalTags": [
+              "electronic",
+              "minimal",
+              "retro-gaming"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "902D8AE1-F74E-4D8F-8E52-FEABC35DBFC9",
+            "name": "Mansur Gavriel",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Other",
+              "Bags & Leather",
+              "Fashion",
+              "Accessories",
+              "Footwear",
+              "Clean Lines",
+              "Vegetable-Tanned Leather",
+              "Rich Color Palettes",
+              "Structured Silhouettes",
+              "Understated Hardware"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion",
+              "luxury"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "7161ADA0-8DC8-471E-A4A8-61EE15578400",
+            "name": "Supreme",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Clothing brands of the United States",
+              "The Carlyle Group companies",
+              "Clothing companies established in 1994",
+              "Shoe companies of the United States",
+              "Skateboarding companies",
+              "1994 establishments in New York City",
+              "2020 mergers and acquisitions",
+              "Clothing companies based in New York City",
+              "Retail companies established in 1994",
+              "American companies established in 1994"
+            ],
+            "canonicalTags": [
+              "skate"
+            ],
+            "estimated": false,
+            "brandCategories": [
+              "streetwear",
+              "skate"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "AFD8529F-7456-4D6F-B239-846DD9973AD3",
+            "name": "Clarins Group",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "Cosmetics brands",
+              "French brands",
+              "Manufacturing companies established in 1954",
+              "Perfume houses",
+              "Design companies established in 1954",
+              "Health & Beauty",
+              "Companies based in Île-de-France",
+              "Cosmetics companies of France",
+              "Minimalist Packaging",
+              "Elegant Typography"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "boutique-fashion"
+            ],
+            "priceTier": "premium"
+          }
+        ],
+        "crossDomain": [
+          {
+            "id": "20047E26-C446-4293-A99A-6100D7353E08",
+            "name": "IN THE SOOP : Friendcation",
+            "type": "tv_show",
+            "weight": 1,
+            "tags": [
+              "Warm",
+              "Reflective",
+              "Affectionate",
+              "Reflective",
+              "Laid back",
+              "Music",
+              "Playful",
+              "Atmospheric",
+              "Down to earth",
+              "Emotionally engaged"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "4CADFA89-A7C4-43BC-AD52-5102A7F58B06",
+            "name": "Tale of the Nine Tailed",
+            "type": "tv_show",
+            "weight": 0.92,
+            "tags": [
+              "Fated love",
+              "Sibling relationship",
+              "Loss of parents",
+              "Romance",
+              "Veterinarian",
+              "Karma",
+              "Afterlife",
+              "Korean mythology",
+              "Death",
+              "Half brother"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "5853060C-DFF1-4595-9356-752C43EA102D",
+            "name": "Hi Bye, Mama!",
+            "type": "tv_show",
+            "weight": 0.84,
+            "tags": [
+              "Motherhood studies",
+              "Comedy",
+              "Nurturing",
+              "Intimate",
+              "Cinematic",
+              "Tragedy",
+              "Married couple",
+              "Witty",
+              "Supernatural romance",
+              "Drama loving"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "CD2991CD-832E-4626-8A82-32F9FA5504EB",
+            "name": "Start-Up",
+            "type": "tv_show",
+            "weight": 0.77,
+            "tags": [
+              "Investment firm",
+              "Feel good romance",
+              "Korean drama",
+              "Father daughter relationship",
+              "Pen pal relationship",
+              "Industry",
+              "21st century",
+              "Workplace",
+              "Orphan",
+              "Heros journey"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "C5D371F0-C14D-457F-B392-10D867454E88",
+            "name": "Crash Landing on You",
+            "type": "tv_show",
+            "weight": 0.69,
+            "tags": [
+              "Demilitarized zone",
+              "Tv mini series",
+              "Romantic comedy",
+              "Love",
+              "Protection",
+              "Adventure",
+              "Playful physical comedy",
+              "Melodrama",
+              "Emotional",
+              "Chaebol"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "0FBAF204-FB9C-489A-AE69-E70053ECDC34",
+            "name": "Feast",
+            "type": "movie",
+            "weight": 1,
+            "tags": [
+              "B action",
+              "Blood",
+              "Action packed",
+              "First of series",
+              "Practical effects focused",
+              "Atmospheric",
+              "Ensemble cast",
+              "Slime",
+              "Black comedy",
+              "Genital mutilation"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "525DB1D6-14BD-4935-8B35-9B5E2C1322EF",
+            "name": "Art of Seduction",
+            "type": "movie",
+            "weight": 0.92,
+            "tags": [
+              "Jealousy",
+              "Dating comedy",
+              "Insecure",
+              "Text message",
+              "Sword fight",
+              "Manipulative",
+              "Quirky framing",
+              "Stylized romance lighting",
+              "Father son relationship",
+              "Playful visual gags"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "8D834570-36FE-4749-8A57-EFA3ABD54A7C",
+            "name": "Cocaine Bear",
+            "type": "movie",
+            "weight": 0.84,
+            "tags": [
+              "Loss of friend",
+              "Bolt action rifle",
+              "Bullet wound",
+              "Injured leg",
+              "Death of fiance",
+              "Visitor center",
+              "Title spoken by character",
+              "Male friendship",
+              "Riff raff",
+              "Reference to billy idol"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "B4BB4FB8-1F0F-40A2-BAB5-D1157F50A092",
+            "name": "Ingrid Goes West",
+            "type": "movie",
+            "weight": 0.77,
+            "tags": [
+              "Flawed",
+              "Clumbsiness",
+              "Obsession",
+              "Bicycle",
+              "Character driven",
+              "Video",
+              "Defecation",
+              "Selfie",
+              "Party",
+              "Reference to joan didion"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "050A6E7E-58A8-4F76-BF6D-BE6D88748F1E",
+            "name": "Red Rocket",
+            "type": "movie",
+            "weight": 0.69,
+            "tags": [
+              "Reference to avn",
+              "Reference to dollar general",
+              "Shotgun",
+              "Explicit sexual content",
+              "Hometown",
+              "Sexual references",
+              "Galveston texas",
+              "Return home",
+              "Car crash",
+              "Store clerk"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          }
+        ],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "pastel-cozy",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 6
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:genre:media:pop_culture"
+      ]
+    },
+    "tags": [
+      {
+        "name": "Pop culture",
+        "qlooTagId": "urn:tag:genre:media:pop_culture",
+        "canonical": "pop",
+        "weight": 0.83,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "E8642ED3-4AF1-4121-9523-2A7601BB4E57",
+        "name": "6ixty8ight",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Fashion",
+          "Lingerie & Sleepwear",
+          "Pastel Color Palette",
+          "Playful Patterns",
+          "Feminine Details",
+          "Minimalist Branding",
+          "Soft Textures",
+          "Trendy Aesthetic",
+          "Effortless Chic",
+          "Carefree Youth"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "streetwear",
+          "skate"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "5DB45D6B-4D40-4ED8-B73F-7108C2656F99",
+        "name": "Grab",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Software",
+          "Minimalist Design",
+          "Clean Interface",
+          "Signature Green Color Palette",
+          "Functional UX",
+          "Seamless Efficiency",
+          "Modern Convenience",
+          "Financial Inclusion",
+          "Other",
+          "Corporate Brand"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "2591B9BF-C436-42D7-AAB0-9BFEED33432F",
+        "name": "Heron Preston",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Other",
+          "Casual",
+          "Lifestyle / Casual",
+          "Footwear",
+          "Fashion",
+          "Utilitarian Elements",
+          "Workwear-Inspired Details",
+          "High-Contrast Graphics",
+          "Industrial Motifs",
+          "Bright Orange Accents"
+        ],
+        "canonicalTags": [
+          "workwear"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "streetwear",
+          "boutique-fashion"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "80751C6A-A624-46EB-8997-7A2A7875B51D",
+        "name": "Pomelo Fashion",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Formalwear",
+          "Accessories",
+          "Website",
+          "Casual",
+          "Fashion",
+          "Bags & Leather",
+          "Vibrant",
+          "Minimalist",
+          "Modern",
+          "Photogenic"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "5F8BF7D5-63B1-4E52-95CE-D237B505259C",
+        "name": "Irvins",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Food & Beverage"
+        ],
+        "canonicalTags": [
+          "foodie"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "DDB697E1-1045-44D5-8EAB-6E526A82345D",
+        "name": "Mamonde",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Health & Beauty",
+          "Amorepacific brands",
+          "Company stubs",
+          "Floral Imagery",
+          "Clean Packaging",
+          "Pastel Color Palettes",
+          "Botanical Prints",
+          "Minimalist Branding",
+          "Radiant Skin",
+          "Holistic Wellness"
+        ],
+        "canonicalTags": [
+          "art-print",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "3FF1FAB4-41BB-448F-98E0-9CA10C8F81EA",
+        "name": "Aftershock PC",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Computers & Laptops",
+          "Electronics",
+          "Minimalist Industrial",
+          "RGB Lighting",
+          "Sleek Chassis Designs",
+          "Modern Professional",
+          "High-Performance Setup",
+          "Pro-Level Gaming",
+          "Streamer Lifestyle",
+          "Hardware Mastery"
+        ],
+        "canonicalTags": [
+          "electronic",
+          "minimal",
+          "retro-gaming"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "902D8AE1-F74E-4D8F-8E52-FEABC35DBFC9",
+        "name": "Mansur Gavriel",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Other",
+          "Bags & Leather",
+          "Fashion",
+          "Accessories",
+          "Footwear",
+          "Clean Lines",
+          "Vegetable-Tanned Leather",
+          "Rich Color Palettes",
+          "Structured Silhouettes",
+          "Understated Hardware"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion",
+          "luxury"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "7161ADA0-8DC8-471E-A4A8-61EE15578400",
+        "name": "Supreme",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Clothing brands of the United States",
+          "The Carlyle Group companies",
+          "Clothing companies established in 1994",
+          "Shoe companies of the United States",
+          "Skateboarding companies",
+          "1994 establishments in New York City",
+          "2020 mergers and acquisitions",
+          "Clothing companies based in New York City",
+          "Retail companies established in 1994",
+          "American companies established in 1994"
+        ],
+        "canonicalTags": [
+          "skate"
+        ],
+        "estimated": false,
+        "brandCategories": [
+          "streetwear",
+          "skate"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "AFD8529F-7456-4D6F-B239-846DD9973AD3",
+        "name": "Clarins Group",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "Cosmetics brands",
+          "French brands",
+          "Manufacturing companies established in 1954",
+          "Perfume houses",
+          "Design companies established in 1954",
+          "Health & Beauty",
+          "Companies based in Île-de-France",
+          "Cosmetics companies of France",
+          "Minimalist Packaging",
+          "Elegant Typography"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "boutique-fashion"
+        ],
+        "priceTier": "premium"
+      }
+    ],
+    "crossDomain": [
+      {
+        "id": "20047E26-C446-4293-A99A-6100D7353E08",
+        "name": "IN THE SOOP : Friendcation",
+        "type": "tv_show",
+        "weight": 1,
+        "tags": [
+          "Warm",
+          "Reflective",
+          "Affectionate",
+          "Reflective",
+          "Laid back",
+          "Music",
+          "Playful",
+          "Atmospheric",
+          "Down to earth",
+          "Emotionally engaged"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "4CADFA89-A7C4-43BC-AD52-5102A7F58B06",
+        "name": "Tale of the Nine Tailed",
+        "type": "tv_show",
+        "weight": 0.92,
+        "tags": [
+          "Fated love",
+          "Sibling relationship",
+          "Loss of parents",
+          "Romance",
+          "Veterinarian",
+          "Karma",
+          "Afterlife",
+          "Korean mythology",
+          "Death",
+          "Half brother"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "5853060C-DFF1-4595-9356-752C43EA102D",
+        "name": "Hi Bye, Mama!",
+        "type": "tv_show",
+        "weight": 0.84,
+        "tags": [
+          "Motherhood studies",
+          "Comedy",
+          "Nurturing",
+          "Intimate",
+          "Cinematic",
+          "Tragedy",
+          "Married couple",
+          "Witty",
+          "Supernatural romance",
+          "Drama loving"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "CD2991CD-832E-4626-8A82-32F9FA5504EB",
+        "name": "Start-Up",
+        "type": "tv_show",
+        "weight": 0.77,
+        "tags": [
+          "Investment firm",
+          "Feel good romance",
+          "Korean drama",
+          "Father daughter relationship",
+          "Pen pal relationship",
+          "Industry",
+          "21st century",
+          "Workplace",
+          "Orphan",
+          "Heros journey"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "C5D371F0-C14D-457F-B392-10D867454E88",
+        "name": "Crash Landing on You",
+        "type": "tv_show",
+        "weight": 0.69,
+        "tags": [
+          "Demilitarized zone",
+          "Tv mini series",
+          "Romantic comedy",
+          "Love",
+          "Protection",
+          "Adventure",
+          "Playful physical comedy",
+          "Melodrama",
+          "Emotional",
+          "Chaebol"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "0FBAF204-FB9C-489A-AE69-E70053ECDC34",
+        "name": "Feast",
+        "type": "movie",
+        "weight": 1,
+        "tags": [
+          "B action",
+          "Blood",
+          "Action packed",
+          "First of series",
+          "Practical effects focused",
+          "Atmospheric",
+          "Ensemble cast",
+          "Slime",
+          "Black comedy",
+          "Genital mutilation"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "525DB1D6-14BD-4935-8B35-9B5E2C1322EF",
+        "name": "Art of Seduction",
+        "type": "movie",
+        "weight": 0.92,
+        "tags": [
+          "Jealousy",
+          "Dating comedy",
+          "Insecure",
+          "Text message",
+          "Sword fight",
+          "Manipulative",
+          "Quirky framing",
+          "Stylized romance lighting",
+          "Father son relationship",
+          "Playful visual gags"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "8D834570-36FE-4749-8A57-EFA3ABD54A7C",
+        "name": "Cocaine Bear",
+        "type": "movie",
+        "weight": 0.84,
+        "tags": [
+          "Loss of friend",
+          "Bolt action rifle",
+          "Bullet wound",
+          "Injured leg",
+          "Death of fiance",
+          "Visitor center",
+          "Title spoken by character",
+          "Male friendship",
+          "Riff raff",
+          "Reference to billy idol"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "B4BB4FB8-1F0F-40A2-BAB5-D1157F50A092",
+        "name": "Ingrid Goes West",
+        "type": "movie",
+        "weight": 0.77,
+        "tags": [
+          "Flawed",
+          "Clumbsiness",
+          "Obsession",
+          "Bicycle",
+          "Character driven",
+          "Video",
+          "Defecation",
+          "Selfie",
+          "Party",
+          "Reference to joan didion"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "050A6E7E-58A8-4F76-BF6D-BE6D88748F1E",
+        "name": "Red Rocket",
+        "type": "movie",
+        "weight": 0.69,
+        "tags": [
+          "Reference to avn",
+          "Reference to dollar general",
+          "Shotgun",
+          "Explicit sexual content",
+          "Hometown",
+          "Sexual references",
+          "Galveston texas",
+          "Return home",
+          "Car crash",
+          "Store clerk"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      }
+    ],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "pastel-cozy",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 6
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "acrylic-keychain",
+        "name": "Acrylic Charm Keychain",
+        "oneLiner": "Bright and cheerful acrylic charm for your bag.",
+        "category": "objects",
+        "role": "hero",
+        "silhouette": "round",
+        "fitScore": 37,
+        "scoreParts": {
+          "tag": 0.415,
+          "brand": 0.552,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "pop",
+            "points": 21,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "6ixty8ight",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Heron Preston",
+            "points": 7.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 1.85,
+          "price": 8,
+          "marginPerUnit": 6.15,
+          "minRun": 50,
+          "setupCost": 25,
+          "firstRunCost": 117.5,
+          "breakEvenUnits": 15,
+          "typicalRange": [
+            8,
+            14
+          ],
+          "estimate": true
+        },
+        "supplierType": "acrylic charm maker",
+        "supplierBrief": "2 in double-sided printed acrylic charm with ring and clasp.",
+        "description": {
+          "text": "A glossy double-sided acrylic charm featuring a playful pop-art motif in blush pink, sage, butter yellow, and cocoa. The shape is compact and smooth, attached to a silver metal ring and sturdy clasp. The surface captures light with a vibrant, high-contrast finish, creating a bright, energetic mood that feels modern and fun without any text or branding.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "acrylic-keychain"
+          ],
+          "runSizes": {
+            "acrylic-keychain": 50
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "llm",
+      "notes": [
+        "8 low-fit products were withheld because the audience evidence was too weak.",
+        "Fewer than 5 products have enough audience evidence for this budget."
+      ]
+    }
+  },
+  "descriptionSource": "llm",
+  "collabs": {
+    "collabs": [],
+    "cityNote": "No suitable partner candidates near Pune right now — try a nearby city or search again."
+  },
+  "elapsedMs": 65217
+}

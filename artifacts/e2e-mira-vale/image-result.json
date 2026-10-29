@@ -1,0 +1,10 @@
+{
+  "http": 200,
+  "data": {
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "attempt": 1,
+    "file": "/Users/kanishk_pandey/Desktop/workspace-4c6a7d07-3bcc-4c8c-97d9-e36950d0bdcc (1)/artifacts/e2e-mira-vale/concept-hero-crewneck.jpg",
+    "bytes": 502358
+  },
+  "error": null
+}

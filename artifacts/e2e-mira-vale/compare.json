@@ -1,0 +1,8 @@
+{
+  "http": 503,
+  "data": null,
+  "error": {
+    "code": "LLM_UNAVAILABLE",
+    "message": "Our free AI is resting. (groq: groq transient failure 429)"
+  }
+}

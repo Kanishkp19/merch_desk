@@ -1,0 +1,130 @@
+{
+  "id": "b02",
+  "input": {
+    "text": "Independent hip-hop artist. Fans love freestyle sessions, skate culture, and bold graphics.",
+    "soundsLike": [],
+    "city": "Atlanta",
+    "creatorType": "musician",
+    "budget": "small"
+  },
+  "startedAt": "2026-10-29T12:06:41.969Z",
+  "providerCalls": {
+    "qloo": 0,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s4",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "note",
+      "text": "Free AI resting — using fixed research steps. Results still come from taste data."
+    },
+    {
+      "type": "tool_call",
+      "id": "sc1",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "independent hip-hop"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc1",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Independent Hip Hop, Hip - Hop, Underground Hip - Hop",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc2",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "hip-hop artist"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc2",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Hip - Hop, Underground Hip - Hop, Instrumental Hip - Hop",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc3",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "artist freestyle"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc3",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Artist, Make-up artist, Make-up artist",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc4",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:music:independent_hip_hop",
+          "urn:tag:genre:music:hip_hop",
+          "urn:tag:genre:music:underground_hip_hop",
+          "urn:tag:genre:music:instrumental_hip_hop",
+          "urn:tag:genre:music:alternative_hip_hop",
+          "urn:tag:genre:place:hip_hop_dance_class"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc4",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: hip hip-hop, hipo hop, hip hop music, hiphop…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "sc5",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:music:independent_hip_hop",
+          "urn:tag:genre:music:hip_hop",
+          "urn:tag:genre:music:underground_hip_hop",
+          "urn:tag:genre:music:instrumental_hip_hop",
+          "urn:tag:genre:music:alternative_hip_hop",
+          "urn:tag:genre:place:hip_hop_dance_class"
+        ]
+      }
+    },
+    {
+      "type": "error",
+      "code": "INTERNAL",
+      "message": "Something went wrong while researching taste."
+    }
+  ],
+  "error": "Error: Something went wrong while researching taste.",
+  "elapsedMs": 39290
+}

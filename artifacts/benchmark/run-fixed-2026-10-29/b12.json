@@ -1,0 +1,504 @@
+{
+  "id": "b12",
+  "input": {
+    "text": "Brand-new creator, still exploring; audience preferences are unknown.",
+    "soundsLike": [],
+    "city": "Pune",
+    "creatorType": "other",
+    "budget": "small"
+  },
+  "startedAt": "2026-10-29T12:02:20.012Z",
+  "providerCalls": {
+    "qloo": 5,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s57",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "note",
+      "text": "No named artist or 'sounds like' clues. Building a taste profile from the fan description and home city (Pune) using interest tags."
+    },
+    {
+      "type": "tool_call",
+      "id": "t96",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "Pune India emerging creator lifestyle"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t96",
+      "tool": "qloo_search_tags",
+      "summary": "No tags for \"Pune India emerging creator lifestyle\""
+    },
+    {
+      "type": "tool_call",
+      "id": "t97",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "lifestyle"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t97",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Lifestyle, Lifestyle, Lifestyle",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t98",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "India"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t98",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: India, India, Indian",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t99",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:subgenre:qloo:lifestyle",
+          "urn:tag:keyword:qloo:lifestyle",
+          "urn:tag:decor:qloo:lifestyle",
+          "urn:tag:theme:qloo:lifestyle"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t99",
+      "tool": "qloo_taste_tags",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "tool_call",
+      "id": "t100",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:subgenre:qloo:lifestyle",
+          "urn:tag:keyword:qloo:lifestyle",
+          "urn:tag:decor:qloo:lifestyle",
+          "urn:tag:theme:qloo:lifestyle"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t100",
+      "tool": "qloo_related",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "note",
+      "text": "Time budget reached — building the profile from what we have."
+    },
+    {
+      "type": "step",
+      "id": "s58",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "5 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s59",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s60",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": []
+        },
+        "tags": [],
+        "brands": [],
+        "crossDomain": [],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": false,
+        "paletteId": "earth-retro",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 5
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": []
+    },
+    "tags": [],
+    "brands": [],
+    "crossDomain": [],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": false,
+    "paletteId": "earth-retro",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 5
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "acrylic-keychain",
+        "name": "Acrylic Keychain",
+        "oneLiner": "Double-sided charm for the determined spirit.",
+        "category": "objects",
+        "role": "hero",
+        "silhouette": "round",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 1.85,
+          "price": 8,
+          "marginPerUnit": 6.15,
+          "minRun": 50,
+          "setupCost": 25,
+          "firstRunCost": 117.5,
+          "breakEvenUnits": 15,
+          "typicalRange": [
+            8,
+            14
+          ],
+          "estimate": true
+        },
+        "supplierType": "acrylic charm maker",
+        "supplierBrief": "2 in double-sided printed acrylic charm with ring and clasp.",
+        "description": {
+          "text": "This two-inch acrylic charm features a bold, pop-inspired motif in vibrant burnt orange and crisp cream. The double-sided print captures an anime-style underdog character, radiating indie energy. A sturdy metal ring and clasp complete the piece, offering a glossy, collectible look that stands out with quiet, defiant pop culture charm.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-pin-set",
+        "name": "Enamel Pin Set",
+        "oneLiner": "Retro gaming icons with a gritty edge.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 12,
+          "marginPerUnit": 9.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 165,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            12,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "enamel pin maker",
+        "supplierBrief": "Set of 3 hard-enamel pins, 1.25 in, butterfly clasps, mold fee applies.",
+        "description": {
+          "text": "Three hard-enamel pins showcase retro-gaming motifs in forest green and charcoal. Each pin features a distinct indie art-print style, highlighting a resilient underdog theme. The glossy finish contrasts with the matte backing, creating a tactile, collectible set. The design feels nostalgic yet modern, perfect for enthusiasts who appreciate detailed, small-scale visual storytelling.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "bandana",
+        "name": "Printed Bandana",
+        "oneLiner": "Vintage folk patterns for the street.",
+        "category": "apparel",
+        "role": "limited",
+        "silhouette": "bandana",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 12,
+          "marginPerUnit": 8.5,
+          "minRun": 36,
+          "setupCost": 30,
+          "firstRunCost": 156,
+          "breakEvenUnits": 13,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer / sublimation",
+        "supplierBrief": "22 in square cotton bandana, 1–2 colour all-over print.",
+        "description": {
+          "text": "A square cotton bandana displays a two-color all-over print in charcoal and cream. The pattern blends folk and vintage motifs with a subtle hiphop influence, creating a gritty, festival-ready aesthetic. The underdog mood is captured through bold, repetitive shapes that feel both timeless and rebellious. Soft yet durable, it offers a versatile accessory for casual, expressive wear.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "matchbook",
+        "name": "Matchbooks",
+        "oneLiner": "Punk-inspired nightlife art in a pocket.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 0.65,
+          "price": 3,
+          "marginPerUnit": 2.35,
+          "minRun": 100,
+          "setupCost": 20,
+          "firstRunCost": 85,
+          "breakEvenUnits": 29,
+          "typicalRange": [
+            3,
+            6
+          ],
+          "estimate": true
+        },
+        "supplierType": "print shop",
+        "supplierBrief": "Box of matchbooks with custom cover art, 100 min run, check local shipping rules.",
+        "description": {
+          "text": "This compact matchbook box features a cover design rooted in punk and nightlife aesthetics. The artwork uses burnt orange and charcoal to evoke a gritty, craft-beer bar atmosphere. Vintage textures are visible in the print, enhancing the underdog vibe. The small format holds a sense of rebellion, making it a unique, tactile collectible for fans of underground culture and analog props.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Art Print Poster",
+        "oneLiner": "Cinematic indie vibes on heavy matte stock.",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "An eighteen-by-twenty-four-inch matte poster displays a cinematic, indie-inspired scene. The image utilizes forest green and cream tones to create a moody, vintage atmosphere. A central underdog figure anchors the composition, surrounded by abstract, art-print elements. The heavy 100 lb stock provides a rich texture, making the design feel substantial and gallery-worthy for any personal space.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Sticker Pack",
+        "oneLiner": "Waterproof punk art for daily use.",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 0.43,
+          "price": 4,
+          "marginPerUnit": 3.58,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 42.5,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            4,
+            8
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "This vinyl sticker sheet contains three distinct designs in charcoal and burnt orange. The motifs blend indie art-print styles with punk energy, reflecting a resilient, underdog perspective. The waterproof material ensures durability for laptops or bottles. The die-cut shapes offer a tactile, collectible experience, perfect for personalizing everyday items with a touch of gritty, creative flair.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "enamel-pin-set",
+            "matchbook",
+            "poster-print",
+            "sticker-pack"
+          ],
+          "runSizes": {
+            "enamel-pin-set": 50,
+            "matchbook": 100,
+            "poster-print": 50,
+            "sticker-pack": 100
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "acrylic-keychain"
+          ],
+          "runSizes": {
+            "acrylic-keychain": 50
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "bandana"
+          ],
+          "runSizes": {
+            "bandana": 36
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "llm",
+      "notes": [
+        "No product has direct audience evidence yet — the hero pick is exploratory.",
+        "Exploratory picks (no direct audience evidence yet): Acrylic Keychain, Enamel Pin Set, Printed Bandana, Matchbooks, Art Print Poster, Sticker Pack."
+      ]
+    }
+  },
+  "descriptionSource": "llm",
+  "collabsError": "Error: /api/collabs: 503 {\"error\":{\"code\":\"QLOO_UNAVAILABLE\",\"message\":\"Taste data is unavailable. Try again.\"}}",
+  "elapsedMs": 58621
+}

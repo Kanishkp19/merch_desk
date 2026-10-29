@@ -1,0 +1,154 @@
+{
+  "id": "b04",
+  "input": {
+    "text": "Known indie rock band with listeners who collect vinyl and go to small venues.",
+    "artist": {
+      "id": "69B1344A-11B3-46AC-ACD2-098DE349E9D3",
+      "name": "The National"
+    },
+    "soundsLike": [],
+    "city": "Chicago",
+    "creatorType": "musician",
+    "budget": "large"
+  },
+  "startedAt": "2026-10-29T12:08:46.018Z",
+  "providerCalls": {
+    "qloo": 0,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s8",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "note",
+      "text": "Free AI resting — using fixed research steps. Results still come from taste data."
+    },
+    {
+      "type": "tool_call",
+      "id": "sc1",
+      "tool": "qloo_search_entity",
+      "args": {
+        "query": "The National",
+        "type": "artist"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc1",
+      "tool": "qloo_search_entity",
+      "summary": "Found The National (artist)",
+      "count": 3
+    },
+    {
+      "type": "tool_call",
+      "id": "sc2",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "known indie"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc2",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: \"indie\", Indie - Rock, Indie Pop",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc3",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "indie rock"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc3",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Indie - Rock, Indierock, Indie Rock",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc4",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "rock band"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc4",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Rock Band, Rock Band, Rock Band",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc5",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [
+          "192BB96E-F4BD-4A76-B24E-CD049EC9DFA2"
+        ],
+        "tagIds": [
+          "urn:tag:genre:music:indie",
+          "urn:tag:genre:music:indie_rock",
+          "urn:tag:genre:music:indie_pop",
+          "urn:tag:genre:music:indie_folk",
+          "urn:tag:genre:music:spanish_indie_pop",
+          "urn:tag:genre:music:indierock"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc5",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: indietronica, indie electronic, Indietronic, indie dance…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "sc6",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [
+          "192BB96E-F4BD-4A76-B24E-CD049EC9DFA2"
+        ],
+        "tagIds": [
+          "urn:tag:genre:music:indie",
+          "urn:tag:genre:music:indie_rock",
+          "urn:tag:genre:music:indie_pop",
+          "urn:tag:genre:music:indie_folk",
+          "urn:tag:genre:music:spanish_indie_pop",
+          "urn:tag:genre:music:indierock"
+        ]
+      }
+    },
+    {
+      "type": "error",
+      "code": "INTERNAL",
+      "message": "Something went wrong while researching taste."
+    }
+  ],
+  "error": "Error: Something went wrong while researching taste.",
+  "elapsedMs": 42935
+}

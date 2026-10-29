@@ -1,0 +1,1184 @@
+{
+  "id": "b02",
+  "input": {
+    "text": "Independent hip-hop artist. Fans love freestyle sessions, skate culture, and bold graphics.",
+    "soundsLike": [],
+    "city": "Atlanta",
+    "creatorType": "musician",
+    "budget": "small"
+  },
+  "startedAt": "2026-10-29T11:50:07.558Z",
+  "providerCalls": {
+    "qloo": 6,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s17",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t26",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "independent hip-hop freestyle skate culture bold graphics"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t26",
+      "tool": "qloo_search_tags",
+      "summary": "No tags for \"independent hip-hop freestyle skate culture bold graphics\""
+    },
+    {
+      "type": "tool_call",
+      "id": "t27",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "hip-hop"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t27",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Hip hop, Hip - Hop, Hiphop",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t28",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "skate culture"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t28",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Society & Culture, Pop culture, Culture",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t29",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:hip_hop",
+          "urn:tag:genre:music:hip_hop",
+          "urn:tag:genre:music:hiphop",
+          "urn:tag:keyword:qloo:hip_hop"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t29",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Hip Hop, Hip Hop, Hip Hop Culture, Pop Culture Hip Hop…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "t30",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:hip_hop",
+          "urn:tag:genre:music:hip_hop",
+          "urn:tag:genre:music:hiphop",
+          "urn:tag:keyword:qloo:hip_hop"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t30",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t31",
+      "tool": "qloo_related",
+      "args": {
+        "type": "tv_show",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:genre:media:hip_hop",
+          "urn:tag:genre:music:hip_hop",
+          "urn:tag:genre:music:hiphop",
+          "urn:tag:keyword:qloo:hip_hop"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t31",
+      "tool": "qloo_related",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "note",
+      "text": "Time budget reached — building the profile from what we have."
+    },
+    {
+      "type": "step",
+      "id": "s18",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "6 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s19",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s20",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:genre:media:hip_hop",
+            "urn:tag:genre:media:pop_culture",
+            "urn:tag:category:place:skate_shop"
+          ]
+        },
+        "tags": [
+          {
+            "name": "skate",
+            "canonical": "skate",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "hiphop",
+            "canonical": "hiphop",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "Pop culture",
+            "qlooTagId": "urn:tag:genre:media:pop_culture",
+            "canonical": "pop",
+            "weight": 0.83,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "380256E8-D68D-494C-8099-398140305F45",
+            "name": "Wu Wear",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Casual",
+              "Fashion",
+              "Bold Graphics",
+              "Logocentric Design",
+              "Street-Style Silhouettes",
+              "Oversized Fits",
+              "High-Contrast Palettes",
+              "Musical Success",
+              "Community Leadership",
+              "Creative Expression"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "streetwear",
+              "vintage-americana"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "7B1A57F6-4B4F-4F1C-9FEC-9F6B6250A0EF",
+            "name": "Mass Appeal",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Advertising Enabled",
+              "Website",
+              "Minimalist",
+              "High-Contrast",
+              "Graphic",
+              "Editorial",
+              "Modern",
+              "Cultural Influencing",
+              "Industry Leadership",
+              "Creative Direction"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "streetwear",
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "70EE3FE8-8E53-46C6-BB75-7639EB2A56DB",
+            "name": "Lifted Research Group",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Fashion",
+              "Casual",
+              "Graphic-Heavy",
+              "Bold Logos",
+              "Oversized Fits",
+              "Earth Tones",
+              "Creative Independence",
+              "Underground Status",
+              "Authentic Self-Expression",
+              "Fashion"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "streetwear",
+              "techwear"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "5300E36B-02E1-4327-8D9C-2776ED1A8015",
+            "name": "Rocawear",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Eyewear",
+              "Accessories",
+              "Fashion",
+              "Bold Graphics",
+              "Logos",
+              "Oversized Silhouettes",
+              "Utility-Inspired Details",
+              "Success In Music",
+              "Entrepreneurship",
+              "Cultural Influence"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "streetwear",
+              "vintage-americana"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "497F779E-82D2-4767-BC15-6147F1CC445F",
+            "name": "Starter",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Fashion",
+              "Athletic",
+              "Casual",
+              "Retro-Inspired",
+              "Varsity Style",
+              "Bold Logos",
+              "Athletic Silhouettes",
+              "Color-Blocked Designs",
+              "Team Pride",
+              "Athletic Excellence"
+            ],
+            "canonicalTags": [
+              "vintage"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "sportswear",
+              "streetwear"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "C46AD34B-7EBF-46FE-B33C-1D3CD7AF075B",
+            "name": "10.deep",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Casual",
+              "Fashion",
+              "Graphic-Heavy",
+              "Bold Typography",
+              "Urban Utility",
+              "Casual Silhouettes",
+              "Creative Expression",
+              "Urban Exploration",
+              "Cultural Influence",
+              "Fashion"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "streetwear",
+              "skate"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "3E8BFF96-10AB-4F03-BADB-70CA964F86E5",
+            "name": "Alife",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Lifestyle / Casual",
+              "Fashion",
+              "Graphic-Heavy",
+              "Urban Minimalist",
+              "Logo-Driven",
+              "Art-Inspired",
+              "Cultural Influencer",
+              "Independent Creative",
+              "Urban Explorer",
+              "Fashion"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "streetwear",
+              "skate"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "CAEC941A-3F23-414F-911A-F04BDA7F6BBE",
+            "name": "Alchemist",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Fashion",
+              "Casual",
+              "Minimalist",
+              "Modern",
+              "Curated",
+              "High-End",
+              "High-Fashion Networking",
+              "Artistic Curation",
+              "Global Luxury Travel",
+              "Fashion"
+            ],
+            "canonicalTags": [
+              "minimal",
+              "travel"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "streetwear",
+              "skate"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "DD69DDAF-41A2-4E23-9901-8C626123A24A",
+            "name": "Ecko Unltd.",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Fashion",
+              "Casual",
+              "Bold Graphics",
+              "Rhino Motif",
+              "Oversized Silhouettes",
+              "Urban Street Style",
+              "High Contrast",
+              "Creative Hustle",
+              "Urban Leadership",
+              "Self-Expression"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "streetwear",
+              "vintage-americana"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "8BFC0FEF-5664-4B29-948D-BFC044C579ED",
+            "name": "Concepts",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "Footwear",
+              "Other",
+              "Fashion",
+              "Casual",
+              "Fashion",
+              "Minimalist",
+              "Industrial",
+              "Curated",
+              "Sophisticated",
+              "Street-focused"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "streetwear",
+              "boutique-fashion"
+            ],
+            "priceTier": "mid"
+          }
+        ],
+        "crossDomain": [],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "mono-punk",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 6
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:genre:media:hip_hop",
+        "urn:tag:genre:media:pop_culture",
+        "urn:tag:category:place:skate_shop"
+      ]
+    },
+    "tags": [
+      {
+        "name": "skate",
+        "canonical": "skate",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "hiphop",
+        "canonical": "hiphop",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "Pop culture",
+        "qlooTagId": "urn:tag:genre:media:pop_culture",
+        "canonical": "pop",
+        "weight": 0.83,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "380256E8-D68D-494C-8099-398140305F45",
+        "name": "Wu Wear",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Casual",
+          "Fashion",
+          "Bold Graphics",
+          "Logocentric Design",
+          "Street-Style Silhouettes",
+          "Oversized Fits",
+          "High-Contrast Palettes",
+          "Musical Success",
+          "Community Leadership",
+          "Creative Expression"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "streetwear",
+          "vintage-americana"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "7B1A57F6-4B4F-4F1C-9FEC-9F6B6250A0EF",
+        "name": "Mass Appeal",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Advertising Enabled",
+          "Website",
+          "Minimalist",
+          "High-Contrast",
+          "Graphic",
+          "Editorial",
+          "Modern",
+          "Cultural Influencing",
+          "Industry Leadership",
+          "Creative Direction"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "streetwear",
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "70EE3FE8-8E53-46C6-BB75-7639EB2A56DB",
+        "name": "Lifted Research Group",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Fashion",
+          "Casual",
+          "Graphic-Heavy",
+          "Bold Logos",
+          "Oversized Fits",
+          "Earth Tones",
+          "Creative Independence",
+          "Underground Status",
+          "Authentic Self-Expression",
+          "Fashion"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "streetwear",
+          "techwear"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "5300E36B-02E1-4327-8D9C-2776ED1A8015",
+        "name": "Rocawear",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Eyewear",
+          "Accessories",
+          "Fashion",
+          "Bold Graphics",
+          "Logos",
+          "Oversized Silhouettes",
+          "Utility-Inspired Details",
+          "Success In Music",
+          "Entrepreneurship",
+          "Cultural Influence"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "streetwear",
+          "vintage-americana"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "497F779E-82D2-4767-BC15-6147F1CC445F",
+        "name": "Starter",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Fashion",
+          "Athletic",
+          "Casual",
+          "Retro-Inspired",
+          "Varsity Style",
+          "Bold Logos",
+          "Athletic Silhouettes",
+          "Color-Blocked Designs",
+          "Team Pride",
+          "Athletic Excellence"
+        ],
+        "canonicalTags": [
+          "vintage"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "sportswear",
+          "streetwear"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "C46AD34B-7EBF-46FE-B33C-1D3CD7AF075B",
+        "name": "10.deep",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Casual",
+          "Fashion",
+          "Graphic-Heavy",
+          "Bold Typography",
+          "Urban Utility",
+          "Casual Silhouettes",
+          "Creative Expression",
+          "Urban Exploration",
+          "Cultural Influence",
+          "Fashion"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "streetwear",
+          "skate"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "3E8BFF96-10AB-4F03-BADB-70CA964F86E5",
+        "name": "Alife",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Lifestyle / Casual",
+          "Fashion",
+          "Graphic-Heavy",
+          "Urban Minimalist",
+          "Logo-Driven",
+          "Art-Inspired",
+          "Cultural Influencer",
+          "Independent Creative",
+          "Urban Explorer",
+          "Fashion"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "streetwear",
+          "skate"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "CAEC941A-3F23-414F-911A-F04BDA7F6BBE",
+        "name": "Alchemist",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Fashion",
+          "Casual",
+          "Minimalist",
+          "Modern",
+          "Curated",
+          "High-End",
+          "High-Fashion Networking",
+          "Artistic Curation",
+          "Global Luxury Travel",
+          "Fashion"
+        ],
+        "canonicalTags": [
+          "minimal",
+          "travel"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "streetwear",
+          "skate"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "DD69DDAF-41A2-4E23-9901-8C626123A24A",
+        "name": "Ecko Unltd.",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Fashion",
+          "Casual",
+          "Bold Graphics",
+          "Rhino Motif",
+          "Oversized Silhouettes",
+          "Urban Street Style",
+          "High Contrast",
+          "Creative Hustle",
+          "Urban Leadership",
+          "Self-Expression"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "streetwear",
+          "vintage-americana"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "8BFC0FEF-5664-4B29-948D-BFC044C579ED",
+        "name": "Concepts",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "Footwear",
+          "Other",
+          "Fashion",
+          "Casual",
+          "Fashion",
+          "Minimalist",
+          "Industrial",
+          "Curated",
+          "Sophisticated",
+          "Street-focused"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "streetwear",
+          "boutique-fashion"
+        ],
+        "priceTier": "mid"
+      }
+    ],
+    "crossDomain": [],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "mono-punk",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 6
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "bandana",
+        "name": "Printed bandana",
+        "oneLiner": "printed bandana in black, reckless by design",
+        "category": "apparel",
+        "role": "hero",
+        "silhouette": "bandana",
+        "fitScore": 38,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.5309999999999999,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "hiphop",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "vintage americana",
+            "entityName": "Wu Wear",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "vintage americana",
+            "entityName": "Rocawear",
+            "points": 7,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 12,
+          "marginPerUnit": 8.5,
+          "minRun": 36,
+          "setupCost": 30,
+          "firstRunCost": 156,
+          "breakEvenUnits": 13,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer / sublimation",
+        "supplierBrief": "22 in square cotton bandana, 1–2 colour all-over print.",
+        "description": {
+          "text": "A cotton bandana in black and off-white, finished with a boombox outline motif. 22 in square cotton bandana. The overall feel is reckless — built for fans who lean into skate and hiphop — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "patch-set",
+        "name": "Embroidered patch set",
+        "oneLiner": "embroidered patch set in black, reckless by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 40,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.5760000000000001,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "skate",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Wu Wear",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Mass Appeal",
+            "points": 8.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2,
+          "price": 8,
+          "marginPerUnit": 6,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 140,
+          "breakEvenUnits": 18,
+          "typicalRange": [
+            8,
+            15
+          ],
+          "estimate": true
+        },
+        "supplierType": "embroidery shop",
+        "supplierBrief": "Set of 2 iron-on embroidered patches, 3 in, merrowed border, digitizing fee applies.",
+        "description": {
+          "text": "A patch set in black and off-white, finished with a bolt and wheel motif. Set of 2 iron-on embroidered patches. The overall feel is reckless — built for fans who lean into skate and hiphop — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Sticker pack",
+        "oneLiner": "sticker pack in black, reckless by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 40,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.5760000000000001,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "skate",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Wu Wear",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Mass Appeal",
+            "points": 8.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 0.43,
+          "price": 4,
+          "marginPerUnit": 3.58,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 42.5,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            4,
+            8
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "A sticker sheet in black and off-white, finished with a bolt and wheel motif. Die-cut or kiss-cut vinyl stickers. The overall feel is reckless — built for fans who lean into skate and hiphop — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "acrylic-keychain",
+        "name": "Acrylic keychain",
+        "oneLiner": "acrylic keychain in black, reckless by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 38,
+        "scoreParts": {
+          "tag": 0.415,
+          "brand": 0.5760000000000001,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "pop",
+            "points": 21,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Wu Wear",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Mass Appeal",
+            "points": 8.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 1.85,
+          "price": 8,
+          "marginPerUnit": 6.15,
+          "minRun": 50,
+          "setupCost": 25,
+          "firstRunCost": 117.5,
+          "breakEvenUnits": 15,
+          "typicalRange": [
+            8,
+            14
+          ],
+          "estimate": true
+        },
+        "supplierType": "acrylic charm maker",
+        "supplierBrief": "2 in double-sided printed acrylic charm with ring and clasp.",
+        "description": {
+          "text": "A acrylic charm keychain in black and off-white, finished with a sparkle dot motif. 2 in double-sided printed acrylic charm with ring and clasp.. The overall feel is reckless — built for fans who lean into skate and hiphop — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-pin-set",
+        "name": "Enamel pin set",
+        "oneLiner": "enamel pin set in black, reckless by design",
+        "category": "objects",
+        "role": "limited",
+        "silhouette": "round",
+        "fitScore": 17,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.5760000000000001,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Wu Wear",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Mass Appeal",
+            "points": 8.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 12,
+          "marginPerUnit": 9.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 165,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            12,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "enamel pin maker",
+        "supplierBrief": "Set of 3 hard-enamel pins, 1.25 in, butterfly clasps, mold fee applies.",
+        "description": {
+          "text": "A pin set in black and off-white, finished with a star badge motif. Set of 3 hard-enamel pins. The overall feel is reckless — built for fans who lean into skate and hiphop — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "patch-set",
+            "sticker-pack",
+            "acrylic-keychain"
+          ],
+          "runSizes": {
+            "patch-set": 50,
+            "sticker-pack": 100,
+            "acrylic-keychain": 50
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "bandana"
+          ],
+          "runSizes": {
+            "bandana": 36
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "enamel-pin-set"
+          ],
+          "runSizes": {
+            "enamel-pin-set": 50
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "template",
+      "notes": []
+    }
+  },
+  "descriptionSource": "template",
+  "collabs": {
+    "collabs": [
+      {
+        "id": "BFE400C1-19BF-4491-9730-2DD7054CE2B7",
+        "name": "Stones Throw Records",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "pop"
+        ],
+        "partnerIdea": "Sticker pack co-designed with their label art, sold at pop-up events in Atlanta.",
+        "linkedProductIds": [
+          "acrylic-keychain"
+        ]
+      },
+      {
+        "id": "C7C72E8C-A671-47FF-8C57-8E50D300B904",
+        "name": "Smith's Olde Bar",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "Food"
+        ],
+        "partnerIdea": "Co-branded bandana with your logo, sold at the bar with Southern comfort vibes.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "5E419F15-D6E6-4C7F-98D6-36D5FF7212C1",
+        "name": "The Porter Beer Bar",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "Private event space"
+        ],
+        "partnerIdea": "Enamel pin set featuring your art, paired with a pint at their Atlanta taproom.",
+        "linkedProductIds": []
+      }
+    ]
+  },
+  "elapsedMs": 68752
+}

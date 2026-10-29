@@ -1,0 +1,469 @@
+{
+  "path": "B_description",
+  "seeds": {
+    "entityIds": [],
+    "tagIds": [
+      "urn:tag:genre:music:ambient_electronic",
+      "urn:tag:genre:music:ambient_electronica",
+      "urn:tag:genre:music:electronic",
+      "urn:tag:genre:music:ambient",
+      "urn:tag:category:place:electronic_parts_supplier",
+      "urn:tag:genre:music:downtempo",
+      "urn:tag:ambience:qloo:downtempo",
+      "urn:tag:genre:music:down_tempo",
+      "urn:tag:genre:music:downtempo_deathcore",
+      "urn:tag:genre:music:metro_downtempo",
+      "urn:tag:category:place:photography_studio",
+      "urn:tag:genre:place:photography_service",
+      "urn:tag:category:place:photography_service",
+      "urn:tag:genre:media:photography",
+      "urn:tag:category:place:photography"
+    ]
+  },
+  "tags": [
+    {
+      "name": "Ambient Electronic",
+      "qlooTagId": "urn:tag:genre:music:ambient_electronic",
+      "canonical": "electronic",
+      "weight": 1,
+      "source": "qloo"
+    },
+    {
+      "name": "Downtempo",
+      "qlooTagId": "urn:tag:genre:music:downtempo",
+      "weight": 1,
+      "source": "qloo"
+    },
+    {
+      "name": "Photography studio",
+      "qlooTagId": "urn:tag:category:place:photography_studio",
+      "canonical": "hiphop",
+      "weight": 1,
+      "source": "qloo"
+    },
+    {
+      "name": "ambience",
+      "qlooTagId": "urn:tag:genre:music:ambience",
+      "weight": 1,
+      "source": "qloo"
+    },
+    {
+      "name": "digital ambience",
+      "qlooTagId": "urn:tag:genre:music:digital_ambience",
+      "weight": 0.95,
+      "source": "qloo"
+    },
+    {
+      "name": "ambient noise",
+      "qlooTagId": "urn:tag:genre:music:ambient_noise",
+      "weight": 0.85,
+      "source": "qloo"
+    },
+    {
+      "name": "Downtempo",
+      "qlooTagId": "urn:tag:ambience:qloo:downtempo",
+      "weight": 0.83,
+      "source": "qloo"
+    },
+    {
+      "name": "ambient noises",
+      "qlooTagId": "urn:tag:genre:music:ambient_noises",
+      "weight": 0.8,
+      "source": "qloo"
+    },
+    {
+      "name": "ambientr",
+      "qlooTagId": "urn:tag:genre:music:ambientr",
+      "weight": 0.75,
+      "source": "qloo"
+    },
+    {
+      "name": "ambiance",
+      "qlooTagId": "urn:tag:genre:music:ambiance",
+      "weight": 0.7,
+      "source": "qloo"
+    },
+    {
+      "name": "Down Tempo",
+      "qlooTagId": "urn:tag:genre:music:down_tempo",
+      "weight": 0.65,
+      "source": "qloo"
+    },
+    {
+      "name": "Musicol",
+      "qlooTagId": "urn:tag:ambience:qloo:musicol",
+      "weight": 0.65,
+      "source": "qloo"
+    }
+  ],
+  "brands": [
+    {
+      "id": "F361B778-7B4E-49C2-82B5-A98AF0771BCC",
+      "name": "The SETI Institute",
+      "type": "brand",
+      "weight": 1,
+      "tags": [
+        "Scientific NGO",
+        "NGO",
+        "Technical",
+        "Minimalist",
+        "Educational",
+        "Professional",
+        "Understanding Cosmic Origins",
+        "Advancing Human Knowledge",
+        "Connecting With The Universe",
+        "Other"
+      ],
+      "canonicalTags": [
+        "minimal"
+      ],
+      "estimated": true,
+      "brandCategories": [
+        "art-goods",
+        "publishing"
+      ],
+      "priceTier": "mid"
+    },
+    {
+      "id": "774675F8-998C-4A53-A767-D8166EF6A29F",
+      "name": "Mozilla Corporation",
+      "type": "brand",
+      "weight": 0.92,
+      "tags": [
+        "Software",
+        "Minimalist",
+        "Functional",
+        "Clean Typography",
+        "Accessible Design",
+        "Digital Sovereignty",
+        "Ethical Computing",
+        "Intellectual Independence",
+        "Other",
+        "Nonprofit Brand"
+      ],
+      "canonicalTags": [
+        "minimal",
+        "hiphop"
+      ],
+      "estimated": true,
+      "brandCategories": [
+        "electronics",
+        "techwear"
+      ],
+      "priceTier": "budget"
+    },
+    {
+      "id": "AEBC18AE-CB5F-4B4E-A23B-A6859035D93B",
+      "name": "Brave Software",
+      "type": "brand",
+      "weight": 0.84,
+      "tags": [
+        "Software",
+        "Minimalist",
+        "Modern",
+        "High Contrast",
+        "Clean Interface",
+        "Digital Sovereignty",
+        "Minimalist Computing",
+        "Unrestricted Internet Access",
+        "Secure Digital Life",
+        "Other"
+      ],
+      "canonicalTags": [
+        "minimal"
+      ],
+      "estimated": true,
+      "brandCategories": [
+        "electronics",
+        "techwear"
+      ],
+      "priceTier": "budget"
+    },
+    {
+      "id": "FBFD8049-3B10-4F87-8B88-A845A40D3DAF",
+      "name": "Product Hunt",
+      "type": "brand",
+      "weight": 0.77,
+      "tags": [
+        "Website",
+        "Advertising Enabled",
+        "Clean UI",
+        "Minimalist Design",
+        "Orange Accent Color",
+        "Grid-Based Layout",
+        "Mobile-Responsive",
+        "Building A Startup",
+        "Disrupting Industries",
+        "Becoming An Influential Creator"
+      ],
+      "canonicalTags": [
+        "minimal",
+        "eco"
+      ],
+      "estimated": true,
+      "brandCategories": [
+        "electronics",
+        "techwear"
+      ],
+      "priceTier": "budget"
+    },
+    {
+      "id": "32500E21-3A4F-46ED-9F92-F82F94A9A03D",
+      "name": "Izotope",
+      "type": "brand",
+      "weight": 0.69,
+      "tags": [
+        "Music App",
+        "Software",
+        "Mobile App",
+        "Minimalist UI",
+        "Functional Design",
+        "Sleek Digital Interface",
+        "Data-Driven Visualization",
+        "Professional Music Production Success",
+        "Sonic Perfection",
+        "Industry-Standard Sound Quality"
+      ],
+      "canonicalTags": [
+        "minimal"
+      ],
+      "estimated": true,
+      "brandCategories": [
+        "electronics",
+        "art-goods"
+      ],
+      "priceTier": "mid"
+    },
+    {
+      "id": "3DD41981-410D-43E1-B71B-95AD99D1B036",
+      "name": "Blue Sky",
+      "type": "brand",
+      "weight": 0.61,
+      "tags": [
+        "Social Networking App",
+        "Mobile App",
+        "Minimalist",
+        "Functional",
+        "Clean Typography",
+        "Blue Tones",
+        "Digital Freedom",
+        "Algorithmic Transparency",
+        "Participatory Governance",
+        "Other"
+      ],
+      "canonicalTags": [
+        "minimal",
+        "hiphop",
+        "craft-beer"
+      ],
+      "estimated": true,
+      "brandCategories": [
+        "electronics",
+        "techwear"
+      ],
+      "priceTier": "budget"
+    },
+    {
+      "id": "65A09DC2-D086-4DD0-B1EF-9123CBEA83EA",
+      "name": "Signal",
+      "type": "brand",
+      "weight": 0.53,
+      "tags": [
+        "Social Networking App",
+        "Mobile App",
+        "Minimalist Design",
+        "Clean Typography",
+        "Blue Color Palette",
+        "Utility-Focused Interface",
+        "Total Digital Autonomy",
+        "Information Security",
+        "Freedom From Surveillance",
+        "Other"
+      ],
+      "canonicalTags": [
+        "minimal",
+        "hiphop",
+        "craft-beer"
+      ],
+      "estimated": true,
+      "brandCategories": [
+        "electronics",
+        "techwear"
+      ],
+      "priceTier": "budget"
+    },
+    {
+      "id": "7F4F52CC-D3F5-4B81-8332-BEA4111FF991",
+      "name": "Airtable",
+      "type": "brand",
+      "weight": 0.46,
+      "tags": [
+        "Software",
+        "Software companies established in 2012",
+        "2012 establishments in California",
+        "American companies established in 2012",
+        "Software companies based in the San Francisco Bay Area",
+        "Cloud computing providers",
+        "Cloud applications",
+        "Software companies based in California",
+        "Software companies of the United States",
+        "Minimalist"
+      ],
+      "canonicalTags": [
+        "minimal"
+      ],
+      "estimated": true,
+      "brandCategories": [
+        "electronics",
+        "techwear"
+      ],
+      "priceTier": "budget"
+    },
+    {
+      "id": "5C7B60DC-2D1C-4F63-8B8D-D7DBA19A2FBB",
+      "name": "Singularity University",
+      "type": "brand",
+      "weight": 0.38,
+      "tags": [
+        "Academic",
+        "Educational organizations based in the United States",
+        "Transhumanist organizations",
+        "Benefit corporations",
+        "Modern",
+        "Minimalist",
+        "Technical",
+        "Professional",
+        "Clean Typography",
+        "Future Building"
+      ],
+      "canonicalTags": [
+        "minimal",
+        "hiphop"
+      ],
+      "estimated": true,
+      "brandCategories": [
+        "publishing",
+        "art-goods"
+      ],
+      "priceTier": "premium"
+    },
+    {
+      "id": "66933347-B7F5-44E2-BEF7-1CA566AAEE76",
+      "name": "Stripe",
+      "type": "brand",
+      "weight": 0.3,
+      "tags": [
+        "Y Combinator companies",
+        "Payment service providers",
+        "Merchant services",
+        "Financial Services",
+        "2009 establishments in California",
+        "Financial technology",
+        "Companies based in San Francisco",
+        "Software",
+        "Online payments",
+        "Business software"
+      ],
+      "canonicalTags": [
+        "electronic"
+      ],
+      "estimated": true,
+      "brandCategories": [
+        "electronics",
+        "techwear"
+      ],
+      "priceTier": "mid"
+    }
+  ],
+  "crossDomain": [
+    {
+      "id": "E0B85F5E-BEA1-46F4-99EF-D9F4B523ABE9",
+      "name": "The Smack",
+      "type": "book",
+      "weight": 1,
+      "tags": [
+        "Thriller",
+        "Noir",
+        "Fiction",
+        "Mystery",
+        "Mystery Thriller",
+        "Suspense",
+        "Crime",
+        "18-24",
+        "25-29",
+        "30-34"
+      ],
+      "canonicalTags": [],
+      "estimated": false
+    },
+    {
+      "id": "4D0DB61E-8A30-47E0-A358-7D04F5A3003B",
+      "name": "Watchlist",
+      "type": "book",
+      "weight": 0.92,
+      "tags": [
+        "Horror",
+        "Mystery",
+        "Suspense",
+        "Thriller",
+        "Short Stories",
+        "Fiction",
+        "Mystery Thriller",
+        "Anthologies",
+        "Adult",
+        "Audiobook"
+      ],
+      "canonicalTags": [
+        "horror"
+      ],
+      "estimated": false
+    },
+    {
+      "id": "1F847EA3-CC41-488E-9FA6-6A99E4AAA1E4",
+      "name": "The Best Horror of the Year, Volume Ten",
+      "type": "book",
+      "weight": 0.84,
+      "tags": [],
+      "canonicalTags": [],
+      "estimated": false
+    },
+    {
+      "id": "2006F4C0-CA38-4DBD-90E7-FF007C18F51C",
+      "name": "The Cannibal's Guide to Ethical Living",
+      "type": "book",
+      "weight": 0.77,
+      "tags": [
+        "Fiction",
+        "Horror",
+        "Bizarro Fiction",
+        "Humor",
+        "Comedy",
+        "18-24",
+        "25-29",
+        "30-34",
+        "35-44",
+        "45-54"
+      ],
+      "canonicalTags": [
+        "horror"
+      ],
+      "estimated": false
+    },
+    {
+      "id": "6C048D57-C7C7-4379-98A4-38D1F1896597",
+      "name": "Twisted Romance, Vol. 1",
+      "type": "book",
+      "weight": 0.69,
+      "tags": [],
+      "canonicalTags": [],
+      "estimated": false
+    }
+  ],
+  "inspirationPlaces": [],
+  "priceTier": "budget",
+  "priceTierEstimated": true,
+  "paletteId": "chrome-y2k",
+  "notes": [],
+  "agentMode": "llm_agent",
+  "qlooCalls": 8
+}

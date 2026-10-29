@@ -1,0 +1,79 @@
+{
+  "http": 200,
+  "data": {
+    "collabs": [
+      {
+        "id": "033261F2-9C89-4170-95AD-005FE0D49FEC",
+        "name": "Sheraton Grand Bangalore Hotel at Brigade Gateway",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "Air conditioned",
+          "Business center"
+        ],
+        "partnerIdea": "Co-release with Sheraton Grand Bangalore Hotel at Brigade Gateway \u2014 their crowd already leans toward Air conditioned.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "CADCE24C-5939-42D7-BDBA-5E206EDB7BD6",
+        "name": "Mantri Square Mall",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "Wheelchair accessible restroom",
+          "Free parking lot"
+        ],
+        "partnerIdea": "Co-release with Mantri Square Mall \u2014 their crowd already leans toward Wheelchair accessible restroom.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "001F5BAD-98A3-4F62-9F8D-1D6A5DE65FB5",
+        "name": "Tharuni PG for Gents",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "Guest house",
+          "Guest house"
+        ],
+        "partnerIdea": "Co-release with Tharuni PG for Gents \u2014 their crowd already leans toward Guest house.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "000BB986-CF39-448C-8E3D-F313DDB2C692",
+        "name": "Rotti Walla",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "Credit cards",
+          "Indian"
+        ],
+        "partnerIdea": "Co-branded heavyweight-tees featuring authentic Rotti patterns, sold alongside their Indian meals.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "000CF07F-CB8C-4731-8366-AFE2A658FCD7",
+        "name": "Ideal Recreational Club",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "Club",
+          "Club"
+        ],
+        "partnerIdea": "Co-release with Ideal Recreational Club \u2014 their crowd already leans toward Club.",
+        "linkedProductIds": []
+      },
+      {
+        "id": "00138019-1537-45F3-9A09-A3A7C5A0D7D9",
+        "name": "eLitmus Evaluation Private Limited",
+        "type": "place",
+        "area": "place",
+        "tags": [
+          "Training centre",
+          "Human resource consulting"
+        ],
+        "partnerIdea": "Co-release with eLitmus Evaluation Private Limited \u2014 their crowd already leans toward Training centre.",
+        "linkedProductIds": []
+      }
+    ]
+  }
+}

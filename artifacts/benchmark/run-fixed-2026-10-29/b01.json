@@ -1,0 +1,1726 @@
+{
+  "id": "b01",
+  "input": {
+    "text": "Tycho-inspired ambient electronic project; fans collect analog photos and enjoy quiet design.",
+    "soundsLike": [
+      "Tycho"
+    ],
+    "city": "San Francisco",
+    "creatorType": "musician",
+    "budget": "medium"
+  },
+  "startedAt": "2026-10-29T11:49:35.082Z",
+  "providerCalls": {
+    "qloo": 5,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s13",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t21",
+      "tool": "qloo_search_entity",
+      "args": {
+        "query": "Tycho",
+        "type": "artist"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t21",
+      "tool": "qloo_search_entity",
+      "summary": "Found Tycho +3 more (artist)",
+      "count": 4
+    },
+    {
+      "type": "tool_call",
+      "id": "t22",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [
+          "D43A50C6-754B-444E-9289-57EBE9146279"
+        ],
+        "tagIds": []
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t22",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Entertainment, Pickled Vegetables, Inexpensive, Bar…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "t23",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [
+          "D43A50C6-754B-444E-9289-57EBE9146279"
+        ],
+        "tagIds": []
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t23",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t24",
+      "tool": "qloo_related",
+      "args": {
+        "type": "book",
+        "entityIds": [
+          "D43A50C6-754B-444E-9289-57EBE9146279"
+        ],
+        "tagIds": []
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t24",
+      "tool": "qloo_related",
+      "summary": "10 related books",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t25",
+      "tool": "qloo_related",
+      "args": {
+        "type": "movie",
+        "entityIds": [
+          "D43A50C6-754B-444E-9289-57EBE9146279"
+        ],
+        "tagIds": []
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t25",
+      "tool": "qloo_related",
+      "summary": "10 related movies",
+      "count": 10
+    },
+    {
+      "type": "note",
+      "text": "Built profile from Tycho (found in Qloo). Audience taste tags captured (15), plus related brands (10), books (10) and movies (10). Fans: ambient electronic, ana"
+    },
+    {
+      "type": "step",
+      "id": "s14",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "5 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s15",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s16",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "A_artist_found",
+        "artist": {
+          "id": "D43A50C6-754B-444E-9289-57EBE9146279",
+          "name": "Tycho"
+        },
+        "seeds": {
+          "entityIds": [
+            "D43A50C6-754B-444E-9289-57EBE9146279"
+          ],
+          "tagIds": []
+        },
+        "tags": [
+          {
+            "name": "electronic",
+            "canonical": "electronic",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "photography",
+            "canonical": "photography",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "minimal",
+            "canonical": "minimal",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "Graphic Novels",
+            "qlooTagId": "urn:tag:genre:media:graphic_novels",
+            "canonical": "comics",
+            "weight": 0.3,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "D5B78065-6DBB-4DDB-80DF-6495B9B1006B",
+            "name": "Apple Inc",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "American business executives",
+              "Apple Inc. lists",
+              "Companies in the PRISM network",
+              "Nigerian women business executives",
+              "Headphones",
+              "Phones & Tablets",
+              "American women business executives",
+              "Home computer hardware companies",
+              "Companies in the NASDAQ-100",
+              "Retail companies of the United States"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "DB03F250-64F3-47AB-8756-BC1C4E13EBFD",
+            "name": "The North Face",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "2010s fashion",
+              "Clothing brands of the United States",
+              "Mountaineering equipment manufacturers",
+              "Sneakers",
+              "Clothing companies established in 1966",
+              "Footwear",
+              "Casual",
+              "Companies based in San Leandro",
+              "Companies based in San Francisco",
+              "Camping equipment manufacturers"
+            ],
+            "canonicalTags": [
+              "outdoors"
+            ],
+            "estimated": false,
+            "brandCategories": [
+              "outdoor",
+              "streetwear"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "62926E8D-2D7E-4428-819E-BF2477D3233F",
+            "name": "Polaroid",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Electronics",
+              "Camera & Video",
+              "Minimalist Design",
+              "Retro-Inspired Elements",
+              "Bold Primary Colors",
+              "Square Format",
+              "High Contrast",
+              "Slow Living",
+              "Artistic Curation",
+              "Meaningful Connection"
+            ],
+            "canonicalTags": [
+              "electronic",
+              "photography",
+              "minimal",
+              "vintage"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics",
+              "collectibles"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "3381E64E-B7C4-4824-8526-BE33C133C2DF",
+            "name": "GoPro",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "American companies established in 2002",
+              "Technology companies based in the San Francisco Bay Area",
+              "2014 initial public offerings",
+              "Action cameras",
+              "Technology companies established in 2002",
+              "2002 establishments in California",
+              "Photography companies of the United States",
+              "Camera & Video",
+              "Companies based in San Mateo",
+              "Companies listed on the Nasdaq"
+            ],
+            "canonicalTags": [
+              "photography"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics",
+              "outdoor"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "29B49E3F-A0EC-42C6-A453-38B1C20D8374",
+            "name": "Tesla",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "2003 establishments in California",
+              "Electric motor manufacturers",
+              "Motor vehicle manufacturers based in Texas",
+              "Companies based in Palo Alto",
+              "Companies in the NASDAQ-100",
+              "Automotive",
+              "Car brands",
+              "Manufacturing companies based in California",
+              "Vehicle manufacturing companies established in 2003",
+              "Battery electric vehicle manufacturers"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "684AAA92-56EE-4DA5-BA67-BD117E8DF5B7",
+            "name": "DJI",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Robotics",
+              "Electronics",
+              "Minimalist Design",
+              "Sleek Engineering",
+              "Functional Form",
+              "Modern Industrial Aesthetic",
+              "High-Tech Finishes",
+              "Cinematic Storytelling",
+              "Aerial Exploration",
+              "Mastery Of Emerging Technology"
+            ],
+            "canonicalTags": [
+              "electronic",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "375A11D8-C069-4938-A79D-5525E494B7F6",
+            "name": "Moment",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Retail",
+              "Website",
+              "Minimalist",
+              "Functional",
+              "Industrial",
+              "Clean Typography",
+              "High-Contrast Photography",
+              "Full-time Creative Travel",
+              "Professional Filmmaking",
+              "Remote Work Flexibility"
+            ],
+            "canonicalTags": [
+              "minimal",
+              "photography",
+              "travel"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "1E488095-7A33-4AAE-A0AD-2AF999DB446F",
+            "name": "Adobe Photoshop",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Software",
+              "Modern Interface",
+              "Tool-Centric Design",
+              "Workspace Customization",
+              "Iconic Branding",
+              "Mastery of Digital Art",
+              "Professional Creative Career",
+              "Visual Perfectionism",
+              "Impactful Visual Storytelling",
+              "Other"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "art-goods"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "AC8F9047-F23D-4A54-BBAA-A3CBD2991C02",
+            "name": "Vans",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "1990s fashion",
+              "Sportswear brands",
+              "1980s fashion",
+              "2020s fashion",
+              "Lifestyle / Casual",
+              "1966 establishments in California",
+              "Skateboarding companies",
+              "VF Corporation",
+              "Clothing companies established in 1966",
+              "Skateboard shoe companies"
+            ],
+            "canonicalTags": [
+              "skate"
+            ],
+            "estimated": false,
+            "brandCategories": [
+              "skate",
+              "streetwear"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "A5269DD4-5BCE-4EC7-BD50-355B29F3079F",
+            "name": "Airbnb",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "2008 establishments in California",
+              "Companies based in San Francisco",
+              "Companies listed on the Nasdaq",
+              "Peer-to-peer",
+              "Y Combinator companies",
+              "Hospitality companies of the United States",
+              "Social planning websites",
+              "Online marketplaces of the United States",
+              "Hospitality companies established in 2008",
+              "Vacation rental"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "home-goods"
+            ],
+            "priceTier": "mid"
+          }
+        ],
+        "crossDomain": [
+          {
+            "id": "B47E7D07-C346-4B0C-87FB-F36CE4551597",
+            "name": "The Shape of Water",
+            "type": "movie",
+            "weight": 1,
+            "tags": [
+              "Government",
+              "Hair piece",
+              "Romantic expressionism",
+              "Womens locker room",
+              "Gun violence",
+              "The caregiver",
+              "Vessel",
+              "Female protagonist",
+              "Pay phone",
+              "Locker room"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "3A02361C-987B-4F7E-9AAD-071C3853AD92",
+            "name": "Blade Runner 2049",
+            "type": "movie",
+            "weight": 0.92,
+            "tags": [
+              "Holographic girl",
+              "Rocket",
+              "Atmospheric",
+              "Hostage",
+              "Designer",
+              "Beating",
+              "Punched in the chest",
+              "Super computer",
+              "Three word title",
+              "Ex soldier"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "5711127E-4A9A-4440-8234-8E536E8A1564",
+            "name": "Annihilation",
+            "type": "movie",
+            "weight": 0.84,
+            "tags": [
+              "Tense",
+              "Backpack",
+              "Explosion",
+              "Expansion",
+              "Cancer",
+              "Theory",
+              "Textured",
+              "Female psychologist",
+              "Florida",
+              "Visually discerning"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "4F8EBD51-46DB-4527-BC61-75B56472A50E",
+            "name": "Her",
+            "type": "movie",
+            "weight": 0.77,
+            "tags": [
+              "Near future",
+              "No opening credits",
+              "Original screenplay",
+              "Chatting",
+              "Sadness",
+              "Future",
+              "Operating system",
+              "Technology ethics",
+              "Love",
+              "Romantic drama"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "DCA9DBE4-3700-4A9E-9315-C06BD6CEA4EC",
+            "name": "Ad Astra",
+            "type": "movie",
+            "weight": 0.69,
+            "tags": [
+              "Characters point of view camera shot",
+              "Co written by director",
+              "Intimate",
+              "Brawl",
+              "Asphyxiation",
+              "Cosmic threat",
+              "Space sci fi",
+              "Antimatter attack",
+              "Missing father",
+              "Intimate"
+            ],
+            "canonicalTags": [
+              "photography",
+              "sci-fi"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "F9D2BBA1-E41B-4FF7-97E8-CE0C721ED1D2",
+            "name": "Running the Light",
+            "type": "book",
+            "weight": 1,
+            "tags": [
+              "Book Club",
+              "Novels",
+              "Contemporary",
+              "Literary Fiction",
+              "Comedian",
+              "Fiction",
+              "Comedy",
+              "Humor",
+              "Dark",
+              "Audiobook"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "E2AB24C4-7E43-47DA-A37F-FF6D10BB0987",
+            "name": "American Kingpin: The Epic Hunt for the Criminal Mastermind Behind the Silk Road",
+            "type": "book",
+            "weight": 0.92,
+            "tags": [
+              "Biography",
+              "True Crime",
+              "Technology",
+              "Mystery",
+              "Crime",
+              "Business",
+              "History",
+              "Journalism",
+              "Audiobook",
+              "Nonfiction"
+            ],
+            "canonicalTags": [
+              "horror"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "BE5A064E-219C-4495-8972-4CC1C66AF76F",
+            "name": "And Then It Fell Apart",
+            "type": "book",
+            "weight": 0.84,
+            "tags": [
+              "Memoir",
+              "Autobiography",
+              "Nonfiction",
+              "Art",
+              "Humor",
+              "The United States Of America",
+              "Music",
+              "Biography",
+              "Audiobook",
+              "American"
+            ],
+            "canonicalTags": [],
+            "estimated": false
+          },
+          {
+            "id": "AD82D164-8F9F-48E4-BF0C-973526DB9BD2",
+            "name": "The Lazarus Heist: From Hollywood to High Finance: Inside North Korea's Global Cyber War",
+            "type": "book",
+            "weight": 0.77,
+            "tags": [
+              "Asia",
+              "Audiobook",
+              "History",
+              "Crime",
+              "True Crime",
+              "Business",
+              "Hackers",
+              "Nonfiction",
+              "Technology",
+              "Politics"
+            ],
+            "canonicalTags": [
+              "horror"
+            ],
+            "estimated": false
+          },
+          {
+            "id": "DB78F3BE-8ADA-4F18-AB2E-DF3569761D35",
+            "name": "Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency",
+            "type": "book",
+            "weight": 0.69,
+            "tags": [
+              "Audiobook",
+              "Economics",
+              "True Crime",
+              "Science",
+              "Business",
+              "Technology",
+              "Crime",
+              "Finance",
+              "Nonfiction",
+              "History"
+            ],
+            "canonicalTags": [
+              "horror"
+            ],
+            "estimated": false
+          }
+        ],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "ink-literary",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 5
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "A_artist_found",
+    "artist": {
+      "id": "D43A50C6-754B-444E-9289-57EBE9146279",
+      "name": "Tycho"
+    },
+    "seeds": {
+      "entityIds": [
+        "D43A50C6-754B-444E-9289-57EBE9146279"
+      ],
+      "tagIds": []
+    },
+    "tags": [
+      {
+        "name": "electronic",
+        "canonical": "electronic",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "photography",
+        "canonical": "photography",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "minimal",
+        "canonical": "minimal",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "Graphic Novels",
+        "qlooTagId": "urn:tag:genre:media:graphic_novels",
+        "canonical": "comics",
+        "weight": 0.3,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "D5B78065-6DBB-4DDB-80DF-6495B9B1006B",
+        "name": "Apple Inc",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "American business executives",
+          "Apple Inc. lists",
+          "Companies in the PRISM network",
+          "Nigerian women business executives",
+          "Headphones",
+          "Phones & Tablets",
+          "American women business executives",
+          "Home computer hardware companies",
+          "Companies in the NASDAQ-100",
+          "Retail companies of the United States"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "DB03F250-64F3-47AB-8756-BC1C4E13EBFD",
+        "name": "The North Face",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "2010s fashion",
+          "Clothing brands of the United States",
+          "Mountaineering equipment manufacturers",
+          "Sneakers",
+          "Clothing companies established in 1966",
+          "Footwear",
+          "Casual",
+          "Companies based in San Leandro",
+          "Companies based in San Francisco",
+          "Camping equipment manufacturers"
+        ],
+        "canonicalTags": [
+          "outdoors"
+        ],
+        "estimated": false,
+        "brandCategories": [
+          "outdoor",
+          "streetwear"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "62926E8D-2D7E-4428-819E-BF2477D3233F",
+        "name": "Polaroid",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Electronics",
+          "Camera & Video",
+          "Minimalist Design",
+          "Retro-Inspired Elements",
+          "Bold Primary Colors",
+          "Square Format",
+          "High Contrast",
+          "Slow Living",
+          "Artistic Curation",
+          "Meaningful Connection"
+        ],
+        "canonicalTags": [
+          "electronic",
+          "photography",
+          "minimal",
+          "vintage"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics",
+          "collectibles"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "3381E64E-B7C4-4824-8526-BE33C133C2DF",
+        "name": "GoPro",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "American companies established in 2002",
+          "Technology companies based in the San Francisco Bay Area",
+          "2014 initial public offerings",
+          "Action cameras",
+          "Technology companies established in 2002",
+          "2002 establishments in California",
+          "Photography companies of the United States",
+          "Camera & Video",
+          "Companies based in San Mateo",
+          "Companies listed on the Nasdaq"
+        ],
+        "canonicalTags": [
+          "photography"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics",
+          "outdoor"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "29B49E3F-A0EC-42C6-A453-38B1C20D8374",
+        "name": "Tesla",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "2003 establishments in California",
+          "Electric motor manufacturers",
+          "Motor vehicle manufacturers based in Texas",
+          "Companies based in Palo Alto",
+          "Companies in the NASDAQ-100",
+          "Automotive",
+          "Car brands",
+          "Manufacturing companies based in California",
+          "Vehicle manufacturing companies established in 2003",
+          "Battery electric vehicle manufacturers"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "684AAA92-56EE-4DA5-BA67-BD117E8DF5B7",
+        "name": "DJI",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Robotics",
+          "Electronics",
+          "Minimalist Design",
+          "Sleek Engineering",
+          "Functional Form",
+          "Modern Industrial Aesthetic",
+          "High-Tech Finishes",
+          "Cinematic Storytelling",
+          "Aerial Exploration",
+          "Mastery Of Emerging Technology"
+        ],
+        "canonicalTags": [
+          "electronic",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "375A11D8-C069-4938-A79D-5525E494B7F6",
+        "name": "Moment",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Retail",
+          "Website",
+          "Minimalist",
+          "Functional",
+          "Industrial",
+          "Clean Typography",
+          "High-Contrast Photography",
+          "Full-time Creative Travel",
+          "Professional Filmmaking",
+          "Remote Work Flexibility"
+        ],
+        "canonicalTags": [
+          "minimal",
+          "photography",
+          "travel"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "1E488095-7A33-4AAE-A0AD-2AF999DB446F",
+        "name": "Adobe Photoshop",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Software",
+          "Modern Interface",
+          "Tool-Centric Design",
+          "Workspace Customization",
+          "Iconic Branding",
+          "Mastery of Digital Art",
+          "Professional Creative Career",
+          "Visual Perfectionism",
+          "Impactful Visual Storytelling",
+          "Other"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "art-goods"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "AC8F9047-F23D-4A54-BBAA-A3CBD2991C02",
+        "name": "Vans",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "1990s fashion",
+          "Sportswear brands",
+          "1980s fashion",
+          "2020s fashion",
+          "Lifestyle / Casual",
+          "1966 establishments in California",
+          "Skateboarding companies",
+          "VF Corporation",
+          "Clothing companies established in 1966",
+          "Skateboard shoe companies"
+        ],
+        "canonicalTags": [
+          "skate"
+        ],
+        "estimated": false,
+        "brandCategories": [
+          "skate",
+          "streetwear"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "A5269DD4-5BCE-4EC7-BD50-355B29F3079F",
+        "name": "Airbnb",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "2008 establishments in California",
+          "Companies based in San Francisco",
+          "Companies listed on the Nasdaq",
+          "Peer-to-peer",
+          "Y Combinator companies",
+          "Hospitality companies of the United States",
+          "Social planning websites",
+          "Online marketplaces of the United States",
+          "Hospitality companies established in 2008",
+          "Vacation rental"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "home-goods"
+        ],
+        "priceTier": "mid"
+      }
+    ],
+    "crossDomain": [
+      {
+        "id": "B47E7D07-C346-4B0C-87FB-F36CE4551597",
+        "name": "The Shape of Water",
+        "type": "movie",
+        "weight": 1,
+        "tags": [
+          "Government",
+          "Hair piece",
+          "Romantic expressionism",
+          "Womens locker room",
+          "Gun violence",
+          "The caregiver",
+          "Vessel",
+          "Female protagonist",
+          "Pay phone",
+          "Locker room"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "3A02361C-987B-4F7E-9AAD-071C3853AD92",
+        "name": "Blade Runner 2049",
+        "type": "movie",
+        "weight": 0.92,
+        "tags": [
+          "Holographic girl",
+          "Rocket",
+          "Atmospheric",
+          "Hostage",
+          "Designer",
+          "Beating",
+          "Punched in the chest",
+          "Super computer",
+          "Three word title",
+          "Ex soldier"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "5711127E-4A9A-4440-8234-8E536E8A1564",
+        "name": "Annihilation",
+        "type": "movie",
+        "weight": 0.84,
+        "tags": [
+          "Tense",
+          "Backpack",
+          "Explosion",
+          "Expansion",
+          "Cancer",
+          "Theory",
+          "Textured",
+          "Female psychologist",
+          "Florida",
+          "Visually discerning"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "4F8EBD51-46DB-4527-BC61-75B56472A50E",
+        "name": "Her",
+        "type": "movie",
+        "weight": 0.77,
+        "tags": [
+          "Near future",
+          "No opening credits",
+          "Original screenplay",
+          "Chatting",
+          "Sadness",
+          "Future",
+          "Operating system",
+          "Technology ethics",
+          "Love",
+          "Romantic drama"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "DCA9DBE4-3700-4A9E-9315-C06BD6CEA4EC",
+        "name": "Ad Astra",
+        "type": "movie",
+        "weight": 0.69,
+        "tags": [
+          "Characters point of view camera shot",
+          "Co written by director",
+          "Intimate",
+          "Brawl",
+          "Asphyxiation",
+          "Cosmic threat",
+          "Space sci fi",
+          "Antimatter attack",
+          "Missing father",
+          "Intimate"
+        ],
+        "canonicalTags": [
+          "photography",
+          "sci-fi"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "F9D2BBA1-E41B-4FF7-97E8-CE0C721ED1D2",
+        "name": "Running the Light",
+        "type": "book",
+        "weight": 1,
+        "tags": [
+          "Book Club",
+          "Novels",
+          "Contemporary",
+          "Literary Fiction",
+          "Comedian",
+          "Fiction",
+          "Comedy",
+          "Humor",
+          "Dark",
+          "Audiobook"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "E2AB24C4-7E43-47DA-A37F-FF6D10BB0987",
+        "name": "American Kingpin: The Epic Hunt for the Criminal Mastermind Behind the Silk Road",
+        "type": "book",
+        "weight": 0.92,
+        "tags": [
+          "Biography",
+          "True Crime",
+          "Technology",
+          "Mystery",
+          "Crime",
+          "Business",
+          "History",
+          "Journalism",
+          "Audiobook",
+          "Nonfiction"
+        ],
+        "canonicalTags": [
+          "horror"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "BE5A064E-219C-4495-8972-4CC1C66AF76F",
+        "name": "And Then It Fell Apart",
+        "type": "book",
+        "weight": 0.84,
+        "tags": [
+          "Memoir",
+          "Autobiography",
+          "Nonfiction",
+          "Art",
+          "Humor",
+          "The United States Of America",
+          "Music",
+          "Biography",
+          "Audiobook",
+          "American"
+        ],
+        "canonicalTags": [],
+        "estimated": false
+      },
+      {
+        "id": "AD82D164-8F9F-48E4-BF0C-973526DB9BD2",
+        "name": "The Lazarus Heist: From Hollywood to High Finance: Inside North Korea's Global Cyber War",
+        "type": "book",
+        "weight": 0.77,
+        "tags": [
+          "Asia",
+          "Audiobook",
+          "History",
+          "Crime",
+          "True Crime",
+          "Business",
+          "Hackers",
+          "Nonfiction",
+          "Technology",
+          "Politics"
+        ],
+        "canonicalTags": [
+          "horror"
+        ],
+        "estimated": false
+      },
+      {
+        "id": "DB78F3BE-8ADA-4F18-AB2E-DF3569761D35",
+        "name": "Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency",
+        "type": "book",
+        "weight": 0.69,
+        "tags": [
+          "Audiobook",
+          "Economics",
+          "True Crime",
+          "Science",
+          "Business",
+          "Technology",
+          "Crime",
+          "Finance",
+          "Nonfiction",
+          "History"
+        ],
+        "canonicalTags": [
+          "horror"
+        ],
+        "estimated": false
+      }
+    ],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "ink-literary",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 5
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "hero-crewneck",
+        "name": "Heavyweight Minimal Crewneck",
+        "oneLiner": "Lush fleece with subtle, hypnotic geometric embroidery.",
+        "category": "apparel",
+        "role": "hero",
+        "silhouette": "top",
+        "fitScore": 42,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.65,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "minimal",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "The North Face",
+            "points": 14,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Vans",
+            "points": 5.5,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 22,
+          "price": 61.5,
+          "marginPerUnit": 39.5,
+          "minRun": 24,
+          "setupCost": 40,
+          "firstRunCost": 568,
+          "breakEvenUnits": 10,
+          "typicalRange": [
+            58,
+            78
+          ],
+          "estimate": true
+        },
+        "supplierType": "premium blank + embroidery/print",
+        "supplierBrief": "12–14 oz fleece crewneck, embroidered chest mark, numbered neck label, limited run.",
+        "description": {
+          "text": "A thick, soft fleece crewneck in deep ink blue. The chest features a small, precise embroidered motif of concentric circles, evoking electronic waveforms. The fabric feels substantial and warm, offering a quiet, hypnotic presence. A small mustard accent on the hem adds warmth against the dark background, keeping the overall design minimal and sophisticated without any distracting text or logos.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "patch-set",
+        "name": "Abstract Waveform Patches",
+        "oneLiner": "Textured patches with pulsing, sound-inspired patterns.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 32,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.65,
+          "cross": 0.6133333333333334
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "The North Face",
+            "points": 14,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "horror",
+            "points": 12,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Vans",
+            "points": 5.5,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2,
+          "price": 8,
+          "marginPerUnit": 6,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 140,
+          "breakEvenUnits": 18,
+          "typicalRange": [
+            8,
+            15
+          ],
+          "estimate": true
+        },
+        "supplierType": "embroidery shop",
+        "supplierBrief": "Set of 2 iron-on embroidered patches, 3 in, merrowed border, digitizing fee applies.",
+        "description": {
+          "text": "Two rugged, iron-on patches featuring dense, merrowed borders in mustard yellow. The centers display abstract, jagged lines resembling oscilloscope waves, rendered in ink blue thread on a paper white base. The texture is rich and tactile, capturing the energy of electronic beats. The design feels raw and kinetic, perfect for layering on denim or jackets, with a hypnotic rhythm in the stitching.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "heavyweight-tee",
+        "name": "Geometric Print Heavy Tee",
+        "oneLiner": "Crisp cotton tee with hypnotic, minimal line art.",
+        "category": "apparel",
+        "role": "core",
+        "silhouette": "top",
+        "fitScore": 54,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.65,
+          "cross": 0.6133333333333334
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "minimal",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "The North Face",
+            "points": 14,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "horror",
+            "points": 12,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 8,
+          "price": 28,
+          "marginPerUnit": 20,
+          "minRun": 36,
+          "setupCost": 30,
+          "firstRunCost": 318,
+          "breakEvenUnits": 12,
+          "typicalRange": [
+            28,
+            40
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "6.5 oz cotton tee, 1–2 colour screen print front, small back print, sizes S–XXL.",
+        "description": {
+          "text": "A sturdy, six-and-a-half-ounce cotton t-shirt in paper white. The front features a bold, single-color screen print of intersecting lines in ink blue, forming a complex, hypnotic grid that suggests digital photography. A tiny, subtle mustard dot anchors the composition. The back mirrors this with a smaller, minimalist graphic. The fabric drapes heavily, offering a clean, crisp canvas for the intricate, electronic-inspired pattern.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "cassette-usb",
+        "name": "Retro Cassette USB Drive",
+        "oneLiner": "Vintage cassette shape housing modern digital audio.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "cassette",
+        "fitScore": 32,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0.45999999999999996
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "electronic",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "sci fi",
+            "points": 9,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 5,
+          "price": 18,
+          "marginPerUnit": 13,
+          "minRun": 50,
+          "setupCost": 30,
+          "firstRunCost": 280,
+          "breakEvenUnits": 16,
+          "typicalRange": [
+            18,
+            28
+          ],
+          "estimate": true
+        },
+        "supplierType": "USB / cassette duplicator",
+        "supplierBrief": "Cassette-style 8 GB USB pre-loaded with the artist's own tracks, printed J-card insert.",
+        "description": {
+          "text": "A glossy, miniature cassette-shaped USB drive in matte ink blue plastic. The front label area displays a minimal, hypnotic pattern of horizontal mustard stripes, reminiscent of tape reels. The casing is smooth and slightly textured, evoking vintage audio equipment. It feels nostalgic yet modern, a tactile object that bridges analog warmth with digital precision. The design is sleek, quiet, and deeply evocative of early electronic music culture.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-pin-set",
+        "name": "Hypnotic Enamel Pin Trio",
+        "oneLiner": "Shiny, patterned pins with a retro-futuristic feel.",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 29,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.65,
+          "cross": 0.45999999999999996
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "The North Face",
+            "points": 14,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "sci fi",
+            "points": 9,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "Vans",
+            "points": 5.5,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.5,
+          "price": 12,
+          "marginPerUnit": 9.5,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 165,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            12,
+            22
+          ],
+          "estimate": true
+        },
+        "supplierType": "enamel pin maker",
+        "supplierBrief": "Set of 3 hard-enamel pins, 1.25 in, butterfly clasps, mold fee applies.",
+        "description": {
+          "text": "Three small, hard-enamel pins featuring intricate, repeating geometric patterns. The designs use ink blue and mustard on a paper white background, creating a sense of depth and movement. One pin depicts a spiral, another a grid, and the third a pulse wave. The metallic edges catch the light, adding a subtle shine. The overall effect is precise, retro-futuristic, and quietly hypnotic, ideal for collecting and displaying on bags or lapels.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Hypnotic Vinyl Sticker Sheet",
+        "oneLiner": "Waterproof stickers with swirling, minimal abstract art.",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 29,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.65,
+          "cross": 0.45999999999999996
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "streetwear",
+            "entityName": "The North Face",
+            "points": 14,
+            "estimated": false
+          },
+          {
+            "kind": "cross_domain",
+            "label": "sci fi",
+            "points": 9,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "skate",
+            "entityName": "Vans",
+            "points": 5.5,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 0.43,
+          "price": 4,
+          "marginPerUnit": 3.58,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 42.5,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            4,
+            8
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "A sheet of die-cut vinyl stickers featuring three distinct, abstract designs. The artwork uses bold ink blue shapes against a paper white base, accented by mustard highlights. One design is a swirling spiral, another a fragmented grid, and the third a rhythmic pulse. The stickers have a matte finish, making them durable and waterproof. The visuals are clean, minimal, and hypnotic, capturing the essence of electronic textures without any text or logos.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "embroidered-cap",
+        "name": "Corduroy Wave Cap",
+        "oneLiner": "Corduroy cap with textured, sound-wave embroidery.",
+        "category": "apparel",
+        "role": "limited",
+        "silhouette": "cap",
+        "fitScore": 21,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.6910000000000001,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "outdoor",
+            "entityName": "The North Face",
+            "points": 14,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "outdoor",
+            "entityName": "GoPro",
+            "points": 7,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 9,
+          "price": 28,
+          "marginPerUnit": 19,
+          "minRun": 24,
+          "setupCost": 25,
+          "firstRunCost": 241,
+          "breakEvenUnits": 9,
+          "typicalRange": [
+            28,
+            38
+          ],
+          "estimate": true
+        },
+        "supplierType": "embroidery shop",
+        "supplierBrief": "Unstructured 6-panel corduroy cap, flat embroidery up to 3 colours, digitizing fee applies.",
+        "description": {
+          "text": "An unstructured, six-panel corduroy cap in deep ink blue. The fabric has a soft, ribbed texture that feels warm and vintage-inspired. The front features flat embroidery in mustard and paper white, depicting a simple, undulating wave pattern. The stitching is clean and precise, creating a subtle, hypnotic visual rhythm. The cap sits low on the brow, offering a casual, workwear aesthetic with a touch of artistic, electronic flair.",
+          "version": 1,
+          "history": [],
+          "source": "llm"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "patch-set",
+            "heavyweight-tee",
+            "cassette-usb",
+            "enamel-pin-set",
+            "sticker-pack"
+          ],
+          "runSizes": {
+            "patch-set": 50,
+            "heavyweight-tee": 36,
+            "cassette-usb": 50,
+            "enamel-pin-set": 50,
+            "sticker-pack": 100
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "hero-crewneck"
+          ],
+          "runSizes": {
+            "hero-crewneck": 24
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "embroidered-cap"
+          ],
+          "runSizes": {
+            "embroidered-cap": 24
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "llm",
+      "notes": []
+    }
+  },
+  "descriptionSource": "llm",
+  "collabs": {
+    "collabs": [
+      {
+        "id": "3381E64E-B7C4-4824-8526-BE33C133C2DF",
+        "name": "GoPro",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "photography",
+          "electronic"
+        ],
+        "partnerIdea": "Co-release with GoPro — your audiences overlap on photography and electronic.",
+        "linkedProductIds": [
+          "hero-crewneck",
+          "heavyweight-tee"
+        ]
+      },
+      {
+        "id": "62926E8D-2D7E-4428-819E-BF2477D3233F",
+        "name": "Polaroid",
+        "type": "brand",
+        "area": "brand",
+        "tags": [
+          "electronic",
+          "photography"
+        ],
+        "partnerIdea": "Co-release with Polaroid — your audiences overlap on electronic and photography.",
+        "linkedProductIds": [
+          "hero-crewneck",
+          "heavyweight-tee"
+        ]
+      }
+    ],
+    "cityNote": "No suitable local venues found near San Francisco; showing affinity brands separately. Try another city for local collaborations."
+  },
+  "elapsedMs": 32469
+}

@@ -1,0 +1,1113 @@
+{
+  "id": "b06",
+  "input": {
+    "text": "YouTube channel teaching watercolor landscapes. Viewers enjoy stationery and outdoor sketching.",
+    "soundsLike": [],
+    "city": "London",
+    "creatorType": "youtuber",
+    "budget": "medium"
+  },
+  "startedAt": "2026-10-29T12:10:02.514Z",
+  "providerCalls": {
+    "qloo": 5,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s10",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "note",
+      "text": "Free AI resting — using fixed research steps. Results still come from taste data."
+    },
+    {
+      "type": "tool_call",
+      "id": "sc1",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "youtube channel"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc1",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Youtube, The Roku Channel, Channel",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc2",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "channel teaching"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc2",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Teaching, The Roku Channel, Channel",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "sc3",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "teaching watercolor"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc3",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Teaching, Teaching Assistant, Teaching",
+      "count": 4
+    },
+    {
+      "type": "tool_call",
+      "id": "sc4",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:streaming_service:media:youtube",
+          "urn:tag:streaming_service:media:roku_channel",
+          "urn:tag:category:place:channel",
+          "urn:tag:streaming_service:media:paramount_amazon_channel",
+          "urn:tag:streaming_service:media:hbo_max_amazon_channel",
+          "urn:tag:genre:media:teaching"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc4",
+      "tool": "qloo_taste_tags",
+      "summary": "Audience taste tags: Instructional, Edutainment, Education, Educational Material…",
+      "count": 15
+    },
+    {
+      "type": "tool_call",
+      "id": "sc5",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:streaming_service:media:youtube",
+          "urn:tag:streaming_service:media:roku_channel",
+          "urn:tag:category:place:channel",
+          "urn:tag:streaming_service:media:paramount_amazon_channel",
+          "urn:tag:streaming_service:media:hbo_max_amazon_channel",
+          "urn:tag:genre:media:teaching"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "sc5",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "step",
+      "id": "s11",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s12",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": []
+        },
+        "tags": [
+          {
+            "name": "outdoors",
+            "canonical": "outdoors",
+            "weight": 0.9,
+            "source": "user"
+          },
+          {
+            "name": "art print",
+            "canonical": "art-print",
+            "weight": 0.9,
+            "source": "user"
+          }
+        ],
+        "brands": [
+          {
+            "id": "30B15C1C-6A1B-4CCC-AC38-3FB0C8DB6E36",
+            "name": "Fasttelco",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Telecommunication",
+              "Corporate Minimalist",
+              "Clean Layouts",
+              "Brand-Aligned Color Palette",
+              "Digital-First Design",
+              "Seamless Digital Experience",
+              "High-Performance Productivity",
+              "Competitive Dominance",
+              "Other",
+              "Service Brand"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "78001719-D9CC-4F7F-B823-A5E754DA8B53",
+            "name": "British University in Dubai",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Academic",
+              "Formal",
+              "Academic",
+              "Conservative",
+              "Institutional",
+              "Academic Leadership",
+              "Expertise Development",
+              "Global Intellectual Network",
+              "Professional Advancement",
+              "Other"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "publishing"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "1F043BF4-EC38-4FCE-842F-1E0BEFBD34CD",
+            "name": "Infltr",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Software",
+              "Minimalist Interface",
+              "High-Definition Visuals",
+              "Clean Typography",
+              "Professional Photography",
+              "Artistic Expression",
+              "Curated Visual Aesthetic",
+              "Other",
+              "Product Brand",
+              "B2C"
+            ],
+            "canonicalTags": [
+              "minimal",
+              "photography"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "techwear"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "37AC7DCD-6DDD-4BFA-BCEC-29D7411A8BD0",
+            "name": "Bigo Live Malaysia",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Software",
+              "Vibrant",
+              "Digital-First",
+              "High-Energy",
+              "Internet Fame",
+              "Creative Monetization",
+              "Global Connectivity",
+              "Other",
+              "Media Brand",
+              "B2C"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "4A259F00-1C88-4CC4-ADB4-21865A2C6B79",
+            "name": "PicCollage",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Mobile App",
+              "Photo & Video App",
+              "Software",
+              "Playful Stickers",
+              "Handwritten Typography",
+              "Paper Textures",
+              "Bright Color Palettes",
+              "Layered Collages",
+              "Artistic Expression",
+              "Curated Visual Aesthetic"
+            ],
+            "canonicalTags": [
+              "photography"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "art-goods"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "F90E3065-2F8D-4ECA-9E9B-5723A8AE8C9F",
+            "name": "CIEE",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "NGO",
+              "Education NGO",
+              "Educational",
+              "Professional",
+              "Inclusive",
+              "Clear",
+              "Accessible",
+              "Global Citizen",
+              "Cross-Cultural Connector",
+              "Independent Traveler"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "publishing"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "63511A8E-6173-43F5-B8CA-41438E16E26C",
+            "name": "Abu Dhabi University",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Academic",
+              "Modern Campus Architecture",
+              "Professional Branding",
+              "Academic Crest",
+              "Formal Presentation",
+              "Career Success",
+              "Lifelong Learning",
+              "Global Leadership",
+              "Intellectual Growth",
+              "Other"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "publishing"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "D8779E11-ECE1-4780-8EC4-E12DA131BCA7",
+            "name": "Concordia University",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Academic",
+              "Academic Traditionalism",
+              "Collegiate Architecture",
+              "Formal Institutional Branding",
+              "Professional Success",
+              "Ethical Leadership",
+              "Intellectual Maturity",
+              "Other",
+              "Educational Brand",
+              "B2C"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "publishing"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "DC6A4C8C-040D-4161-A2B8-016350476340",
+            "name": "National University",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Academic",
+              "Professional",
+              "Clean",
+              "Academic",
+              "Modern",
+              "Career Advancement",
+              "Academic Achievement",
+              "Financial Independence",
+              "Work-Life Integration",
+              "Other"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "publishing"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "D7EDAE52-38AE-4B8C-8147-5C8588886A49",
+            "name": "WE",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "NGO",
+              "Humanitarian NGO",
+              "Clean",
+              "Accessible",
+              "Educational",
+              "Human-Centric",
+              "Global Change-Making",
+              "Social Entrepreneurship",
+              "Philanthropy",
+              "Other"
+            ],
+            "canonicalTags": [],
+            "estimated": true,
+            "brandCategories": [
+              "electronics"
+            ],
+            "priceTier": "budget"
+          }
+        ],
+        "crossDomain": [],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "earth-retro",
+        "notes": [
+          "LLM agent hit a snag — switched to fixed research steps.",
+          "Fallback mode: fixed steps (no free LLM available right now) — results are still grounded in taste data."
+        ],
+        "agentMode": "scripted_fallback",
+        "qlooCalls": 5
+      }
+    },
+    {
+      "type": "done",
+      "mode": "scripted_fallback"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": []
+    },
+    "tags": [
+      {
+        "name": "outdoors",
+        "canonical": "outdoors",
+        "weight": 0.9,
+        "source": "user"
+      },
+      {
+        "name": "art print",
+        "canonical": "art-print",
+        "weight": 0.9,
+        "source": "user"
+      }
+    ],
+    "brands": [
+      {
+        "id": "30B15C1C-6A1B-4CCC-AC38-3FB0C8DB6E36",
+        "name": "Fasttelco",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Telecommunication",
+          "Corporate Minimalist",
+          "Clean Layouts",
+          "Brand-Aligned Color Palette",
+          "Digital-First Design",
+          "Seamless Digital Experience",
+          "High-Performance Productivity",
+          "Competitive Dominance",
+          "Other",
+          "Service Brand"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "78001719-D9CC-4F7F-B823-A5E754DA8B53",
+        "name": "British University in Dubai",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Academic",
+          "Formal",
+          "Academic",
+          "Conservative",
+          "Institutional",
+          "Academic Leadership",
+          "Expertise Development",
+          "Global Intellectual Network",
+          "Professional Advancement",
+          "Other"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "publishing"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "1F043BF4-EC38-4FCE-842F-1E0BEFBD34CD",
+        "name": "Infltr",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Software",
+          "Minimalist Interface",
+          "High-Definition Visuals",
+          "Clean Typography",
+          "Professional Photography",
+          "Artistic Expression",
+          "Curated Visual Aesthetic",
+          "Other",
+          "Product Brand",
+          "B2C"
+        ],
+        "canonicalTags": [
+          "minimal",
+          "photography"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "techwear"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "37AC7DCD-6DDD-4BFA-BCEC-29D7411A8BD0",
+        "name": "Bigo Live Malaysia",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Software",
+          "Vibrant",
+          "Digital-First",
+          "High-Energy",
+          "Internet Fame",
+          "Creative Monetization",
+          "Global Connectivity",
+          "Other",
+          "Media Brand",
+          "B2C"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "4A259F00-1C88-4CC4-ADB4-21865A2C6B79",
+        "name": "PicCollage",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Mobile App",
+          "Photo & Video App",
+          "Software",
+          "Playful Stickers",
+          "Handwritten Typography",
+          "Paper Textures",
+          "Bright Color Palettes",
+          "Layered Collages",
+          "Artistic Expression",
+          "Curated Visual Aesthetic"
+        ],
+        "canonicalTags": [
+          "photography"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "art-goods"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "F90E3065-2F8D-4ECA-9E9B-5723A8AE8C9F",
+        "name": "CIEE",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "NGO",
+          "Education NGO",
+          "Educational",
+          "Professional",
+          "Inclusive",
+          "Clear",
+          "Accessible",
+          "Global Citizen",
+          "Cross-Cultural Connector",
+          "Independent Traveler"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "publishing"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "63511A8E-6173-43F5-B8CA-41438E16E26C",
+        "name": "Abu Dhabi University",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Academic",
+          "Modern Campus Architecture",
+          "Professional Branding",
+          "Academic Crest",
+          "Formal Presentation",
+          "Career Success",
+          "Lifelong Learning",
+          "Global Leadership",
+          "Intellectual Growth",
+          "Other"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "publishing"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "D8779E11-ECE1-4780-8EC4-E12DA131BCA7",
+        "name": "Concordia University",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Academic",
+          "Academic Traditionalism",
+          "Collegiate Architecture",
+          "Formal Institutional Branding",
+          "Professional Success",
+          "Ethical Leadership",
+          "Intellectual Maturity",
+          "Other",
+          "Educational Brand",
+          "B2C"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "publishing"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "DC6A4C8C-040D-4161-A2B8-016350476340",
+        "name": "National University",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Academic",
+          "Professional",
+          "Clean",
+          "Academic",
+          "Modern",
+          "Career Advancement",
+          "Academic Achievement",
+          "Financial Independence",
+          "Work-Life Integration",
+          "Other"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "publishing"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "D7EDAE52-38AE-4B8C-8147-5C8588886A49",
+        "name": "WE",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "NGO",
+          "Humanitarian NGO",
+          "Clean",
+          "Accessible",
+          "Educational",
+          "Human-Centric",
+          "Global Change-Making",
+          "Social Entrepreneurship",
+          "Philanthropy",
+          "Other"
+        ],
+        "canonicalTags": [],
+        "estimated": true,
+        "brandCategories": [
+          "electronics"
+        ],
+        "priceTier": "budget"
+      }
+    ],
+    "crossDomain": [],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "earth-retro",
+    "notes": [
+      "LLM agent hit a snag — switched to fixed research steps.",
+      "Fallback mode: fixed steps (no free LLM available right now) — results are still grounded in taste data."
+    ],
+    "agentMode": "scripted_fallback",
+    "qlooCalls": 5
+  },
+  "fallbackMode": "scripted_fallback",
+  "collection": {
+    "products": [
+      {
+        "id": "playing-cards",
+        "name": "Playing card deck",
+        "oneLiner": "playing card deck in burnt orange, earthy by design",
+        "category": "objects",
+        "role": "hero",
+        "silhouette": "cards",
+        "fitScore": 36,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.459,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "British University in Dubai",
+            "points": 8.5,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "CIEE",
+            "points": 5.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 4.5,
+          "price": 12.5,
+          "marginPerUnit": 8,
+          "minRun": 50,
+          "setupCost": 40,
+          "firstRunCost": 265,
+          "breakEvenUnits": 22,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "card printer",
+        "supplierBrief": "54-card poker-size deck with custom back and 4 custom face cards, tuck box.",
+        "description": {
+          "text": "A playing card deck in burnt orange and cream, finished with a risograph sun motif. 54-card poker-size deck with custom back and 4 custom face cards. The overall feel is earthy — built for fans who lean into outdoors and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Art print poster",
+        "oneLiner": "art print poster in burnt orange, earthy by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 36,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.459,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "British University in Dubai",
+            "points": 8.5,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "CIEE",
+            "points": 5.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "A poster in burnt orange and cream, finished with a risograph sun motif. 18×24 in matte poster on 100 lb stock. The overall feel is earthy — built for fans who lean into outdoors and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "tote-bag",
+        "name": "Tote bag",
+        "oneLiner": "tote bag in burnt orange, earthy by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "tote",
+        "fitScore": 36,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0.459,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 23,
+            "estimated": false
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "British University in Dubai",
+            "points": 8.5,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "publishing",
+            "entityName": "CIEE",
+            "points": 5.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 15,
+          "marginPerUnit": 11.5,
+          "minRun": 36,
+          "setupCost": 25,
+          "firstRunCost": 151,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            15,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "10 oz natural canvas tote, 1–2 colour print, reinforced handles.",
+        "description": {
+          "text": "A tote bag in burnt orange and cream, finished with a risograph sun motif. 10 oz natural canvas tote. The overall feel is earthy — built for fans who lean into outdoors and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "embroidered-cap",
+        "name": "Embroidered corduroy cap",
+        "oneLiner": "embroidered corduroy cap in burnt orange, earthy by design",
+        "category": "apparel",
+        "role": "limited",
+        "silhouette": "cap",
+        "fitScore": 23,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "outdoors",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 9,
+          "price": 28,
+          "marginPerUnit": 19,
+          "minRun": 24,
+          "setupCost": 25,
+          "firstRunCost": 241,
+          "breakEvenUnits": 9,
+          "typicalRange": [
+            28,
+            38
+          ],
+          "estimate": true
+        },
+        "supplierType": "embroidery shop",
+        "supplierBrief": "Unstructured 6-panel corduroy cap, flat embroidery up to 3 colours, digitizing fee applies.",
+        "description": {
+          "text": "A corduroy cap in burnt orange and cream, finished with a pine ridge line motif. Unstructured 6-panel corduroy cap. The overall feel is earthy — built for fans who lean into outdoors and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "enamel-camp-mug",
+        "name": "Enamel camp mug",
+        "oneLiner": "enamel camp mug in burnt orange, earthy by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "mug",
+        "fitScore": 23,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "outdoors",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 4.25,
+          "price": 18,
+          "marginPerUnit": 13.75,
+          "minRun": 48,
+          "setupCost": 40,
+          "firstRunCost": 244,
+          "breakEvenUnits": 14,
+          "typicalRange": [
+            18,
+            28
+          ],
+          "estimate": true
+        },
+        "supplierType": "drinkware printer",
+        "supplierBrief": "12 oz enamel-coated steel mug, 1–2 colour print, silver rim.",
+        "description": {
+          "text": "A camp mug in burnt orange and cream, finished with a pine ridge line motif. 12 oz enamel-coated steel mug. The overall feel is earthy — built for fans who lean into outdoors and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Sticker pack",
+        "oneLiner": "sticker pack in burnt orange, earthy by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 23,
+        "scoreParts": {
+          "tag": 0.45,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "tag",
+            "label": "art print",
+            "points": 23,
+            "estimated": false
+          }
+        ],
+        "pricing": {
+          "unitCost": 0.43,
+          "price": 4,
+          "marginPerUnit": 3.58,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 42.5,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            4,
+            8
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "A sticker sheet in burnt orange and cream, finished with a risograph sun motif. Die-cut or kiss-cut vinyl stickers. The overall feel is earthy — built for fans who lean into outdoors and art-print — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "poster-print",
+            "tote-bag",
+            "enamel-camp-mug",
+            "sticker-pack"
+          ],
+          "runSizes": {
+            "poster-print": 50,
+            "tote-bag": 36,
+            "enamel-camp-mug": 48,
+            "sticker-pack": 100
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "playing-cards"
+          ],
+          "runSizes": {
+            "playing-cards": 50
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "embroidered-cap"
+          ],
+          "runSizes": {
+            "embroidered-cap": 24
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "template",
+      "notes": [
+        "12 low-fit products were withheld because the audience evidence was too weak.",
+        "LLM agent hit a snag — switched to fixed research steps.",
+        "Fallback mode: fixed steps (no free LLM available right now) — results are still grounded in taste data."
+      ]
+    }
+  },
+  "descriptionSource": "template",
+  "collabsError": "Error: /api/collabs: 503 {\"error\":{\"code\":\"QLOO_UNAVAILABLE\",\"message\":\"Taste data is unavailable. Try again.\"}}",
+  "elapsedMs": 193988
+}

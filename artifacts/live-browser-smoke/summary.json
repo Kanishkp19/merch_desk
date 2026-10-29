@@ -1,0 +1,30 @@
+{
+  "profileTags": "TASTE TAGS\nCOFFEE\nELECTRONIC\nPHOTOGRAPHY\nART PRINT\nFOOD PRODUCER\nFILM PRODUCER\nBRANDS",
+  "partners": [
+    {
+      "name": "Subko Craftery",
+      "type": "place"
+    },
+    {
+      "name": "Champaca Bookstore",
+      "type": "place"
+    },
+    {
+      "name": "Atta Galatta",
+      "type": "place"
+    },
+    {
+      "name": "db studioLab",
+      "type": "place"
+    }
+  ],
+  "cityNote": "Curated Bengaluru venue ideas matched to your stated interests. Locations are sourced; partnerships and audience overlap are unverified.",
+  "image": {
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "mime": "image/jpeg",
+    "file": "concept.jpg",
+    "bytes": 342438
+  },
+  "pdfPages": 1,
+  "pageErrors": []
+}

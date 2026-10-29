@@ -1,0 +1,14 @@
+{
+  "compare": {
+    "status": 200,
+    "error": null,
+    "count": 6,
+    "provider": "groq"
+  },
+  "image": {
+    "status": 200,
+    "error": null,
+    "model": "@cf/black-forest-labs/flux-1-schnell",
+    "dataBytes": 861351
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "b10",
+  "input": {
+    "text": "Streamer whose audience likes cozy games, tea, and soft colors; no music angle.",
+    "soundsLike": [],
+    "city": "Seattle",
+    "creatorType": "streamer",
+    "budget": "medium"
+  },
+  "startedAt": "2026-10-29T12:13:25.118Z",
+  "providerCalls": {
+    "qloo": 0,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "status": {
+    "qloo": true,
+    "dataMode": "live",
+    "llmProviders": [
+      "groq"
+    ],
+    "image": true,
+    "maxImagesPerSession": 12
+  },
+  "events": [
+    {
+      "type": "step",
+      "id": "s16",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "note",
+      "text": "Free AI resting — using fixed research steps. Results still come from taste data."
+    },
+    {
+      "type": "tool_call",
+      "id": "sc1",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "streamer whose"
+      }
+    },
+    {
+      "type": "error",
+      "code": "INTERNAL",
+      "message": "Something went wrong while researching taste."
+    }
+  ],
+  "error": "Error: Something went wrong while researching taste.",
+  "elapsedMs": 17
+}

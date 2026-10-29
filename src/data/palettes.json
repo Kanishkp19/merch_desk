@@ -1,0 +1,38 @@
+{
+  "palettes": [
+    { "id": "earth-retro", "names": ["burnt orange", "cream", "forest green", "charcoal"], "hex": ["#B5651D", "#E8D8B0", "#3B4A3A", "#14110F"], "matchTags": ["vintage", "workwear", "outdoors", "folk", "coffee"], "imageStyle": "warm earthy retro look, matte textures, slightly faded print" },
+    { "id": "neon-arcade", "names": ["hot pink", "cyan", "yellow", "deep purple"], "hex": ["#FF2E93", "#2EE6FF", "#FFE600", "#1A1033"], "matchTags": ["retro-gaming", "esports", "electronic", "y2k", "anime"], "imageStyle": "bright neon arcade colours, glossy highlights, playful pixel-art-inspired graphics" },
+    { "id": "mono-punk", "names": ["black", "off-white", "signal red"], "hex": ["#14110F", "#F5F0E6", "#E4002B"], "matchTags": ["punk", "metal", "emo", "streetwear", "skate"], "imageStyle": "high-contrast monochrome with one red accent, rough photocopied zine texture" },
+    { "id": "pastel-cozy", "names": ["blush pink", "sage", "butter yellow", "cocoa"], "hex": ["#F7C8D0", "#CDE7D8", "#FFF1C9", "#5B4B49"], "matchTags": ["cozy", "pets", "plants", "tea", "pop"], "imageStyle": "soft pastel palette, gentle lighting, friendly rounded shapes" },
+    { "id": "forest-outdoors", "names": ["pine green", "sand", "rust", "slate"], "hex": ["#234D3A", "#D9C7A0", "#A4471F", "#3C4650"], "matchTags": ["outdoors", "craft-beer", "travel", "fitness"], "imageStyle": "natural outdoorsy palette, canvas and enamel textures" },
+    { "id": "chrome-y2k", "names": ["silver", "baby blue", "magenta", "black"], "hex": ["#C9CED6", "#9CC9FF", "#E000A8", "#14110F"], "matchTags": ["y2k", "electronic", "hiphop", "techwear"], "imageStyle": "glossy chrome y2k aesthetic, metallic sheen, bubbly shapes" },
+    { "id": "sunset-festival", "names": ["coral", "marigold", "teal", "plum"], "hex": ["#FF6F59", "#F5B83D", "#1F8A8A", "#5B2A5E"], "matchTags": ["festival", "nightlife", "travel", "foodie"], "imageStyle": "warm sunset festival colours, screen-print look with slight misregistration" },
+    { "id": "ink-literary", "names": ["ink blue", "paper white", "mustard"], "hex": ["#1B2A49", "#F5F0E6", "#D9A441"], "matchTags": ["books", "zines", "cinema", "art-print", "comics", "photography"], "imageStyle": "editorial print look, tidy layout without any readable text, paper grain" }
+  ],
+  "motifs": {
+    "retro-gaming": "pixel-art", "board-games": "dice-and-meeple", "tabletop": "twenty-sided-die", "esports": "trophy-laurel",
+    "anime": "speed-line-star", "sci-fi": "retro-rocket", "fantasy": "sword-and-crest", "horror": "moth-and-moon", "cinema": "film-strip",
+    "books": "open-book", "comics": "halftone-burst", "zines": "cut-and-paste collage", "art-print": "risograph sun", "photography": "contact-sheet grid", "vintage": "faded postcard",
+    "80s": "chrome-grid", "90s": "wavy-smiley", "y2k": "glossy-star", "workwear": "woven-label patch", "outdoors": "pine-ridge line",
+    "streetwear": "boxy-crest", "skate": "bolt-and-wheel", "techwear": "utility-straps", "minimal": "single-line mark", "maximalist": "dense collage",
+    "handmade": "hand-stitched patch", "thrift": "thrift-tag", "luxury": "embroidered monogram", "eco": "leaf-and-loop",
+    "craft-beer": "hop-cone", "coffee": "steaming cup", "tea": "teapot", "hot-sauce": "flame-and-chili", "foodie": "fork-and-flame",
+    "nightlife": "neon door", "festival": "string-lights", "travel": "wanderer's compass", "fitness": "rising track lines",
+    "pets": "paw-and-heart", "plants": "leafy-vine", "cozy": "quilted-heart", "punk": "safety-pin star", "indie": "hand-drawn doodle",
+    "hiphop": "boombox outline", "electronic": "waveform", "folk": "wildflower", "metal": "iron cross-flame", "emo": "broken-heart star",
+    "pop": "sparkle-dot", "collectible": "star-badge", "cassette": "cassette-tape", "vinyl": "record groove"
+  },
+  "moods": {
+    "retro-gaming": "nostalgic arcade", "board-games": "game-night warm", "tabletop": "adventurous", "esports": "energetic",
+    "anime": "expressive", "sci-fi": "futuristic", "fantasy": "epic", "horror": "moody", "cinema": "cinematic",
+    "books": "literary", "comics": "playful", "zines": "DIY", "art-print": "gallery-clean", "photography": "quiet and observational", "vintage": "faded vintage",
+    "80s": "neon-nostalgic", "90s": "wobbly-fun", "y2k": "glossy", "workwear": "rugged", "outdoors": "earthy",
+    "streetwear": "bold", "skate": "reckless", "techwear": "sleek", "minimal": "clean minimal", "maximalist": "busy",
+    "handmade": "crafted", "thrift": "lived-in", "luxury": "elevated", "eco": "grounded",
+    "craft-beer": "taproom-casual", "coffee": "warm and roasted", "tea": "calm", "hot-sauce": "fiery", "foodie": "appetizing",
+    "nightlife": "after-dark", "festival": "sun-drenched", "travel": "wanderlust", "fitness": "kinetic",
+    "pets": "friendly", "plants": "fresh", "cozy": "soft", "punk": "raw", "indie": "underdog",
+    "hiphop": "confident", "electronic": "hypnotic", "folk": "whittled and warm", "metal": "heavy", "emo": "confessional",
+    "pop": "bright", "collectible": "treasure-like", "cassette": "mixtape", "vinyl": "audiophile"
+  }
+}

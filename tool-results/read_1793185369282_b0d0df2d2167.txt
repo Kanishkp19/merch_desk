@@ -1,0 +1,629 @@
+     1→# MerchDesk — Technical Requirements Document
+     2→
+     3→## Assumptions
+     4→
+     5→- Next.js App Router, TypeScript strict, deployed to **Vercel Hobby** (free). Hobby is for non-commercial use: fine for a hackathon demo. If MerchDesk becomes a business, move to Vercel Pro or Cloudflare Pages.
+     6→- **No database, no auth.** State lives in React (`useReducer`) with a text-only copy in `sessionStorage`. Generated images stay in memory only (too big for sessionStorage).
+     7→- **No paid SDKs.** LLM, Qloo and image calls use plain `fetch`. This removes SDK version drift and keeps the dependency list tiny.
+     8→- **Qloo parameter names below are from public hackathon projects and developer notes, not from the official docs** (docs.qloo.com blocked automated reading). The adapter `lib/qloo/client.ts` is the only place that knows parameter names. Phase 2 of the plan verifies every call with a probe script before anything else is built.
+     9→- Free-tier limits change. Numbers below were checked in October 2026 from public sources and **must be re-checked in each provider's dashboard** on build day.
+    10→- Package versions are known-good majors. After first `npm install`, **commit `package-lock.json` and do not upgrade during the hackathon.**
+    11→
+    12→---
+    13→
+    14→## Free-tier compliance (the "free of cost" contract)
+    15→
+    16→| Need | Service | Free allowance (verify in dashboard) | If exhausted |
+    17→|---|---|---|---|
+    18→| Hosting + API routes | Vercel Hobby | Free forever, non-commercial; function max duration is 10 s default and configurable to 60 s (some sources list higher; we set `maxDuration = 60`, valid under either reading) | Site pauses until reset; no charge |
+    19→| Taste data | Qloo hackathon API | Key issued by organizers; works only on `https://hackathon.api.qloo.com`; keys expire after the event | Show "Qloo unavailable" + retry |
+    20→| LLM (primary) | Groq free tier, `llama-3.3-70b-versatile` | Rate-limited free tier, OpenAI-compatible, supports tool calling | Fall to next provider |
+    21→| LLM (fallback 1) | Google AI Studio, `gemini-2.5-flash-lite` | Free tier; **Flash-Lite is the safe free choice** — reports conflict on whether 2.5 Flash is still free, so the model name is an env var | Fall to next provider |
+    22→| LLM (fallback 2) + images | Cloudflare Workers AI (Free plan) | 10,000 neurons/day, no card. FLUX.1 [schnell] ≈ 43–58 neurons per 1024² image per Cloudflare-based sources (≈170–230 images/day); other write-ups quote higher per-image costs, so **budget for ≥50/day** | SVG sketch stays; text still works |
+    23→| Domain | `*.vercel.app` | Free | — |
+    24→| Repo | GitHub public | Free | — |
+    25→
+    26→**Hard rules**
+    27→1. Never add a payment method to Groq, Google AI Studio, Cloudflare, Vercel or Qloo. A free plan with no card cannot overspend.
+    28→2. Cloudflare account stays on the **Free** plan (not Workers Paid).
+    29→3. Gemini image models (Nano Banana / Imagen) have **no free API tier** — do not use them.
+    30→4. Any new service added later must pass: free tier exists, no card needed, works from a Vercel serverless function.
+    31→
+    32→**Per-run quota math (typical):** ~10–12 Qloo calls, ~6–8 LLM calls (agent loop 3–6, descriptions 1, classify 0–1, compare 0–1), 0 image calls until approval, then 1 per approved product (≤ 8 + regenerations).
+    33→
+    34→---
+    35→
+    36→## Tech Stack
+    37→
+    38→| Layer | Technology | Version (major) | Justification |
+    39→|---|---|---|---|
+    40→| Framework | Next.js (App Router) | 15.x | Route handlers for server-side keys, one-command Vercel deploy |
+    41→| UI runtime | React | 19.x | Ships with Next 15 |
+    42→| Language | TypeScript | 5.x (`strict: true`) | Safe contracts between agent, scorer and UI |
+    43→| Styling | Tailwind CSS | 4.x | Tokens in CSS via `@theme`; fast iteration |
+    44→| Validation | Zod | 3.x | Validates every API input/output and every LLM JSON response |
+    45→| Icons | lucide-react | latest at install | Small, consistent |
+    46→| Class merge | clsx | 2.x | Conditional classes |
+    47→| Tests | Vitest | 2.x | Pure-function tests for scoring/pricing/prompt builder |
+    48→| Fonts | `next/font/google` | — | Archivo Black, Space Grotesk, JetBrains Mono (self-hosted at build, free) |
+    49→| LLM transport | `fetch` to OpenAI-compatible endpoints | — | Groq, Gemini and Cloudflare all expose `/chat/completions` |
+    50→| Image | Cloudflare Workers AI REST, FLUX.1 [schnell] (Apache-2.0) | — | Free daily allowance, no watermark |
+    51→| Hosting | Vercel Hobby | — | Free |
+    52→
+    53→No Redux, no TanStack Query, no shadcn, no ORM. All server calls go through one typed `lib/api-client.ts`.
+    54→
+    55→### npm packages
+    56→
+    57→```bash
+    58→# runtime
+    59→npm i zod lucide-react clsx
+    60→# dev
+    61→npm i -D vitest @vitest/coverage-v8 @types/node tsx
+    62→```
+    63→(Next, React, Tailwind and TypeScript come from `create-next-app`.)
+    64→
+    65→| Package | Purpose |
+    66→|---|---|
+    67→| `next`, `react`, `react-dom` | App framework |
+    68→| `tailwindcss`, `@tailwindcss/postcss` | Styling |
+    69→| `zod` | Schemas (`lib/schemas/*`) |
+    70→| `lucide-react` | Icons used in `04-UI-UX-BRIEF.md` |
+    71→| `clsx` | Class merging helper in `lib/cn.ts` |
+    72→| `vitest`, `@vitest/coverage-v8` | Unit tests |
+    73→| `tsx` | Runs `scripts/*.ts` (probe scripts) |
+    74→
+    75→---
+    76→
+    77→## Architecture
+    78→
+    79→```
+    80→┌──────────────────────────────────────────────────────────────────┐
+    81→│ Browser (Next.js client components)                              │
+    82→│  StudioProvider (useReducer) ── sessionStorage (text only)       │
+    83→│  AgentThinkingPanel ◄── SSE ──┐                                  │
+    84→│  ProductCard (describe → approve → image state machine)          │
+    85→└──────────────┬───────────────────────────────────────────────────┘
+    86→               │ fetch (JSON) / fetch+ReadableStream (SSE)
+    87→┌──────────────▼───────────────────────────────────────────────────┐
+    88→│ Next.js route handlers on Vercel (keys live here only)           │
+    89→│  /api/search      /api/agent/profile (SSE)    /api/collection    │
+    90→│  /api/describe    /api/replace                /api/image         │
+    91→│  /api/collabs     /api/compare                /api/status        │
+    92→│                                                                  │
+    93→│  lib/agent  ── LLM tool loop (or scripted fallback)              │
+    94→│  lib/score  ── tag/brand/cross scoring, rules, pricing, drops    │
+    95→│  lib/image  ── prompt builder + moderation + CF client           │
+    96→│  lib/http   ── errors, SSE, in-memory rate limit                 │
+    97→└───────┬───────────────┬──────────────────┬───────────────────────┘
+    98→        │               │                  │
+    99→┌───────▼──────┐ ┌──────▼─────────────┐ ┌──▼───────────────────────┐
+   100→│ Qloo         │ │ LLM chain          │ │ Cloudflare Workers AI    │
+   101→│ hackathon    │ │ Groq → Gemini →    │ │ FLUX.1 schnell (images)  │
+   102→│ API (GET)    │ │ Cloudflare chat    │ │ (also CF chat fallback)  │
+   103→└──────────────┘ └────────────────────┘ └──────────────────────────┘
+   104→```
+   105→
+   106→**Data flow in one run**
+   107→1. `POST /api/agent/profile` streams agent steps → client builds `TasteProfile`.
+   108→2. User confirms/edits chips → `POST /api/collection` → scored `ProductProposal[]` (descriptions via one batched LLM call, or template fallback) + `DropPlan`.
+   109→3. Per product: user approves → `POST /api/image` → `data:` URL shown. Reject → `POST /api/replace`.
+   110→4. `POST /api/collabs` fills Collab Radar. `POST /api/compare` runs lazily.
+   111→5. `/line-sheet` reads `sessionStorage` and prints.
+   112→
+   113→---
+   114→
+   115→## Folder Structure (scaffold exactly this)
+   116→
+   117→```
+   118→merchdesk/
+   119→├── app/
+   120→│   ├── layout.tsx                    # fonts, SiteHeader/Footer, StudioProvider, ToastHost
+   121→│   ├── page.tsx                      # landing + HeroInput
+   122→│   ├── globals.css                   # tokens from 04-UI-UX-BRIEF.md
+   123→│   ├── not-found.tsx
+   124→│   ├── error.tsx                     # global error boundary
+   125→│   ├── about/page.tsx                # how it works, data honesty, license, credits
+   126→│   ├── studio/
+   127→│   │   ├── page.tsx                  # workspace (client)
+   128→│   │   └── loading.tsx
+   129→│   ├── line-sheet/page.tsx           # print view
+   130→│   └── api/
+   131→│       ├── status/route.ts
+   132→│       ├── search/route.ts
+   133→│       ├── agent/profile/route.ts    # SSE
+   134→│       ├── collection/route.ts
+   135→│       ├── describe/route.ts
+   136→│       ├── replace/route.ts
+   137→│       ├── image/route.ts
+   138→│       ├── collabs/route.ts
+   139→│       └── compare/route.ts
+   140→├── components/
+   141→│   ├── layout/{SiteHeader,SiteFooter,PoweredByQloo,ToastHost}.tsx
+   142→│   ├── landing/{HeroInput,ExampleChips,ArtistAutocomplete}.tsx
+   143→│   ├── studio/
+   144→│   │   ├── Stepper.tsx
+   145→│   │   ├── OptionsBar.tsx
+   146→│   │   ├── AgentThinkingPanel.tsx
+   147→│   │   ├── TasteProfileCard.tsx
+   148→│   │   ├── TasteChips.tsx
+   149→│   │   ├── CollectionGrid.tsx
+   150→│   │   ├── ProductCard.tsx
+   151→│   │   ├── DescriptionEditor.tsx
+   152→│   │   ├── ApprovalBar.tsx
+   153→│   │   ├── ImageStage.tsx
+   154→│   │   ├── NumbersDrawer.tsx
+   155→│   │   ├── WhyPopover.tsx
+   156→│   │   ├── CollabRadar.tsx
+   157→│   │   ├── DropTimeline.tsx
+   158→│   │   ├── ComparePanel.tsx
+   159→│   │   └── ExportBar.tsx
+   160→│   ├── mockups/Silhouette.tsx        # 13 flat SVG shapes (no AI)
+   161→│   ├── print/LineSheet.tsx
+   162→│   └── ui/{Button,Chip,Card,Input,Select,Textarea,Skeleton,Modal,Drawer,Tooltip,ScoreRing,Sticker,Tape,Toast}.tsx
+   163→├── lib/
+   164→│   ├── env.ts                        # zod-parsed env, server only
+   165→│   ├── cn.ts
+   166→│   ├── api-client.ts                 # typed fetch wrappers + SSE reader
+   167→│   ├── qloo/{client,types,normalize}.ts
+   168→│   ├── llm/{providers,chat,prompts}.ts
+   169→│   ├── agent/{tools,loop,scripted,memory,events}.ts
+   170→│   ├── score/{score,rules,pricing,drops,tag-map,classify,describe}.ts
+   171→│   ├── image/{cloudflare,prompt,moderation}.ts
+   172→│   ├── http/{errors,sse,rate-limit}.ts
+   173→│   ├── state/{studio-reducer.ts,StudioProvider.tsx,storage.ts}
+   174→│   └── schemas/{input,profile,product,api,events}.ts
+   175→├── data/
+   176→│   ├── catalog.json                  # 20 items (full file in 05-BACKEND-SCHEMA.md)
+   177→│   ├── canonical-tags.json
+   178→│   ├── tag-aliases.json
+   179→│   ├── brand-tiers.json              # 40–60 brands → categories/tier (estimates)
+   180→│   ├── palettes.json                 # 8 palettes + image style phrases
+   181→│   └── fixtures/                     # SYNTHETIC sample data for local dev only
+   182→├── scripts/{probe-qloo,smoke-llm,smoke-image}.ts
+   183→├── tests/{score,pricing,drops,image-prompt,moderation,qloo-normalize,agent-loop}.test.ts
+   184→├── types/index.ts                    # re-exports z.infer types
+   185→├── LICENSE                           # MIT
+   186→├── README.md
+   187→├── .env.example
+   188→├── next.config.ts
+   189→├── tsconfig.json
+   190→├── vitest.config.ts
+   191→└── package.json
+   192→```
+   193→
+   194→---
+   195→
+   196→## Environment Variables
+   197→
+   198→```bash
+   199→# .env.local  (never commit; mirror in Vercel → Project → Settings → Environment Variables)
+   200→
+   201→# --- Qloo (server only) ---
+   202→QLOO_API_KEY=                     # issued via the hackathon developer guide
+   203→QLOO_BASE_URL=https://hackathon.api.qloo.com
+   204→
+   205→# --- LLM chain (server only). Order = priority; missing keys are skipped ---
+   206→LLM_PROVIDERS=groq,gemini,cloudflare
+   207→GROQ_API_KEY=
+   208→GROQ_MODEL=llama-3.3-70b-versatile
+   209→GEMINI_API_KEY=
+   210→GEMINI_MODEL=gemini-2.5-flash-lite
+   211→CF_LLM_MODEL=@cf/meta/llama-3.3-70b-instruct-fp8-fast
+   212→
+   213→# --- Cloudflare Workers AI (server only; one account for LLM fallback + images) ---
+   214→CF_ACCOUNT_ID=
+   215→CF_API_TOKEN=                     # token with Workers AI read/edit permission
+   216→CF_IMAGE_MODEL=@cf/black-forest-labs/flux-1-schnell
+   217→
+   218→# --- App ---
+   219→NEXT_PUBLIC_APP_URL=http://localhost:3000
+   220→NEXT_PUBLIC_MAX_IMAGES_PER_SESSION=12
+   221→MERCHDESK_DATA_MODE=live          # live | fixtures  (fixtures = synthetic sample data, dev only)
+   222→RATE_LIMIT_ENABLED=true
+   223→```
+   224→
+   225→| Variable | Type | Layer | Notes |
+   226→|---|---|---|---|
+   227→| `QLOO_API_KEY` | string | server | Sent only as `X-Api-Key`; never logged; never prefixed `NEXT_PUBLIC_` |
+   228→| `QLOO_BASE_URL` | url | server | Leave at hackathon default |
+   229→| `LLM_PROVIDERS` | csv enum | server | Allowed: `groq`, `gemini`, `cloudflare` |
+   230→| `GROQ_*`, `GEMINI_*` | string | server | OpenAI-compatible chat completions |
+   231→| `CF_ACCOUNT_ID`, `CF_API_TOKEN` | string | server | Used by `lib/image/cloudflare.ts` and Cloudflare LLM provider |
+   232→| `CF_LLM_MODEL`, `CF_IMAGE_MODEL` | string | server | Model ids may change — confirm in Cloudflare model catalog |
+   233→| `NEXT_PUBLIC_MAX_IMAGES_PER_SESSION` | int | client | Default 12 |
+   234→| `MERCHDESK_DATA_MODE` | enum | server | `fixtures` is blocked when `VERCEL_ENV=production` |
+   235→| `RATE_LIMIT_ENABLED` | bool | server | In-memory, best-effort |
+   236→
+   237→`lib/env.ts` parses these with Zod at first use and throws a readable error listing missing required keys. At least one LLM provider **or** scripted fallback must be available; Qloo key is required unless `MERCHDESK_DATA_MODE=fixtures` (dev).
+   238→
+   239→---
+   240→
+   241→## Third-party Integrations
+   242→
+   243→### 1. Qloo (hackathon API) — `lib/qloo/client.ts`
+   244→
+   245→- Base: `https://hackathon.api.qloo.com`. All calls are **GET** with header `X-Api-Key: <key>`.
+   246→- Entity type URNs to use: `urn:entity:artist`, `urn:entity:brand`, `urn:entity:place`, `urn:entity:movie`, `urn:entity:tv_show`, `urn:entity:book`, `urn:entity:podcast`, `urn:entity:videogame`, `urn:entity:destination`. **`urn:entity:video_game` returns HTTP 400 — use `videogame`.**
+   247→- Adapter methods (the rest of the app never builds a Qloo URL):
+   248→
+   249→| Method | Request (believed shape — verify in Phase 2) | Returns |
+   250→|---|---|---|
+   251→| `searchEntities(query, type, take=5)` | `GET /search?query=…&types=urn:entity:artist&take=5` | `QlooEntity[]` |
+   252→| `searchTags(query, take=5)` | `GET /v2/tags?filter.query=…&take=5` | `QlooTag[]` |
+   253→| `tasteTags({entityIds, tagIds, take=15})` | `GET /v2/insights?filter.type=urn:tag&signal.interests.entities=…&signal.interests.tags=…&take=15` | `QlooTag[]` with affinity scores |
+   254→| `related({type, entityIds, tagIds, location?, excludeEntityIds?, take=10})` | `GET /v2/insights?filter.type=<urn>&signal.interests.entities=…&signal.interests.tags=…&filter.location.query=<city>&filter.exclude.entities=…&take=10&feature.explainability=true` | `QlooEntity[]` with affinity and tags |
+   255→
+   256→- **Caching:** in-memory LRU Map keyed by full URL, TTL 30 min, max 200 entries. Reduces quota use and keeps demos fast.
+   257→- **Timeouts:** 8 s per call, 1 retry on network error or 5xx, no retry on 4xx.
+   258→- **Normalization (`normalize.ts`):** map each response to `QlooEntity { id, name, type, weight(0..1), tags: string[], imageUrl?, location? }`. If a numeric affinity score is absent, use rank-based weight `w = 1 − 0.7 × rank/N`. Drop entries without id or name. Unit-tested with synthetic JSON.
+   259→- **Errors:** `401/403` → `QLOO_NO_KEY`; `429` → `QLOO_RATE_LIMIT` (with `retryAfterSec` if header present); network/5xx → `QLOO_UNAVAILABLE`; `400` → logged with sanitized URL, surfaced as `QLOO_UNAVAILABLE` plus dev-only detail.
+   260→
+   261→### 2. LLM chain — `lib/llm/*`
+   262→
+   263→Providers share one OpenAI-compatible shape:
+   264→
+   265→| Provider | Endpoint | Auth | Tools |
+   266→|---|---|---|---|
+   267→| groq | `https://api.groq.com/openai/v1/chat/completions` | `Authorization: Bearer $GROQ_API_KEY` | yes |
+   268→| gemini | `https://generativelanguage.googleapis.com/v1beta/openai/chat/completions` | `Authorization: Bearer $GEMINI_API_KEY` | yes |
+   269→| cloudflare | `https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/ai/v1/chat/completions` | `Authorization: Bearer $CF_API_TOKEN` | **no** (treated as text/JSON only) |
+   270→
+   271→```ts
+   272→// lib/llm/chat.ts
+   273→export interface ChatMessage { role: 'system'|'user'|'assistant'|'tool'; content: string; tool_call_id?: string; tool_calls?: ToolCall[] }
+   274→export interface ChatRequest { messages: ChatMessage[]; tools?: ToolSpec[]; json?: boolean; temperature?: number; maxTokens?: number }
+   275→export interface ChatResult { text: string; toolCalls: ToolCall[]; provider: ProviderName; model: string }
+   276→export async function chat(req: ChatRequest): Promise<ChatResult>  // tries providers in order
+   277→```
+   278→**Fallback rule:** on HTTP 429, 5xx, timeout (20 s) or unparseable response, try the next provider. If `tools` is set, skip providers without tool support. If no provider remains, throw `LLM_UNAVAILABLE` and callers use the **scripted** or **template** fallback.
+   279→
+   280→**JSON discipline:** every LLM JSON output is parsed with a Zod schema; on failure retry once with "Return only valid JSON matching the schema", then fall back.
+   281→
+   282→### 3. Cloudflare Workers AI image — `lib/image/cloudflare.ts`
+   283→
+   284→```ts
+   285→POST https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/ai/run/${CF_IMAGE_MODEL}
+   286→Headers: Authorization: Bearer ${CF_API_TOKEN}, Content-Type: application/json
+   287→Body: { "prompt": string, "steps": 6 }   // schnell: default 4, max 8
+   288→Response: { "result": { "image": "<base64 JPEG>" }, "success": true, "errors": [] }
+   289→```
+   290→- Server returns `data:image/jpeg;base64,<image>` to the client.
+   291→- Timeout 40 s. HTTP 429 or error code indicating daily limit → `IMAGE_QUOTA`. Other failures → `IMAGE_FAILED`.
+   292→- Width/height are assumed fixed (schnell default 1024²). Do not send them unless the docs for your chosen model list them.
+   293→
+   294→---
+   295→
+   296→## TypeScript Interfaces (`types/index.ts` re-exports; Zod versions in `05-BACKEND-SCHEMA.md`)
+   297→
+   298→```ts
+   299→export type CreatorType = 'musician'|'podcaster'|'youtuber'|'streamer'|'comic_artist'|'other'
+   300→export type BudgetTier = 'small'|'medium'|'large'
+   301→export type PriceTier = 'budget'|'mid'|'premium'
+   302→export type EntityType = 'artist'|'brand'|'place'|'movie'|'tv_show'|'book'|'podcast'|'videogame'|'destination'
+   303→export type ProductCategory = 'apparel'|'print'|'objects'|'consumables'
+   304→export type ProductRole = 'core'|'hero'|'limited'
+   305→
+   306→export interface CatalogItem {       // one row of data/catalog.json
+   307→  id: string; name: string; noun: string
+   308→  category: ProductCategory
+   309→  silhouette: 'cap'|'top'|'socks'|'tote'|'flat'|'round'|'cassette'|'mug'|'bottle'|'bag'|'can'|'bandana'|'cards'
+   310→  tags: string[]                     // canonical tags (taste fit)
+   311→  crossDomainTags: string[]          // canonical tags (games, drinks, places…)
+   312→  brandCategories: string[]          // brand-category vocabulary
+   313→  minRun: number
+   314→  unitCost: [number, number]         // USD per unit at min run (estimate)
+   315→  setupCost: number                  // USD one-off (estimate)
+   316→  priceRange: [number, number]       // USD retail guardrail
+   317→  supplierType: string; supplierBrief: string
+   318→  complianceNote?: string
+   319→  difficulty: 'low'|'medium'|'high'
+   320→  lowRisk: boolean; hero: boolean; collab?: boolean
+   321→}
+   322→
+   323→export interface StudioInput {
+   324→  text: string                       // free text or artist name as typed
+   325→  artist?: { id: string; name: string }   // set when user picked an autocomplete result
+   326→  soundsLike: string[]               // up to 3 names
+   327→  city: string                       // may be ''
+   328→  creatorType: CreatorType
+   329→  budget: BudgetTier
+   330→}
+   331→
+   332→export interface WeightedTag {
+   333→  name: string                       // as shown (Qloo's name)
+   334→  qlooTagId?: string
+   335→  canonical?: string                 // mapped to data/canonical-tags.json
+   336→  weight: number                     // 0..1
+   337→  source: 'qloo'|'llm_estimate'
+   338→}
+   339→
+   340→export interface AffinityEntity {
+   341→  id: string; name: string; type: EntityType
+   342→  weight: number                     // 0..1
+   343→  tags: string[]
+   344→  canonicalTags: string[]            // mapped, may be LLM-estimated
+   345→  brandCategories?: string[]         // brands only
+   346→  priceTier?: PriceTier              // brands only
+   347→  estimated: boolean                 // true if canonicalTags/brandCategories came from LLM
+   348→  imageUrl?: string
+   349→  location?: string
+   350→}
+   351→
+   352→export interface TasteProfile {
+   353→  path: 'A_artist_found' | 'B_description'
+   354→  artist?: { id: string; name: string }
+   355→  seeds: { entityIds: string[]; tagIds: string[] }
+   356→  tags: WeightedTag[]
+   357→  brands: AffinityEntity[]
+   358→  crossDomain: AffinityEntity[]      // videogame, tv_show, movie, book, podcast
+   359→  inspirationPlaces: AffinityEntity[]
+   360→  priceTier: PriceTier
+   361→  priceTierEstimated: boolean
+   362→  paletteId: string
+   363→  notes: string[]                    // shown in UI (e.g. "Artist not found in Qloo")
+   364→  agentMode: 'llm_agent' | 'scripted_fallback'
+   365→  qlooCalls: number
+   366→}
+   367→
+   368→export interface EvidenceLink {
+   369→  kind: 'tag'|'brand'|'cross_domain'
+   370→  label: string                      // e.g. "retro gaming"
+   371→  entityName?: string                // brand/entity that drove it
+   372→  entityId?: string
+   373→  points: number                     // contribution to the 0–100 fit score
+   374→  estimated: boolean
+   375→}
+   376→
+   377→export interface Pricing {
+   378→  unitCost: number; price: number; marginPerUnit: number
+   379→  minRun: number; setupCost: number; firstRunCost: number
+   380→  breakEvenUnits: number | null      // null = not reachable within min run
+   381→  typicalRange: [number, number]
+   382→  estimate: true
+   383→}
+   384→
+   385→export interface ProductDescription {
+   386→  text: string                       // 40–70 words, what it looks like
+   387→  version: number                    // increments on every change
+   388→  history: string[]                  // previous versions for Undo (max 5)
+   389→  source: 'llm' | 'template' | 'user'
+   390→}
+   391→
+   392→export type ImageStatus = 'idle'|'generating'|'ready'|'failed'|'quota'|'cap'
+   393→export interface ProductImage {
+   394→  status: ImageStatus
+   395→  dataUrl?: string                   // memory only, never persisted
+   396→  attempts: number                   // 0..3
+   397→  outdated: boolean
+   398→  error?: string
+   399→}
+   400→
+   401→export type Decision = 'pending'|'approved'|'rejected'
+   402→export interface ProductProposal {
+   403→  id: string                         // catalog id
+   404→  name: string; oneLiner: string
+   405→  category: ProductCategory; role: ProductRole
+   406→  silhouette: string
+   407→  fitScore: number                   // 0..100
+   408→  scoreParts: { tag: number; brand: number; cross: number }  // 0..1 each
+   409→  evidence: EvidenceLink[]
+   410→  pricing: Pricing
+   411→  supplierType: string; supplierBrief: string
+   412→  complianceNote?: string
+   413→  description: ProductDescription
+   414→  decision: Decision
+   415→  image: ProductImage
+   416→  replacedFrom?: string              // catalog id of the rejected product
+   417→}
+   418→
+   419→export interface CollabSuggestion {
+   420→  id: string; name: string; type: 'place'|'brand'
+   421→  area?: string; tags: string[]
+   422→  partnerIdea: string                // LLM text restricted to supplied data, or template
+   423→  linkedProductIds: string[]
+   424→}
+   425→
+   426→export interface DropStep { wave: 'core'|'hero'|'limited'; weekOffset: number; productIds: string[]; runSizes: Record<string, number>; note: string }
+   427→export interface DropPlan { steps: DropStep[]; firstRunTip: string }
+   428→
+   429→export interface ApiErrorBody { error: { code: ErrorCode; message: string; field?: string; retryAfterSec?: number } }
+   430→export type ErrorCode = 'VALIDATION'|'QLOO_NO_KEY'|'QLOO_RATE_LIMIT'|'QLOO_UNAVAILABLE'|'LLM_UNAVAILABLE'|'IMAGE_QUOTA'|'IMAGE_FAILED'|'MODERATION_BLOCKED'|'RATE_LIMITED'|'INTERNAL'
+   431→```
+   432→
+   433→---
+   434→
+   435→## Agent Design — `lib/agent/*`
+   436→
+   437→**Principle:** the LLM *decides which Qloo calls to make*; it never *produces* data. Tool results are stored server-side in `AgentMemory`; the final `TasteProfile` is assembled from memory by code, not by the LLM.
+   438→
+   439→### Tools exposed to the LLM (`tools.ts`)
+   440→
+   441→| Tool | Args | Backed by | Result summary shown in UI |
+   442→|---|---|---|---|
+   443→| `qloo_search_entity` | `{query:string, type:'artist'\|'brand'\|'place'}` | `searchEntities` | "Found *X* (artist)" / "No match for *X*" |
+   444→| `qloo_search_tags` | `{query:string}` | `searchTags` | "Matched tags: a, b, c" |
+   445→| `qloo_taste_tags` | `{entityIds?:string[], tagIds?:string[]}` | `tasteTags` | "Audience taste tags: …" |
+   446→| `qloo_related` | `{type:'brand'\|'videogame'\|'tv_show'\|'movie'\|'book'\|'podcast', entityIds?, tagIds?}` | `related` | "12 related brands" |
+   447→| `note` | `{text:string}` | — | Free-text note shown in panel (max 160 chars) |
+   448→| `finish` | `{path:'A'\|'B', summary:string}` | — | Ends loop |
+   449→
+   450→**Guards:** max 8 tool calls; 45 s wall clock; arguments validated with Zod; entity/tag IDs in args must exist in `AgentMemory` (else the call is rejected with "unknown id" and the model is told); each tool result truncated to 12 items before being fed back to the model.
+   451→
+   452→### System prompt (`prompts.ts → AGENT_SYSTEM`)
+   453→
+   454→```
+   455→You are MerchDesk's taste researcher. Build an audience taste profile for a creator's fans using ONLY the provided Qloo tools.
+   456→
+   457→Rules:
+   458→1. If the user named an artist, call qloo_search_entity(type="artist") first. If no result clearly matches the name, do NOT guess. Call note("Not found in Qloo — trying genre and interest tags") and use qloo_search_tags with the genres/interests from the description and any "sounds like" names.
+   459→2. Call qloo_taste_tags once using the best seed ids you have.
+   460→3. Call qloo_related for type "brand" once. Then call it for up to 3 cross-domain types (videogame, tv_show, movie, book, podcast) that match what the fans are said to like. Skip types with no relevance.
+   461→4. Use only ids returned by tools. Never invent ids, names or facts about the artist.
+   462→5. Use at most 8 tool calls total. When you have taste tags, brands and at least one cross-domain list (or you have run out of useful calls), call finish.
+   463→6. Keep notes short and factual.
+   464→```
+   465→
+   466→### Scripted fallback (`scripted.ts`)
+   467→Used when no tool-capable LLM provider is available or the loop fails. Fixed sequence, no LLM: artist search if `input.artist`/text looks like a name; else split description into up to 4 keyword phrases and call `searchTags` for each → `tasteTags` → `related(brand)` → `related` for the first 2 cross-domain types detected by keyword (`game`→videogame, `show|series|tv`→tv_show, `movie|film`→movie, `book|read`→book, `podcast`→podcast). Marks `agentMode: 'scripted_fallback'`.
+   468→
+   469→### Classification step (`score/classify.ts`)
+   470→After tool results are in, entities with no mapping in `tag-aliases.json` / `brand-tiers.json` are classified in **one batched LLM call** into the fixed vocabularies (`canonical-tags.json`, brand categories) and flagged `estimated: true`. If the LLM is unavailable they are simply skipped (never guessed by code).
+   471→
+   472→---
+   473→
+   474→## Scoring, Selection, Pricing (deterministic; `lib/score/*`)
+   475→
+   476→### Mapping to canonical tags
+   477→`tag-map.ts`: lowercase → trim → exact match in `tag-aliases.json` → else substring match on alias keys → else unmapped (kept for display, not scored). Profile weight per canonical tag `P[c]` = max weight among tags mapping to `c`. Cross-domain weights `X[c]` built the same way from `crossDomain` and `inspirationPlaces` entities' `canonicalTags` × entity weight.
+   478→
+   479→### Fit score
+   480→```
+   481→tag    = clamp( Σ_{c ∈ item.tags ∩ P}            P[c] / 2 , 0, 1 )
+   482→brand  = clamp( Σ top2 over brands b with b.brandCategories ∩ item.brandCategories ≠ ∅
+   483→                    of (b.weight × (b.estimated ? 0.6 : 1)) / 2 , 0, 1 )
+   484→cross  = clamp( Σ_{c ∈ item.crossDomainTags ∩ X}  X[c] / 1.5 , 0, 1 )
+   485→fitScore = round( 100 × (0.5·tag + 0.3·brand + 0.2·cross) )
+   486→```
+   487→Evidence points per link = coefficient × (share of that term contributed by the link) × 100. Top 3 links by points are kept. Ties break on catalog `id` for determinism.
+   488→
+   489→### Selection (`rules.ts`)
+   490→Per-item first-run cap and total cap by budget:
+   491→
+   492→| Budget | Per-item first-run cap | Total first-run cap | Target size |
+   493→|---|---|---|---|
+   494→| small | $200 | $700 | 6 |
+   495→| medium | $600 | $2,200 | 7 |
+   496→| large | $1,500 | $6,000 | 8 |
+   497→
+   498→`firstRunCost = setupCost + minRun × mean(unitCost range)`.
+   499→1. Eligible = items with `firstRunCost ≤ perItemCap`.
+   500→2. Hero = highest-fit eligible item with `hero: true`; if none, highest-fit non-lowRisk eligible item.
+   501→3. Low-risk = highest-fit eligible item with `lowRisk: true`.
+   502→4. Fill by descending fit, skipping items that would make a category exceed 3 items or consumables exceed 2, stopping at target size or total cap.
+   503→5. If fewer than 3 categories, swap the lowest-fit item for the best-fit item from a missing category.
+   504→6. If fewer than 5 items fit, relax per-item cap by 25% once, then return what exists with a note.
+   505→7. Roles: hero → `hero`; the collab consumable or highest-priced non-hero item with `minRun ≤ 50` → `limited` (if any); rest → `core`.
+   506→
+   507→### Pricing (`pricing.ts`)
+   508→```
+   509→mult = { budget: 2.2, mid: 2.8, premium: 3.5 }[profile.priceTier]
+   510→unitCost = (lo + hi) / 2
+   511→price = charm( clamp(unitCost × mult, priceRange[0], priceRange[1]) )   // charm = nearest .00 or .50
+   512→marginPerUnit = price − unitCost
+   513→firstRunCost = setupCost + minRun × unitCost
+   514→breakEvenUnits = ceil(firstRunCost / price)  →  null if > minRun
+   515→```
+   516→`priceTier` comes from brands' tiers weighted by affinity (`brand-tiers.json`; unknown brands LLM-estimated, `priceTierEstimated=true`); default `mid`. Public benchmarks from the earlier research (stickers ≈ $5, posters ≤ $10, totes $15–25) are *guardrails already encoded in `priceRange`*; re-verify before quoting them publicly.
+   517→
+   518→### Drop plan (`drops.ts`)
+   519→| Wave | Week offset | Contents | Run size |
+   520→|---|---|---|---|
+   521→| core | 0 | all `core` products | `minRun` |
+   522→| hero | 2 | hero product, pre-order framing | `minRun` |
+   523→| limited | 5 | limited product, numbered edition | `minRun` |
+   524→Run size never exceeds `2 × minRun`. `firstRunTip` = "Order less than you think you'll sell — a sell-out creates demand." (from the earlier research; keep wording soft, no statistics).
+   525→
+   526→---
+   527→
+   528→## Image Pipeline (describe → approve → generate)
+   529→
+   530→```
+   531→catalog + profile ─► describeProducts() ─► ProductDescription (text only)
+   532→                                   │
+   533→              user edits/approves ─┘
+   534→                                   ▼
+   535→                 POST /api/image { approved: true, text }
+   536→                                   │
+   537→              moderation.check ─► sanitize ─► buildImagePrompt ─► Cloudflare FLUX ─► data URL
+   538→```
+   539→
+   540→1. **Description generation (`score/describe.ts` via `llm/prompts.ts → DESCRIBE_SYSTEM`):** one batched JSON call for all products. Input per product: catalog name/category/materials hints, top 3 canonical tags, palette color names. Output: `{id, name, oneLiner, visualDescription}`. Rules: 40–70 words; cover object, materials, colours (from palette), motif drawn from tags, overall mood; **no brand names, no artist name, no text or logo content**, no sales claims. Zod-validated; word count enforced (retry once, else template).
+   541→2. **Template fallback:** `"A {material} {noun} in {color1} and {color2}, decorated with a simple {motif} motif, finished in a {mood} style."` with motif/mood looked up from tag→phrase tables in `palettes.json`.
+   542→3. **Approval gate:** the client state machine (`studio-reducer.ts`) only dispatches `IMAGE_REQUESTED` from state `approved`. `/api/image` additionally requires `approved: true` and a non-empty `approvedDescription`; otherwise `422 VALIDATION`. A unit test asserts that no code path other than the approve action calls the image API.
+   543→4. **Moderation (`moderation.ts`):** remove (word-boundary, case-insensitive) the artist name, every Qloo-returned brand name in the profile, and a static list of major trademarks (e.g. Nike, Adidas, Supreme, Nintendo, Pokémon, Disney, Marvel, Carhartt) from the description. Reject with `MODERATION_BLOCKED` if it contains unsafe terms (weapons, nudity, slurs, real-person names list). Strip any "text saying", "logo", "slogan", "brand" phrases.
+   544→5. **Prompt template (`image/prompt.ts`):**
+   545→```
+   546→Studio product photograph of {categoryNoun}: {sanitizedDescription}. Colour palette: {paletteNames}. {palette.imageStyle}. Plain warm off-white seamless backdrop, soft natural shadow, centered {composition}, sharp focus, e-commerce catalog style. Blank unprinted label areas, no text, no letters, no logos, no watermark, no people.
+   547→```
+   548→`composition` by attempt: 1 = "front view", 2 = "three-quarter view", 3 = "flat lay from above". (FLUX has no negative prompt, so the constraints are phrased positively. Free text-to-image models often garble text even when told to avoid it; the UI labels outputs as concept images.)
+   549→6. **Session cap:** client refuses to call the API after `NEXT_PUBLIC_MAX_IMAGES_PER_SESSION` generations (counter in reducer).
+   550→
+   551→---
+   552→
+   553→## Error Handling Strategy
+   554→
+   555→| Layer | Condition | Handling |
+   556→|---|---|---|
+   557→| Route handler | Invalid body | `400` `{error:{code:'VALIDATION', field}}` via Zod |
+   558→| Route handler | Rate limit hit | `429` `RATE_LIMITED` + `Retry-After` |
+   559→| Qloo | No key / 401 / 403 | `503` `QLOO_NO_KEY`; UI: "MerchDesk can't reach its taste data right now" + retry |
+   560→| Qloo | 429 | `503` `QLOO_RATE_LIMIT`; UI shows retry-after |
+   561→| Qloo | 5xx/timeout | 1 retry then `503` `QLOO_UNAVAILABLE` |
+   562→| Agent | Tool arg invalid / unknown id | Return error text to model once; second failure aborts loop → scripted fallback |
+   563→| Agent | 45 s budget hit | Emit `note`, build profile from memory so far, continue |
+   564→| LLM | All providers fail | `LLM_UNAVAILABLE` → scripted agent, template descriptions, skip compare panel with message |
+   565→| Image | Daily quota | `429`-like → `IMAGE_QUOTA`; card keeps sketch |
+   566→| Image | Other failure | `IMAGE_FAILED`; card offers Retry (counts as an attempt only on success) |
+   567→| Client | Network error | Toast "Connection problem — try again", action buttons re-enabled |
+   568→| Client | Unhandled render error | `app/error.tsx` shows "Something went wrong" + Reload; state in sessionStorage is kept |
+   569→
+   570→---
+   571→
+   572→## Performance Requirements
+   573→
+   574→| Target | How |
+   575→|---|---|
+   576→| Landing LCP < 2.5 s on mobile | Static page, 3 fonts via `next/font` with `display: swap`, no images above the fold |
+   577→| Agent run ≤ 25 s typical, hard cap 45 s | ≤8 tool calls, Qloo cache, parallelize independent `related` calls with `Promise.all` where the agent requests multiple |
+   578→| Collection build ≤ 6 s | Scoring is pure and instant; one batched LLM call for descriptions |
+   579→| Image ≤ 15 s typical | FLUX schnell, 6 steps; skeleton with timer |
+   580→| No layout shift on card state change | Fixed aspect-ratio image stage (`aspect-square`) |
+   581→| Bundle | No heavy libs; `Silhouette` is inline SVG |
+   582→
+   583→---
+   584→
+   585→## Security Checklist
+   586→
+   587→- [ ] No secret is ever referenced in client code; all keys read in route handlers via `lib/env.ts`
+   588→- [ ] No `NEXT_PUBLIC_` prefix on any key
+   589→- [ ] `.env.local` in `.gitignore`; `.env.example` has empty values only
+   590→- [ ] Every API body/query validated with Zod; max sizes enforced (text ≤ 1,000 chars, arrays ≤ 20, description ≤ 600 chars)
+   591→- [ ] LLM output treated as untrusted: JSON-parsed + Zod-validated; rendered as text only (never `dangerouslySetInnerHTML`)
+   592→- [ ] Prompt-injection hygiene: user text and Qloo strings are placed in clearly delimited data blocks; tool IDs validated against memory
+   593→- [ ] In-memory rate limits on all POST routes (best-effort; the providers' own free-tier caps are the real backstop)
+   594→- [ ] Response headers via `next.config.ts`: `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, `X-Frame-Options: DENY`
+   595→- [ ] Logs never contain API keys, full prompts with user text in production, or Qloo keys in URLs (keys are headers)
+   596→- [ ] `MERCHDESK_DATA_MODE=fixtures` refused in production builds
+   597→- [ ] Generated images and user text are not stored server-side
+   598→
+   599→---
+   600→
+   601→## Testing Strategy (`tests/`, run with `npx vitest run`)
+   602→
+   603→| File | Covers |
+   604→|---|---|
+   605→| `score.test.ts` | Fit formula edge cases (no overlap = 0, saturation at 1), deterministic ordering, evidence points sum |
+   606→| `pricing.test.ts` | Tier multipliers, clamping, charm rounding, break-even null case |
+   607→| `drops.test.ts` | Wave assignment, run size ≤ 2×minRun |
+   608→| `image-prompt.test.ts` | Template output, composition per attempt, no brand/artist name leakage |
+   609→| `moderation.test.ts` | Brand/artist stripping, blocklist rejection, "text/logo" phrase removal |
+   610→| `qloo-normalize.test.ts` | Synthetic response → `QlooEntity`, rank-based weights, drops invalid rows |
+   611→| `agent-loop.test.ts` | Mock LLM: invalid arg handling, unknown id rejection, max-calls stop, scripted fallback |
+   612→| Approval-gate test (in `agent-loop.test.ts` or `image-prompt.test.ts`) | `/api/image` handler rejects `approved: false` |
+   613→
+   614→Manual matrix and Lighthouse checks are in `06-IMPLEMENTATION-PLAN.md`.
+   615→
+   616→---
+   617→
+   618→## Known Risks (technical)
+   619→
+   620→| Risk | Mitigation |
+   621→|---|---|
+   622→| Qloo parameter names differ from this doc | Probe script first (Phase 2); change only `lib/qloo/client.ts` |
+   623→| Free-tier models/quotas change mid-week | Env-driven model names, provider chain, scripted + template fallbacks |
+   624→| SSE buffering on Vercel | `Content-Type: text/event-stream`, `Cache-Control: no-cache, no-transform`, `X-Accel-Buffering: no`, flush after each event |
+   625→| Hobby function time limit | `maxDuration = 60`; agent hard cap 45 s; images 40 s timeout |
+   626→| In-memory rate limiter resets between serverless instances | Accept; real caps come from free-tier providers |
+   627→| FLUX ignores "no text" | UI label + blank-label phrasing; description rules avoid text content |
+   628→| Hobby plan is non-commercial | Fine for hackathon; migrate if commercialized |
+   629→

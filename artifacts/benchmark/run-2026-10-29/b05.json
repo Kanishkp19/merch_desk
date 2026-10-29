@@ -1,0 +1,1227 @@
+{
+  "id": "b05",
+  "input": {
+    "text": "Tiny interview podcast about urban gardens and local food. Listeners prefer practical, low-waste goods.",
+    "soundsLike": [],
+    "city": "Portland",
+    "creatorType": "podcaster",
+    "budget": "small"
+  },
+  "startedAt": "2026-10-28T21:52:20.005Z",
+  "providerCalls": {
+    "qloo": 8,
+    "image": 0
+  },
+  "estimatedCostUsd": 0,
+  "costBasis": "No paid calls or image requests; free-tier API use only.",
+  "events": [
+    {
+      "type": "step",
+      "id": "s29",
+      "label": "Reading your fans’ taste…",
+      "status": "running"
+    },
+    {
+      "type": "tool_call",
+      "id": "t48",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "urban gardens local food low waste practical"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t48",
+      "tool": "qloo_search_tags",
+      "summary": "No tags for \"urban gardens local food low waste practical\""
+    },
+    {
+      "type": "tool_call",
+      "id": "t49",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "sustainable living zero waste gardening"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t49",
+      "tool": "qloo_search_tags",
+      "summary": "No tags for \"sustainable living zero waste gardening\""
+    },
+    {
+      "type": "tool_call",
+      "id": "t50",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "food"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t50",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Food, Food, Food",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t51",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "gardening"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t51",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Gardening, Gardening, Gardening",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t52",
+      "tool": "qloo_taste_tags",
+      "args": {
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:offerings:place:food",
+          "urn:tag:genre:media:food",
+          "urn:tag:category:place:food",
+          "urn:tag:genre:place:restaurant:food"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t52",
+      "tool": "qloo_taste_tags",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "tool_call",
+      "id": "t53",
+      "tool": "qloo_search_tags",
+      "args": {
+        "query": "low waste"
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t53",
+      "tool": "qloo_search_tags",
+      "summary": "Matched tags: Waste management service, Waste Reduction, Offers free or low-cost care based on individual circumstances",
+      "count": 5
+    },
+    {
+      "type": "tool_call",
+      "id": "t54",
+      "tool": "qloo_related",
+      "args": {
+        "type": "brand",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:offerings:place:food",
+          "urn:tag:genre:media:food",
+          "urn:tag:category:place:food",
+          "urn:tag:genre:place:restaurant:food"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t54",
+      "tool": "qloo_related",
+      "summary": "10 related brands",
+      "count": 10
+    },
+    {
+      "type": "tool_call",
+      "id": "t55",
+      "tool": "qloo_related",
+      "args": {
+        "type": "podcast",
+        "entityIds": [],
+        "tagIds": [
+          "urn:tag:offerings:place:food",
+          "urn:tag:genre:media:food",
+          "urn:tag:category:place:food",
+          "urn:tag:genre:place:restaurant:food"
+        ]
+      }
+    },
+    {
+      "type": "tool_result",
+      "id": "t55",
+      "tool": "qloo_related",
+      "summary": "Tool failed"
+    },
+    {
+      "type": "note",
+      "text": "Time budget reached — building the profile from what we have."
+    },
+    {
+      "type": "step",
+      "id": "s30",
+      "label": "Research complete",
+      "status": "done",
+      "detail": "8 tool calls"
+    },
+    {
+      "type": "step",
+      "id": "s31",
+      "label": "Assembling taste profile",
+      "status": "running"
+    },
+    {
+      "type": "step",
+      "id": "s32",
+      "label": "Taste profile ready",
+      "status": "done"
+    },
+    {
+      "type": "profile",
+      "profile": {
+        "path": "B_description",
+        "seeds": {
+          "entityIds": [],
+          "tagIds": [
+            "urn:tag:offerings:place:food",
+            "urn:tag:genre:media:gardening",
+            "urn:tag:category:place:waste_management_service",
+            "urn:tag:sustainability_iniative:qloo:waste_reduction",
+            "urn:tag:payments:place:offers_free_or_low_cost_care_based_on_individual_circumstances",
+            "urn:tag:category:place:low_income_housing_program",
+            "urn:tag:payments:place:offers_free_low_cost_care_based_on_individual_circumstances"
+          ]
+        },
+        "tags": [
+          {
+            "name": "Food",
+            "qlooTagId": "urn:tag:offerings:place:food",
+            "canonical": "foodie",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Gardening",
+            "qlooTagId": "urn:tag:genre:media:gardening",
+            "canonical": "plants",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Waste management service",
+            "qlooTagId": "urn:tag:category:place:waste_management_service",
+            "weight": 1,
+            "source": "qloo"
+          },
+          {
+            "name": "Waste Reduction",
+            "qlooTagId": "urn:tag:sustainability_iniative:qloo:waste_reduction",
+            "weight": 0.83,
+            "source": "qloo"
+          },
+          {
+            "name": "Offers free or low-cost care based on individual circumstances",
+            "qlooTagId": "urn:tag:payments:place:offers_free_or_low_cost_care_based_on_individual_circumstances",
+            "weight": 0.65,
+            "source": "qloo"
+          },
+          {
+            "name": "Low income housing program",
+            "qlooTagId": "urn:tag:category:place:low_income_housing_program",
+            "weight": 0.48,
+            "source": "qloo"
+          },
+          {
+            "name": "Offers free or low-cost care based on individual circumstances",
+            "qlooTagId": "urn:tag:payments:place:offers_free_low_cost_care_based_on_individual_circumstances",
+            "weight": 0.3,
+            "source": "qloo"
+          }
+        ],
+        "brands": [
+          {
+            "id": "5F620BA9-9B72-4580-94E5-5D3FE09DCC60",
+            "name": "Stryve Biltong",
+            "type": "brand",
+            "weight": 1,
+            "tags": [
+              "Meat, Seafood, & Substitutes",
+              "Snacks",
+              "Food",
+              "Packaged",
+              "Food & Beverage",
+              "Clean",
+              "Minimalist",
+              "Bold Typography",
+              "Modern",
+              "Peak Athletic Performance"
+            ],
+            "canonicalTags": [
+              "foodie",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "57B38BED-D8EC-470C-B1EC-B1CCB13A039D",
+            "name": "Barnana",
+            "type": "brand",
+            "weight": 0.92,
+            "tags": [
+              "Food & Beverage",
+              "Food",
+              "Snacks",
+              "Packaged",
+              "Natural Textures",
+              "Earthy Color Palette",
+              "Minimalist Typography",
+              "Transparent Imagery",
+              "Clean Packaging",
+              "Environmental Activism"
+            ],
+            "canonicalTags": [
+              "foodie",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "F20CB0FE-4A65-4B77-81C0-3733338E6329",
+            "name": "Guayakí",
+            "type": "brand",
+            "weight": 0.84,
+            "tags": [
+              "Food & Beverage",
+              "Drinks",
+              "Carbonated",
+              "Earthy Tones",
+              "Bold Typography",
+              "Botanical Illustrations",
+              "Vibrant Packaging",
+              "Sustainable Living",
+              "Global Citizenship",
+              "Active Lifestyle"
+            ],
+            "canonicalTags": [
+              "foodie",
+              "art-print",
+              "eco"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food",
+              "eco-goods"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "BF923F2D-5113-4091-B7A5-C5B0EB5B67B6",
+            "name": "RUNA",
+            "type": "brand",
+            "weight": 0.77,
+            "tags": [
+              "Energy Drink",
+              "Drinks",
+              "Food & Beverage",
+              "Clean Minimalist Design",
+              "Natural Color Palette",
+              "Botanical Imagery",
+              "Transparent Labeling",
+              "Global Citizenship",
+              "Sustainable Living",
+              "Purpose-Driven Career"
+            ],
+            "canonicalTags": [
+              "foodie",
+              "minimal",
+              "eco"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food",
+              "eco-goods"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "F43287BF-1CFB-4CAF-8694-3368EFBF24D8",
+            "name": "Epic Provisions",
+            "type": "brand",
+            "weight": 0.69,
+            "tags": [
+              "Meat, Seafood, & Substitutes",
+              "Food & Beverage",
+              "Food",
+              "Prepared",
+              "Minimalist",
+              "Earth-Toned",
+              "Rustic",
+              "Clean Typography",
+              "Informative Packaging",
+              "High-Performance Living"
+            ],
+            "canonicalTags": [
+              "foodie",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "EFA6231A-B873-4F02-9B42-50A3E3AF1BA2",
+            "name": "Honest Tea",
+            "type": "brand",
+            "weight": 0.61,
+            "tags": [
+              "Coffee & Tea",
+              "Food & Beverage",
+              "Drinks",
+              "Bright Colors",
+              "Minimalist Packaging",
+              "Clear Typography",
+              "Friendly Imagery",
+              "Wellness-Centered Living",
+              "Sustainable Family Habits",
+              "Balanced Nutrition"
+            ],
+            "canonicalTags": [
+              "coffee",
+              "foodie",
+              "minimal",
+              "eco"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "48D2F627-8B76-4F6F-B8D7-F23771C86BD8",
+            "name": "Jif Peanut Butter",
+            "type": "brand",
+            "weight": 0.53,
+            "tags": [
+              "Food & Beverage",
+              "Condiments & Spices",
+              "Food",
+              "Blue Lid",
+              "Classic Serif Typography",
+              "Red and White Color Palette",
+              "Effortless Parenting",
+              "Happy Family Gatherings",
+              "Creative Home Cooking",
+              "CPG"
+            ],
+            "canonicalTags": [
+              "foodie"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "budget"
+          },
+          {
+            "id": "C4D45C17-ED3C-4546-961A-E1E2FA02A22C",
+            "name": "Organic Valley",
+            "type": "brand",
+            "weight": 0.46,
+            "tags": [
+              "Agricultural cooperatives in the United States",
+              "Food",
+              "Dairy & Substitutes",
+              "Food and drink companies based in Wisconsin",
+              "Multinational food companies",
+              "Organic farming organizations",
+              "Dairy products companies of the United States",
+              "Food & Beverage",
+              "Vernon County",
+              "Rustic"
+            ],
+            "canonicalTags": [
+              "foodie"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food",
+              "eco-goods"
+            ],
+            "priceTier": "mid"
+          },
+          {
+            "id": "E32C61D2-867E-4936-A74F-E85BECD7333E",
+            "name": "Koia",
+            "type": "brand",
+            "weight": 0.38,
+            "tags": [
+              "Food & Beverage",
+              "Minimalist",
+              "Clean Typography",
+              "Bright Color Palettes",
+              "Modern Packaging Design",
+              "Holistic Wellness",
+              "Optimized Performance",
+              "Mindful Consumption",
+              "CPG",
+              "Product Brand"
+            ],
+            "canonicalTags": [
+              "foodie",
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "premium"
+          },
+          {
+            "id": "614F4845-D4A8-4341-B778-9E39C3C69E30",
+            "name": "Giant Food",
+            "type": "brand",
+            "weight": 0.3,
+            "tags": [
+              "Retail",
+              "Functional",
+              "Clear Signage",
+              "Organized Layouts",
+              "Clean Minimalist Branding",
+              "Healthy Eating",
+              "Seamless Online Shopping",
+              "Well-Stocked Home Pantry",
+              "Other",
+              "Retail Brand"
+            ],
+            "canonicalTags": [
+              "minimal"
+            ],
+            "estimated": true,
+            "brandCategories": [
+              "craft-food"
+            ],
+            "priceTier": "budget"
+          }
+        ],
+        "crossDomain": [],
+        "inspirationPlaces": [],
+        "priceTier": "mid",
+        "priceTierEstimated": true,
+        "paletteId": "pastel-cozy",
+        "notes": [],
+        "agentMode": "llm_agent",
+        "qlooCalls": 8
+      }
+    },
+    {
+      "type": "done",
+      "mode": "llm_agent"
+    }
+  ],
+  "profile": {
+    "path": "B_description",
+    "seeds": {
+      "entityIds": [],
+      "tagIds": [
+        "urn:tag:offerings:place:food",
+        "urn:tag:genre:media:gardening",
+        "urn:tag:category:place:waste_management_service",
+        "urn:tag:sustainability_iniative:qloo:waste_reduction",
+        "urn:tag:payments:place:offers_free_or_low_cost_care_based_on_individual_circumstances",
+        "urn:tag:category:place:low_income_housing_program",
+        "urn:tag:payments:place:offers_free_low_cost_care_based_on_individual_circumstances"
+      ]
+    },
+    "tags": [
+      {
+        "name": "Food",
+        "qlooTagId": "urn:tag:offerings:place:food",
+        "canonical": "foodie",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Gardening",
+        "qlooTagId": "urn:tag:genre:media:gardening",
+        "canonical": "plants",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Waste management service",
+        "qlooTagId": "urn:tag:category:place:waste_management_service",
+        "weight": 1,
+        "source": "qloo"
+      },
+      {
+        "name": "Waste Reduction",
+        "qlooTagId": "urn:tag:sustainability_iniative:qloo:waste_reduction",
+        "weight": 0.83,
+        "source": "qloo"
+      },
+      {
+        "name": "Offers free or low-cost care based on individual circumstances",
+        "qlooTagId": "urn:tag:payments:place:offers_free_or_low_cost_care_based_on_individual_circumstances",
+        "weight": 0.65,
+        "source": "qloo"
+      },
+      {
+        "name": "Low income housing program",
+        "qlooTagId": "urn:tag:category:place:low_income_housing_program",
+        "weight": 0.48,
+        "source": "qloo"
+      },
+      {
+        "name": "Offers free or low-cost care based on individual circumstances",
+        "qlooTagId": "urn:tag:payments:place:offers_free_low_cost_care_based_on_individual_circumstances",
+        "weight": 0.3,
+        "source": "qloo"
+      }
+    ],
+    "brands": [
+      {
+        "id": "5F620BA9-9B72-4580-94E5-5D3FE09DCC60",
+        "name": "Stryve Biltong",
+        "type": "brand",
+        "weight": 1,
+        "tags": [
+          "Meat, Seafood, & Substitutes",
+          "Snacks",
+          "Food",
+          "Packaged",
+          "Food & Beverage",
+          "Clean",
+          "Minimalist",
+          "Bold Typography",
+          "Modern",
+          "Peak Athletic Performance"
+        ],
+        "canonicalTags": [
+          "foodie",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "57B38BED-D8EC-470C-B1EC-B1CCB13A039D",
+        "name": "Barnana",
+        "type": "brand",
+        "weight": 0.92,
+        "tags": [
+          "Food & Beverage",
+          "Food",
+          "Snacks",
+          "Packaged",
+          "Natural Textures",
+          "Earthy Color Palette",
+          "Minimalist Typography",
+          "Transparent Imagery",
+          "Clean Packaging",
+          "Environmental Activism"
+        ],
+        "canonicalTags": [
+          "foodie",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "F20CB0FE-4A65-4B77-81C0-3733338E6329",
+        "name": "Guayakí",
+        "type": "brand",
+        "weight": 0.84,
+        "tags": [
+          "Food & Beverage",
+          "Drinks",
+          "Carbonated",
+          "Earthy Tones",
+          "Bold Typography",
+          "Botanical Illustrations",
+          "Vibrant Packaging",
+          "Sustainable Living",
+          "Global Citizenship",
+          "Active Lifestyle"
+        ],
+        "canonicalTags": [
+          "foodie",
+          "art-print",
+          "eco"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food",
+          "eco-goods"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "BF923F2D-5113-4091-B7A5-C5B0EB5B67B6",
+        "name": "RUNA",
+        "type": "brand",
+        "weight": 0.77,
+        "tags": [
+          "Energy Drink",
+          "Drinks",
+          "Food & Beverage",
+          "Clean Minimalist Design",
+          "Natural Color Palette",
+          "Botanical Imagery",
+          "Transparent Labeling",
+          "Global Citizenship",
+          "Sustainable Living",
+          "Purpose-Driven Career"
+        ],
+        "canonicalTags": [
+          "foodie",
+          "minimal",
+          "eco"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food",
+          "eco-goods"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "F43287BF-1CFB-4CAF-8694-3368EFBF24D8",
+        "name": "Epic Provisions",
+        "type": "brand",
+        "weight": 0.69,
+        "tags": [
+          "Meat, Seafood, & Substitutes",
+          "Food & Beverage",
+          "Food",
+          "Prepared",
+          "Minimalist",
+          "Earth-Toned",
+          "Rustic",
+          "Clean Typography",
+          "Informative Packaging",
+          "High-Performance Living"
+        ],
+        "canonicalTags": [
+          "foodie",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "EFA6231A-B873-4F02-9B42-50A3E3AF1BA2",
+        "name": "Honest Tea",
+        "type": "brand",
+        "weight": 0.61,
+        "tags": [
+          "Coffee & Tea",
+          "Food & Beverage",
+          "Drinks",
+          "Bright Colors",
+          "Minimalist Packaging",
+          "Clear Typography",
+          "Friendly Imagery",
+          "Wellness-Centered Living",
+          "Sustainable Family Habits",
+          "Balanced Nutrition"
+        ],
+        "canonicalTags": [
+          "coffee",
+          "foodie",
+          "minimal",
+          "eco"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "48D2F627-8B76-4F6F-B8D7-F23771C86BD8",
+        "name": "Jif Peanut Butter",
+        "type": "brand",
+        "weight": 0.53,
+        "tags": [
+          "Food & Beverage",
+          "Condiments & Spices",
+          "Food",
+          "Blue Lid",
+          "Classic Serif Typography",
+          "Red and White Color Palette",
+          "Effortless Parenting",
+          "Happy Family Gatherings",
+          "Creative Home Cooking",
+          "CPG"
+        ],
+        "canonicalTags": [
+          "foodie"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "budget"
+      },
+      {
+        "id": "C4D45C17-ED3C-4546-961A-E1E2FA02A22C",
+        "name": "Organic Valley",
+        "type": "brand",
+        "weight": 0.46,
+        "tags": [
+          "Agricultural cooperatives in the United States",
+          "Food",
+          "Dairy & Substitutes",
+          "Food and drink companies based in Wisconsin",
+          "Multinational food companies",
+          "Organic farming organizations",
+          "Dairy products companies of the United States",
+          "Food & Beverage",
+          "Vernon County",
+          "Rustic"
+        ],
+        "canonicalTags": [
+          "foodie"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food",
+          "eco-goods"
+        ],
+        "priceTier": "mid"
+      },
+      {
+        "id": "E32C61D2-867E-4936-A74F-E85BECD7333E",
+        "name": "Koia",
+        "type": "brand",
+        "weight": 0.38,
+        "tags": [
+          "Food & Beverage",
+          "Minimalist",
+          "Clean Typography",
+          "Bright Color Palettes",
+          "Modern Packaging Design",
+          "Holistic Wellness",
+          "Optimized Performance",
+          "Mindful Consumption",
+          "CPG",
+          "Product Brand"
+        ],
+        "canonicalTags": [
+          "foodie",
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "premium"
+      },
+      {
+        "id": "614F4845-D4A8-4341-B778-9E39C3C69E30",
+        "name": "Giant Food",
+        "type": "brand",
+        "weight": 0.3,
+        "tags": [
+          "Retail",
+          "Functional",
+          "Clear Signage",
+          "Organized Layouts",
+          "Clean Minimalist Branding",
+          "Healthy Eating",
+          "Seamless Online Shopping",
+          "Well-Stocked Home Pantry",
+          "Other",
+          "Retail Brand"
+        ],
+        "canonicalTags": [
+          "minimal"
+        ],
+        "estimated": true,
+        "brandCategories": [
+          "craft-food"
+        ],
+        "priceTier": "budget"
+      }
+    ],
+    "crossDomain": [],
+    "inspirationPlaces": [],
+    "priceTier": "mid",
+    "priceTierEstimated": true,
+    "paletteId": "pastel-cozy",
+    "notes": [],
+    "agentMode": "llm_agent",
+    "qlooCalls": 8
+  },
+  "fallbackMode": "llm_agent",
+  "collection": {
+    "products": [
+      {
+        "id": "tote-bag",
+        "name": "Tote bag",
+        "oneLiner": "tote bag in blush pink, appetizing by design",
+        "category": "objects",
+        "role": "hero",
+        "silhouette": "tote",
+        "fitScore": 14,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.483,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "eco goods",
+            "entityName": "Guayakí",
+            "points": 7.5,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "eco goods",
+            "entityName": "RUNA",
+            "points": 7,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 15,
+          "marginPerUnit": 11.5,
+          "minRun": 36,
+          "setupCost": 25,
+          "firstRunCost": 151,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            15,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer",
+        "supplierBrief": "10 oz natural canvas tote, 1–2 colour print, reinforced handles.",
+        "description": {
+          "text": "A tote bag in blush pink and sage, finished with a hand drawn doodle motif. 10 oz natural canvas tote. The overall feel is appetizing — built for fans who lean into foodie and plants — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "matchbook",
+        "name": "Matchbooks",
+        "oneLiner": "matchbooks in blush pink, appetizing by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 17,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0.5760000000000001,
+          "cross": 0
+        },
+        "evidence": [
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Stryve Biltong",
+            "points": 9,
+            "estimated": true
+          },
+          {
+            "kind": "brand",
+            "label": "craft food",
+            "entityName": "Barnana",
+            "points": 8.5,
+            "estimated": true
+          }
+        ],
+        "pricing": {
+          "unitCost": 0.65,
+          "price": 3,
+          "marginPerUnit": 2.35,
+          "minRun": 100,
+          "setupCost": 20,
+          "firstRunCost": 85,
+          "breakEvenUnits": 29,
+          "typicalRange": [
+            3,
+            6
+          ],
+          "estimate": true
+        },
+        "supplierType": "print shop",
+        "supplierBrief": "Box of matchbooks with custom cover art, 100 min run, check local shipping rules.",
+        "description": {
+          "text": "A matchbook in blush pink and sage, finished with a faded postcard motif. Box of matchbooks with custom cover art. The overall feel is appetizing — built for fans who lean into foodie and plants — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "acrylic-keychain",
+        "name": "Acrylic keychain",
+        "oneLiner": "acrylic keychain in blush pink, appetizing by design",
+        "category": "objects",
+        "role": "core",
+        "silhouette": "round",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 1.85,
+          "price": 8,
+          "marginPerUnit": 6.15,
+          "minRun": 50,
+          "setupCost": 25,
+          "firstRunCost": 117.5,
+          "breakEvenUnits": 15,
+          "typicalRange": [
+            8,
+            14
+          ],
+          "estimate": true
+        },
+        "supplierType": "acrylic charm maker",
+        "supplierBrief": "2 in double-sided printed acrylic charm with ring and clasp.",
+        "description": {
+          "text": "A acrylic charm keychain in blush pink and sage, finished with a speed line star motif. 2 in double-sided printed acrylic charm with ring and clasp.. The overall feel is appetizing — built for fans who lean into foodie and plants — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "bandana",
+        "name": "Printed bandana",
+        "oneLiner": "printed bandana in blush pink, appetizing by design",
+        "category": "apparel",
+        "role": "limited",
+        "silhouette": "bandana",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 3.5,
+          "price": 12,
+          "marginPerUnit": 8.5,
+          "minRun": 36,
+          "setupCost": 30,
+          "firstRunCost": 156,
+          "breakEvenUnits": 13,
+          "typicalRange": [
+            12,
+            20
+          ],
+          "estimate": true
+        },
+        "supplierType": "screen printer / sublimation",
+        "supplierBrief": "22 in square cotton bandana, 1–2 colour all-over print.",
+        "description": {
+          "text": "A cotton bandana in blush pink and sage, finished with a wildflower motif. 22 in square cotton bandana. The overall feel is appetizing — built for fans who lean into foodie and plants — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "poster-print",
+        "name": "Art print poster",
+        "oneLiner": "art print poster in blush pink, appetizing by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 2.1,
+          "price": 10,
+          "marginPerUnit": 7.9,
+          "minRun": 50,
+          "setupCost": 0,
+          "firstRunCost": 105,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            10,
+            25
+          ],
+          "estimate": true
+        },
+        "supplierType": "digital / offset print shop",
+        "supplierBrief": "18×24 in matte poster on 100 lb stock, single design, shipped in tubes.",
+        "description": {
+          "text": "A poster in blush pink and sage, finished with a risograph sun motif. 18×24 in matte poster on 100 lb stock. The overall feel is appetizing — built for fans who lean into foodie and plants — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      },
+      {
+        "id": "sticker-pack",
+        "name": "Sticker pack",
+        "oneLiner": "sticker pack in blush pink, appetizing by design",
+        "category": "print",
+        "role": "core",
+        "silhouette": "flat",
+        "fitScore": 0,
+        "scoreParts": {
+          "tag": 0,
+          "brand": 0,
+          "cross": 0
+        },
+        "evidence": [],
+        "pricing": {
+          "unitCost": 0.43,
+          "price": 4,
+          "marginPerUnit": 3.58,
+          "minRun": 100,
+          "setupCost": 0,
+          "firstRunCost": 42.5,
+          "breakEvenUnits": 11,
+          "typicalRange": [
+            4,
+            8
+          ],
+          "estimate": true
+        },
+        "supplierType": "sticker printer",
+        "supplierBrief": "Die-cut or kiss-cut vinyl stickers, 3 designs, waterproof, 100 min run.",
+        "description": {
+          "text": "A sticker sheet in blush pink and sage, finished with a hand drawn doodle motif. Die-cut or kiss-cut vinyl stickers. The overall feel is appetizing — built for fans who lean into foodie and plants — with a clean blank area left for the artist's own mark.",
+          "version": 1,
+          "history": [],
+          "source": "template"
+        },
+        "decision": "pending",
+        "image": {
+          "status": "idle",
+          "attempts": 0,
+          "outdated": false
+        }
+      }
+    ],
+    "dropPlan": {
+      "steps": [
+        {
+          "wave": "core",
+          "weekOffset": 0,
+          "productIds": [
+            "matchbook",
+            "acrylic-keychain",
+            "poster-print",
+            "sticker-pack"
+          ],
+          "runSizes": {
+            "matchbook": 100,
+            "acrylic-keychain": 50,
+            "poster-print": 50,
+            "sticker-pack": 100
+          },
+          "note": "Launch the reliable sellers first — smallest cash at risk."
+        },
+        {
+          "wave": "hero",
+          "weekOffset": 2,
+          "productIds": [
+            "tote-bag"
+          ],
+          "runSizes": {
+            "tote-bag": 36
+          },
+          "note": "Take pre-orders for the statement piece — gauge demand before the print run."
+        },
+        {
+          "wave": "limited",
+          "weekOffset": 5,
+          "productIds": [
+            "bandana"
+          ],
+          "runSizes": {
+            "bandana": 36
+          },
+          "note": "Numbered edition. Scarce by design — one run, then gone."
+        }
+      ],
+      "firstRunTip": "Order less than you think you'll sell — a sell-out creates demand."
+    },
+    "meta": {
+      "descriptionSource": "template",
+      "notes": [
+        "Exploratory picks (no direct audience evidence yet): Acrylic keychain, Printed bandana, Art print poster, Sticker pack."
+      ]
+    }
+  },
+  "descriptionSource": "template",
+  "collabsError": "Error: /api/collabs: 503 {\"error\":{\"code\":\"QLOO_UNAVAILABLE\",\"message\":\"Taste data is unavailable. Try again.\"}}",
+  "elapsedMs": 87755
+}
