@@ -98,7 +98,13 @@ export const operatorPatchSchema = z.discriminatedUnion('type', [
 ])
 export type OperatorPatchZ = z.infer<typeof operatorPatchSchema>
 
-/** Creator-side actions on their own request (ref-holder). */
+/** Creator-side actions on their own request (creator-key holder).
+ * Quote acceptance, sample approval and production authorization are three
+ * separate, individually-acknowledged creator decisions — none implies another. */
+export const CREATOR_SAMPLE_ACK =
+  'I have reviewed the sample myself and this approval is only about the sample'
+export const CREATOR_PRODUCTION_ACK =
+  'I understand this authorizes production spending and does not guarantee supplier delivery'
 export const creatorActionSchema = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('quote_decision'),
@@ -108,6 +114,23 @@ export const creatorActionSchema = z.discriminatedUnion('type', [
       'I understand this does not commit the supplier, start production, or guarantee delivery',
       { error: 'Please tick the acknowledgement' }
     ),
+  }),
+  z.object({
+    type: z.literal('sample_decision'),
+    approved: z.boolean(),
+    note: z.string().max(1000).optional(),
+    ackText: z.literal(CREATOR_SAMPLE_ACK, { error: 'Please tick the sample acknowledgement' }),
+  }),
+  z.object({
+    type: z.literal('production_decision'),
+    authorized: z.boolean(),
+    note: z.string().max(1000).optional(),
+    ackText: z.literal(CREATOR_PRODUCTION_ACK, { error: 'Please tick the production acknowledgement' }),
+  }),
+  /** Creator's answer to an operator information request. */
+  z.object({
+    type: z.literal('info_reply'),
+    text: z.string().trim().min(1, 'Write an answer before sending').max(2000),
   }),
 ])
 export type CreatorActionZ = z.infer<typeof creatorActionSchema>

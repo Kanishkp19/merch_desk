@@ -66,7 +66,7 @@ export function launchBriefMarkdown(plan: LaunchPlan): string {
   lines.push(
     base.breakEvenUnits === null
       ? `- Break-even: ${base.breakEvenImpossibleReason ?? 'not computable'}`
-      : `- Break-even: about ${base.breakEvenUnits} units across the batch (${base.breakEvenReachableInBatch ? 'within' : 'MORE than'} the ${result.lines.reduce((a, l) => a + l.quantityOrdered, 0)} units ordered), based on the sales mix: ${result.salesMix.map((m) => `${m.name} ${(m.weight * 100).toFixed(0)}%`).join(', ')}`
+      : `- Break-even: about ${base.breakEvenUnits} units across the batch, recovering fixed costs, the full inventory purchase and the defect allowance (${base.breakEvenReachableInBatch ? `reachable — the assumed mix can sell up to ${base.mixFeasibleUnits} units within the stock ordered` : `NOT reachable — the assumed mix can only sell ${base.mixFeasibleUnits} units within the stock ordered, so break-even needs more stock, a higher price or a different mix`}), based on the sales mix: ${result.salesMix.map((m) => `${m.name} ${(m.weight * 100).toFixed(0)}%`).join(', ')}`
   )
   lines.push('')
 
@@ -92,6 +92,9 @@ export function launchBriefMarkdown(plan: LaunchPlan): string {
     lines.push(`- Reference: ${plan.submission.ref}`)
     lines.push(`- Submitted: ${new Date(plan.submission.submittedAt).toLocaleString('en-IN')}`)
     lines.push(`- Status: tracked separately — edits made after submission do not change the request the operator received.`)
+    lines.push(
+      '- Creator gates are three separate decisions: (1) quote acceptance, (2) sample approval, (3) production authorization. Each is recorded individually; none implies another, and none implies supplier acceptance, payment or a delivery guarantee.'
+    )
   }
 
   return lines.join('\n')

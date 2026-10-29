@@ -137,6 +137,9 @@ export interface LaunchPlan {
     submittedAt: string
     /** Hash of the payload at submission, so later edits are visibly "not yet re-sent". */
     snapshotDigest: string
+    /** Creator credential for this request, kept on this device only. The
+     * server stores only its hash. Recovery: the operator can re-issue. */
+    creatorKey?: string
   }
 }
 
@@ -172,9 +175,16 @@ export interface RequestEvent {
 export interface CreatorRequestView {
   ref: string
   status: LaunchRequestStatus
-  statusLabel: string
   submittedAt: string
   launchName: string
+  /** True only when every line in the submitted payload has artwork ready. */
+  allArtworkReady: boolean
+  /** Distinct gate 2 — set only by an explicit creator sample decision, bound
+   * to the accepted quote revision it followed. */
+  sampleApproved: { at: string; approved: boolean; note?: string; quoteId: string; quoteRevision: number } | null
+  /** Distinct gate 3 — set only by an explicit creator production authorization,
+   * bound to the same quote revision as the sample approval. */
+  productionAuthorized: { at: string; quoteId: string; quoteRevision: number } | null
   events: Array<{ at: string; text: string }>
   quotes: Array<{
     id: string

@@ -16,6 +16,18 @@ const CONSENT_TEXT =
 interface SubmitResult {
   ref: string
   duplicate: boolean
+  creatorKey?: string
+}
+
+/** Per-device store of creator credentials, keyed by request reference. */
+export function saveCreatorKey(ref: string, key: string) {
+  try {
+    const map = JSON.parse(localStorage.getItem('merchdesk:creatorKeys') ?? '{}') as Record<string, string>
+    map[ref] = key
+    localStorage.setItem('merchdesk:creatorKeys', JSON.stringify(map))
+  } catch {
+    /* ignore */
+  }
 }
 
 export function QuoteRequestPanel({
@@ -23,7 +35,7 @@ export function QuoteRequestPanel({
   onSubmitted,
 }: {
   plan: LaunchPlan
-  onSubmitted: (ref: string, submittedAt: string, digest: string) => void
+  onSubmitted: (ref: string, submittedAt: string, digest: string, creatorKey?: string) => void
 }) {
   const [contact, setContact] = useState({ name: plan.brief.creatorName, email: '', phone: '', shareWithSuppliers: false })
   const [notes, setNotes] = useState('')
@@ -31,6 +43,7 @@ export function QuoteRequestPanel({
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [result, setResult] = useState<SubmitResult | null>(null)
+  const [creatorKey, setCreatorKey] = useState<string | null>(null)
   const [showPayload, setShowPayload] = useState(false)
 
   const economics = planEconomics(plan).result
@@ -97,7 +110,7 @@ export function QuoteRequestPanel({
     setSubmitting(true)
     setError(null)
     try {
-      const res = await apiJson<{ ref: string; duplicate: boolean; submittedAt: string }>('/api/launches', {
+      const res = await apiJson<{ ref: string; duplicate: boolean; submittedAt: string; creatorKey?: string }>('/api/launches', {
         method: 'POST',
         body: JSON.stringify({
           clientRequestId: `sub-${plan.id}`,
@@ -105,10 +118,14 @@ export function QuoteRequestPanel({
           payload,
         }),
       })
+      if (res.creatorKey) {
+        saveCreatorKey(res.ref, res.creatorKey)
+        setCreatorKey(res.creatorKey)
+      }
       setResult({ ref: res.ref, duplicate: res.duplicate })
       const { digestPayload } = await import('@/lib/launch/checklist')
       const digest = await digestPayload(payload)
-      onSubmitted(res.ref, res.submittedAt, digest)
+      onSubmitted(res.ref, res.submittedAt, digest, res.creatorKey)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Could not submit — try again')
     } finally {
@@ -129,13 +146,31 @@ export function QuoteRequestPanel({
           </p>
           <p className="text-sm text-ink-2 mt-2">
             {result.duplicate
-              ? 'You had already submitted this exact request — we returned the original reference instead of creating a duplicate.'
+              ? 'You had already submitted this exact request — we returned the original reference instead of creating a duplicate. Your request is safe: nothing was submitted twice.'
               : 'No email was sent and no supplier was contacted. The founder picks this up manually during the pilot and records supplier quotes here.'}
           </p>
+          {result.duplicate && (
+            <p className="text-sm text-ink-2 mt-2 bg-amber/30 border-2 border-dashed border-ink rounded-sm p-2" role="note">
+              The creator key is shown only once, with the first response. If the response was lost or the key was not saved, ask the
+              operator to re-issue a key for reference <strong className="font-mono">{result.ref}</strong> from the operator queue —
+              re-issuing invalidates the previous key and does not need the old one. The reference alone never opens a request.
+            </p>
+          )}
           <p className="text-sm text-ink-2 mt-2">
             Plan edits made after this point do <strong>not</strong> change the request the operator received.
           </p>
         </div>
+
+        {creatorKey && (
+          <div className="bg-amber/40 border-2 border-ink rounded-md p-6" role="note">
+            <p className="font-display text-xl uppercase">Your creator key — save this now</p>
+            <p className="font-mono text-lg bg-paper border-2 border-ink rounded-sm p-3 mt-3 break-all select-all">{creatorKey}</p>
+            <p className="text-sm text-ink-2 mt-3">
+              Viewing status, quotes and decisions for this request needs this key — the reference alone no longer grants access. It is
+              stored on this device automatically, but copy it somewhere safe: if you lose it, only the operator can issue a new one.
+            </p>
+          </div>
+        )}
       </div>
     )
   }

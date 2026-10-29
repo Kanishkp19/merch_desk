@@ -169,6 +169,9 @@ export interface DropPlan {
 
 export type ErrorCode =
   | 'VALIDATION'
+  | 'UNAUTHORIZED'
+  | 'FORBIDDEN'
+  | 'CONFLICT'
   | 'QLOO_NO_KEY'
   | 'QLOO_RATE_LIMIT'
   | 'QLOO_UNAVAILABLE'

@@ -65,8 +65,8 @@ export function EconomicsPanel({
             {result.perScenario.base.breakEvenUnits === null
               ? result.perScenario.base.breakEvenImpossibleReason
               : result.perScenario.base.breakEvenReachableInBatch
-                ? 'Within the batch you plan to order'
-                : 'More units than you plan to order — reprice or cut costs'}
+                ? `Recoverable within your stock under the assumed mix (mix can sell up to ${result.perScenario.base.mixFeasibleUnits} units)`
+                : `Not reachable: the assumed mix can only sell ${result.perScenario.base.mixFeasibleUnits} of the units you ordered — order more stock, reprice, or change the mix`}
           </p>
         </div>
       </div>
@@ -128,6 +128,9 @@ export function EconomicsPanel({
         {result.perScenario.base.breakEvenUnits !== null && (
           <p className="text-xs text-ink-2 mt-2">
             Sales mix behind the combined break-even: {result.salesMix.map((m) => `${m.name} ${(m.weight * 100).toFixed(0)}%`).join(', ')} (from your expected sales split).
+            {result.perScenario.base.breakEvenApproximate
+              ? ' Approximate: real sales are whole units per product, so the exact units-to-break-even can differ by a unit from this weighted average — the per-product stock check (above) is computed against actual stock, not this average.'
+              : ''}
           </p>
         )}
       </section>

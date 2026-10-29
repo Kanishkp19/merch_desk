@@ -36,13 +36,25 @@ model Post {
 /// it. Operator activity (status, notes, recorded quotes, decisions) lives in
 /// `working` so revisions stay distinguishable from the original request.
 model LaunchRequest {
-  id           String   @id // public reference (e.g. MD-XXXXXX)
+  id           String   @id // public reference (e.g. MD-XXXXXX) — display identifier only
   status       String   @default("submitted") // submitted | needs_info | quote_ready | closed
   creatorName  String
   creatorEmail String
-  clientRequestId String // idempotency key from the submitting browser
+  /// SHA-256 hex of the creator credential (never the credential itself).
+  /// Null = legacy record from before credentials existed; creator routes
+  /// refuse it until the operator issues a key from the operator queue.
+  creatorKeyHash String?
+  /// Idempotency key from the submitting browser. Unique at the database level
+  /// so concurrent retries collide here instead of creating duplicate requests.
+  clientRequestId String @unique
+  /// SHA-256 hex of the payload JSON at first submission — detects reuse of an
+  /// idempotency key with different request data.
+  payloadHash  String?
   payload      String // immutable JSON snapshot of the request
-  working      String @default("{}") // JSON: events[], quotes[], creatorDecisions
+  working      String @default("{}") // JSON: events[], quotes[], sampleApproved?, productionAuthorized?
+  /// Optimistic-concurrency counter: updates must match the version they read,
+  /// so concurrent operator and creator edits cannot overwrite each other.
+  version      Int      @default(0)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 

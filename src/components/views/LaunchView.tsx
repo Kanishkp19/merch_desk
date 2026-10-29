@@ -116,8 +116,8 @@ export function LaunchView({ exampleMode = false }: { exampleMode?: boolean }) {
     update((p) => ({ ...p, lines: [...p.lines, line] }))
   }
 
-  const onSubmitted = (ref: string, submittedAt: string, digest: string) =>
-    update((p) => ({ ...p, submission: { ref, submittedAt, snapshotDigest: digest } }))
+  const onSubmitted = (ref: string, submittedAt: string, digest: string, creatorKey?: string) =>
+    update((p) => ({ ...p, submission: { ref, submittedAt, snapshotDigest: digest, ...(creatorKey ? { creatorKey } : {}) } }))
 
   const startFromStudio = () => {
     const approved = studio.state.products.filter((p) => p.decision === 'approved')

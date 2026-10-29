@@ -3,6 +3,9 @@ import type { ApiErrorBody, ErrorCode } from '@/types'
 
 const HTTP_BY_CODE: Record<ErrorCode, number> = {
   VALIDATION: 400,
+  UNAUTHORIZED: 401,
+  FORBIDDEN: 403,
+  CONFLICT: 409,
   RATE_LIMITED: 429,
   QLOO_NO_KEY: 503,
   QLOO_RATE_LIMIT: 503,

@@ -25,6 +25,7 @@ interface FullRequest {
   ref: string
   status: string
   createdAt: string
+  hasCreatorKey?: boolean
   payload: {
     launchName: string
     brief: Record<string, string>
@@ -47,21 +48,10 @@ export function OperatorView() {
   const [queue, setQueue] = useState<QueueItem[] | null>(null)
   const [selected, setSelected] = useState<FullRequest | null>(null)
   const [manualNote, setManualNote] = useState('')
-
-  useEffect(() => {
-    try {
-      const saved = sessionStorage.getItem(KEY_STORE)
-      if (saved) {
-        setKey(saved)
-        void loadQueue(saved)
-      }
-    } catch {
-      /* ignore */
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  const [issuedKey, setIssuedKey] = useState<string | null>(null)
 
   const loadQueue = async (operatorKey: string) => {
+    setKey(operatorKey)
     setAuthError(null)
     try {
       const res = await apiJson<{ requests: QueueItem[]; manualNote: string }>('/api/operator/requests', {
@@ -76,6 +66,22 @@ export function OperatorView() {
       setAuthError(err instanceof Error ? err.message : 'Could not load the queue')
     }
   }
+
+  useEffect(() => {
+    let cancelled = false
+    void (async () => {
+      try {
+        const saved = sessionStorage.getItem(KEY_STORE)
+        if (saved && !cancelled) await loadQueue(saved)
+      } catch {
+        /* ignore */
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
+
+  }, [])
 
   const open = async (ref: string) => {
     try {
@@ -102,6 +108,21 @@ export function OperatorView() {
       setManualNote('')
     } catch (err) {
       setAuthError(err instanceof Error ? err.message : 'Update failed')
+    }
+  }
+
+  const issueCreatorKey = async () => {
+    if (!selected) return
+    setIssuedKey(null)
+    try {
+      const res = await apiJson<{ ref: string; creatorKey: string }>(
+        `/api/operator/requests/${encodeURIComponent(selected.ref)}`,
+        { method: 'POST', headers: { 'x-operator-key': key } }
+      )
+      setIssuedKey(res.creatorKey)
+      await open(selected.ref)
+    } catch (err) {
+      setAuthError(err instanceof Error ? err.message : 'Could not issue a creator key')
     }
   }
 
@@ -208,23 +229,55 @@ export function OperatorView() {
               {/* operator actions */}
               <div className="border-2 border-ink rounded-md bg-paper-2 p-4 space-y-3">
                 <h3 className="font-display uppercase">Record supplier activity</h3>
-                <Textarea label="Message to creator / note" value={manualNote} onChange={(e) => setManualNote(e.target.value)} maxLength={2000} />
-                <div className="flex flex-wrap gap-2">
-                  <Button variant="secondary" className="text-xs" onClick={() => void patch({ type: 'note', text: manualNote || 'Operator note' })}>
-                    Save note
+                {selected.status === 'closed' ? (
+                  <p className="text-sm bg-amber/30 border-2 border-dashed border-ink rounded-sm p-2">
+                    This request is closed — quotes and info requests are rejected until you reopen it. Reopening also re-enables the
+                    creator's decisions.
+                  </p>
+                ) : (
+                  <>
+                    <Textarea label="Message to creator / note" value={manualNote} onChange={(e) => setManualNote(e.target.value)} maxLength={2000} />
+                    <div className="flex flex-wrap gap-2">
+                      <Button variant="secondary" className="text-xs" onClick={() => void patch({ type: 'note', text: manualNote || 'Operator note' })}>
+                        Save note
+                      </Button>
+                      <Button
+                        variant="secondary"
+                        className="text-xs"
+                        onClick={() => void patch({ type: 'info_request', text: manualNote || 'Please send the missing information.' })}
+                      >
+                        Request info (marks “needs information”)
+                      </Button>
+                      <Button variant="secondary" className="text-xs" onClick={() => void patch({ type: 'status', status: 'closed' })}>
+                        Close request
+                      </Button>
+                    </div>
+                    <QuoteRecorder onRecord={(q) => void patch({ type: 'quote', ...q })} />
+                  </>
+                )}
+                {selected.status === 'closed' && (
+                  <Button variant="secondary" className="text-xs" onClick={() => void patch({ type: 'status', status: 'submitted', note: 'Reopened by operator.' })}>
+                    Reopen request
                   </Button>
-                  <Button
-                    variant="secondary"
-                    className="text-xs"
-                    onClick={() => void patch({ type: 'info_request', text: manualNote || 'Please send the missing information.' })}
-                  >
-                    Request info (marks “needs information”)
-                  </Button>
-                  <Button variant="secondary" className="text-xs" onClick={() => void patch({ type: 'status', status: 'closed' })}>
-                    Close request
-                  </Button>
-                </div>
-                <QuoteRecorder onRecord={(q) => void patch({ type: 'quote', ...q })} />
+                )}
+              </div>
+
+              {/* creator credential recovery */}
+              <div className="border-2 border-ink rounded-md bg-paper-2 p-4 space-y-2">
+                <h3 className="font-display uppercase">Creator access</h3>
+                <p className="text-sm text-ink-2">
+                  Creators need a personal creator key to view this request and record decisions — the reference alone no longer
+                  grants access. {selected.hasCreatorKey ? 'A key has been issued.' : 'No key issued yet (older request).'}
+                </p>
+                <Button variant="secondary" className="text-xs" onClick={() => void issueCreatorKey()}>
+                  <KeyRound className="h-4 w-4" aria-hidden /> Issue / re-issue creator key
+                </Button>
+                {issuedKey && (
+                  <div role="alert">
+                    <p className="text-sm font-bold mt-2">Give this key to the creator now — it is shown only once:</p>
+                    <p className="font-mono text-sm bg-paper border-2 border-ink rounded-sm p-2 mt-1 break-all select-all">{issuedKey}</p>
+                  </div>
+                )}
               </div>
 
               {/* quotes + history */}

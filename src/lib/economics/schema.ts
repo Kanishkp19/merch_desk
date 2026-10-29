@@ -100,9 +100,16 @@ export interface EconomicsResult {
       unsoldUnits: number
       capitalTiedInUnsold: number
       gstRemitted: number
+      /** Fixed costs + full-batch inventory + defect allowance (integer paise). */
+      requiredCostsToRecover: number
       /** Aggregate break-even units under the launch's sales mix; null when impossible. */
       breakEvenUnits: number | null
+      /** True when the weighted mix spans 2+ products — whole-unit sales can differ from the weighted average by a unit. */
+      breakEvenApproximate: boolean
+      /** Whether the assumed mix can sell that many units within each product's inventory. */
       breakEvenReachableInBatch: boolean
+      /** Largest total-unit count the assumed mix can sell within the ordered stock. */
+      mixFeasibleUnits: number
       breakEvenImpossibleReason?: string
     }
   >

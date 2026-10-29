@@ -199,9 +199,9 @@ See [.env.example](.env.example) for a starting template and [environment parsin
 | Generated image bytes | Browser IndexedDB |
 | Submitted quote requests and operator updates | Server-side SQLite through Prisma |
 
-Clearing browser storage removes local work. Local drafts do not sync across devices. Persist the SQLite file if you deploy the request workflow.
+Clearing browser storage removes local work. Local drafts do not sync across devices. Persist the SQLite file if you deploy the request workflow (backup/restore: [docs/PILOT-OPS.md](docs/PILOT-OPS.md)).
 
-The operator key is a shared pilot gate, not an account system. User accounts, full authentication, payment collection, and supplier integrations are outside the current pilot.
+The operator key is a shared pilot gate, not an account system. Submitted requests are protected by a per-request **creator key** (shown once at submission; the reference alone grants nothing). Lost creator keys are recovered by the operator re-issuing one from the queue. User accounts, full authentication, payment collection, and supplier integrations are outside the current pilot.
 
 </details>
 
@@ -253,6 +253,8 @@ The Next.js config currently allows builds despite TypeScript errors, so run the
 - [India pilot notes](docs/INDIA_PILOT.md) — pricing evidence, venue outreach status, and launch acceptance criteria.
 - [Implementation map](docs/IMPLEMENTATION_MAP.md) — historical build notes and recorded verification; some sections describe the pre-pilot state.
 - [Working assumptions](docs/ASSUMPTIONS.md) — assumptions behind the pilot.
+- [Pilot operations runbook](docs/PILOT-OPS.md) — configuration, migrations, backups, operator access, creator key recovery.
+- [Pilot validation checklist](docs/PILOT-VALIDATION-CHECKLIST.md) — real-world validation (supplier quotes, usability, willingness to pay). Software tests are not evidence of demand or supplier reliability.
 - [Benchmark rubric](artifacts/benchmark/RUBRIC.md) — how recorded recommendation runs were reviewed.
 
 <details>
@@ -267,6 +269,8 @@ The Next.js config currently allows builds despite TypeScript errors, so run the
 **Quote submission fails with a database error.** Ensure `db/` exists, check `DATABASE_URL`, and run `npm run db:generate` followed by `npm run db:push` against your development database.
 
 **The operator queue is unavailable.** Set `OPERATOR_KEY`, restart the server, and supply the same key in the operator UI.
+
+**A request won't open from its reference.** References are display identifiers — viewing and deciding requires the creator key issued at submission. If it is lost, the operator can re-issue one from the request detail in the queue (see [docs/PILOT-OPS.md](docs/PILOT-OPS.md)).
 
 **A draft disappeared on another browser.** Drafts belong to the device and browser where you created them. Export the brief before clearing browser storage.
 

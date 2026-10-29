@@ -40,9 +40,26 @@ function soldFor(line: LaunchLineItem, scenario: ScenarioName): number {
  *  - Final profit (scenario): contribution − fixed costs − full-batch inventory cost.
  *    The batch is expensed exactly once; unsold stock is treated as worthless here.
  *  - Profit if all sell: same but assumes unsold stock sells later at the same price.
- *  - Break-even units: fixed costs ÷ weighted contribution per unit (sales mix =
- *    the creator's expected sold split). Null when any sold unit loses money or a
- *    needed cost is unknown.
+ *  - Break-even units: the minimum whole-unit sales needed to recover every
+ *    modeled cost — fixed costs + full-batch inventory + the defect allowance —
+ *    under the weighted contribution per unit (sales mix = the creator's
+ *    expected sold split). Single ceil, so it is consistent with the profit
+ *    calculation: selling exactly break-even units never shows a loss. Null
+ *    with an explanation when a needed cost is unknown, every sale loses
+ *    money, or the creator expects zero sales (mix unknown).
+ *  - Reachability: the mix must fit each product's inventory — selling N units
+ *    with weights w_i needs N·w_i ≤ quantityOrdered_i per product. The batch
+ *    cannot reach break-even if the required units exceed that cap.
+ *
+ * Rounding: every monetary value is integer paise. Per-unit GST, payment fees
+ * and defect allowances are rounded to the nearest paise (Math.round) at the
+ * line level; the launch defect allowance is the sum of those per-line figures —
+ * never re-rounded in aggregate — so scenario profit, profit-if-all-sell and
+ * break-even all use one identical number. Break-even rounds up to the next
+ * whole unit (Math.ceil) exactly once, over the total of all modeled costs.
+ * The combined break-even for a multi-product launch is a weighted-average
+ * approximation (real sales are whole units per product) and is labelled as
+ * such; reachability is checked against each product's actual stock.
  */
 export function computeLaunchEconomics(rawInput: LaunchEconomicsInput | z.input<typeof launchEconomicsInputSchema>): EconomicsResult {
   const input = launchEconomicsInputSchema.parse(rawInput)
@@ -138,14 +155,33 @@ export function computeLaunchEconomics(rawInput: LaunchEconomicsInput | z.input<
     (input.inboundFreight.known ? input.inboundFreight.amount : 0) +
     (input.planningFee.known ? input.planningFee.amount : 0)
   const fixedComplete = !anySetupUnknown && input.sampling.known && input.inboundFreight.known && input.planningFee.known
+  if (!input.planningFee.known) unconfirmed.push({ item: 'Launch', kind: 'cost', detail: 'MerchDesk planning fee' })
 
   const upfrontCash = inventoryCashTotal + fixedKnown
   const upfrontComplete =
     fixedComplete && lines.every((l) => l.unitCost.known) && lines.length > 0
 
+  // Defect allowance, rounded per product (the same rounding the per-line
+  // contributions use) and then summed — one definition for scenario profit,
+  // profit-if-all-sell and break-even, never an aggregate re-rounding.
+  const defectAllowanceTotal = sum(lineResults.map((l) => Math.round((l.inventoryCash * input.defectRatePct) / 100)))
+
   const salesMixWeights = mixWeights(lines)
   const weightedContribution = sum(lineResults.map((l, i) => l.contributionPerUnit * (salesMixWeights[i]?.weight ?? 0)))
   const contributionKnown = lineResults.every((l) => l.contributionPerUnitKnown) && lines.every((l) => l.unitCost.known)
+
+  // Largest total-unit count the assumed mix can actually sell within each
+  // product's inventory: N·w_i ≤ quantityOrdered_i for every product in the mix.
+  const mixFeasibleUnits = Math.min(
+    ...salesMixWeights.map((w, i) => (w.weight > 0 ? Math.floor(lines[i].quantityOrdered / w.weight) : Infinity))
+  )
+
+  const unknownFixedNames = [
+    ...(anySetupUnknown ? ['setup cost'] : []),
+    ...(!input.sampling.known ? ['sampling'] : []),
+    ...(!input.inboundFreight.known ? ['inbound freight'] : []),
+    ...(!input.planningFee.known ? ['the planning fee'] : []),
+  ]
 
   const perScenario = {} as EconomicsResult['perScenario']
   for (const s of SCENARIOS) {
@@ -158,11 +194,23 @@ export function computeLaunchEconomics(rawInput: LaunchEconomicsInput | z.input<
     const unsoldUnits = sum(lineResults.map((l) => l.unsold[s]))
     const capitalTiedInUnsold = sum(lineResults.map((l) => l.capitalTiedInUnsold[s]))
 
+    // All modeled costs a sale must recover: fixed + full-batch inventory +
+    // defect allowance. One ceil keeps break-even consistent with the profit
+    // calculation (selling exactly this many units never shows a loss).
+    const requiredCostsToRecover = fixedKnown + inventoryCashTotal + defectAllowanceTotal
+
     let breakEvenUnits: number | null
     let breakEvenImpossibleReason: string | undefined
     if (!contributionKnown) {
       breakEvenUnits = null
       breakEvenImpossibleReason = 'Some per-order costs or supplier costs are unknown — break-even needs them.'
+    } else if (!fixedComplete) {
+      breakEvenUnits = null
+      breakEvenImpossibleReason = `Fixed costs are incomplete — ${unknownFixedNames.join(', ')} not confirmed yet. Break-even is suppressed rather than computed against a guessed total.`
+    } else if (sum(lines.map((l) => l.expectedSold)) <= 0) {
+      breakEvenUnits = null
+      breakEvenImpossibleReason =
+        'You expect zero sales, so there is no sales mix to weight break-even with. Enter an expected-sales guess to see a break-even figure.'
     } else if (weightedContribution <= 0) {
       breakEvenUnits = null
       breakEvenImpossibleReason =
@@ -170,7 +218,7 @@ export function computeLaunchEconomics(rawInput: LaunchEconomicsInput | z.input<
           ? 'Each sale brings in exactly what it costs — no finite break-even exists.'
           : 'Each sale loses money after fees and shipping — selling more increases losses. Raise the price or cut per-order costs.'
     } else {
-      breakEvenUnits = Math.ceil(fixedKnown / weightedContribution) + Math.ceil(inventoryCashTotal / weightedContribution)
+      breakEvenUnits = Math.ceil(requiredCostsToRecover / weightedContribution)
     }
 
     perScenario[s] = {
@@ -181,15 +229,21 @@ export function computeLaunchEconomics(rawInput: LaunchEconomicsInput | z.input<
       finalProfit,
       profitIfAllSell:
         sum(lineResults.map((l) => l.quantityOrdered * l.contributionPerUnit)) -
-        Math.round((inventoryCashTotal * input.defectRatePct) / 100) -
+        defectAllowanceTotal -
         fixedKnown -
         inventoryCashTotal,
       unsoldUnits,
       capitalTiedInUnsold,
       gstRemitted: sum(lineResults.map((l) => l.gstRemitted[s])),
+      requiredCostsToRecover,
       breakEvenUnits,
+      // The weighted contribution is fractional when two or more products sell;
+      // real sales are whole units per product, so the true units-to-break-even
+      // can differ by a unit from this weighted figure. Labelled approximate.
+      breakEvenApproximate: salesMixWeights.filter((w) => w.weight > 0).length > 1,
       breakEvenReachableInBatch:
-        breakEvenUnits !== null && breakEvenUnits <= sum(lines.map((l) => l.quantityOrdered)),
+        breakEvenUnits !== null && breakEvenUnits <= mixFeasibleUnits,
+      mixFeasibleUnits: Number.isFinite(mixFeasibleUnits) ? mixFeasibleUnits : sum(lines.map((l) => l.quantityOrdered)),
       breakEvenImpossibleReason,
     }
   }
@@ -249,7 +303,7 @@ export const METRIC_DEFINITIONS: Array<{ metric: string; definition: string }> =
   {
     metric: 'Break-even units',
     definition:
-      'Fixed costs plus batch inventory cost, divided by the average contribution per unit under your expected sales mix across products. A combined figure — the mix is shown above.',
+      'Minimum whole-unit sales that recover every modeled cost — fixed costs, the full batch inventory and the defect allowance — using the average contribution per unit under your expected sales mix. For a multi-product launch this is an approximation: real sales are whole units per product, so the exact figure can differ by a unit from the weighted average. Suppressed, never guessed, when a needed cost is unknown or you expect zero sales. A combined figure; it must also fit within each product\'s stock under that mix (see the reachability note).',
   },
   {
     metric: 'Capital tied in unsold stock',

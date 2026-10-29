@@ -19,8 +19,9 @@ as demand.
   math. It is shown in the economics workspace as an upfront cost, distinct from supplier payments.
 - Supplier money flows creator → supplier directly. MerchDesk never touches inventory cash in this
   pilot, so there is no platform revenue to model yet.
-- The ₹2,500 figure is an experiment with explicit assumptions (see `src/lib/economics/engine.ts`
-  `PILOT_FEE_Paise`), not a researched market price. First pilot conversations may reprice it.
+- The ₹2,500 figure is an experiment with explicit assumptions (see the `planningFee` default in
+  `src/lib/economics/schema.ts`), not a researched market price. First pilot conversations may
+  reprice it.
 
 ## Money representation
 
@@ -39,24 +40,29 @@ registration threshold (states vary on intra-state supply of goods). The workspa
 
 ## Persistence and access
 
-- Drafts (brief + launch, pre-submission): device-only sessionStorage, labelled "Stored on this
-  device".
+- Drafts (brief + launch, pre-submission): device-only localStorage, labelled "on this device".
 - Submitted quote requests: SQLite via Prisma (`db/custom.db`), because the request must survive
-  the browser. DATABASE_URL fixed to a repo-relative path. This is pilot-grade storage; there is no
-  backup/retention story yet.
-- Access: creator retrieves status by unguessable reference (UUID-based, shown once + stored on
-  device). Operator queue is gated by a shared `OPERATOR_KEY` (set in `.env.local`); this is a
-  shared secret, not authentication. Acceptable for one operator in a pilot; replace before any
-  second operator or public launch.
+  the browser. DATABASE_URL fixed to a repo-relative path. Backup/restore: `docs/PILOT-OPS.md`.
+- Access: submitted requests are opened with a per-request **creator key** (256-bit, shown once at
+  submission, stored server-side only as a SHA-256 hash). The short `MD-XXXXXX` reference is a
+  display identifier and grants nothing. Keys travel in the `x-creator-key` header, never in URLs.
+  Lost keys and pre-credential legacy records are recovered by the operator re-issuing a key from
+  the operator queue (`docs/PILOT-OPS.md` §5).
+- Operator queue is gated by a shared `OPERATOR_KEY`; this is a shared secret, not authentication.
+  Acceptable for one operator in a pilot; replace before any second operator or public launch.
+- Submission idempotency and concurrent-update safety are enforced at the database level
+  (unique `clientRequestId`, version-checked writes) — see `src/lib/launch/server.ts`.
 
 ## Fulfilment, suppliers, payments
 
 - No supplier integration and no verified lead times exist (docs/INDIA_PILOT.md: no venue or
   supplier contacted). Every lead time in the UI is shown as "requires supplier confirmation".
-- Sample approval and production authorization are separate, explicit creator actions. Accepting a
-  quote authorizes MerchDesk to request a sample only.
-- No email is sent. "Submit" stores the request for the operator and gives the creator a reference;
-  the UI says the founder picks it up manually. This is labelled everywhere the flow touches it.
+- Quote acceptance, sample approval and production authorization are three separate, explicit
+  creator decisions, each acknowledged individually and enforced server-side. Accepting a quote
+  authorizes a sample request only.
+- No email is sent. "Submit" stores the request for the operator and gives the creator a reference
+  plus a creator key; the UI says the founder picks it up manually. This is labelled everywhere the
+  flow touches it.
 
 ## Demand numbers
 
