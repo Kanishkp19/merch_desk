@@ -18,6 +18,8 @@ Turn audience taste into a focused collection, understandable money math, and a 
 
 [🚀 Run locally](#run-locally) · [🧭 Take a tour](#take-a-tour) · [🔎 Understand the decisions](#understand-the-decisions) · [🛠️ Developer guide](#developer-guide)
 
+[Deploy for free](docs/DEPLOYMENT.md) · [Hackathon submission copy](docs/DEVPOST.md) · [MIT license](LICENSE)
+
 </div>
 
 ---

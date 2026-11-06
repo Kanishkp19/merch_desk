@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: merchdesk
+    runtime: node
+    plan: free
+    buildCommand: bun install --frozen-lockfile && bun run db:generate && bunx tsc --noEmit && bun run build
+    startCommand: sh scripts/render-start.sh
+    healthCheckPath: /api/status
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: BUN_VERSION
+        value: "1.4.3"
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: file:/tmp/merchdesk.db
+      - key: MERCHDESK_DATA_MODE
+        value: live
+      - key: LLM_PROVIDERS
+        value: groq,cloudflare
+      - key: QLOO_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: CF_ACCOUNT_ID
+        sync: false
+      - key: CF_API_TOKEN
+        sync: false
+      - key: OPERATOR_KEY
+        generateValue: true
